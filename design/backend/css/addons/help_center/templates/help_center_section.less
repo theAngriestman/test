@@ -106,7 +106,7 @@
     justify-content: center;
     align-items: center;
     padding: 8px 16px 8px 24px;
-    color: @textMutedColor;
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
     text-align: center;
     min-height: 128px;
 }
@@ -162,5 +162,5 @@
 // Help center product release info
 .help-center-section__product-release-info {
     margin-left: auto;
-    color: @textMutedColor;
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
 }

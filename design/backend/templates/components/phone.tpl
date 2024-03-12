@@ -121,7 +121,7 @@
                 selected_id=$country_code|lower
                 display_icons=true
                 key_name="name"
-                dropdown_menu_item_link_class="cm-phone-number-with-country-selection-li-link"
+                dropdown_menu_item_link_class="cm-phone-number-with-country-selection-li-link phone-number-with-country-selection-li-link"
                 assign="select_countries"
                 class="cm-phone-number-with-country-selection-btn-group btn-group--phone-mask dropleft `$btn_group`"
                 button_class=$button_class

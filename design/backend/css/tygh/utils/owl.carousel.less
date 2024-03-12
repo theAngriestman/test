@@ -334,14 +334,16 @@
 }
 .owl-prev:after,
 .owl-next:before {
-  font-family: FontAwesome;
+  display: block;
+  width: @iconSize;
+  height: @iconSize;
 }
 .owl-prev:after {
-  content: "\f053";
+  content: url('../templates/icons/chevron_left.svg');
 }
 
 .owl-next:before {
-  content: "\f054";
+  content: url('../templates/icons/chevron_right.svg');
 }
 
 // Custom style

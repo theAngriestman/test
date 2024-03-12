@@ -68,6 +68,10 @@ msgctxt "Languages::seo.redirects_manager"
 msgid "301 redirects"
 msgstr "301 redirects"
 
+msgctxt "Languages::seo.view_redirects_manager"
+msgid "View 301 redirects"
+msgstr "View 301 redirects"
+
 msgctxt "Languages::seo.old_url"
 msgid "Old URL"
 msgstr "Old URL"

@@ -49,7 +49,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $filtering_result = fn_shopify_import_filter_data($shopify_csv_data, $import_options);
             $shopify_filtered_data = $filtering_result->getData('filtered_data');
+            $shopify_filtering_params = $filtering_result->getData('filtering_params');
             $import_success = false;
+
+            if (
+                fn_allowed_for('MULTIVENDOR')
+                && !empty($shopify_filtering_params['specific_vendor'])
+                && !empty($shopify_filtering_params['import_company_id'])
+            ) {
+                foreach (array_keys($pattern['export_fields']) as $field) {
+                    if (
+                        empty($pattern['export_fields'][$field]['process_put'][0])
+                        || $pattern['export_fields'][$field]['process_put'][0] !== 'fn_exim_set_product_features'
+                    ) {
+                        continue;
+                    }
+                    $pattern['export_fields'][$field]['process_put'][0] = 'fn_exim_set_product_features_by_company';
+                    $pattern['export_fields'][$field]['process_put'][5] = (int) $shopify_filtering_params['import_company_id'];
+                }
+            }
 
             if ($filtering_result->isSuccess()) {
                 $import_success = fn_import($pattern, $shopify_filtered_data, $import_options);

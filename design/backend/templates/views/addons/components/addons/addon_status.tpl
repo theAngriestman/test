@@ -1,7 +1,7 @@
 {$show_addon_status = $show_addon_status|default:true}
 
 {if $show_addon_status}
-    {$target_id="addons_list,header_navbar,header_subnav,addons_counter,elm_developer_pages,elm_all_dev_pages"}
+    {$target_id="addons_list,top_bar,header_navbar,header_subnav,addons_counter,elm_developer_pages,elm_all_dev_pages"}
     {$c_url = $config.current_url}
 
     <div>
@@ -46,7 +46,7 @@
                     {/if}
                     {if $a.delete_url}
                         {$btn_delete_data = [
-                            "data-ca-target-id"=>"addons_list,header_navbar,header_subnav"
+                            "data-ca-target-id"=>"addons_list,top_bar,header_navbar,header_subnav"
                         ]}
                         {if isset($a.confirmation_deleting)}
                             {$btn_delete_data["data-ca-confirm-text"] = $a.confirmation_deleting}

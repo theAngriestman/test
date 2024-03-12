@@ -51,7 +51,8 @@
 
             {hook name="fileuploader:uploaded_files"}
                 {if $delete_link}<a class="cm-ajax cm-post" href="{$delete_link|fn_url}">{/if}{if !($po.required === "YesNo::YES"|enum && $images|count == 1)}{include_ext file="common/icon.tpl"
-                        class="icon-remove-sign cm-tooltip hand"
+                        source="remove_sign"
+                        class="cm-tooltip hand flex-inline top"
                         id="clean_selection_`$id_var_name`_`$image.file`"
                         title=__("remove_this_item")
                         data=[
@@ -68,7 +69,8 @@
 <div id="file_uploader_{$id_var_name}">
     <div class="upload-file-section" id="message_{$id_var_name}" title="">
         <p class="cm-fu-file hidden">{include_ext file="common/icon.tpl"
-            class="icon-remove-sign cm-tooltip hand"
+            source="remove_sign"
+            class="cm-tooltip hand flex-inline top"
             id="clean_selection_`$id_var_name`"
             title=__("remove_this_item")
             data=[

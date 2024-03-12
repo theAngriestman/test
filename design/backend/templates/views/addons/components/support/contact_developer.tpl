@@ -79,7 +79,7 @@
             text=__("contact_the_developer", ["[developer]" => $addon.supplier])
             content=$smarty.capture.contact_developer_form
             link_text=__("contact_the_developer", ["[developer]" => $addon.supplier])
-            link_class="btn-text"
+            link_class="btn-link"
             act="general"
             title=false
         }

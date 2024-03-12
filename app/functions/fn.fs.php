@@ -926,17 +926,23 @@ function fn_get_last_key(&$arr, $fn = '', $is_first = false)
 /**
  * Filters data from instant file uploader
  *
- * @param string $name                             Name of uploaded data
- * @param array  $filter_by_ext                    Allow file extensions
- * @param bool   $show_default_error_notifications Show default notification
- * @param bool   $sanitaze_filename                Sanitaze file names
+ * @param string      $name                             Name of uploaded data
+ * @param array       $filter_by_ext                    Allow file extensions
+ * @param bool        $show_default_error_notifications Show default notification
+ * @param bool        $sanitaze_filename                Sanitaze file names
+ * @param float|false $filter_by_file_size_bytes        Allowed file size value, if false - not filtered
  *
  * @return array filtered file data
  *
  * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification
  */
-function fn_filter_uploaded_data($name, array $filter_by_ext = [], $show_default_error_notifications = true, $sanitaze_filename = true)
-{
+function fn_filter_uploaded_data(
+    $name,
+    array $filter_by_ext = [],
+    $show_default_error_notifications = true,
+    $sanitaze_filename = true,
+    $filter_by_file_size_bytes = false
+) {
     $udata_local = fn_rebuild_files('file_' . $name);
     $udata_other = !empty($_REQUEST['file_' . $name]) ? $_REQUEST['file_' . $name] : [];
     $utype = !empty($_REQUEST['type_' . $name]) ? $_REQUEST['type_' . $name] : [];
@@ -983,7 +989,7 @@ function fn_filter_uploaded_data($name, array $filter_by_ext = [], $show_default
             if ($sanitaze_filename) {
                 $filtered[$id]['name'] = SecurityHelper::sanitizeFileName(urldecode($filtered[$id]['name']));
             }
-            if (!fn_check_uploaded_data($filtered[$id], $filter_by_ext)) {
+            if (!fn_check_uploaded_data($filtered[$id], $filter_by_ext, $filter_by_file_size_bytes)) {
                 unset($filtered[$id]);
             }
         }
@@ -1000,14 +1006,15 @@ function fn_filter_uploaded_data($name, array $filter_by_ext = [], $show_default
      * Executed after filtering uploaded files.
      * It allows to change or extend the filtered files.
      *
-     * @param string $name          name of uploaded data
-     * @param array  $filter_by_ext allow file extensions
-     * @param array  $filtered      filtered file data
-     * @param array  $udata_local   List of uploaded files
-     * @param array  $udata_other   List of files object types
-     * @param array  $utype         List of files sources
+     * @param string      $name                      Name of uploaded data
+     * @param array       $filter_by_ext             Allow file extensions
+     * @param array       $filtered                  Filtered file data
+     * @param array       $udata_local               List of uploaded files
+     * @param array       $udata_other               List of files object types
+     * @param array       $utype                     List of files sources
+     * @param float|false $filter_by_file_size_bytes Allowed file size value, if false - not filtered
      */
-    fn_set_hook('filter_uploaded_data_post', $name, $filter_by_ext, $filtered, $udata_local, $udata_other, $utype);
+    fn_set_hook('filter_uploaded_data_post', $name, $filter_by_ext, $filtered, $udata_local, $udata_other, $utype, $filter_by_file_size_bytes);
 
     return $filtered;
 }
@@ -1032,11 +1039,16 @@ function fn_filter_instant_upload($filter_by_ext = array())
 
 /**
  * Checks uploaded file can be processed
- * @param array $uploaded_data uploaded file data
- * @param array $filter_by_ext allowed file extensions
- * @return boolean true if file can be processed, false - otherwise
+ *
+ * @param array       $uploaded_data             Uploaded file data
+ * @param array       $filter_by_ext             Allowed file extensions
+ * @param float|false $filter_by_file_size_bytes Allowed file size value, if false - not filtered
+ *
+ * @return bool true if file can be processed, false - otherwise
+ *
+ * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint
  */
-function fn_check_uploaded_data($uploaded_data, $filter_by_ext)
+function fn_check_uploaded_data(array $uploaded_data, array $filter_by_ext, $filter_by_file_size_bytes = false)
 {
     $result = true;
     $processed = false;
@@ -1044,12 +1056,13 @@ function fn_check_uploaded_data($uploaded_data, $filter_by_ext)
     /**
      * Actions before check uploaded data
      *
-     * @param array $uploaded_data Uploaded data
-     * @param array $filter_by_ext Allowed file extensions
-     * @param bool  $result        Result status
-     * @param bool  $processed     Processed flag
+     * @param array       $uploaded_data             Uploaded data
+     * @param array       $filter_by_ext             Allowed file extensions
+     * @param bool        $result                    Result status
+     * @param bool        $processed                 Processed flag
+     * @param float|false $filter_by_file_size_bytes Allowed file size value, if false - not filtered
      */
-    fn_set_hook('check_uploaded_data_pre', $uploaded_data, $filter_by_ext, $result, $processed);
+    fn_set_hook('check_uploaded_data_pre', $uploaded_data, $filter_by_ext, $result, $processed, $filter_by_file_size_bytes);
 
     if ($processed) {
         return $result;
@@ -1096,17 +1109,31 @@ function fn_check_uploaded_data($uploaded_data, $filter_by_ext)
             $result = false;
             $processed = true;
         }
+
+        if (
+            !$processed
+            && !empty($uploaded_data['size']) && !empty($filter_by_file_size_bytes)
+            && $uploaded_data['size'] > $filter_by_file_size_bytes
+        ) {
+            fn_set_notification(NotificationSeverity::ERROR, __('error'), __('text_not_allowed_to_upload_file_size', [
+                '[file_size]' => round($filter_by_file_size_bytes / (1024 * 1024), 2, PHP_ROUND_HALF_DOWN)
+            ]));
+
+            $result = false;
+            $processed = true;
+        }
     }
 
     /**
      * Actions after check uploaded data
      *
-     * @param array $uploaded_data Uploaded data
-     * @param array $filter_by_ext Allowed file extensions
-     * @param bool  $result        Result status
-     * @param bool  $processed     Processed flag
+     * @param array       $uploaded_data             Uploaded data
+     * @param array       $filter_by_ext             Allowed file extensions
+     * @param bool        $result                    Result status
+     * @param bool        $processed                 Processed flag
+     * @param float|false $filter_by_file_size_bytes Allowed file size value, if false - not filtered
      */
-    fn_set_hook('check_uploaded_data_post', $uploaded_data, $filter_by_ext, $result, $processed);
+    fn_set_hook('check_uploaded_data_post', $uploaded_data, $filter_by_ext, $result, $processed, $filter_by_file_size_bytes);
 
     return $result;
 }

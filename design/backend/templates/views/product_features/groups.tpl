@@ -137,9 +137,17 @@
         {include file="common/popupbox.tpl" id="add_new_feature" text=__("new_group") title=__("new_group") content=$smarty.capture.add_new_picker act="general" icon="icon-plus"}
     {/capture}
 
-    {capture name="sidebar"}
-        {include file="views/product_features/components/product_feature_groups_search_form.tpl" dispatch="product_features.groups"}
+    {capture name="search_filters"}
+        {include file="views/product_features/components/product_feature_groups_search_form.tpl"
+            dispatch="product_features.groups"
+        }
     {/capture}
 
 {/capture}
-{include file="common/mainbox.tpl" title=__("feature_groups") content=$smarty.capture.mainbox select_languages=true adv_buttons=$smarty.capture.adv_buttons sidebar=$smarty.capture.sidebar}
+{include file="common/mainbox.tpl"
+    title=__("feature_groups")
+    content=$smarty.capture.mainbox
+    select_languages=true
+    adv_buttons=$smarty.capture.adv_buttons
+    search_filters=$smarty.capture.search_filters
+}

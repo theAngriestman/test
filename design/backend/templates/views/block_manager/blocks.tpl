@@ -122,9 +122,15 @@
 
 {/capture}
 
-{capture name="sidebar"}
-        {include file="common/saved_search.tpl" dispatch="block_manager.blocks" view_type="blocks"}
-        {include file="views/block_manager/components/blocks_search_form.tpl" dispatch="block_manager.blocks"}
+{$saved_search = [
+    dispatch => "block_manager.blocks",
+    view_type => "blocks"
+]}
+
+{capture name="search_filters"}
+    {include file="views/block_manager/components/blocks_search_form.tpl"
+        dispatch="block_manager.blocks"
+    }
 {/capture}
 
 {capture name="mainbox_title"}
@@ -136,6 +142,7 @@
     content=$smarty.capture.mainbox
     adv_buttons=$smarty.capture.adv_buttons
     select_languages=true
-    sidebar=$smarty.capture.sidebar
+    saved_search=$saved_search
+    search_filters=$smarty.capture.search_filters
     content_id="manage_blocks"
 }

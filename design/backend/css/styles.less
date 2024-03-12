@@ -2,33 +2,15 @@
 @import "lib/twitterbootstrap/bootstrap.less";
 @import "lib/bootstrap_switch/stylesheets/bootstrapSwitch.less";
 @import "config.less";
-@import "block_manager.less";
 
 
 // Mixins
-@import "tygh/mixins.less";
 @import "tygh/mixins.less";
 
 
 // Main styles
 @import "tygh/admin_content.less";
 @import "tygh/common.less";
-
-
-// Styles of navigation menu
-@import "tygh/navbars/menu.less";
-
-
-// Styles for popups and modals
-@import "tygh/modals/modals.less";
-@import "tygh/modals/popups.less";
-@import "tygh/modals/login_modal.less";
-@import "tygh/modals/welcome_dialogs.less";
-
-
-// Icons
-@import "tygh/icons/old.less";
-@import "tygh/icons/regular.less";
 
 
 // Base UI elements
@@ -45,6 +27,7 @@
 @import "tygh/ui_base/popovers.less";
 @import "tygh/ui_base/images.less";
 @import "tygh/ui_base/pagination.less";
+@import "tygh/ui_base/progress_bar.less";
 @import "tygh/ui_base/headers.less";
 @import "tygh/ui_base/fileuploader.less";
 @import "tygh/ui_base/approve_disapprove.less";
@@ -58,6 +41,30 @@
 @import "tygh/ui_base/picker/companies.less";
 @import "tygh/ui_base/picker/product_features.less";
 
+
+// Styles of navigation menu
+@import "tygh/navbars/top_bar.less";
+@import "tygh/navbars/mobile_menu.less";
+@import "tygh/navbars/storefront_menu.less";
+@import "tygh/navbars/user_menu.less";
+@import "tygh/navbars/menu.less";
+@import "tygh/navbars/main_menu.less";
+@import "tygh/navbars/actions.less";
+@import "tygh/navbars/actions_menu.less";
+@import "tygh/navbars/content_top.less";
+@import "tygh/navbars/context_search.less";
+@import "tygh/components/sidebar.less";
+
+// Styles for popups and modals
+@import "tygh/modals/modals.less";
+@import "tygh/modals/popups.less";
+@import "tygh/modals/login_modal.less";
+@import "tygh/modals/welcome_dialogs.less";
+
+
+// Icons
+@import "tygh/icons/icons.less";
+
 // Components
 @import "tygh/components/update_for_all.less";
 @import "tygh/components/global_individual.less";
@@ -65,6 +72,7 @@
 @import "tygh/components/content_more.less";
 @import "tygh/components/phone.less";
 @import "tygh/components/append_language.less";
+@import "tygh/components/search_filters.less";
 
 // Utility styles and complex UI elements
 @import "tygh/utils/notifications_center.less";
@@ -79,9 +87,7 @@
 @import "tygh/utils/google_graph.less";
 @import "tygh/utils/scroll.less";
 @import "tygh/utils/calendar.less";
-@import "tygh/utils/progress_bar.less";
 @import "tygh/utils/categories.less";
-@import "tygh/utils/quick_menu.less";
 @import "tygh/utils/search_menu.less";
 @import "tygh/utils/notifications.less";
 @import "tygh/utils/spinner.less";
@@ -99,12 +105,15 @@
 
 // Special styles for pages
 @import "tygh/pages/index/components/simple_dashboard.less";
+@import "tygh/pages/administration.less";
 @import "tygh/pages/products.less";
 @import "tygh/pages/theme_selector.less";
 @import "tygh/pages/orders.less";
 @import "tygh/pages/cart.less";
 @import "tygh/pages/payments.less";
+@import "tygh/pages/companies.less";
 @import "tygh/pages/profile_info.less";
+@import "tygh/pages/profiles.less";
 @import "tygh/pages/conditions_tree.less";
 @import "tygh/pages/store_mode.less";
 @import "tygh/pages/dashboard.less";
@@ -124,13 +133,13 @@
 @import "tygh/pages/shippings.less";
 @import "tygh/pages/states.less";
 @import "tygh/pages/pages.less";
+@import "tygh/pages/currencies.less";
 
-//Setup wizard
-@import "tygh/setup_wizard/setup_wizard.less";
+// Block manager
+@import "block_manager.less";
 
 // Responsive styles
 @import "tygh/responsive/responsive.less";
-@import "tygh/navbars/mobile_menu.less";
 
 // Bottom panel
 @import "tygh/bottom_panel/index.less";

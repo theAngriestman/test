@@ -1,66 +1,154 @@
-// tabs
-.tabs {
-    margin-top: 15px;
-    .cm-subtab-item a {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .subtab .dropdown-menu {
-        margin: -1px 0 0;
-    }
-    .nav-tabs {
-        padding-bottom: 8px;
-        border-bottom: 1px solid #e0e7ef;
-    }
-    .nav-tabs > li,
-    .nav-pills > li {
-        margin: 3px 6px 3px 0;
-    }
-    .nav-pills > li > a,
-    .nav-tabs > li > a {
-        background-color: @tabsBackgroundColor;
-        border: none;
-        line-height: @baseLineHeight - 6px;
-        margin-bottom: 2px;
-        margin-top: 2px;
-        .border-radius(5px);
-    }
-    .nav-pills > .active > a,
-    .nav-pills > .active > a:hover,
-    .nav-pills > .active > a:focus,
-    .nav-tabs > .active > a,
-    .nav-tabs > .active > a:hover,
-    .nav-tabs > .active > a:focus {
-        background-color: @tabsActiveBackgroundColor;
-        border: none;
-        color: #fff;
-    }
-    .nav-tabs > .cm-no-highlight > a {
-        background-color: #eee;
-        &:hover {
-            background-color: #e5e5e5;
-        }
-    }
-    .nav-pills > li > a:hover,
-    .nav-pills > li > a:focus,
-    .nav-tabs > li > a:hover,
-    .nav-tabs > li > a:focus {
-        background-color: #eee;
-    }
-    .nav-tabs .dropdown-toggle .caret {
-        margin-top: 5px;
+// Bootstrap styles
+// Convert tabs to pills styles
+
+// Give the tabs something to sit on
+.nav-tabs,
+.nav-pills {
+    border: 0;
+    border-radius: @baseBorderRadius;
+    background: @btnBackgroundHighlight;
+
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,.1);
+    row-gap: 8px;
+}
+
+// Make the list-items overlay the bottom border
+.nav-tabs > li,
+.nav-pills > li {
+    margin-bottom: 0;
+}
+
+// Actual tabs (as links)
+.nav-tabs > li > a,
+.nav-pills > li > a {
+    margin: 0;
+    padding: 5px 16px;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+    border-radius: @baseBorderRadius;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: background 0.1s linear;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+        .gradientBar(@btnBorder, @btnBorder, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+        border-color: @btnBackgroundHighlight;
     }
 }
+
+@media (max-width: @TabletBreakpoint) {
+    .nav-tabs > li > a,
+    .nav-pills > li > a {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: @fontSizeSmall;
+    }
+}
+
+// Active state, and it's :hover/:focus to override normal :hover/:focus
+.nav-tabs>.active>a,
+.nav-tabs>.active>a:hover,
+.nav-tabs>.active>a:focus,
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+    .gradientBar(@btnBackground, @btnBackground, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+    color: @linkColor;
+    border-color: @btnBorder;
+    border-bottom-color: darken(@btnBorder, 10%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+    cursor: pointer;
+}
+
+// DROPDOWNS
+// ---------
+
+.nav-tabs .dropdown-menu,
+.nav-pills .dropdown-menu {
+    border-radius: @baseBorderRadius; // make rounded corners match the pills
+}
+
+// Default dropdown links
+// -------------------------
+.nav-tabs .dropdown-toggle .caret,
+.nav-pills .dropdown-toggle .caret {
+    margin-top: 2px;
+}
+
+// Active dropdown links
+// -------------------------
+.nav-tabs .active .dropdown-toggle .caret,
+.nav-pills .active .dropdown-toggle .caret {
+    border-top-color: @gray;
+    border-bottom-color: @gray;
+}
+
+// Open dropdowns
+// -------------------------
+.nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.nav-tabs>li.dropdown.open.active>a:hover,
+.nav-tabs>li.dropdown.open.active>a:focus,
+.nav-pills>li.dropdown.open.active>a:hover,
+.nav-pills>li.dropdown.open.active>a:focus {
+    color: @linkColor;
+    border-color: @btnBorder;
+    border-bottom-color: darken(@btnBorder, 10%);
+    background: @btnBackgroundHighlight;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+}
+
+.nav-tabs li.dropdown.open .caret,
+.nav-tabs li.dropdown.open.active .caret,
+.nav-tabs li.dropdown.open a:hover .caret,
+.nav-tabs li.dropdown.open a:focus .caret,
+.nav-pills li.dropdown.open .caret,
+.nav-pills li.dropdown.open.active .caret,
+.nav-pills li.dropdown.open a:hover .caret,
+.nav-pills li.dropdown.open a:focus .caret {
+    border-top-color: @gray;
+    border-bottom-color: @gray;
+}
+
+
+
+// Custom styles
+
+// Fill tabs
+.tabs--enable-fill.tabs--count-1 .nav-tabs > li,
+.pills--enable-fill.pills--count-1 .nav-pills > li,
+.tabs--enable-fill.tabs--count-2 .nav-tabs > li,
+.pills--enable-fill.pills--count-2 .nav-pills > li,
+.tabs--enable-fill.tabs--count-3 .nav-tabs > li,
+.pills--enable-fill.pills--count-3 .nav-pills > li {
+    flex-grow: 1;
+}
+@media (min-width: @TabletBreakpoint + 1) {
+    .tabs--enable-fill.tabs--count-4 .nav-tabs > li,
+    .pills--enable-fill.pills--count-4 .nav-pills > li,
+    .tabs--enable-fill.tabs--count-5 .nav-tabs > li,
+    .pills--enable-fill.pills--count-5 .nav-pills > li,
+    .tabs--enable-fill.tabs--count-6 .nav-tabs > li,
+    .pills--enable-fill.pills--count-6 .nav-pills > li,
+    .tabs--enable-fill.tabs--count-7 .nav-tabs > li,
+    .pills--enable-fill.pills--count-7 .nav-pills > li {
+        flex-grow: 1;
+    }
+}
+
 .tabs-with-conf {
     li.active a {
         padding-right: 25px;
     }
-    // disable padding for dropdown
-    .dropdown.active > a {
-        padding-right: 12px;
-    }
     .nav-tabs > .active > a.icon-cog {
-        cursor: pointer !important;
+        cursor: pointer;
     }
     .icon-cog {
         position: absolute;
@@ -68,55 +156,31 @@
         right: 7px;
         opacity: 0.7;
         display: inline-block;
-        padding: 0px !important;
-        border: 0px !important;
-        .border-radius(0);
+        border-radius: 0;
+    }
+    .icon-cog.icon-cog.icon-cog {
+        padding: 0px;
+        border: 0px;
     }
     .active > .icon-cog {
-        cursor: default !important;
         opacity: 0.8;
     }
     .dropdown-menu li {
         position: relative;
     }
-
-    .dropdown-menu li .icon-cog {
-        display: inline-block;
-        top: 6px;
-        opacity: 1;
-        .icon-white;
-    }
-}
-.nav-tabs li a {
-    text-decoration: none !important;
 }
 .nav-tabs li.extra-tab {
     position: relative;
-    z-index: 0;
     a:first-child {
         padding-right: 30px;
     }
-    a.icon-edit {
-        position: absolute;
-        top: 11px;
-        right: 10px;
-        z-index: 10;
-        padding: 0;
-        width: 14px;
-        height: 14px;
-        border: none;
-        cursor: pointer;
-    }
 }
 
-.nav-tabs li a.icon-cog {
-    display: none;
-}
-.nav-tabs li.active a.icon-cog {
-    display: block;
-}
-.extra-tab--force-initial-padding {
-    a {
-        padding: 8px 12px !important;
+.content-wrap {
+    > form > .tabs,
+    > .tabs,
+    > .cm-tabs-content {
+        margin: 0;
+        max-width: none;
     }
 }

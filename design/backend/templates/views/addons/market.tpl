@@ -2,7 +2,7 @@
 {$page_title = ($search.q) ? "{__("addon_market")}: `$search.q`" : __("addon_market")}
 
 {capture name="mainbox"}
-<div class="items-container" id="addons_market">
+<div class="items-container addons-market" id="addons_market">
     {include file="views/addons/components/addons_list.tpl"
         is_marketplace_addons=true
     }

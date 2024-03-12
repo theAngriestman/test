@@ -93,6 +93,8 @@ class ProductsHookHandler
         ) {
             return;
         }
+
+        $params['is_product_bundle'] = true;
         $params['group_child_variations'] = true;
     }
 }

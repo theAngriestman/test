@@ -16,12 +16,18 @@
     data-ca-displayed-format="{if $settings.Appearance.calendar_date_format == "month_first"}MMM DD, YYYY{else}DD MMM, YYYY{/if}"
     data-ca-use-predefined-periods="{$use_predefined_periods|default:"true"}"
     data-ca-show-ranges="{$show_ranges|default:"true"}"
+    data-ca-linked-calendars="{$linked_calendars|default:"true"}"
     {if $always_show_calendars !== null}
         data-ca-always-show-calendars="{$always_show_calendars}"
     {/if}
     {if $data_event}data-ca-event="{$data_event}"{/if}>
-    <a class="btn-text">
-        <span class="cm-date-range__selected-date">
+    <a class="btn btn-link">
+        <span class="mobile-visible-inline">
+            {include_ext file="common/icon.tpl"
+                class="icon-calendar"
+            }
+        </span>
+        <span class="cm-date-range__selected-date mobile-hidden">
             {if $settings.Appearance.calendar_date_format == "month_first"}
                 {$start_date|date_format:"%b %d, %Y"} — {$end_date|date_format:"%b %d, %Y"}
             {else}

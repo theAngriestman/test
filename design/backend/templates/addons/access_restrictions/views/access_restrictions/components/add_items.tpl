@@ -1,9 +1,10 @@
+{$tabs_count = 1}
 <form action="{""|fn_url}" method="post" name="update_rule_form" class="form-horizontal form-edit ">
 <input type="hidden" name="selected_section" value="{$selected_section}" />
 <input type="hidden" name="rule_data[section]" value="{$selected_section}" />
 
 <div class="add-new-object-group">
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="tab_add_rule_new" class="cm-js active"><a>{__("general")}</a></li>
         </ul>

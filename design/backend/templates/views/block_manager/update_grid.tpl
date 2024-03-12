@@ -5,6 +5,7 @@
     {$id = 0}
     {$elm_id = uniqid()}
 {/if}
+{$tabs_count = 1}
 
 <div id="grid_properties_{$elm_id}">
 <form action="{""|fn_url}" method="post" enctype="multipart/form-data" class="form-horizontal form-edit " name="grid_update_form">
@@ -14,7 +15,7 @@
 <input type="hidden" name="container_id" value="{$grid_params.container_id}" />
 <input type="hidden" name="parent_id" value="{$grid_params.parent_id|default:$grid.parent_id|default:0}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li class="cm-js active"><a>{__("general")}</a></li>
     </ul>

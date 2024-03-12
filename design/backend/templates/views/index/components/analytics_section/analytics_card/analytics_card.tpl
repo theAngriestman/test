@@ -32,7 +32,13 @@
             {if $analytics_card.number || $analytics_card.dynamics_number}
                 <div class="analytics-card__numbers">
                     {if $analytics_card.number}
-                        <div class="analytics-card__number">{$analytics_card.number nofilter}</div>
+                        <div class="analytics-card__number">
+                            {if $analytics_card.use_price_for_number}
+                                {include file="common/price.tpl" value=$analytics_card.number}
+                            {else}
+                                {$analytics_card.number nofilter}
+                            {/if}
+                        </div>
                     {/if}
                     {if $analytics_card.number_dynamics}
                         {$number_dynamics_text = $analytics_card.number_dynamics}
@@ -47,11 +53,16 @@
                     {/if}
                 </div>
             {/if}
-            {if $analytics_card.content}
+            {if $analytics_card.content || $analytics_card.content_tpl}
                 <div class="analytics-card__content">
                     {foreach $analytics_card.content as $content_item}
                         <div class="analytics-card__content-item">
                             {$content_item nofilter}
+                        </div>
+                    {/foreach}
+                    {foreach $analytics_card.content_tpl as $content_tpl}
+                        <div class="analytics-card__content-item">
+                            {include file=$content_tpl}
                         </div>
                     {/foreach}
                 </div>

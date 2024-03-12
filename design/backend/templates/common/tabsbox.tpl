@@ -5,6 +5,10 @@
 {/if}
 
 {assign var="empty_tab_ids" value=$content|empty_tabs}
+{$show_tabs_navigation = $show_tabs_navigation|default:true}
+
+{* Fill tabs if there are more than 7 *}
+{$enable_fill = $enable_fill|default:true}
 
 {if $navigation.tabs}
 
@@ -26,14 +30,23 @@
     {/foreach}
 {/capture}
 
-<div class="cm-j-tabs{if $track} cm-track{/if} tabs {if $with_conf}tabs-with-conf{/if} {$meta_tabs}">
+{capture name="tabs_navigation" assign=tabs_navigation}
+<div class="cm-j-tabs{if $track} cm-track{/if} tabs {if $with_conf}tabs-with-conf{/if} {if $enable_fill}tabs--enable-fill{/if} tabs--count-{$navigation.tabs|@count} {$meta_tabs}">
     <ul class="nav nav-tabs">
         {$smarty.capture.tab_items nofilter}
     </ul>
 </div>
+{/capture}
+{if $show_tabs_navigation}
+    {$smarty.capture.tabs_navigation nofilter}
+{/if}
 <div class="cm-tabs-content">
     {$content nofilter}
 </div>
 {else}
     {$content nofilter}
+{/if}
+{if !$show_tabs_navigation}
+    {* Export *}
+    {$tabs_navigation = $tabs_navigation scope=parent}
 {/if}

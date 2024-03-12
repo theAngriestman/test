@@ -126,8 +126,24 @@
 
 {capture name="buttons"}
     {capture name="tools_list"}
+        {$buttons = []}
         {hook name="shippings:manage_tools_list"}
+        {$buttons.destinations = [
+            href => "destinations.manage",
+            text => __("edit_rate_areas")
+        ]}
+        {$buttons.countries = [
+            href => "countries.manage",
+            text => __("edit_countries")
+        ]}
+        {$buttons.states = [
+            href => "states.manage",
+            text => __("edit_states")
+        ]}
         {/hook}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
     {/capture}
     {dropdown content=$smarty.capture.tools_list}
 
@@ -145,4 +161,13 @@
 {/capture}
 
 {/capture}
-{include file="common/mainbox.tpl" title=__("manage_shippings") content=$smarty.capture.mainbox buttons=$smarty.capture.buttons adv_buttons=$smarty.capture.adv_buttons select_languages=true select_storefront=true storefront_switcher_param_name="storefront_id" selected_storefront_id=$selected_storefront_id}
+{include file="common/mainbox.tpl"
+    title=__("manage_shippings")
+    content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
+    adv_buttons=$smarty.capture.adv_buttons
+    select_languages=true
+    select_storefront=true
+    storefront_switcher_param_name="storefront_id"
+    selected_storefront_id=$selected_storefront_id
+}

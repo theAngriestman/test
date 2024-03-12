@@ -22,6 +22,7 @@
 {/if}
 
 {$styles_subtitle = ($smarty.const.AREA === "SiteArea::ADMIN_PANEL"|enum) ? __("theme_editor.color_scheme") : __("theme_editor.styles")}
+{$icon_path = ($smarty.const.AREA === "SiteArea::ADMIN_PANEL"|enum) ? "common/icon_deprecated.tpl" : "common/icon.tpl"}
 
 <div class="theme-editor-container" id="theme_editor">
 
@@ -54,19 +55,19 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
 <input type="hidden" name="result_ids" value="theme_editor">
 
 <span class="te-nav"><a id="sw_theme_editor_container" class="te-minimize cm-combination" title="{__("theme_editor.hide_show")}">
-        {include_ext file="common/icon.tpl"
+        {include_ext file=$icon_path
             class="glyph-left-open"
             data=[
                 "data-ca-theme-editor" => "minimizeIconClose"
             ]
-        }{include_ext file="common/icon.tpl"
+        }{include_ext file=$icon_path
             class="glyph-right-open hidden"
             data=[
                 "data-ca-theme-editor" => "minimizeIconOpen"
             ]
         }
     </a>
-<a href="{"customization.disable_mode?type=theme_editor"|fn_url}" class="te-close cm-te-close-editor" title="{__("theme_editor.close")}">{include_ext file="common/icon.tpl" class="glyph-cancel"}</a>
+<a href="{"customization.disable_mode?type=theme_editor"|fn_url}" class="te-close cm-te-close-editor" title="{__("theme_editor.close")}">{include_ext file=$icon_path class="glyph-cancel"}</a>
         </span>
 </span>
 
@@ -99,7 +100,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
             {__("theme_editor")}
             {if $show_converted_to_css && !$theme_manifest.converted_to_css && !$runtime.vendor_id}
                 <a class="te-action-link cm-te-convert-to-css cm-confirm">
-                    <span class="te-action-link-title">{__('theme_editor.convert_to_css')}&nbsp;{include_ext file="common/icon.tpl" class="ty-icon-help-circle icon-question-sign cm-tooltip" title=__('theme_editor.text_convert_to_css')}</span>
+                    <span class="te-action-link-title">{__('theme_editor.convert_to_css')}&nbsp;{include_ext file=$icon_path class="ty-icon-help-circle icon-question-sign cm-tooltip" title=__('theme_editor.text_convert_to_css')}</span>
                 </a>
             {/if}
             {/hook}
@@ -113,7 +114,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                 <div class="te-header-menu-wrap-left">
                     {$current_style_name = $current_style.name}
 
-                    <div class="te-select-box cm-te-selectbox te-theme" tabindex="0"><span class="cm-style-title">{$current_style_name|default:__("none")}</span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                    <div class="te-select-box cm-te-selectbox te-theme" tabindex="0"><span class="cm-style-title">{$current_style_name|default:__("none")}</span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                     <ul class="te-select-dropdown" id="elm_te_styles">
                         {foreach from=$styles_list item="s_item"}
                             <li class="{if $active_style_id === $s_item.style_id}active{/if}">
@@ -127,7 +128,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
 
                                 {if $show_duplicate_style}
                                 <a class="ty-icon-wrap-duplicate cm-te-duplicate-style" data-ca-style-id="{$s_item.style_id}">
-                                    {include_ext file="common/icon.tpl"
+                                    {include_ext file=$icon_path
                                         class="ty-icon-docs icon-copy te-duplicate-style__icon"
                                         title=__("clone")
                                     }
@@ -136,7 +137,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
 
                                 {if $s_item.is_removable|default:true}
                                     <a class="ty-icon-wrap-remove cm-ajax cm-confirm" data-ca-target-id="te_styles_list" href="{"theme_editor.delete_style?style_id=`$s_item.style_id`"|fn_url}">
-                                        {include_ext file="common/icon.tpl"
+                                        {include_ext file=$icon_path
                                             class="ty-icon-trashcan icon-trash te-delete-style__icon"
                                             title=__("delete")
                                         }
@@ -160,7 +161,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
             {if $te_sections && $te_sections|@count > 1}
                 <span class="te-subtitle">{__("theme_editor.customize")}</span>
                 <div class="te-select-box cm-te-selectbox te-customize" tabindex="0">
-                    <span>{__($te_sections.$selected_section)}</span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                    <span>{__($te_sections.$selected_section)}</span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                     <ul class="te-select-dropdown cm-te-sections">
                         {foreach from=$te_sections key="section" item="s"}
                         <li {if $selected_section == $section}class="active"{/if} data-ca-target-id="{$section}">{__($s)}</li>
@@ -177,7 +178,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
             <span class="te-subtitle">{__("files")}</span>
             <div class="te-header-menu-wrap">
                 <div class="te-header-menu-wrap-left">
-                    <div class="te-select-box cm-te-selectbox te-theme" tabindex="0"><span class="cm-style-title">{$selected_css_file|default:__("none")}</span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                    <div class="te-select-box cm-te-selectbox te-theme" tabindex="0"><span class="cm-style-title">{$selected_css_file|default:__("none")}</span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                         <ul class="te-select-dropdown">
                             {foreach from=$css_files_list item="css_file"}
                                 <li class="{if $css_file == $selected_css_file}active{/if}">
@@ -345,7 +346,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
             {foreach from=$props_schema.fonts.fields key="name" item="field"}
             <div class="ty-control-group control-group te-font-group">
                 <label for="elm_te_{$name}">{__($field.description)}</label>
-                <div class="te-select-box cm-te-selectbox cm-te-google cm-te-value-changer" tabindex="0" data-ca-select-box-default="{$current_style.data.$name}"><span></span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                <div class="te-select-box cm-te-selectbox cm-te-google cm-te-value-changer" tabindex="0" data-ca-select-box-default="{$current_style.data.$name}"><span></span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                     <input type="text" class="hidden cm-te-selectbox-storage" name="style[data][{$name}]" value="{if $current_style.data.$name}{$current_style.data.$name}{else}{$props_schema.fonts.families|key}{/if}">
 
                     <ul class="te-select-dropdown">
@@ -365,7 +366,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                     {$size_name = $field.properties.size.match}
                     {$current_value = $current_style.data.$size_name|replace:$field.properties.size.unit:""}
 
-                    <div class="te-select-box te-font-size cm-te-selectbox cm-te-value-changer" tabindex="0"><span>{$current_value}</span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                    <div class="te-select-box te-font-size cm-te-selectbox cm-te-value-changer" tabindex="0"><span>{$current_value}</span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                         <input type="text" class="hidden cm-te-selectbox-storage" name="style[data][{$size_name}]" value="{$current_style.data.$size_name}">
                         <ul class="te-select-dropdown">
                             {foreach from=$field.properties.size.values item="font_size"}
@@ -413,7 +414,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                             <span class="te-bg-title">{__($field.properties.color.description)|default:__("theme_editor.background_color")}&nbsp;</span>
 
                             {if $field.gradient || $field.transparent || $field.full_width}
-                            <a id="sw_backgrounds_adv_color_{$name}" class="cm-combination te-advanced-options">{include_ext file="common/icon.tpl" class="glyph-cog"}</a>
+                            <a id="sw_backgrounds_adv_color_{$name}" class="cm-combination te-advanced-options">{include_ext file=$icon_path class="glyph-cog"}</a>
                             {/if}
 
                             {$color = $current_style.data.$field_name|replace:"transparent":""}
@@ -486,7 +487,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                     {if $field.properties.pattern}
                         <div class="te-bg-pattern-group clearfix">
                             <span class="te-bg-title">{__("theme_editor.pattern")}</span>
-                            <a id="sw_backgrounds_adv_pattern_{$name}" class="te-advanced-options cm-combination">{include_ext file="common/icon.tpl" class="glyph-cog"}</a>
+                            <a id="sw_backgrounds_adv_pattern_{$name}" class="te-advanced-options cm-combination">{include_ext file=$icon_path class="glyph-cog"}</a>
                             <div id="elm_preview_{$name}" class="te-pattern-preview {if !$current_style.parsed} te-pattern-empty{/if} input-prepend cm-te-pattern-selector" data-ca-pattern-dialog="backgrounds_adv_pattern_selector_{$name}">
                                 {if $current_style.parsed}
                                     <div class="te-pattern-preview__img cm-pattern-preview__img"
@@ -494,7 +495,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                                         style="--te-pattern-preview-img: url('{$current_style.parsed[$field.properties.pattern]}');"
                                     ></div>
                                 {else}
-                                    {include_ext file="common/icon.tpl" class="glyph-image te-pattern-empty__icon"}
+                                    {include_ext file=$icon_path class="glyph-image te-pattern-empty__icon"}
                                 {/if}
                             </div>
                             <div id="backgrounds_adv_pattern_selector_{$name}" class="hidden te-bg-pattern-selector cm-te-patterns-container">
@@ -502,7 +503,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                                     <div class="te-bg-pattern-list">
                                         <ul class="cm-te-pattern-list" data-ca-holder-id="elm_holder_{$name}">
                                             <li><div class="te-pattern-preview te-pattern-empty cm-te-select-pattern">
-                                                    {include_ext file="common/icon.tpl" class="glyph-image te-pattern-empty__icon"}
+                                                    {include_ext file=$icon_path class="glyph-image te-pattern-empty__icon"}
                                                 </div></li>
                                             {foreach from=$theme_patterns item="pattern"}
                                                 <li><div class="te-pattern-preview cm-te-select-pattern">
@@ -538,27 +539,27 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                                         {strip}
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="top_left" name="style[data][{$field.properties.position}]" value="top left" {if $current_style.data[$field.properties.position] == "top left"}checked="checked"{/if} />
-                                                <label for="top_left">{include_ext file="common/icon.tpl" class="glyph-arrow-up-left"}</label>
+                                                <label for="top_left">{include_ext file=$icon_path class="glyph-arrow-up-left"}</label>
                                             </div>
                                             <div class="te-bg-position-item"><input class="cm-te-value-changer" type="radio" id="top_center" name="style[data][{$field.properties.position}]" value="top center" {if $current_style.data[$field.properties.position] == "top center"}checked="checked"{/if} />
-                                            <label for="top_center">{include_ext file="common/icon.tpl" class="glyph-arrow-up"}</label></div>
+                                            <label for="top_center">{include_ext file=$icon_path class="glyph-arrow-up"}</label></div>
                                             <div class="te-bg-position-item"><input class="cm-te-value-changer" type="radio" id="top_right" name="style[data][{$field.properties.position}]" value="top right" {if $current_style.data[$field.properties.position] == "top right"}checked="checked"{/if} />
-                                            <label for="top_right">{include_ext file="common/icon.tpl" class="glyph-arrow-up-right"}</label></div>
+                                            <label for="top_right">{include_ext file=$icon_path class="glyph-arrow-up-right"}</label></div>
                                         {/strip}
                                     </div>
                                     <div class="te-bg-position-wrap clearfix">
                                         {strip}
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="center_left" name="style[data][{$field.properties.position}]" if="center_left" value="center left" {if $current_style.data[$field.properties.position] == "center left"}checked="checked"{/if} />
-                                                <label for="center_left">{include_ext file="common/icon.tpl" class="glyph-arrow-left"}</label>
+                                                <label for="center_left">{include_ext file=$icon_path class="glyph-arrow-left"}</label>
                                             </div>
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="center_center" name="style[data][{$field.properties.position}]" value="center center" {if $current_style.data[$field.properties.position] == "center center"}checked="checked"{/if} />
-                                                <label for="center_center">{include_ext file="common/icon.tpl" class="glyph-square"}</label>
+                                                <label for="center_center">{include_ext file=$icon_path class="glyph-square"}</label>
                                             </div>
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="center_right" name="style[data][{$field.properties.position}]" value="center right" {if $current_style.data[$field.properties.position] == "center right"}checked="checked"{/if} />
-                                                <label for="center_right">{include_ext file="common/icon.tpl" class="glyph-arrow-right"}</label>
+                                                <label for="center_right">{include_ext file=$icon_path class="glyph-arrow-right"}</label>
                                             </div>
                                         {/strip}
                                     </div>
@@ -566,15 +567,15 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                                         {strip}
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="bottom_left" name="style[data][{$field.properties.position}]" value="bottom left" {if $current_style.data[$field.properties.position] == "bottom left"}checked="checked"{/if} />
-                                                <label for="bottom_left">{include_ext file="common/icon.tpl" class="glyph-arrow-down-left"}</label>
+                                                <label for="bottom_left">{include_ext file=$icon_path class="glyph-arrow-down-left"}</label>
                                             </div>
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="bottom_center" name="style[data][{$field.properties.position}]" value="bottom center" {if $current_style.data[$field.properties.position] == "bottom center"}checked="checked"{/if} />
-                                                <label for="bottom_center">{include_ext file="common/icon.tpl" class="glyph-arrow-down"}</label>
+                                                <label for="bottom_center">{include_ext file=$icon_path class="glyph-arrow-down"}</label>
                                             </div>
                                             <div class="te-bg-position-item">
                                                 <input class="cm-te-value-changer" type="radio" id="bottom_right" name="style[data][{$field.properties.position}]" value="bottom right" {if $current_style.data[$field.properties.position] == "bottom right"}checked="checked"{/if} />
-                                                <label for="bottom_right">{include_ext file="common/icon.tpl" class="glyph-arrow-down-right"}</label>
+                                                <label for="bottom_right">{include_ext file=$icon_path class="glyph-arrow-down-right"}</label>
                                             </div>
                                         {/strip}
                                     </div>
@@ -594,7 +595,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                                 </ul>
                             {/capture}
 
-                            <div class="te-select-box cm-te-selectbox cm-te-value-changer" tabindex="0"><span>{$repeat_title|default:__("theme_editor.repeat")}</span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                            <div class="te-select-box cm-te-selectbox cm-te-value-changer" tabindex="0"><span>{$repeat_title|default:__("theme_editor.repeat")}</span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                                 {$smarty.capture.repeat_content nofilter}
                             </div>
                         </div>
@@ -610,7 +611,7 @@ Tygh.te_custom_fonts = {$current_style.custom_fonts|to_json nofilter};
                                 </ul>
                             {/capture}
 
-                            <div class="te-select-box cm-te-selectbox cm-te-value-changer" tabindex="0"><span>{$scroll_title|default:__("theme_editor.scroll")}</span>{include_ext file="common/icon.tpl" class="glyph-down-open te-select-box__icon"}
+                            <div class="te-select-box cm-te-selectbox cm-te-value-changer" tabindex="0"><span>{$scroll_title|default:__("theme_editor.scroll")}</span>{include_ext file=$icon_path class="glyph-down-open te-select-box__icon"}
                                 {$smarty.capture.scroll_content nofilter}
                             </div>
                         </div>

@@ -22,12 +22,8 @@ $schema['top']['settings']['items']['Stores'] = [
 
 $schema['top']['administration']['items']['stores'] = [
     'href'     => 'companies.manage',
-    'position' => 90,
+    'position' => 1350,
     'title'    => __('storefronts'),
-];
-$schema['top']['administration']['items']['stores_divider'] = [
-    'type'     => 'divider',
-    'position' => 91,
 ];
 
 if (!fn_check_change_storefront_permission()) {

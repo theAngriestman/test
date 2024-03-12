@@ -360,7 +360,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!empty($_REQUEST['product_ids'])) {
             $product_ids = (array) $_REQUEST['product_ids'];
         } elseif (!empty($_REQUEST['category_ids'])) {
-            list($products, ) = fn_get_products(['cid' => (array) $_REQUEST['category_ids'], 'load_products_extra_data' => false]);
+            [$products, ] = fn_get_products(['cid' => (array) $_REQUEST['category_ids'], 'load_products_extra_data' => false]);
             $product_ids = array_keys($products);
 
             if (empty($product_ids)) {
@@ -433,8 +433,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 return [CONTROLLER_STATUS_DENIED];
             }
 
-            list($_files) = fn_get_product_files(['product_id' => $_REQUEST['product_id']]);
-            list($_folder) = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
+            [$_files] = fn_get_product_files(['product_id' => $_REQUEST['product_id']]);
+            [$_folder] = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
 
             if (empty($_files) && empty($_folder)) {
                 Tygh::$app['view']->assign('product_id', $_REQUEST['product_id']);
@@ -453,8 +453,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 return [CONTROLLER_STATUS_DENIED];
             }
 
-            list($product_files) = fn_get_product_files(['product_id' => $_REQUEST['product_id']]);
-            list($product_file_folders) = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
+            [$product_files] = fn_get_product_files(['product_id' => $_REQUEST['product_id']]);
+            [$product_file_folders] = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
             $files_tree = fn_build_files_tree($product_file_folders, $product_files);
 
             Tygh::$app['view']->assign('product_file_folders', $product_file_folders);
@@ -478,7 +478,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return [CONTROLLER_STATUS_NO_PAGE];
         }
 
-        list($products) = fn_get_products([
+        [$products] = fn_get_products([
             'pid'     => $product_ids,
             'sort_by' => null,
         ]);
@@ -626,7 +626,7 @@ if ($mode === 'manage' || $mode === 'p_subscr') {
         $params['get_subscribers'] = true;
     }
 
-    list($products, $search) = fn_get_products($params, Registry::get('settings.Appearance.admin_elements_per_page'), DESCR_SL);
+    [$products, $search] = fn_get_products($params, Registry::get('settings.Appearance.admin_elements_per_page'), DESCR_SL);
     fn_gather_additional_products_data($products, ['get_icon' => true, 'get_detailed' => true, 'get_options' => false, 'get_discounts' => false]);
 
     $page = $search['page'];
@@ -661,7 +661,7 @@ if ($mode === 'manage' || $mode === 'p_subscr') {
         $filter_params['variants_only'] = $_REQUEST['filter_variants'];
     }
 
-    list($filters) = fn_get_product_filters($filter_params);
+    [$filters] = fn_get_product_filters($filter_params);
     Tygh::$app['view']->assign('filter_items', $filters);
     unset($filters);
 
@@ -678,7 +678,7 @@ if ($mode === 'manage' || $mode === 'p_subscr') {
         $feature_params['variants_only'] = $_REQUEST['feature_variants'];
     }
 
-    list($features, $features_search) = fn_get_product_features($feature_params, PRODUCT_FEATURES_THRESHOLD);
+    [$features, $features_search] = fn_get_product_features($feature_params, PRODUCT_FEATURES_THRESHOLD);
 
     if ($features_search['total_items'] <= PRODUCT_FEATURES_THRESHOLD) {
         Tygh::$app['view']->assign('feature_items', $features);
@@ -730,6 +730,8 @@ if ($mode === 'add') {
         $product_data['main_category'] = reset($product_data['category_ids']);
     }
 
+    $image_file_size = fn_get_allowed_image_file_size(true, true);
+
     if (fn_allowed_for('MULTIVENDOR') && Registry::get('runtime.company_id')) {
         Tygh::$app['view']->assign('disable_edit_popularity', true);
     } else {
@@ -737,6 +739,7 @@ if ($mode === 'add') {
     }
 
     Tygh::$app['view']->assign('product_data', $product_data);
+    Tygh::$app['view']->assign('image_file_size', $image_file_size);
 
 // 'Multiple products addition' page
 } elseif ($mode === 'm_add') {
@@ -762,13 +765,15 @@ if ($mode === 'add') {
         return [CONTROLLER_STATUS_NO_PAGE];
     }
 
-    list($product_features, $features_search) = fn_get_paginated_product_features(['product_id' => $product_data['product_id']], $auth, $product_data);
+    [$product_features, $features_search] = fn_get_paginated_product_features(['product_id' => $product_data['product_id']], $auth, $product_data);
 
     $taxes = fn_get_taxes();
     $allow_save_feature =
         fn_allowed_for('ULTIMATE')
         || !fn_get_runtime_company_id()
         || YesNo::toBool(Registry::get('settings.Vendors.allow_vendor_manage_features'));
+
+    $image_file_size = fn_get_allowed_image_file_size(true, true);
 
     Tygh::$app['view']->assign([
         'product_features'   => $product_features,
@@ -777,19 +782,20 @@ if ($mode === 'add') {
         'taxes'              => $taxes,
         'allow_save_feature' => $allow_save_feature,
         'selected_section'   => $selected_section,
+        'image_file_size'    => $image_file_size
     ]);
 
     $product_options = fn_get_product_options($_REQUEST['product_id'], DESCR_SL);
 
-    list($global_options) = fn_get_product_global_options();
+    [$global_options] = fn_get_product_global_options();
     Tygh::$app['view']->assign([
         'product_options' => $product_options,
         'global_options'  => $global_options,
     ]);
 
     // If the product is electronnicaly distributed, get the assigned files
-    list($product_files) = fn_get_product_files(['product_id' => $_REQUEST['product_id']]);
-    list($product_file_folders) = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
+    [$product_files] = fn_get_product_files(['product_id' => $_REQUEST['product_id']]);
+    [$product_file_folders] = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
     $files_tree = fn_build_files_tree($product_file_folders, $product_files);
 
     $sharing_company_id = Registry::get('runtime.company_id')
@@ -828,7 +834,7 @@ if ($mode === 'add') {
         Tygh::$app['view']->assign('disable_edit_popularity', false);
     }
 
-    list($subscribers, $search) = fn_get_product_subscribers($_REQUEST, Registry::get('settings.Appearance.admin_elements_per_page'));
+    [$subscribers, $search] = fn_get_product_subscribers($_REQUEST, Registry::get('settings.Appearance.admin_elements_per_page'));
 
     $main_category_data = fn_get_category_data($product_data['main_category']);
     if (!empty($main_category_data)) {
@@ -1051,7 +1057,7 @@ if ($mode === 'add') {
         $fields2update[] = 'features';
         $get_features = true;
 
-        list($all_product_features, $all_features_search) = fn_get_paginated_product_features(['over' => true], $auth, []);
+        [$all_product_features, $all_features_search] = fn_get_paginated_product_features(['over' => true], $auth, []);
 
         Tygh::$app['view']->assign([
             'all_product_features' => $all_product_features,
@@ -1082,7 +1088,7 @@ if ($mode === 'add') {
         $products_data[$value]['base_price'] = $products_data[$value]['price'];
 
         if ($get_features) {
-            list($product_features[$value], $features_search[$value]) = fn_get_paginated_product_features(['product_id' => $value], $auth, $products_data[$value]);
+            [$product_features[$value], $features_search[$value]] = fn_get_paginated_product_features(['product_id' => $value], $auth, $products_data[$value]);
         }
     }
 
@@ -1186,7 +1192,7 @@ if ($mode === 'add') {
                 'file_ids'   => $_REQUEST['file_id']
             ];
 
-            list($product_files) = fn_get_product_files($params);
+            [$product_files] = fn_get_product_files($params);
 
             if (!$product_files) {
                 return [CONTROLLER_STATUS_NO_PAGE];
@@ -1198,7 +1204,7 @@ if ($mode === 'add') {
             Tygh::$app['view']->assign('product_file', $product_file);
         }
 
-        list($product_file_folders) = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
+        [$product_file_folders] = fn_get_product_file_folders(['product_id' => $_REQUEST['product_id']]);
         Tygh::$app['view']->assign('product_file_folders', $product_file_folders);
 
         Tygh::$app['view']->assign('product_id', $_REQUEST['product_id']);
@@ -1211,7 +1217,7 @@ if ($mode === 'add') {
                 'folder_ids' => $_REQUEST['folder_id']
             ];
 
-            list($product_file_folders) = fn_get_product_file_folders($params);
+            [$product_file_folders] = fn_get_product_file_folders($params);
             if (!$product_file_folders) {
                 return [CONTROLLER_STATUS_NO_PAGE];
             }
@@ -1225,7 +1231,7 @@ if ($mode === 'add') {
         Tygh::$app['view']->assign('product_id', $_REQUEST['product_id']);
     }
 } elseif ($mode === 'get_features') {
-    list($product_features, $features_search) = fn_get_paginated_product_features($_REQUEST, $auth, []);
+    [$product_features, $features_search] = fn_get_paginated_product_features($_REQUEST, $auth, []);
 
     Tygh::$app['view']->assign('product_features', $product_features);
     Tygh::$app['view']->assign('features_search', $features_search);
@@ -1270,7 +1276,7 @@ if ($mode === 'add') {
 
     $params = fn_products_form_product_list_params($_REQUEST);
 
-    list($products, $params) = fn_get_products($params, $page_size, $lang_code);
+    [$products, $params] = fn_get_products($params, $page_size, $lang_code);
 
     if (!empty($params['pid'])) {
         $products = fn_sort_by_ids($products, $params['pid']);

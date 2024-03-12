@@ -12,12 +12,16 @@
 * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
 ****************************************************************************/
 
-$schema['central']['website']['items']['hybrid_auth'] = array(
-    'attrs' => array(
+/**
+ * @var array<string, array<string, array>> $schema
+ */
+$schema['top']['administration']['items']['hybrid_auth'] = [
+    'attrs' => [
         'class'=>'is-addon'
-    ),
+    ],
     'href' => 'hybrid_auth.manage',
-    'position' => 500
-);
+    'position' => 10100,
+    'icon' => 'signin',
+];
 
 return $schema;

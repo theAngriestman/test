@@ -10,8 +10,8 @@
                 </h3>
                 ${data.dispatch_name
                     ? `<button type="button" class="help-center-section__header-reset" data-ca-help-center="resetDispatch">
-                        <span class="cs-icon help-center-section__header-reset-text">${data.dispatch_name}</span>
-                        <span class="cs-icon help-center-section__header-reset-icon icon-remove"></span>
+                        <span class="help-center-section__header-reset-text">${data.dispatch_name}</span>
+                        <span class="cs-icon help-center-section__header-reset-icon cs-icon--type-remove"><span class="hidden-accessible"></span><svg fill="currentColor" class="cs-icon__svg" focusable="false" aria-hidden="true" viewBox="0 0 20 20"><path d="m4.46967 4.46967c.29289-.29289.76777-.29289 1.06066 0l4.46967 4.46967 4.4697-4.46967c.2929-.29289.7677-.29289 1.0606 0s.2929.76777 0 1.06066l-4.4696 4.46967 4.4696 4.4697c.2929.2929.2929.7677 0 1.0606s-.7677.2929-1.0606 0l-4.4697-4.4696-4.46967 4.4696c-.29289.2929-.76777.2929-1.06066 0s-.29289-.7677 0-1.0606l4.46967-4.4697-4.46967-4.46967c-.29289-.29289-.29289-.76777 0-1.06066z"></path></svg></span>
                     </button>`
                     : ''
                 }

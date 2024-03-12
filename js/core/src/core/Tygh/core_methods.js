@@ -185,6 +185,13 @@ export const dispatchEvent = function(e)
         return processed.to_return;
     }
 
+    // If the event is triggered on the icon, then the icon's parent will be processed
+    const $icon = jelm.closest('.cs-icon');
+    if ($icon.length) {
+        jelm = $icon.parent();
+        elm = $icon.parent()[0];
+    }
+
     // Dispatch click event
     if (e.type == 'click') {
 
@@ -1244,6 +1251,12 @@ export const commonInit = function(context)
     $('.dropdown-menu', context).on('click', function (e) {
         var jelm = $(e.target);
 
+        // Pass processing to the button. For example, if you click on an icon in a button.
+        var $button = jelm.closest('a, button', this);
+        if ($button.length) {
+            jelm = $button;
+        }
+        
         if (jelm.parents('.cm-dropdown-skip-processing').length) {
             e.stopPropagation();
             return true;
@@ -2155,6 +2168,9 @@ export const externalLink = function(url)
 }
 
 export const toggleCombination = function (jelm) {
+    if (jelm.closest('.cs-icon').length) {
+        jelm = jelm.closest('.cs-icon');
+    }
     var p_elm = (jelm.parents('.cm-combination').length) ? jelm.parents('.cm-combination:first') : (jelm.prop('id') ? jelm : jelm.parent());
     var id, prefix;
     if (p_elm.prop('id')) {

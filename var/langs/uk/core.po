@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: uk\n"
-"X-Crowdin-File: /release-4.17.2/core.po\n"
-"X-Crowdin-File-ID: 8104\n"
-"PO-Revision-Date: 2023-11-23 09:57\n"
+"X-Crowdin-File: /release-4.18.1/core.po\n"
+"X-Crowdin-File-ID: 8378\n"
+"PO-Revision-Date: 2024-02-02 11:19\n"
 
 msgctxt "LanguageName"
 msgid "Localized language name"
@@ -599,6 +599,22 @@ msgstr "Розширений пошук"
 msgctxt "Languages::advanced_search_options"
 msgid "Advanced search options"
 msgstr "Розширений пошук"
+
+msgctxt "Languages::search_add_filter"
+msgid "Add filter"
+msgstr ""
+
+msgctxt "Languages::search_range_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::search_range_to"
+msgid "To"
+msgstr ""
+
+msgctxt "Languages::dynamic_navigation_more"
+msgid "More"
+msgstr ""
 
 msgctxt "Languages::after_full_payment"
 msgid "After full payment"
@@ -1860,6 +1876,10 @@ msgctxt "Languages::cdn_settings"
 msgid "CDN settings"
 msgstr "Налаштування системи доставки контенту (CDN)"
 
+msgctxt "Languages::edit_cdn_settings"
+msgid "Edit CDN settings"
+msgstr ""
+
 msgctxt "Languages::central"
 msgid "Central"
 msgstr "По центру"
@@ -2041,6 +2061,10 @@ msgctxt "Languages::choose_action"
 msgid "Choose action"
 msgstr "Вибрати дію"
 
+msgctxt "Languages::more_actions"
+msgid "More actions"
+msgstr ""
+
 msgctxt "Languages::choose_category"
 msgid "Choose category"
 msgstr "Вибрати категорію"
@@ -2060,6 +2084,10 @@ msgstr "Будь ласка, виберіть режим ліцензуванн�
 msgctxt "Languages::cities"
 msgid "Cities"
 msgstr "Міста"
+
+msgctxt "Languages::edit_cities"
+msgid "Edit cities"
+msgstr ""
 
 msgctxt "Languages::city"
 msgid "City"
@@ -2397,6 +2425,10 @@ msgctxt "Languages::countries"
 msgid "Countries"
 msgstr "Країни"
 
+msgctxt "Languages::edit_countries"
+msgid "Edit countries"
+msgstr ""
+
 msgctxt "Languages::countries_menu_description"
 msgid "Manage the set of countries that are supported in your store."
 msgstr "Редагування списку країн, які використовуються у вашій крамниці."
@@ -2536,6 +2568,10 @@ msgstr "Файл CSV"
 msgctxt "Languages::currencies"
 msgid "Currencies"
 msgstr "Валюти"
+
+msgctxt "Languages::edit_currencies"
+msgid "Edit currencies"
+msgstr ""
 
 msgctxt "Languages::currency"
 msgid "Currency"
@@ -2833,6 +2869,10 @@ msgctxt "Languages::text_file_editor_notice"
 msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>"
 msgstr "Ви можете завантажити та скачати файли через <a href=\"[href]\">Редактор файлів</a>"
 
+msgctxt "Languages::text_file_editor_notice_with_image_size_info"
+msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>. The maximum size of image files is [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_file_editor_notice_full_link"
 msgid "You can upload and download files via [link]"
 msgstr "Ви можете завантажити та скачати файли через [link]"
@@ -2862,8 +2902,8 @@ msgid "Customers"
 msgstr "Покупці"
 
 msgctxt "Languages::customers_menu_title"
-msgid "Customers"
-msgstr "Покупці"
+msgid "Users"
+msgstr ""
 
 msgctxt "Languages::my_customers"
 msgid "My customers"
@@ -4421,6 +4461,10 @@ msgctxt "Languages::files"
 msgid "Files"
 msgstr "Файли"
 
+msgctxt "Languages::view_files"
+msgid "View files"
+msgstr ""
+
 msgctxt "Languages::sell_files"
 msgid "Files to sell"
 msgstr "Файли на продаж"
@@ -5285,6 +5329,10 @@ msgctxt "Languages::language"
 msgid "Language"
 msgstr "Мова"
 
+msgctxt "Languages::language_content"
+msgid "The language of content"
+msgstr ""
+
 msgctxt "Languages::languagecode"
 msgid "Language code"
 msgstr "Код мови"
@@ -5356,6 +5404,10 @@ msgstr "Макет"
 msgctxt "Languages::layouts"
 msgid "Layouts"
 msgstr "Макети"
+
+msgctxt "Languages::edit_layouts"
+msgid "Edit layouts"
+msgstr ""
 
 msgctxt "Languages::lbl_amazon_aws_access_public_key"
 msgid "AWS access public key"
@@ -5573,6 +5625,10 @@ msgctxt "Languages::rate_areas"
 msgid "Rate areas"
 msgstr "Тарифні зони"
 
+msgctxt "Languages::edit_rate_areas"
+msgid "Edit rate areas"
+msgstr ""
+
 msgctxt "Languages::statuses_management"
 msgid "Statuses"
 msgstr "Статуси"
@@ -5608,6 +5664,10 @@ msgstr "Адреса (URL) логотипу"
 msgctxt "Languages::logs"
 msgid "Logs"
 msgstr "Журнали"
+
+msgctxt "Languages::view_logs"
+msgid "View logs"
+msgstr ""
 
 msgctxt "Languages::log_action_backup"
 msgid "backup"
@@ -6821,6 +6881,10 @@ msgctxt "Languages::order_statuses"
 msgid "Order statuses"
 msgstr "Статуси замовлень"
 
+msgctxt "Languages::edit_order_statuses"
+msgid "Edit order statuses"
+msgstr ""
+
 msgctxt "Languages::order_statuses_menu_description"
 msgid "Add new or edit existing order statuses."
 msgstr "Створення та редагування статусів замовлень."
@@ -7989,6 +8053,10 @@ msgctxt "Languages::product_options_forbidden_combination"
 msgid "The <strong>[product]</strong> product has options that are included in the forbidden combination. The product was deleted from the cart"
 msgstr "Товар <strong>[product]</strong> має опції із заборонених комбінацій. Товар було видалено з кошика"
 
+msgctxt "Languages::zero_price_product_was_deleted"
+msgid "The <strong>[product]</strong> product has zero price. The product was deleted from the cart"
+msgstr ""
+
 msgctxt "Languages::product_disabled_options"
 msgid "The product <strong>[product]</strong> has options or option variants that are not available anymore, so it was removed from cart"
 msgstr "Продукт <strong>[product]</strong> має опції або їх варіанти, що зараз немає в наявності, тому товар видалено зкошика"
@@ -8000,6 +8068,10 @@ msgstr "Товар(и)"
 msgctxt "Languages::product_subscriptions"
 msgid "Product subscriptions"
 msgstr "Товари за підпискою"
+
+msgctxt "Languages::view_product_subscriptions"
+msgid "View product subscriptions"
+msgstr ""
 
 msgctxt "Languages::product_summary"
 msgid "Product summary"
@@ -8032,10 +8104,6 @@ msgstr "Обліковий запис"
 msgctxt "Languages::profile_fields"
 msgid "Profile fields"
 msgstr "Поля профілю"
-
-msgctxt "Languages::profile_fields_menu_description"
-msgid "Configure the set of fields included in the profile forms."
-msgstr "Налаштування списку полів облікового запису."
 
 msgctxt "Languages::profile_info"
 msgid "Profile information"
@@ -8946,6 +9014,10 @@ msgctxt "Languages::search_by_order"
 msgid "Search by order"
 msgstr "Пошук по замовленню"
 
+msgctxt "Languages::search_by_customer"
+msgid "Search by customer"
+msgstr ""
+
 msgctxt "Languages::search_by_owner"
 msgid "Search by owner"
 msgstr "Пошук по магазину"
@@ -9130,6 +9202,14 @@ msgctxt "Languages::select_dates"
 msgid "Select dates"
 msgstr "Обрати дати"
 
+msgctxt "Languages::period_selector_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::period_selector_to"
+msgid "To"
+msgstr ""
+
 msgctxt "Languages::select_descr_lang"
 msgid "Select the description language"
 msgstr "Оберіть мову опису"
@@ -9253,6 +9333,70 @@ msgstr "Майстер налаштування можливо відкрити 
 msgctxt "Languages::settings_wizard_title"
 msgid "Settings wizard: Step [current_step] of [total_steps]"
 msgstr "Майстер налаштування: Крок [current_step] з [total_steps]"
+
+msgctxt "Languages::store_mode_menu_description"
+msgid "View and manage your licensing details."
+msgstr ""
+
+msgctxt "Languages::upgrade_center_menu_description"
+msgid "Get the latest versions of CS-Cart and its add-ons."
+msgstr ""
+
+msgctxt "Languages::import_data_menu_description"
+msgid "Import products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::export_data_menu_description"
+msgid "Export products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::languages_menu_description"
+msgid "Configure the available languages and edit any texts on your site."
+msgstr ""
+
+msgctxt "Languages::storage_menu_description"
+msgid "Back up your site data or restore a previous copy, manage files and CDN."
+msgstr ""
+
+msgctxt "Languages::settings_general"
+msgid "General"
+msgstr ""
+
+msgctxt "Languages::settings_general_menu_description"
+msgid "Configure your company info and basic principles of how your site works."
+msgstr ""
+
+msgctxt "Languages::payment_methods_menu_description"
+msgid "Set up the payment options available to your customers."
+msgstr ""
+
+msgctxt "Languages::shipping_methods_menu_description"
+msgid "Set up shipping options, their rates and availability by location."
+msgstr ""
+
+msgctxt "Languages::taxes_menu_description"
+msgid "Configure what taxes you show, how you do it, and tax rates by location."
+msgstr ""
+
+msgctxt "Languages::storefronts_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::stores_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::profile_fields_menu_description"
+msgid "Manage information collected from customers and sellers."
+msgstr ""
+
+msgctxt "Languages::notifications_menu_description"
+msgid "Manage the notifications sent to customers, administrators and sellers."
+msgstr ""
+
+msgctxt "Languages::logs_menu_description"
+msgid "Store activity log."
+msgstr ""
 
 msgctxt "Languages::share"
 msgid "Share"
@@ -9389,10 +9533,6 @@ msgstr "Методи доставки"
 msgctxt "Languages::shipping_methods"
 msgid "Shipping methods"
 msgstr "Методи доставки"
-
-msgctxt "Languages::shipping_methods_menu_description"
-msgid "Set of rules and parameters to calculate the cost of shipping."
-msgstr "Набір правил і параметрів для розрахунку вартості доставки."
 
 msgctxt "Languages::shipping_name"
 msgid "Shipping name"
@@ -10314,6 +10454,10 @@ msgctxt "Languages::states"
 msgid "States"
 msgstr "Регіони"
 
+msgctxt "Languages::edit_states"
+msgid "Edit states"
+msgstr ""
+
 msgctxt "Languages::states_menu_description"
 msgid "Manage the set of states that are supported in your store."
 msgstr "Редагування регіонів, що використовуються у вашому магазині."
@@ -10585,10 +10729,6 @@ msgstr "Податок"
 msgctxt "Languages::taxes"
 msgid "Taxes"
 msgstr "Податки"
-
-msgctxt "Languages::taxes_menu_description"
-msgid "Manage the set of taxes that are supported in your store."
-msgstr "Редагування податків, які використовуються у вашому магазині."
 
 msgctxt "Languages::tax_exempt"
 msgid "Tax exempt"
@@ -11273,6 +11413,10 @@ msgstr "Нічого не знайдено"
 msgctxt "Languages::text_not_allowed_to_upload_file_extension"
 msgid "It is not allowed to upload files with the <b>.[ext]</b> extension here."
 msgstr "Файли з розширенням <b>.[ext]</b> не можуть бути завантажені."
+
+msgctxt "Languages::text_not_allowed_to_upload_file_size"
+msgid "It is not allowed to upload files that exceed the maximum allowed size of [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::text_not_valid_email"
 msgid "<b>[email]</b> is not a valid e-mail address."
@@ -12554,6 +12698,10 @@ msgctxt "Languages::thumbnail_width"
 msgid "Thumbnail width in scroller"
 msgstr "Ширина іконки в скроллері"
 
+msgctxt "Languages::image_file_size_set_to_server_setting"
+msgid "Image file size set to [file_size] MB. This is the largest file size allowed by the server settings."
+msgstr ""
+
 msgctxt "Languages::tier_account"
 msgid "tier account"
 msgstr "рівня"
@@ -12941,6 +13089,10 @@ msgstr "Недоступні для завантаження товари з н�
 msgctxt "Languages::tt_views_products_update_categories"
 msgid "Categories to be displayed in the navigation breadcrumbs."
 msgstr "Категорії, які будуть відображатися в навігації («хлібних крихтах»)."
+
+msgctxt "Languages::tt_views_products_update_images"
+msgid "The maximum size of image files is [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::tt_views_products_update_inventory"
 msgid "Track in stock product quantity. Enable the \"Enable inventory tracking\" option (Settings -> General) to modify."
@@ -13353,6 +13505,10 @@ msgstr "Користувачі"
 msgctxt "Languages::users_carts"
 msgid "Abandoned / Live carts"
 msgstr "Кошики покупців"
+
+msgctxt "Languages::users_carts_menu"
+msgid "Live carts"
+msgstr ""
 
 msgctxt "Languages::users_carts_menu_description"
 msgid "Lists of products that have not been purchased for some reason."
@@ -14790,6 +14946,10 @@ msgctxt "SettingsOptions::company_phone_2"
 msgid "Company phone 2"
 msgstr "Телефон компанії 2"
 
+msgctxt "SettingsOptions::image_file_size"
+msgid "Image file size"
+msgstr ""
+
 msgctxt "SettingsOptions::thumbnail_background_color"
 msgid "Thumbnail background color"
 msgstr "Колір фону іконок"
@@ -15337,6 +15497,10 @@ msgstr "Введіть число від 1 до 10000000 або залиште �
 msgctxt "SettingsTooltips::user_multiple_profiles"
 msgid "A profile is a combination of shipping and billing address."
 msgstr "Профіль - це поєднання адреси доставки і адреси платника."
+
+msgctxt "SettingsTooltips::image_file_size"
+msgid "The maximum size of an uploaded image file in megabytes. Leave empty to use the server settings."
+msgstr ""
 
 msgctxt "SettingsTooltips::thumbnail_background_color"
 msgid "Leave empty for transparent background."
@@ -16371,6 +16535,10 @@ msgctxt "Languages::templates"
 msgid "Templates"
 msgstr "Шаблони"
 
+msgctxt "Languages::edit_templates"
+msgid "Edit templates"
+msgstr ""
+
 msgctxt "Languages::payments.realex.referring_url"
 msgid "Please supply this URL to your Realex Payments account manager"
 msgstr "Будь ласка, надайте цей URL менеджеру вашого рахунку в Realex Payments"
@@ -16554,6 +16722,10 @@ msgstr "SEO настройки вашого магазину."
 msgctxt "Languages::seo_robots"
 msgid "robots.txt"
 msgstr "robots.txt"
+
+msgctxt "Languages::view_seo_robots"
+msgid "View robots.txt"
+msgstr ""
 
 msgctxt "Languages::robots_title"
 msgid "Editing: robots.txt"
@@ -17159,6 +17331,10 @@ msgstr "Ця тема не підтримує редактор тем"
 msgctxt "Languages::shipment_statuses"
 msgid "Shipment statuses"
 msgstr "Статуси відвантажень"
+
+msgctxt "Languages::edit_shipment_statuses"
+msgid "Edit shipment statuses"
+msgstr ""
 
 msgctxt "Languages::email_templates"
 msgid "Email templates"
@@ -17955,6 +18131,10 @@ msgstr "Деякі файли ядра були змінені. Згодом ц�
 msgctxt "Languages::file_changes_detector"
 msgid "File changes detector"
 msgstr "Детектор змін ядра"
+
+msgctxt "Languages::view_file_changes_detector"
+msgid "View file changes detector"
+msgstr ""
 
 msgctxt "Languages::privileges.view_file_changes"
 msgid "Can view"
@@ -21037,390 +21217,6 @@ msgctxt "Languages::license_expires"
 msgid "License expires"
 msgstr "Термін дії ліцензії закінчується"
 
-msgctxt "Languages::sw.store_setup_wizard"
-msgid "Store setup wizard"
-msgstr "Майстер налаштування мазагину "
-
-msgctxt "Languages::sw.store_setup_wizard_short"
-msgid "Setup wizard"
-msgstr "Майстер установки "
-
-msgctxt "Languages::sw.text_about_store_header"
-msgid "Fill out the contact information about your store"
-msgstr "Заповніть контактну інформацію про свій магазин "
-
-msgctxt "Languages::sw.text_design_header"
-msgid "Select your storefront design and upload the logo"
-msgstr "Виберіть дизайн магазину і завантажте логотип "
-
-msgctxt "Languages::sw.text_payments_header"
-msgid "Set up the service to recieve payments"
-msgstr "Налаштуйте сервіс для отримання платежів "
-
-msgctxt "Languages::sw.text_shippings_header"
-msgid "Select shipping services"
-msgstr "Виберіть службу доставки "
-
-msgctxt "Languages::sw.text_business_model_header"
-msgid "Choose your business model and checkout flow"
-msgstr "Виберіть свою бізнес-модель і порядок оформлення замовлення "
-
-msgctxt "Languages::sw.select_money_transfer_methods"
-msgid "Select one of the following models, and we'll handle most of the setup for you."
-msgstr "Вибери одну із наведених нижче моделей, і ми виконаємо більшу частину налаштування за вас."
-
-msgctxt "Languages::sw.text_vendors_header"
-msgid "Set up how you work with vendors and their data"
-msgstr "Налаштуйте спосіб роботи з продавцями та їхніми даними"
-
-msgctxt "Languages::sw.text_settings_header"
-msgid "Configure product catalog settings"
-msgstr "Налаштуйте параметр каталогу продукту"
-
-msgctxt "Languages::sw.about_store"
-msgid "About store"
-msgstr "Про магазин"
-
-msgctxt "Languages::sw.company_name"
-msgid "Company name"
-msgstr "Назва компанії "
-
-msgctxt "Languages::sw.google_analytics.tracking_code"
-msgid "Google Analytics account number"
-msgstr "Номер облікового запису Google Analytics"
-
-msgctxt "Languages::sw.business_model"
-msgid "Business Model"
-msgstr "Бізнес-модель "
-
-msgctxt "Languages::sw.vendors"
-msgid "Vendors"
-msgstr "Продавці "
-
-msgctxt "Languages::sw.site_admin_email"
-msgid "Site administrator e-mail address"
-msgstr "Електронна адреса адміністратора сайту "
-
-msgctxt "Languages::sw.address_text"
-msgid "Company address (street, house, etc.)"
-msgstr "Адреса компанії (вулиця, будинок, тощо)"
-
-msgctxt "Languages::sw.country"
-msgid "Company country"
-msgstr "Країна компанії "
-
-msgctxt "Languages::sw.state"
-msgid "Company state"
-msgstr "Регіон компанії "
-
-msgctxt "Languages::sw.city"
-msgid "Company city"
-msgstr "Місто компанії "
-
-msgctxt "Languages::sw.zipcode"
-msgid "Company zip code"
-msgstr "Поштовий індекс компанії "
-
-msgctxt "Languages::sw.phone"
-msgid "Company phone"
-msgstr "Телефон компанії "
-
-msgctxt "Languages::sw.phone_2"
-msgid "Company phone 2"
-msgstr "Телефон компанії 2"
-
-msgctxt "Languages::sw.fax"
-msgid "Fax"
-msgstr "Факс"
-
-msgctxt "Languages::sw.website"
-msgid "Company website"
-msgstr "Веб-сайт компанії "
-
-msgctxt "Languages::sw.company_start_year"
-msgid "Year when the store started its operation"
-msgstr "Рік, коли магазин розпочав роботу "
-
-msgctxt "Languages::sw.collect_taxes_from_vendors"
-msgid "Collect taxes from vendors"
-msgstr "Збирати податки з продавців "
-
-msgctxt "Languages::sw.moderation"
-msgid "Moderation"
-msgstr "Модерація "
-
-msgctxt "Languages::sw.vendor_profile_updates_approval"
-msgid "Check changes to vendor profile"
-msgstr "Перевірити зміни в профілі продаця "
-
-msgctxt "Languages::sw.products_prior_approval"
-msgid "Check new products"
-msgstr "Перевірити нові продукти "
-
-msgctxt "Languages::sw.products_updates_approval"
-msgid "Check changes to existing products"
-msgstr "Перевірити зміни в наявних продуктах"
-
-msgctxt "Languages::sw.accounting"
-msgid "Accounting"
-msgstr "Бухгалтерський облік"
-
-msgctxt "Languages::sw.lowers_allowed_balance"
-msgid "Minimum allowed vendor balance"
-msgstr "Дозволений мінімальний залишок продавця"
-
-msgctxt "Languages::sw.grace_period_to_refill_balance"
-msgid "Block vendor after days"
-msgstr "Блокування продавця через кілька днів "
-
-msgctxt "Languages::sw.location"
-msgid "Location"
-msgstr "Розташування "
-
-msgctxt "Languages::sw.enable_vendor_location_using_google_map"
-msgid "Let vendors set their location on Google Maps"
-msgstr "Дозволити продавцям встановлювати своє місцезнаходження на Google Maps"
-
-msgctxt "Languages::sw.vendor_profile_fields"
-msgid "Vendor profile fields"
-msgstr "Поля профілю продавця "
-
-msgctxt "Languages::sw.set_up_vendor_profile_fields"
-msgid "What information about vendors do you need?"
-msgstr "Яка інформація про продавців вам потрібно? "
-
-msgctxt "Languages::sw.notifications"
-msgid "Notifications"
-msgstr "Сповіщення "
-
-msgctxt "Languages::sw.admin_notifications"
-msgid "Admin notifications"
-msgstr "Повідомлення для адміністратора"
-
-msgctxt "Languages::sw.vendor_notifications"
-msgid "Vendor notifications"
-msgstr "Повідомлення продавців "
-
-msgctxt "Languages::sw.selected_design"
-msgid "Current design"
-msgstr "Сучасний дизайн "
-
-msgctxt "Languages::sw.upload_logo"
-msgid "Upload logo"
-msgstr "Завантажити логотип "
-
-msgctxt "Languages::sw.logo_theme"
-msgid "Main"
-msgstr "Головний "
-
-msgctxt "Languages::sw.logo_mail"
-msgid "Email"
-msgstr "Електронна пошта "
-
-msgctxt "Languages::sw.select_image"
-msgid "Select image"
-msgstr "Вибрати зображення "
-
-msgctxt "Languages::sw.select_right_design"
-msgid "Pick a design preset"
-msgstr "Вибрати шаблон дизайну "
-
-msgctxt "Languages::sw.activate"
-msgid "Activate"
-msgstr "Активувати "
-
-msgctxt "Languages::sw.apply"
-msgid "Apply"
-msgstr "Застосувати "
-
-msgctxt "Languages::sw.preview"
-msgid "Preview"
-msgstr "Попередній перегляд "
-
-msgctxt "Languages::sw.edit_design"
-msgid "Edit design"
-msgstr "Редагувати дизайн "
-
-msgctxt "Languages::sw.design"
-msgid "Design"
-msgstr "Дизайн"
-
-msgctxt "Languages::sw.error_updating_payment"
-msgid "Error occured during payment method update"
-msgstr "Під час оновлення способу оплати сталася помилка"
-
-msgctxt "Languages::sw.payments"
-msgid "Payments"
-msgstr "Платежі "
-
-msgctxt "Languages::sw.payment_not_found"
-msgid "The Yandex.Money payment method not found"
-msgstr "Спосіб оплати Яндекс.Гроші не знайдено"
-
-msgctxt "Languages::sw.over_payment_system"
-msgid "Use another payment system"
-msgstr "Використовуй іншу платіжну систему"
-
-msgctxt "Languages::sw.shippings"
-msgid "Shipping services"
-msgstr "Послуги доставки "
-
-msgctxt "Languages::sw.ems_russian_post"
-msgid "EMS Russian Post"
-msgstr "EMS Пошта Росії "
-
-msgctxt "Languages::sw.russian_post"
-msgid "Russian Post"
-msgstr " Пошта Росії"
-
-msgctxt "Languages::sw.edost"
-msgid "eDost"
-msgstr "eDost"
-
-msgctxt "Languages::sw.usps"
-msgid "USPS"
-msgstr "USPS"
-
-msgctxt "Languages::sw.ups"
-msgid "UPS"
-msgstr "UPS"
-
-msgctxt "Languages::sw.fedex"
-msgid "FedEx"
-msgstr "FedEx"
-
-msgctxt "Languages::sw.goto_shipping_methods"
-msgid "Go to shipping methods"
-msgstr "Перейдіть до способів доставки "
-
-msgctxt "Languages::sw.configure"
-msgid "Configure"
-msgstr "Налаштування "
-
-msgctxt "Languages::sw.settings"
-msgid "Settings"
-msgstr "Налаштування "
-
-msgctxt "Languages::sw.enable"
-msgid "Enable"
-msgstr "Увімкнути"
-
-msgctxt "Languages::sw.disable"
-msgid "Disable"
-msgstr "Вимкнути"
-
-msgctxt "Languages::sw.activated"
-msgid "Activated"
-msgstr "Активовано "
-
-msgctxt "Languages::sw.select_model"
-msgid "Select model"
-msgstr "Видеріть модель "
-
-msgctxt "Languages::sw.timezone"
-msgid "Time zone"
-msgstr "Часовий пояс "
-
-msgctxt "Languages::sw.order_start_id"
-msgid "Initial order ID value (leave empty for auto)"
-msgstr "Початкове значення ідентифікатора замовлення (залиште порожнім для автоматичного) "
-
-msgctxt "Languages::sw.min_order_amount"
-msgid "Minimum order amount"
-msgstr "Мінімальна сума замовлення "
-
-msgctxt "Languages::sw.show_out_of_stock_products"
-msgid "Show out of stock products"
-msgstr "Показати товари, яких немає в наявності"
-
-msgctxt "Languages::sw.enable_quick_view"
-msgid "Enable quick view"
-msgstr "Увімкнути швидкий перегляд"
-
-msgctxt "Languages::sw.enable_inventory_tracking"
-msgid "Enable inventory tracking"
-msgstr "Увімкнути відстеження запасів "
-
-msgctxt "Languages::sw.allow_negative_amount"
-msgid "Allow negative amount in inventory"
-msgstr "Дозволити від’ємну суму кількість товарів на складі "
-
-msgctxt "Languages::sw.ym_merchant_country"
-msgid "Country"
-msgstr "Країна "
-
-msgctxt "Languages::sw.ym_merchant_forma"
-msgid "Ownership"
-msgstr "Право власності "
-
-msgctxt "Languages::sw.send"
-msgid "Send"
-msgstr "Надіслати "
-
-msgctxt "Languages::sw.remove_demo_data_text"
-msgid "Clean up orders, products, categories, user profiles, and related data"
-msgstr "Очистіть замовлення, продукти, категорії, профілі користувачів і пов'язані дані"
-
-msgctxt "Languages::sw.remove"
-msgid "Clean up"
-msgstr "Прибирати "
-
-msgctxt "Languages::sw.demo_data_removed"
-msgid "Demo data removed."
-msgstr "Демо-дані видалено."
-
-msgctxt "Languages::sw.error_removing_demo_data"
-msgid "An error occurred while removing the demo data"
-msgstr "Під час видалення демо-даних сталася помилка"
-
-msgctxt "Languages::sw.confirm_demo_data_removal_title"
-msgid "Remove the data?"
-msgstr "Видалити дані? "
-
-msgctxt "Languages::sw.text_confirm_demo_data_removal"
-msgid "All orders, products, product categories, customer profiles, and associated data (tags, comments, etc.) including the data added by you <b>will be permanently removed.</b> This operation cannot be undone. Are you sure you want to continue?"
-msgstr "Усі замовлення, продукти, категорії продуктів, профілі клієнта та пов'язані з ними дані (теги, коментарії тощо) включають дані, які додані вами <b>будуть назавжди видалені.</b> Цю операцію неможливо скасувати. Ви впевнені, що хочете продовжити?"
-
-msgctxt "Languages::sw.delete_demo_data"
-msgid "Delete the  data"
-msgstr "Видалити дані "
-
-msgctxt "Languages::sw.keep_demo_data"
-msgid "Keep the data"
-msgstr "Зберегти дані "
-
-msgctxt "Languages::sw.more_themes_in_marketplace"
-msgid "More themes in the Marketplace"
-msgstr "Більше тем на Marketplace"
-
-msgctxt "Languages::sw.logo_recommended_size_text"
-msgid "recommended size [height]px × [width]px"
-msgstr "рекомендований розмір [height] пікселів × [width] пікселів"
-
-msgctxt "Languages::sw.money_goes_to_owner"
-msgid "Customer makes a single payment, all money goes to you"
-msgstr "Клієнт робить один платіж, усі гроші переходять вам "
-
-msgctxt "Languages::sw.money_goes_to_owner_descr"
-msgid "The money owed to the vendor is tracked in the admin panel. A vendor can request money withdrawal through the admin panel. You forward the money to vendors as you see fit."
-msgstr "Гроші, заборговані продавцю, відстежуються на панелі адміністратора. Продавець може запросити виведення грошей через панель адміністратора. Ви пересилаєте гроші продавцям як вважаєте за потрібне."
-
-msgctxt "Languages::sw.money_split_automaticaly"
-msgid "Customer makes a single payment, money is split automatically"
-msgstr "Клієнт робить разовий платіж, гроші розподіляються автоматично "
-
-msgctxt "Languages::sw.money_split_automaticaly_descr"
-msgid "This is achieved via [stripe_connect] payments and/or [paypal_commerce_platform], so each vendor must have a Stripe and/or PayPal account. We'll create these payment methods for you. You'll just need to configure them, and vendors will need to provide their account information."
-msgstr "Це досягається за допомогою платежів [stripe_connect] та/або [paypal_commerce_platform], тому кожний продавець повинен мати обліковий запис Stripe та/або PayPal. Ми створимо для вас ці способи оплати. Вам просто необхідно налаштувати їх, а продавці повинні надати інформацію про свої облікові записи."
-
-msgctxt "Languages::sw.money_goes_to_vendor"
-msgid "Customer makes multiple payments (one to each vendor)"
-msgstr "Клієнт здійснює кілька платежів (по одному для кожного продавця)"
-
-msgctxt "Languages::sw.money_goes_to_vendor_descr"
-msgid "Each vendor has to create own payment methods. Money goes directly to vendors, and marketplace commission gets added to vendors' debt. It becomes a vendor's responsibility to pay the marketplace."
-msgstr "Кожний продавець повинен створити власні способи оплати. Гроші надходять безпосередньо до продавців, а комісія на маркетплейс додається до боргу продавців. Продавець несе відповідальність за оплату на маркетплейс. "
-
 msgctxt "Languages::unsupported_browser_notice"
 msgid "<p>We have detected that the browser you are using is not fully supported by our Admin Panel. You can view this site using your current browser but it may not display properly, and you may not be able to fully use all features.</p><br><p>Admin Panel is best viewed using the following browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (latest version)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (latest version)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (latest version)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (latest version)</a></li></ul><br><p>Click on one of the links to download the browser of your choice. Once the download has completed, install the browser by running the setup program.</p><br><p>If you cannot upgrade your browser now, you can still access Admin Panel, but you may not be able to fully use all features.<br><br><a href=\"[url]\">Continue</a></p>"
 msgstr "<p>Ми виявили, що браузер, який ви використовуєте, не повністю підтримується нашою панеллю адміністратора. Ви можете переглянути цю сторінку за допомогою поточного браузера, який ви зараз використовуєте, але сторінка може не відображатися належним чином, і ви не зможете повністю використовувати всі функції.</p><br><p>Панель адміністратора найкраще переглядати за допомогою таких браузерів:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (остання версія)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (остання версія)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (остання версія)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (остання версія)</a></li></ul><br><p>Натисніть на одне з посилань, щоб завантажити браузер на ваш вибір. Після завершення завантаження встановіть браузер, запустивши інсталятор.</p> <br> <p>Якщо ви не можете оновити свій браузер, ви все одно можете використовувати панель адміністратора, але ви не зможете повністю використовувати всі функції.<br><br><a href=\"[url]\">Продовжити</a></p>"
@@ -21436,6 +21232,10 @@ msgstr "Встановити за замовчуванням "
 msgctxt "Languages::saved_search.set_as_non_default"
 msgid "Set as non-default"
 msgstr "Встановити не за замовчуванням "
+
+msgctxt "Languages::saved_search.more"
+msgid "More saved search"
+msgstr ""
 
 msgctxt "Languages::saved_search.set_as_default_confirm"
 msgid "Saved search \"[name]\" will open by default instead of the full list of objects. Is that what you'd like?"
@@ -21704,10 +21504,6 @@ msgstr "Використовуйте для всіх нових продавці
 msgctxt "Languages::show_vendor_info_if_shipping_no_required"
 msgid "Show information about vendors whose products do not require shipping"
 msgstr "Показати інформацію про продавців, чия продукція не потребує доставки"
-
-msgctxt "Languages::sw.marketplace_setup_wizard"
-msgid "Marketplace setup wizard"
-msgstr "Майстер налаштування Marketplace"
 
 msgctxt "Languages::sw.money_split_automaticaly_descr.ru"
 msgid "This is achieved via YooMoney for marketplaces, so each vendor must have a YooMoney account. We'll create a payment method for you. You'll just need to configure it, and vendors will need to provide their account information."

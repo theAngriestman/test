@@ -262,6 +262,15 @@ function fn_banners_need_image_update()
 
 function fn_banners_update_banner($data, $banner_id, $lang_code = DESCR_SL)
 {
+    /**
+     * Executes before updating/creating a banner.
+     *
+     * @param array  $data      Banner data
+     * @param int    $banner_id Banner identifier
+     * @param string $lang_code Two-letter language code (e.g. 'en', 'ru', etc.)
+     */
+    fn_set_hook('banners_update_banner_pre', $data, $banner_id, $lang_code);
+
     SecurityHelper::sanitizeObjectData('banner', $data);
 
     if (isset($data['timestamp'])) {

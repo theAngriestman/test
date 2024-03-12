@@ -20,6 +20,7 @@
 {else}
     {assign var="product_id" value=$product_id}
 {/if}
+{$tabs_count = 2}
 
 <div id="content_group_bt_{$id}">
 
@@ -28,7 +29,7 @@
 <input type="hidden" class="cm-no-hide-input" name="item_id" value="{$id}" />
 <input type="hidden" class="cm-no-hide-input" name="product_id" value="{$product_id}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_general_{$id}" class="cm-js active"><a>{__("general")}</a></li>
         <li id="tab_products_{$id}" class="cm-js"><a>{__("products")}</a></li>

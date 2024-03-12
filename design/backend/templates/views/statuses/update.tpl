@@ -11,6 +11,7 @@
 {if "ULTIMATE"|fn_allowed_for && $settings.Stores.default_state_update_for_all == 'not_active' && !$runtime.simple_ultimate && !$runtime.company_id}
     {assign var="disable_input" value=true}
 {/if}
+{$tabs_count = 1}
 
 <div id="content_group{$st}">
 
@@ -19,7 +20,7 @@
 <input type="hidden" name="status" value="{$status_data.status}">
 <input type="hidden" name="status_data[status_id]" value="{$status_data.status_id}">
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li class="cm-js active"><a>{__("general")}</a></li>
     </ul>

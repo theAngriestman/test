@@ -256,6 +256,7 @@
                                             image_pair_types=['N' => 'product_add_additional_image', 'M' => 'product_main_image', 'A' => 'product_additional_image']
                                             allow_update_files=!$is_shared_product && $allow_update_files|default:true
                                         }
+                                        <p class="muted description">{__("tt_views_products_update_images", ["[file_size]" => $image_file_size])}</p>
                                     </div>
                                 </div>
                             {/component}
@@ -793,9 +794,10 @@
                 {if $has_global_individual_settings_permission}
                     <hr>
                     <div class="well well-small help-block">
+                        {include_ext file="common/icon.tpl" source="sitemap" class="flex-inline top" assign="icon_global_setting"}
                         {__("global_individual.additional_settings", [
                             "[settings_url]" => "settings.manage&section_id=Checkout"|fn_url,
-                            "[icon]" => "<i class=\"icon-sitemap\"></i>"
+                            "[icon]" => $icon_global_setting
                         ]) nofilter}
                         </a>
                     </div>
@@ -982,8 +984,15 @@
         {/if}
 
     {/capture}
-    {include file="common/tabsbox.tpl" content=$smarty.capture.tabsbox group_name=$runtime.controller active_tab=$selected_section track=true meta_tabs="tabs--product-update"}
-
+    {* Get $tabs_navigation *}
+    {include file="common/tabsbox.tpl"
+        content=$smarty.capture.tabsbox
+        group_name=$runtime.controller
+        active_tab=$selected_section
+        track=true
+        meta_tabs="tabs--product-update"
+        show_tabs_navigation=false
+    }
 {/capture}
 
 {hook name="products:update_mainbox_params"}
@@ -1002,6 +1011,7 @@
     select_languages=(bool) $id
     buttons=$smarty.capture.buttons
     adv_buttons=$smarty.capture.adv_buttons
+    tabs_navigation=$tabs_navigation
 }
 
 {if "MULTIVENDOR"|fn_allowed_for}

@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /release-4.17.2/core.po\n"
-"X-Crowdin-File-ID: 8104\n"
-"PO-Revision-Date: 2023-11-23 09:55\n"
+"X-Crowdin-File: /release-4.18.1/core.po\n"
+"X-Crowdin-File-ID: 8378\n"
+"PO-Revision-Date: 2024-02-02 11:16\n"
 
 msgctxt "LanguageName"
 msgid "Localized language name"
@@ -599,6 +599,22 @@ msgstr "高级搜索"
 msgctxt "Languages::advanced_search_options"
 msgid "Advanced search options"
 msgstr "高级搜索选项"
+
+msgctxt "Languages::search_add_filter"
+msgid "Add filter"
+msgstr ""
+
+msgctxt "Languages::search_range_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::search_range_to"
+msgid "To"
+msgstr ""
+
+msgctxt "Languages::dynamic_navigation_more"
+msgid "More"
+msgstr ""
 
 msgctxt "Languages::after_full_payment"
 msgid "After full payment"
@@ -1860,6 +1876,10 @@ msgctxt "Languages::cdn_settings"
 msgid "CDN settings"
 msgstr "CDN 的设置"
 
+msgctxt "Languages::edit_cdn_settings"
+msgid "Edit CDN settings"
+msgstr ""
+
 msgctxt "Languages::central"
 msgid "Central"
 msgstr "中心的"
@@ -2040,6 +2060,10 @@ msgctxt "Languages::choose_action"
 msgid "Choose action"
 msgstr "选择操作"
 
+msgctxt "Languages::more_actions"
+msgid "More actions"
+msgstr ""
+
 msgctxt "Languages::choose_category"
 msgid "Choose category"
 msgstr "选择分类"
@@ -2059,6 +2083,10 @@ msgstr "请选择你的授权模式"
 msgctxt "Languages::cities"
 msgid "Cities"
 msgstr "城市"
+
+msgctxt "Languages::edit_cities"
+msgid "Edit cities"
+msgstr ""
 
 msgctxt "Languages::city"
 msgid "City"
@@ -2396,6 +2424,10 @@ msgctxt "Languages::countries"
 msgid "Countries"
 msgstr "国家"
 
+msgctxt "Languages::edit_countries"
+msgid "Edit countries"
+msgstr ""
+
 msgctxt "Languages::countries_menu_description"
 msgid "Manage the set of countries that are supported in your store."
 msgstr "管理您的商店中支持的国家设置."
@@ -2535,6 +2567,10 @@ msgstr "CSV 文件"
 msgctxt "Languages::currencies"
 msgid "Currencies"
 msgstr "货币"
+
+msgctxt "Languages::edit_currencies"
+msgid "Edit currencies"
+msgstr ""
 
 msgctxt "Languages::currency"
 msgid "Currency"
@@ -2832,6 +2868,10 @@ msgctxt "Languages::text_file_editor_notice"
 msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>"
 msgstr "你可以通过 <a href=\"[href]\">文件编辑器</a>上传或者下载文件"
 
+msgctxt "Languages::text_file_editor_notice_with_image_size_info"
+msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>. The maximum size of image files is [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_file_editor_notice_full_link"
 msgid "You can upload and download files via [link]"
 msgstr "您可以通过 [link]上传和下载文件"
@@ -2861,8 +2901,8 @@ msgid "Customers"
 msgstr "客户"
 
 msgctxt "Languages::customers_menu_title"
-msgid "Customers"
-msgstr "顾客"
+msgid "Users"
+msgstr ""
 
 msgctxt "Languages::my_customers"
 msgid "My customers"
@@ -4420,6 +4460,10 @@ msgctxt "Languages::files"
 msgid "Files"
 msgstr "文件"
 
+msgctxt "Languages::view_files"
+msgid "View files"
+msgstr ""
+
 msgctxt "Languages::sell_files"
 msgid "Files to sell"
 msgstr "售卖的文件"
@@ -5284,6 +5328,10 @@ msgctxt "Languages::language"
 msgid "Language"
 msgstr "语言"
 
+msgctxt "Languages::language_content"
+msgid "The language of content"
+msgstr ""
+
 msgctxt "Languages::languagecode"
 msgid "Language code"
 msgstr "语言符号"
@@ -5355,6 +5403,10 @@ msgstr "布局"
 msgctxt "Languages::layouts"
 msgid "Layouts"
 msgstr "布局"
+
+msgctxt "Languages::edit_layouts"
+msgid "Edit layouts"
+msgstr ""
 
 msgctxt "Languages::lbl_amazon_aws_access_public_key"
 msgid "AWS access public key"
@@ -5572,6 +5624,10 @@ msgctxt "Languages::rate_areas"
 msgid "Rate areas"
 msgstr "评价区域"
 
+msgctxt "Languages::edit_rate_areas"
+msgid "Edit rate areas"
+msgstr ""
+
 msgctxt "Languages::statuses_management"
 msgid "Statuses"
 msgstr "状态"
@@ -5607,6 +5663,10 @@ msgstr "位置商标(URL)"
 msgctxt "Languages::logs"
 msgid "Logs"
 msgstr "日志"
+
+msgctxt "Languages::view_logs"
+msgid "View logs"
+msgstr ""
 
 msgctxt "Languages::log_action_backup"
 msgid "backup"
@@ -6820,6 +6880,10 @@ msgctxt "Languages::order_statuses"
 msgid "Order statuses"
 msgstr "订单状态"
 
+msgctxt "Languages::edit_order_statuses"
+msgid "Edit order statuses"
+msgstr ""
+
 msgctxt "Languages::order_statuses_menu_description"
 msgid "Add new or edit existing order statuses."
 msgstr "新增或编辑已存在的订单状态."
@@ -7988,6 +8052,10 @@ msgctxt "Languages::product_options_forbidden_combination"
 msgid "The <strong>[product]</strong> product has options that are included in the forbidden combination. The product was deleted from the cart"
 msgstr "<strong>[product]</strong>此产品的选项包含禁止的组合. 该产品已从购物车中删除"
 
+msgctxt "Languages::zero_price_product_was_deleted"
+msgid "The <strong>[product]</strong> product has zero price. The product was deleted from the cart"
+msgstr ""
+
 msgctxt "Languages::product_disabled_options"
 msgid "The product <strong>[product]</strong> has options or option variants that are not available anymore, so it was removed from cart"
 msgstr "商品 <strong>[product]</strong> 已失效，因此从购物车中删除。"
@@ -7999,6 +8067,10 @@ msgstr "产品"
 msgctxt "Languages::product_subscriptions"
 msgid "Product subscriptions"
 msgstr "产品订购"
+
+msgctxt "Languages::view_product_subscriptions"
+msgid "View product subscriptions"
+msgstr ""
 
 msgctxt "Languages::product_summary"
 msgid "Product summary"
@@ -8031,10 +8103,6 @@ msgstr "详细资料"
 msgctxt "Languages::profile_fields"
 msgid "Profile fields"
 msgstr "个人资料选项"
-
-msgctxt "Languages::profile_fields_menu_description"
-msgid "Configure the set of fields included in the profile forms."
-msgstr "配置包含在档案表格中的字段集."
 
 msgctxt "Languages::profile_info"
 msgid "Profile information"
@@ -8944,6 +9012,10 @@ msgctxt "Languages::search_by_order"
 msgid "Search by order"
 msgstr "按订单搜索"
 
+msgctxt "Languages::search_by_customer"
+msgid "Search by customer"
+msgstr ""
+
 msgctxt "Languages::search_by_owner"
 msgid "Search by owner"
 msgstr "按所有者搜索"
@@ -9128,6 +9200,14 @@ msgctxt "Languages::select_dates"
 msgid "Select dates"
 msgstr "选择日期"
 
+msgctxt "Languages::period_selector_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::period_selector_to"
+msgid "To"
+msgstr ""
+
 msgctxt "Languages::select_descr_lang"
 msgid "Select the description language"
 msgstr "选择描述语言"
@@ -9251,6 +9331,70 @@ msgstr "可以在菜单“设置 -> 设置向导”中重新打开向导。"
 msgctxt "Languages::settings_wizard_title"
 msgid "Settings wizard: Step [current_step] of [total_steps]"
 msgstr "设置向导：第 [current_step] 步，共 [total_steps]步"
+
+msgctxt "Languages::store_mode_menu_description"
+msgid "View and manage your licensing details."
+msgstr ""
+
+msgctxt "Languages::upgrade_center_menu_description"
+msgid "Get the latest versions of CS-Cart and its add-ons."
+msgstr ""
+
+msgctxt "Languages::import_data_menu_description"
+msgid "Import products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::export_data_menu_description"
+msgid "Export products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::languages_menu_description"
+msgid "Configure the available languages and edit any texts on your site."
+msgstr ""
+
+msgctxt "Languages::storage_menu_description"
+msgid "Back up your site data or restore a previous copy, manage files and CDN."
+msgstr ""
+
+msgctxt "Languages::settings_general"
+msgid "General"
+msgstr ""
+
+msgctxt "Languages::settings_general_menu_description"
+msgid "Configure your company info and basic principles of how your site works."
+msgstr ""
+
+msgctxt "Languages::payment_methods_menu_description"
+msgid "Set up the payment options available to your customers."
+msgstr ""
+
+msgctxt "Languages::shipping_methods_menu_description"
+msgid "Set up shipping options, their rates and availability by location."
+msgstr ""
+
+msgctxt "Languages::taxes_menu_description"
+msgid "Configure what taxes you show, how you do it, and tax rates by location."
+msgstr ""
+
+msgctxt "Languages::storefronts_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::stores_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::profile_fields_menu_description"
+msgid "Manage information collected from customers and sellers."
+msgstr ""
+
+msgctxt "Languages::notifications_menu_description"
+msgid "Manage the notifications sent to customers, administrators and sellers."
+msgstr ""
+
+msgctxt "Languages::logs_menu_description"
+msgid "Store activity log."
+msgstr ""
 
 msgctxt "Languages::share"
 msgid "Share"
@@ -9387,10 +9531,6 @@ msgstr "配送方式"
 msgctxt "Languages::shipping_methods"
 msgid "Shipping methods"
 msgstr "配送方式"
-
-msgctxt "Languages::shipping_methods_menu_description"
-msgid "Set of rules and parameters to calculate the cost of shipping."
-msgstr "设置规则和参数来计算运费."
 
 msgctxt "Languages::shipping_name"
 msgid "Shipping name"
@@ -10312,6 +10452,10 @@ msgctxt "Languages::states"
 msgid "States"
 msgstr "州/省份"
 
+msgctxt "Languages::edit_states"
+msgid "Edit states"
+msgstr ""
+
 msgctxt "Languages::states_menu_description"
 msgid "Manage the set of states that are supported in your store."
 msgstr "管理您的商店中支持的洲设置."
@@ -10583,10 +10727,6 @@ msgstr "税金"
 msgctxt "Languages::taxes"
 msgid "Taxes"
 msgstr "税金"
-
-msgctxt "Languages::taxes_menu_description"
-msgid "Manage the set of taxes that are supported in your store."
-msgstr "管理您的商店中支持的税收设置."
 
 msgctxt "Languages::tax_exempt"
 msgid "Tax exempt"
@@ -11271,6 +11411,10 @@ msgstr "什么都没找到"
 msgctxt "Languages::text_not_allowed_to_upload_file_extension"
 msgid "It is not allowed to upload files with the <b>.[ext]</b> extension here."
 msgstr "它不是允许上传文件扩展名为 <b>.[ext]</b>。"
+
+msgctxt "Languages::text_not_allowed_to_upload_file_size"
+msgid "It is not allowed to upload files that exceed the maximum allowed size of [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::text_not_valid_email"
 msgid "<b>[email]</b> is not a valid e-mail address."
@@ -12552,6 +12696,10 @@ msgctxt "Languages::thumbnail_width"
 msgid "Thumbnail width in scroller"
 msgstr "滚动文本中的缩略图宽度"
 
+msgctxt "Languages::image_file_size_set_to_server_setting"
+msgid "Image file size set to [file_size] MB. This is the largest file size allowed by the server settings."
+msgstr ""
+
 msgctxt "Languages::tier_account"
 msgid "tier account"
 msgstr "帐户层"
@@ -12939,6 +13087,10 @@ msgstr "重量为零不可下载的产品作为具有最小的可能非零重量
 msgctxt "Languages::tt_views_products_update_categories"
 msgid "Categories to be displayed in the navigation breadcrumbs."
 msgstr "要在导航面包屑中显示的类别。"
+
+msgctxt "Languages::tt_views_products_update_images"
+msgid "The maximum size of image files is [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::tt_views_products_update_inventory"
 msgid "Track in stock product quantity. Enable the \"Enable inventory tracking\" option (Settings -> General) to modify."
@@ -13351,6 +13503,10 @@ msgstr "会员"
 msgctxt "Languages::users_carts"
 msgid "Abandoned / Live carts"
 msgstr "弃置的/ 实时购物"
+
+msgctxt "Languages::users_carts_menu"
+msgid "Live carts"
+msgstr ""
 
 msgctxt "Languages::users_carts_menu_description"
 msgid "Lists of products that have not been purchased for some reason."
@@ -14788,6 +14944,10 @@ msgctxt "SettingsOptions::company_phone_2"
 msgid "Company phone 2"
 msgstr "公司的电话 2"
 
+msgctxt "SettingsOptions::image_file_size"
+msgid "Image file size"
+msgstr ""
+
 msgctxt "SettingsOptions::thumbnail_background_color"
 msgid "Thumbnail background color"
 msgstr "缩略图背景颜色"
@@ -15335,6 +15495,10 @@ msgstr "使用 1 到 10000000 之间的数字或留空以进行自动填充。"
 msgctxt "SettingsTooltips::user_multiple_profiles"
 msgid "A profile is a combination of shipping and billing address."
 msgstr "配置文件是送货地址和帐单地址的组合。"
+
+msgctxt "SettingsTooltips::image_file_size"
+msgid "The maximum size of an uploaded image file in megabytes. Leave empty to use the server settings."
+msgstr ""
 
 msgctxt "SettingsTooltips::thumbnail_background_color"
 msgid "Leave empty for transparent background."
@@ -16368,6 +16532,10 @@ msgctxt "Languages::templates"
 msgid "Templates"
 msgstr "模板"
 
+msgctxt "Languages::edit_templates"
+msgid "Edit templates"
+msgstr ""
+
 msgctxt "Languages::payments.realex.referring_url"
 msgid "Please supply this URL to your Realex Payments account manager"
 msgstr "请将此 URL 提供给您的 Realex Payments 客户经理"
@@ -16551,6 +16719,10 @@ msgstr "您商店的 SEO 设置。"
 msgctxt "Languages::seo_robots"
 msgid "robots.txt"
 msgstr "机器人.txt"
+
+msgctxt "Languages::view_seo_robots"
+msgid "View robots.txt"
+msgstr ""
 
 msgctxt "Languages::robots_title"
 msgid "Editing: robots.txt"
@@ -17156,6 +17328,10 @@ msgstr "此主题不支持主题编辑器"
 msgctxt "Languages::shipment_statuses"
 msgid "Shipment statuses"
 msgstr "发货状态"
+
+msgctxt "Languages::edit_shipment_statuses"
+msgid "Edit shipment statuses"
+msgstr ""
 
 msgctxt "Languages::email_templates"
 msgid "Email templates"
@@ -17952,6 +18128,10 @@ msgstr "您的一些核心文件已更改。这可能会在升级 [product] 时�
 msgctxt "Languages::file_changes_detector"
 msgid "File changes detector"
 msgstr "文件更改检测器"
+
+msgctxt "Languages::view_file_changes_detector"
+msgid "View file changes detector"
+msgstr ""
 
 msgctxt "Languages::privileges.view_file_changes"
 msgid "Can view"
@@ -21033,390 +21213,6 @@ msgctxt "Languages::license_expires"
 msgid "License expires"
 msgstr "许可证到期"
 
-msgctxt "Languages::sw.store_setup_wizard"
-msgid "Store setup wizard"
-msgstr "商店设置向导"
-
-msgctxt "Languages::sw.store_setup_wizard_short"
-msgid "Setup wizard"
-msgstr "设置向导"
-
-msgctxt "Languages::sw.text_about_store_header"
-msgid "Fill out the contact information about your store"
-msgstr "填写您店铺的联系方式"
-
-msgctxt "Languages::sw.text_design_header"
-msgid "Select your storefront design and upload the logo"
-msgstr "选择您的店面设计并上传徽标"
-
-msgctxt "Languages::sw.text_payments_header"
-msgid "Set up the service to recieve payments"
-msgstr "设置服务以接收付款"
-
-msgctxt "Languages::sw.text_shippings_header"
-msgid "Select shipping services"
-msgstr "选择运输服务"
-
-msgctxt "Languages::sw.text_business_model_header"
-msgid "Choose your business model and checkout flow"
-msgstr "选择您的商业模式和结帐流程"
-
-msgctxt "Languages::sw.select_money_transfer_methods"
-msgid "Select one of the following models, and we'll handle most of the setup for you."
-msgstr "选择以下型号之一，我们将为您处理大部分设置。"
-
-msgctxt "Languages::sw.text_vendors_header"
-msgid "Set up how you work with vendors and their data"
-msgstr "设置您与供应商及其数据的合作方式"
-
-msgctxt "Languages::sw.text_settings_header"
-msgid "Configure product catalog settings"
-msgstr "配置产品目录设置"
-
-msgctxt "Languages::sw.about_store"
-msgid "About store"
-msgstr "关于店铺"
-
-msgctxt "Languages::sw.company_name"
-msgid "Company name"
-msgstr "公司名"
-
-msgctxt "Languages::sw.google_analytics.tracking_code"
-msgid "Google Analytics account number"
-msgstr "谷歌分析帐号"
-
-msgctxt "Languages::sw.business_model"
-msgid "Business Model"
-msgstr "商业模式"
-
-msgctxt "Languages::sw.vendors"
-msgid "Vendors"
-msgstr "供应商"
-
-msgctxt "Languages::sw.site_admin_email"
-msgid "Site administrator e-mail address"
-msgstr "站点管理员电子邮件地址"
-
-msgctxt "Languages::sw.address_text"
-msgid "Company address (street, house, etc.)"
-msgstr "公司地址（街道、房屋等）"
-
-msgctxt "Languages::sw.country"
-msgid "Company country"
-msgstr "公司国家"
-
-msgctxt "Languages::sw.state"
-msgid "Company state"
-msgstr "公司状态"
-
-msgctxt "Languages::sw.city"
-msgid "Company city"
-msgstr "公司城市"
-
-msgctxt "Languages::sw.zipcode"
-msgid "Company zip code"
-msgstr "公司邮政编码"
-
-msgctxt "Languages::sw.phone"
-msgid "Company phone"
-msgstr "公司电话"
-
-msgctxt "Languages::sw.phone_2"
-msgid "Company phone 2"
-msgstr "公司电话2"
-
-msgctxt "Languages::sw.fax"
-msgid "Fax"
-msgstr "传真"
-
-msgctxt "Languages::sw.website"
-msgid "Company website"
-msgstr "公司网站"
-
-msgctxt "Languages::sw.company_start_year"
-msgid "Year when the store started its operation"
-msgstr "店铺开始营业的年份"
-
-msgctxt "Languages::sw.collect_taxes_from_vendors"
-msgid "Collect taxes from vendors"
-msgstr "从供应商处收税"
-
-msgctxt "Languages::sw.moderation"
-msgid "Moderation"
-msgstr "适度"
-
-msgctxt "Languages::sw.vendor_profile_updates_approval"
-msgid "Check changes to vendor profile"
-msgstr "检查对供应商资料的更改"
-
-msgctxt "Languages::sw.products_prior_approval"
-msgid "Check new products"
-msgstr "检查新产品"
-
-msgctxt "Languages::sw.products_updates_approval"
-msgid "Check changes to existing products"
-msgstr "检查对现有产品的更改"
-
-msgctxt "Languages::sw.accounting"
-msgid "Accounting"
-msgstr "会计"
-
-msgctxt "Languages::sw.lowers_allowed_balance"
-msgid "Minimum allowed vendor balance"
-msgstr "允许的最低供应商余额"
-
-msgctxt "Languages::sw.grace_period_to_refill_balance"
-msgid "Block vendor after days"
-msgstr "几天后阻止供应商"
-
-msgctxt "Languages::sw.location"
-msgid "Location"
-msgstr "地点"
-
-msgctxt "Languages::sw.enable_vendor_location_using_google_map"
-msgid "Let vendors set their location on Google Maps"
-msgstr "让供应商在 Google 地图上设置他们的位置"
-
-msgctxt "Languages::sw.vendor_profile_fields"
-msgid "Vendor profile fields"
-msgstr "供应商资料字段"
-
-msgctxt "Languages::sw.set_up_vendor_profile_fields"
-msgid "What information about vendors do you need?"
-msgstr "您需要有关供应商的哪些信息？"
-
-msgctxt "Languages::sw.notifications"
-msgid "Notifications"
-msgstr "通知"
-
-msgctxt "Languages::sw.admin_notifications"
-msgid "Admin notifications"
-msgstr "管理员通知"
-
-msgctxt "Languages::sw.vendor_notifications"
-msgid "Vendor notifications"
-msgstr "供应商通知"
-
-msgctxt "Languages::sw.selected_design"
-msgid "Current design"
-msgstr "当前设计"
-
-msgctxt "Languages::sw.upload_logo"
-msgid "Upload logo"
-msgstr "上传徽标"
-
-msgctxt "Languages::sw.logo_theme"
-msgid "Main"
-msgstr "主要的"
-
-msgctxt "Languages::sw.logo_mail"
-msgid "Email"
-msgstr "电子邮件"
-
-msgctxt "Languages::sw.select_image"
-msgid "Select image"
-msgstr "选择图片"
-
-msgctxt "Languages::sw.select_right_design"
-msgid "Pick a design preset"
-msgstr "选择一个设计预设"
-
-msgctxt "Languages::sw.activate"
-msgid "Activate"
-msgstr "启用"
-
-msgctxt "Languages::sw.apply"
-msgid "Apply"
-msgstr "申请"
-
-msgctxt "Languages::sw.preview"
-msgid "Preview"
-msgstr "预览"
-
-msgctxt "Languages::sw.edit_design"
-msgid "Edit design"
-msgstr "编辑设计"
-
-msgctxt "Languages::sw.design"
-msgid "Design"
-msgstr "设计"
-
-msgctxt "Languages::sw.error_updating_payment"
-msgid "Error occured during payment method update"
-msgstr "付款方式更新期间发生错误"
-
-msgctxt "Languages::sw.payments"
-msgid "Payments"
-msgstr "付款"
-
-msgctxt "Languages::sw.payment_not_found"
-msgid "The Yandex.Money payment method not found"
-msgstr "未找到 Yandex.Money 付款方式"
-
-msgctxt "Languages::sw.over_payment_system"
-msgid "Use another payment system"
-msgstr "使用其他支付系统"
-
-msgctxt "Languages::sw.shippings"
-msgid "Shipping services"
-msgstr "运输服务"
-
-msgctxt "Languages::sw.ems_russian_post"
-msgid "EMS Russian Post"
-msgstr "EMS 俄罗斯邮政"
-
-msgctxt "Languages::sw.russian_post"
-msgid "Russian Post"
-msgstr "俄罗斯邮政"
-
-msgctxt "Languages::sw.edost"
-msgid "eDost"
-msgstr "eDost"
-
-msgctxt "Languages::sw.usps"
-msgid "USPS"
-msgstr "美国邮政总局"
-
-msgctxt "Languages::sw.ups"
-msgid "UPS"
-msgstr "UPS"
-
-msgctxt "Languages::sw.fedex"
-msgid "FedEx"
-msgstr "联邦快递"
-
-msgctxt "Languages::sw.goto_shipping_methods"
-msgid "Go to shipping methods"
-msgstr "转到运输方式"
-
-msgctxt "Languages::sw.configure"
-msgid "Configure"
-msgstr "配置"
-
-msgctxt "Languages::sw.settings"
-msgid "Settings"
-msgstr "设置"
-
-msgctxt "Languages::sw.enable"
-msgid "Enable"
-msgstr "使能够"
-
-msgctxt "Languages::sw.disable"
-msgid "Disable"
-msgstr "禁用"
-
-msgctxt "Languages::sw.activated"
-msgid "Activated"
-msgstr "活性"
-
-msgctxt "Languages::sw.select_model"
-msgid "Select model"
-msgstr "选择型号"
-
-msgctxt "Languages::sw.timezone"
-msgid "Time zone"
-msgstr "时区"
-
-msgctxt "Languages::sw.order_start_id"
-msgid "Initial order ID value (leave empty for auto)"
-msgstr "初始订单 ID 值（自动留空）"
-
-msgctxt "Languages::sw.min_order_amount"
-msgid "Minimum order amount"
-msgstr "最低订购量"
-
-msgctxt "Languages::sw.show_out_of_stock_products"
-msgid "Show out of stock products"
-msgstr "显示缺货产品"
-
-msgctxt "Languages::sw.enable_quick_view"
-msgid "Enable quick view"
-msgstr "启用快速查看"
-
-msgctxt "Languages::sw.enable_inventory_tracking"
-msgid "Enable inventory tracking"
-msgstr "启用库存跟踪"
-
-msgctxt "Languages::sw.allow_negative_amount"
-msgid "Allow negative amount in inventory"
-msgstr "允许库存中的负数"
-
-msgctxt "Languages::sw.ym_merchant_country"
-msgid "Country"
-msgstr "国家"
-
-msgctxt "Languages::sw.ym_merchant_forma"
-msgid "Ownership"
-msgstr "所有权"
-
-msgctxt "Languages::sw.send"
-msgid "Send"
-msgstr "发送"
-
-msgctxt "Languages::sw.remove_demo_data_text"
-msgid "Clean up orders, products, categories, user profiles, and related data"
-msgstr "清理订单、产品、类别、用户资料和相关数据"
-
-msgctxt "Languages::sw.remove"
-msgid "Clean up"
-msgstr "清理"
-
-msgctxt "Languages::sw.demo_data_removed"
-msgid "Demo data removed."
-msgstr "演示数据已删除。"
-
-msgctxt "Languages::sw.error_removing_demo_data"
-msgid "An error occurred while removing the demo data"
-msgstr "删除演示数据时出错"
-
-msgctxt "Languages::sw.confirm_demo_data_removal_title"
-msgid "Remove the data?"
-msgstr "删除数据？"
-
-msgctxt "Languages::sw.text_confirm_demo_data_removal"
-msgid "All orders, products, product categories, customer profiles, and associated data (tags, comments, etc.) including the data added by you <b>will be permanently removed.</b> This operation cannot be undone. Are you sure you want to continue?"
-msgstr "所有订单、产品、产品类别、客户资料和相关数据（标签、评论等）包括您添加的数据 <b>将被永久删除。</b> 此操作无法撤消。你确定你要继续吗？"
-
-msgctxt "Languages::sw.delete_demo_data"
-msgid "Delete the  data"
-msgstr "删除数据"
-
-msgctxt "Languages::sw.keep_demo_data"
-msgid "Keep the data"
-msgstr "保留数据"
-
-msgctxt "Languages::sw.more_themes_in_marketplace"
-msgid "More themes in the Marketplace"
-msgstr "市场中的更多主题"
-
-msgctxt "Languages::sw.logo_recommended_size_text"
-msgid "recommended size [height]px × [width]px"
-msgstr "推荐尺寸 [height]px × [width]px"
-
-msgctxt "Languages::sw.money_goes_to_owner"
-msgid "Customer makes a single payment, all money goes to you"
-msgstr "客户一次性付款，所有钱都归您所有"
-
-msgctxt "Languages::sw.money_goes_to_owner_descr"
-msgid "The money owed to the vendor is tracked in the admin panel. A vendor can request money withdrawal through the admin panel. You forward the money to vendors as you see fit."
-msgstr "在管理面板中跟踪欠供应商的钱。供应商可以通过管理面板请求提款。你把钱转给你认为合适的供应商。"
-
-msgctxt "Languages::sw.money_split_automaticaly"
-msgid "Customer makes a single payment, money is split automatically"
-msgstr "客户单次付款，钱自动拆分"
-
-msgctxt "Languages::sw.money_split_automaticaly_descr"
-msgid "This is achieved via [stripe_connect] payments and/or [paypal_commerce_platform], so each vendor must have a Stripe and/or PayPal account. We'll create these payment methods for you. You'll just need to configure them, and vendors will need to provide their account information."
-msgstr "这是通过 [stripe_connect] 付款和/或 [paypal_commerce_platform]实现的，因此每个供应商都必须有一个 Stripe 和/或 PayPal 帐户。我们将为您创建这些付款方式。您只需要配置它们，供应商将需要提供他们的帐户信息。"
-
-msgctxt "Languages::sw.money_goes_to_vendor"
-msgid "Customer makes multiple payments (one to each vendor)"
-msgstr "客户进行多次付款（每个供应商支付一笔）"
-
-msgctxt "Languages::sw.money_goes_to_vendor_descr"
-msgid "Each vendor has to create own payment methods. Money goes directly to vendors, and marketplace commission gets added to vendors' debt. It becomes a vendor's responsibility to pay the marketplace."
-msgstr "每个供应商都必须创建自己的付款方式。钱直接流向供应商，市场佣金被添加到供应商的债务中。向市场付款成为供应商的责任。"
-
 msgctxt "Languages::unsupported_browser_notice"
 msgid "<p>We have detected that the browser you are using is not fully supported by our Admin Panel. You can view this site using your current browser but it may not display properly, and you may not be able to fully use all features.</p><br><p>Admin Panel is best viewed using the following browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (latest version)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (latest version)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (latest version)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (latest version)</a></li></ul><br><p>Click on one of the links to download the browser of your choice. Once the download has completed, install the browser by running the setup program.</p><br><p>If you cannot upgrade your browser now, you can still access Admin Panel, but you may not be able to fully use all features.<br><br><a href=\"[url]\">Continue</a></p>"
 msgstr "<p>我们检测到您使用的浏览器不受我们的管理面板的完全支持。您可以使用当前浏览器查看本网站，但可能无法正常显示，并且您可能无法充分使用所有功能。</p><br><p>最好使用以下浏览器查看管理面板：</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox（最新版）</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome（最新版）</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge（最新版）</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari（最新版本）</a></li></ul><br><p>单击其中一个链接下载您选择的浏览器。下载完成后，通过运行安装程序安装浏览器。</p><br><p>如果您现在无法升级浏览器，您仍然可以访问管理面板，但您可能无法完全使用所有功能。<br><br><a href=\"[url]\">继续</a></p>"
@@ -21432,6 +21228,10 @@ msgstr "设为默认"
 msgctxt "Languages::saved_search.set_as_non_default"
 msgid "Set as non-default"
 msgstr "设置为非默认"
+
+msgctxt "Languages::saved_search.more"
+msgid "More saved search"
+msgstr ""
 
 msgctxt "Languages::saved_search.set_as_default_confirm"
 msgid "Saved search \"[name]\" will open by default instead of the full list of objects. Is that what you'd like?"
@@ -21700,10 +21500,6 @@ msgstr "用于所有新供应商"
 msgctxt "Languages::show_vendor_info_if_shipping_no_required"
 msgid "Show information about vendors whose products do not require shipping"
 msgstr "显示有关其产品不需要运输的供应商的信息"
-
-msgctxt "Languages::sw.marketplace_setup_wizard"
-msgid "Marketplace setup wizard"
-msgstr "市场设置向导"
 
 msgctxt "Languages::sw.money_split_automaticaly_descr.ru"
 msgid "This is achieved via YooMoney for marketplaces, so each vendor must have a YooMoney account. We'll create a payment method for you. You'll just need to configure it, and vendors will need to provide their account information."

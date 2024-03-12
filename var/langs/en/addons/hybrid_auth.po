@@ -32,6 +32,10 @@ msgctxt "SettingsTooltips::hybrid_auth::autogen_email"
 msgid "Enables the email auto generation in case that a social network does not pass the address."
 msgstr "Enables the email auto generation in case that a social network does not pass the address."
 
+msgctxt "Languages::hybrid_auth_menu_description"
+msgid "Connect users via Facebook, Twitter, Google, etc."
+msgstr "Connect users via Facebook, Twitter, Google, etc."
+
 msgctxt "Languages::hybrid_auth"
 msgid "Social login"
 msgstr "Social login"
@@ -143,10 +147,6 @@ msgstr "The e-mail was not specified."
 msgctxt "Languages::hybrid_auth.text_specify_email"
 msgid "<p>When logging through the social network the e-mail was not specified.</p><p>Please enter your e-mail and click Continue.</p>"
 msgstr "<p>When logging through the social network the e-mail was not specified.</p><p>Please enter your e-mail and click Continue.</p>"
-
-msgctxt "Languages::hybrid_auth_menu_description"
-msgid "Create social provider"
-msgstr "Create social provider"
 
 msgctxt "Languages::public_key"
 msgid "Public key"

@@ -5,6 +5,7 @@
 {/if}
 
 {$hide_inputs = !""|fn_allow_save_object:"languages"}
+{$tabs_count = (fn_allowed_for("MULTIVENDOR:ULTIMATE") || $is_sharing_enabled) ? 2 : 1}
 
 <div id="content_group{$id}">
 
@@ -13,7 +14,7 @@
     <input type="hidden" name="selected_section" value="languages" />
     <input type="hidden" name="lang_id" value="{$id}" />
 
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="tab_general_{$id}" class="cm-js active"><a>{__("general")}</a></li>
             {if fn_allowed_for("MULTIVENDOR:ULTIMATE") || $is_sharing_enabled}

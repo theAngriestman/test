@@ -1,3 +1,33 @@
+{$show_back_button = true}
+{foreach $navigation.static.central as $back_button_central}
+    {foreach $back_button_central.items as $back_button_central_item}
+        {if !$back_button_central_item || !$back_button_central_item.href}
+            {continue}
+        {/if}
+        {$back_button_dispatch = "."|explode:$back_button_central_item.href}
+        {$back_button_mode_pre = "?"|explode:$back_button_dispatch[1]}
+        {$back_button_mode = $back_button_mode_pre[0]}        
+
+        {if ($runtime.controller === $back_button_dispatch[0] && $runtime.mode === $back_button_mode)
+            || ($runtime.controller === "index" && $runtime.mode === "index")
+        }
+            {$show_back_button = false}
+        {/if}
+    {/foreach}
+{/foreach}
+{foreach $navigation.static.top.administration.items as $back_button_top_item}
+    {if !$back_button_top_item || !$back_button_top_item.href}
+        {continue}
+    {/if}
+    {$back_button_dispatch = "."|explode:$back_button_top_item.href}
+    {$back_button_mode_pre = "?"|explode:$back_button_dispatch[1]}
+    {$back_button_mode = $back_button_mode_pre[0]}        
+
+    {if ($runtime.controller === $back_button_dispatch[0] && $runtime.mode === $back_button_mode)}
+        {$show_back_button = true}
+    {/if}
+{/foreach}
+
 {if !$sidebar_position}
     {$sidebar_position = "right"}
 {/if}
@@ -6,15 +36,13 @@
     {$sidebar_icon = "icon-chevron-left"}
 {/if}
 
-{if !isset($select_storefront)}
-    {if (fn_allowed_for('MULTIVENDOR:ULTIMATE'))}
-        {if !$runtime.is_multiple_storefronts}
-            {$select_storefront = false}
-        {/if}
-        {$selected_storefront_id = $selected_storefront_id|default:$app["storefront"]->storefront_id}
-    {else}
-        {$select_storefront = $runtime.is_multiple_storefronts}
+{if (fn_allowed_for('MULTIVENDOR:ULTIMATE'))}
+    {if !$runtime.is_multiple_storefronts}
+        {$select_storefront = false}
     {/if}
+    {$selected_storefront_id = $selected_storefront_id|default:$app["storefront"]->storefront_id}
+{elseif (!isset($select_storefront))}
+    {$select_storefront = $runtime.is_multiple_storefronts}
 {/if}
 
 {if $anchor}
@@ -29,8 +57,15 @@
     {$sticky_top_on_actions_panel = 45}
 {/if}
 
-{$enable_sticky_scroll = $enable_sticky_scroll|default:true}
-{$navigation_accordion = $navigation_accordion|default:false}
+{* Maximum length of product name / 2 *}
+{$title_long_length = 127}
+{if isset($title_start) && isset($title_end)}
+    {$is_title_long_length = "`$title_start` `$title_end`"|default:"&nbsp;"|strip_tags|strip|sanitize_html|count_characters:true > $title_long_length}
+{else}
+    {$is_title_long_length = $title|default:"&nbsp;"|strip_tags|strip|sanitize_html|count_characters:true > $title_long_length}
+{/if}
+
+{$scroll_header = $config.scroll_header|default:false}
 
 <script>
 // Init ajax callback (rebuild)
@@ -38,23 +73,10 @@ var menu_content = {$convertible_data|default:"''"|unescape nofilter};
 </script>
 
 {capture name="sidebar_content" assign="sidebar_content"}
-    {if $navigation && $navigation.dynamic.sections}
-        <div class="sidebar-row">
-            <ul class="nav nav-list">
-                {foreach from=$navigation.dynamic.sections item=m key="s_id" name="first_level"}
-                    {hook name="index:dynamic_menu_item"}
-                        {if $m.type == "divider"}
-                            <li class="divider"></li>
-                            {else}
-                                {if $m.href|fn_check_view_permissions:{$method|default:"GET"}}
-                                    <li class="{if $m.js == true}cm-js{/if}{if $smarty.foreach.first_level.last} last-item{/if}{if $navigation.dynamic.active_section == $s_id} active{/if}"><a href="{$m.href|fn_url}">{$m.title}</a></li>
-                                {/if}
-                        {/if}
-                    {/hook}
-                {/foreach}
-            </ul>
-        </div>
-    <hr>
+    {if $navigation && $navigation.dynamic && $navigation.dynamic.sections}
+        {include file="common/dynamic_navigation.tpl"
+            navigation=$navigation
+        }
     {/if}
     {$sidebar nofilter}
 
@@ -71,95 +93,53 @@ var menu_content = {$convertible_data|default:"''"|unescape nofilter};
 
 <!-- Actions -->
 {hook name="index:actions_wrapper"}
-    <div class="actions nav__actions {if $enable_sticky_scroll}cm-sticky-scroll{/if}"
+    <div class="actions nav__actions {if $scroll_header}nav__actions--scroll-header{/if}"
         data-ca-stick-on-screens="sm-large,md,md-large,lg,uhd"
         data-ca-top="{$sticky_top_on_actions_panel}"
         data-ca-padding="{$sticky_padding_on_actions_panel}"
         id="actions_panel">
-        <div class="actions__wrapper {if $runtime.is_current_storefront_closed || $runtime.are_all_storefronts_closed}navbar-inner--disabled{/if}">
+        <div class="actions__wrapper {if !$show_back_button}actions__wrapper--no-back{/if} {if $runtime.is_current_storefront_closed || $runtime.are_all_storefronts_closed}actions__wrapper--disabled{/if}">
         {hook name="index:actions"}
-        <div class="btn-bar-left nav__actions-back mobile-hidden">
-            {include file="common/last_viewed_items.tpl"}
-        </div>
-        <div class="btn-bar-left overlay-navbar-open-container mobile-visible">
-            <a role="button" class="btn mobile-visible mobile-menu-toggler" data-ca-mobile-menu-is-convert-dropdown="true">
-                {include_ext file="common/icon.tpl" class="icon icon-align-justify mobile-visible-inline overlay-navbar-open"}
-                <span class="cc-notify-marker-container" data-ca-notifications-mark></span>
-            </a>
-        </div>
-        <div class="title nav__actions-title {if $select_storefront}title--storefronts{/if}">
-            {if isset($title_start) && isset($title_end)}
-                <h2 class="title__heading {if $select_storefront}title__heading--storefronts{/if}"
-                    title="{$title_alt|default:"`$title_start` `$title_end`"|strip_tags|strip|html_entity_decode}"
-                >
-                    <span class="title__part-start mobile-hidden">{$title_start}: </span>
-                    <span class="title__part-end">{$title_end|strip_tags|html_entity_decode}</span>
-                </h2>
-            {else}
-                <h2 class="title__heading {if $select_storefront}title__heading--storefronts{/if}" title="{$title_alt|default:$title|strip_tags|strip|html_entity_decode}">{$title|default:"&nbsp;"|sanitize_html nofilter}</h2>
-            {/if}
-
-            <!--mobile quick search-->
-            <div class="mobile-visible pull-right search-mobile-group cm-search-mobile-group"
-                data-ca-search-mobile-back="#search_mobile_back"
-                data-ca-search-mobile-btn="#search_mobile_btn"
-                data-ca-search-mobile-block="#search_mobile_block"
-                data-ca-search-mobile-input="#gs_text_mobile"
-            >
-                <button class="btn search-mobile-btn" id="search_mobile_btn">{include_ext file="common/icon.tpl" class="icon-search search-mobile-icon"}</button>
-                <div class="search search-mobile-block cm-search-mobile-search hidden" id="search_mobile_block">
-                    <button class="search-mobile-back" type="button" id="search_mobile_back">{include_ext file="common/icon.tpl" class="icon-remove"}</button>
-                    <button class="search_button search-mobile-button" type="submit" id="search_button_mobile" form="global_search">{include_ext file="common/icon.tpl" class="icon-search"}</button>
-                    <label for="gs_text_mobile" class="search-mobile-label"><input type="text" class="cm-autocomplete-off search-mobile-input" id="gs_text_mobile" name="q" value="{$smarty.request.q}" form="global_search" placeholder="{__("admin_search_field")}" disabled /></label>
+            {if $show_back_button}
+                <div class="btn-bar-left nav__actions-back">
+                    {include file="common/last_viewed_items.tpl"}
                 </div>
-            </div>
-            <!--mobile end quick search-->
-
-            {if $languages|sizeof > 1}
-            <!--language-->
-            <span class="title__lang-selector mobile-visible">
-                {include
-                    file="common/select_object.tpl"
-                    style="dropdown"
-                    link_tpl=$config.current_url|fn_link_attach:"sl="
-                    link_suffix="descr_sl="
-                    items=$languages
-                    selected_id=$smarty.const.CART_LANGUAGE
-                    display_icons=true
-                    key_name="name"
-                    key_selected="lang_code"
-                    class="languages btn"
-                    disable_dropdown_processing=true
-                }
-            </span>
-            <!--end language-->
             {/if}
-
+            <div class="title nav__actions-title {if $select_storefront}title--storefronts{/if}">
+                {if isset($title_start) && isset($title_end)}
+                    <h2 class="title__heading {if $is_title_long_length}title__heading--long{/if}
+                        {if $select_storefront}title__heading--storefronts{/if}">
+                        <span class="title__part-start mobile-hidden">{$title_start|default:"&nbsp;"|sanitize_html nofilter}{strip}
+                        {/strip}{if $title_end|strip_tags|strip|sanitize_html !== ""}:{/if}
+                         </span>
+                        <span class="title__part-end">{$title_end|default:"&nbsp;"|sanitize_html nofilter}</span>
+                    </h2>
+                {else}
+                    <h2 class="title__heading {if $is_title_long_length}title__heading--long{/if}
+                        {if $select_storefront}title__heading--storefronts{/if}"
+                    >
+                        {$title|default:"&nbsp;"|sanitize_html nofilter}
+                    </h2>
+                {/if}
             </div>
 
-            {if $select_storefront}
-                {include file="views/storefronts/components/picker/presets.tpl"
-                    input_name=$storefronts_picker_name
-                    item_ids=[$runtime.company_data.company_id]
-                    show_empty_variant=$show_empty_variant
-                    empty_variant_text=__("all_vendors")
-                    select_storefront=$select_storefront
-                    show_all_storefront=$show_all_storefront
-                }
-            {/if}
-
-            <div class="{$main_buttons_meta} btn-bar btn-toolbar nav__actions-bar dropleft" {if $content_id}id="tools_{$content_id}_buttons"{/if}>
+            <div class="{$main_buttons_meta} btn-bar btn-toolbar nav__actions-bar" {if $content_id}id="tools_{$content_id}_buttons"{/if}>
                 {hook name="index:toolbar"}
                 {/hook}
-
-                {if $navigation.dynamic.actions}
-                    {capture name="tools_list"}
-                        {foreach from=$navigation.dynamic.actions key=title item=m name="actions"}
-                            <li><a href="{$m.href|fn_url}" class="{$m.meta}" target="{$m.target}">{__($title)}</a></li>
-                        {/foreach}
-                    {/capture}
-                    {include file="common/tools.tpl" hide_actions=true tools_list=$smarty.capture.tools_list link_text=__("choose_action")}
+                {if $select_storefront}
+                    {include file="views/storefronts/components/picker/presets.tpl"
+                        input_name=$storefronts_picker_name
+                        item_ids=[$runtime.company_data.company_id]
+                        show_empty_variant=$show_empty_variant
+                        empty_variant_text=__("all_vendors")
+                        select_storefront=$select_storefront
+                        show_all_storefront=$show_all_storefront
+                    }
                 {/if}
+
+                {include file="components/menu/actions_menu.tpl"
+                    items=$navigation.dynamic.actions
+                }
 
                 {$buttons nofilter}
 
@@ -194,22 +174,101 @@ var menu_content = {$convertible_data|default:"''"|unescape nofilter};
 
 {* DO NOT REMOVE HTML comment below *}
 <!--Content-->
-<div class="content page-content {if $no_sidebar} content-no-sidebar{/if}{if $sidebar_content|trim == ""} no-sidebar{/if} {if "ULTIMATE"|fn_allowed_for}ufa{/if}" {if $box_id}id="{$box_id}"{/if}>
+<div class="content page-content {if $no_sidebar} content-no-sidebar{/if}{if $sidebar_content && $sidebar_content|trim == ""} no-sidebar{/if} {if "ULTIMATE"|fn_allowed_for}ufa{/if}" {if $box_id}id="{$box_id}"{/if}>
     <div class="content-wrap">
     {hook name="index:content_top"}
-        {if $select_languages && $languages|sizeof > 1}
-            <div class="content-variant-wrap content-variant-wrap--language language-wrap">
-                <h6 class="muted">{__("language")}:</h6>
-                {include file="common/select_object.tpl"
-                    style="graphic"
-                    link_tpl=$config.current_url|fn_link_attach:"descr_sl="
-                    items=$languages
-                    selected_id=$smarty.const.DESCR_SL
-                    key_name="name"
-                    suffix="content"
-                    display_icons=true
+
+        {if ($saved_search)
+            || ($tabs_navigation && $tabs_navigation|trim)
+            || ($context_search && $context_search|trim)
+            || ($select_languages && $languages|sizeof > 1)
+            || ($search_filters && $search_filters|trim)
+        }
+            {*
+                content__top-navigation
+                ├── content__top-navigation-main
+                │   ├── content__top-navigation-primary
+                │   │   ├── content__saved-search
+                │   │   └── content__tabs-navigation
+                │   │
+                │   └── content__top-navigation-secondary
+                │       ├── content__context-search
+                │       └── content-variant-wrap (language)
+                │
+                └── content__search-filters
+            *}
+            <div class="content__top-navigation" id="content_top_navigation">
+                {if $saved_search
+                    || $tabs_navigation && $tabs_navigation|trim
+                    || $context_search && $context_search|trim
+                    || $select_languages && $languages|sizeof > 1
                 }
-            </div>
+                    <div class="content__top-navigation-main {if $context_search && $context_search|trim}content__top-navigation-main--wrap{/if}" id="content_top_navigation_main">
+                        {if $saved_search
+                            || $tabs_navigation && $tabs_navigation|trim
+                        }
+                            <div class="content__top-navigation-primary">
+                                {if $saved_search}
+                                    <div class="content__saved-search" id="views">
+                                        {include file="common/saved_search_horizontal.tpl"
+                                            dispatch=$saved_search.dispatch
+                                            view_type=$saved_search.view_type
+                                            context_search=$context_search
+                                            enable_fill=false
+                                        }
+                                    </div>
+                                {/if}
+
+                                {if $tabs_navigation && $tabs_navigation|trim}
+                                    <div class="content__tabs-navigation">
+                                        {$tabs_navigation nofilter}
+                                    </div>
+                                {/if}
+                            </div>
+                        {/if}
+
+                        {if $context_search && $context_search|trim
+                            || $select_languages && $languages|sizeof > 1
+                        }
+                            <div class="content__top-navigation-secondary {if $context_search && $context_search|trim}content__top-navigation-secondary--fill{/if}">
+                                {if $context_search && $context_search|trim}
+                                    <div class="content__context-search">
+                                        {$context_search nofilter}
+                                    </div>
+                                {/if}
+
+                                {if $select_languages && $languages|sizeof > 1}
+                                    {capture name="languages_select_extra"}
+                                        <li class="disabled">
+                                            <span>{__("language_content")}</span>
+                                        </li>
+                                    {/capture}
+                                    <div class="content-variant-wrap content-variant-wrap--language language-wrap">
+                                        {include file="common/select_object.tpl"
+                                            style="graphic"
+                                            link_tpl=$config.current_url|fn_link_attach:"descr_sl="
+                                            items=$languages
+                                            selected_id=$smarty.const.DESCR_SL
+                                            key_name="name"
+                                            suffix="content"
+                                            extra_pre=$smarty.capture.languages_select_extra
+                                            display_icons=true
+                                            show_button_text=false
+                                            show_caret=false
+                                        }
+                                    </div>
+                                {/if}
+                            </div>
+                        {/if}
+                    <!--content_top_navigation_main--></div>
+                {/if}
+
+                {if $search_filters}
+                    <div class="content__search-filters" id="content_search_filters">
+                        {$search_filters nofilter}
+                    <!--content_search_filters--></div>
+                {/if}
+            <!--content_top_navigation--></div>
         {/if}
 
         {if $tools}{$tools nofilter}{/if}

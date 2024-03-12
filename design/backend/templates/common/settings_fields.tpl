@@ -303,7 +303,7 @@
                     "type"        => "text",
                     "name"        => "{$html_name}",
                     "size"        => "30",
-                    "class"       => "{if $item.type === "SettingTypes::NUMBER"|enum} cm-value-integer{/if}",
+                    "class"       => "{if $item.type === "SettingTypes::NUMBER"|enum} cm-value-integer{elseif $item.type === "SettingTypes::FLOAT"|enum} cm-value-decimal{/if}",
                     "placeholder" => "{$input_placeholder}",
                     "value"       => "{$item.value}"
                 ])}

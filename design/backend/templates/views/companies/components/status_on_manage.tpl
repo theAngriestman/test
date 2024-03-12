@@ -28,6 +28,7 @@
         id=$id
         status=$status
         items_status=$items_status
+        type="c"
         object_id_name="company_id"
         hide_for_vendor=$runtime.company_id
         update_controller="companies"

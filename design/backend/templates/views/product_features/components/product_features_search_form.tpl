@@ -82,9 +82,9 @@
                     {/hook}
                 {/capture}
 
-                {if $smarty.capture.search_form_company|trim}
+                {if $smarty.capture.search_filters_company|trim}
                     <div class="group span6 form-horizontal">
-                        {$smarty.capture.search_form_company nofilter}
+                        {$smarty.capture.search_filters_company nofilter}
                     </div>
                 {/if}
             </div>

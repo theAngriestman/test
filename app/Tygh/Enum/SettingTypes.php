@@ -43,4 +43,5 @@ class SettingTypes
     const HIDDEN = 'D';
     const PHONE = 'L';
     const UNEDITABLE = 'A';
+    const FLOAT = 'Q';
 }

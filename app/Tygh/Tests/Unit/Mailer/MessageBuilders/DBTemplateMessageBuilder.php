@@ -63,6 +63,14 @@ class Context implements IContext
     /**
      * @inheritDoc
      */
+    public function getLanguageDirection()
+    {
+        return 'ltr';
+    }
+    
+    /**
+     * @inheritDoc
+     */
     public function getArea()
     {
         return 'A';

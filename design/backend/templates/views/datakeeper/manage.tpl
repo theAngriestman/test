@@ -1,6 +1,7 @@
 {script src="js/tygh/tabs.js"}
 
 {$c_url=$config.current_url|fn_query_remove:"sort_by":"sort_order"}
+{$redirect_url=$config.current_url|escape:url}
 
 {capture name="mainbox"}
 
@@ -127,10 +128,45 @@
 
     {capture name="buttons"}
         {capture name="tools_list"}
-            <li>{btn type="list" text=__("logs") href="logs.manage"}</li>
-            <li>{btn type="dialog" text=__("upload_file") target_id="content_upload_backup" form="upload_backup_form" class="cm-dialog-auto-size"}</li>
-            <li><a href="{"datakeeper.optimize"|fn_url}" data-ca-target-id="elm_sidebar"
-                class="cm-post cm-comet cm-ajax">{__("optimize_database")}</a></li>
+            {$buttons = []}
+            {$buttons.files = [
+                href => "file_editor.manage",
+                text => __("view_files")
+            ]}
+            {$buttons.file_changes_detector = [
+                href => "tools.view_changes?check_types=C,D",
+                text => __("view_file_changes_detector")
+            ]}
+            {if !"ULTIMATE:FREE"|fn_allowed_for}
+                {$buttons.cdn_settings = [
+                    href => "storage.cdn",
+                    text => __("edit_cdn_settings")
+                ]}
+            {/if}
+            {$buttons.logs = [
+                type => "list",
+                href => "logs.manage",
+                text => __("view_logs")
+            ]}
+            {$buttons.upload_backup = [
+                type => "dialog",
+                href => "logs.manage",
+                text => __("upload_file"),
+                target_id => "content_upload_backup",
+                form => "upload_backup_form",
+                class => "cm-dialog-auto-size"
+            ]}
+            {$buttons.datakeeper_optimize = [
+                href => "datakeeper.optimize",
+                text => __("optimize_database"),
+                class => "cm-post cm-comet cm-ajax",
+                data => [
+                    target_id => "elm_sidebar"
+                ]
+            ]}
+
+            {* Export $navigation.dynamic.actions *}
+            {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
         {/capture}
         {dropdown content=$smarty.capture.tools_list}
     {/capture}

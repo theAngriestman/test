@@ -96,6 +96,10 @@ msgctxt "Languages::gift_certificate_statuses"
 msgid "Gift certificate statuses"
 msgstr "Gift certificate statuses"
 
+msgctxt "Languages::gift_certificates.edit_gift_certificate_statuses"
+msgid "Edit gift certificate statuses"
+msgstr "Edit gift certificate statuses"
+
 msgctxt "Languages::gift_certificates.recipient_email"
 msgid "Recipient email"
 msgstr "Recipient email"

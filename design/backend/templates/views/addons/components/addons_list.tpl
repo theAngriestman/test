@@ -121,7 +121,7 @@
     <!--addon_table--></div>
 
     {if $show_view_more_addons}
-        <div id="view_more_addons_button">
+        <div class="addons-list__view-more-addons">
             {include file="buttons/button.tpl"
                 but_href=fn_url("helpdesk_connector.view_more_addons")
                 but_text=__("view_more_addons")

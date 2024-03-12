@@ -4,6 +4,7 @@
 {script src="js/tygh/block_manager.js"}
 
 {$html_id = "tab_`$id`"}
+{$tabs_count = ($dynamic_object_scheme && $id > 0) ? 2 : 1}
 
 <script>
     var html_id = "{$html_id}";
@@ -27,7 +28,7 @@
     <input type="hidden" name="tab_data[tab_id]" value="{$id}" />
     <input type="hidden" name="result_ids" value="content_group_tab_{$id}" />
 
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="general_{$html_id}" class="cm-js{if $active_tab == "block_general_`$html_id`"} active{/if}">
                 <a>{__("general")}</a>

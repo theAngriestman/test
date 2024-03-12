@@ -3,6 +3,7 @@
 {else}
     {assign var="id" value="0"}
 {/if}
+{$tabs_count = 1}
 
 <div id="content_group{$id}">
 {hook name="static_data_update:form"}
@@ -10,7 +11,7 @@
 <input name="section" type="hidden" value="{$section}" />
 <input name="param_id" type="hidden" value="{$id}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_general_{$id}" class="cm-js active"><a>{__("general")}</a></li>
         {hook name="static_data:tabs_list"}{/hook}

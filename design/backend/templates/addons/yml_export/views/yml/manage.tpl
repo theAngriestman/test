@@ -105,6 +105,18 @@
     </form>
 {/capture}
 
+{capture name="buttons"}
+    {$buttons = [
+        'yml_export.offers_params' => [
+            href => "yml.offers_params",
+            text => __("yml_export.view_offers_params")
+        ]
+    ]}
+
+    {* Export $navigation.dynamic.actions *}
+    {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
+{/capture}
+
 {capture name="adv_buttons"}
     {include file="common/tools.tpl" tool_href="yml.update" prefix="top" hide_tools="true" title=__("yml_export.add_price") icon="icon-plus"}
 {/capture}
@@ -112,5 +124,6 @@
 {include file="common/mainbox.tpl"
     title=__("yml_export.price_lists")
     content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
     adv_buttons=$smarty.capture.adv_buttons
 }

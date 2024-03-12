@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: fr\n"
-"X-Crowdin-File: /release-4.17.2/addons/product_variations.po\n"
-"X-Crowdin-File-ID: 8028\n"
-"PO-Revision-Date: 2023-11-23 09:55\n"
+"X-Crowdin-File: /release-4.18.1/addons/product_variations.po\n"
+"X-Crowdin-File-ID: 8302\n"
+"PO-Revision-Date: 2024-02-02 11:17\n"
 
 msgctxt "Addons::name::product_variations"
 msgid "Product Variations"
@@ -399,4 +399,8 @@ msgstr "Vous ne pouvez pas ajouter d'autres produits pour le moment. Vous devrez
 msgctxt "Languages::product_variations.error.limit_creating_new_products_exhausted"
 msgid "You can’t add more products at this time. You may need to upgrade the plan before adding new products."
 msgstr "Vous ne pouvez pas ajouter d'autres produits pour le moment. Vous devrez peut-être mettre à niveau le plan avant d'ajouter de nouveaux produits."
+
+msgctxt "Languages::product_variations.too_many_combinations_display"
+msgid "There are too many possible variations ([combinations_count]) to preview them here. However, you can still create all the possible variations that don't yet exist."
+msgstr ""
 

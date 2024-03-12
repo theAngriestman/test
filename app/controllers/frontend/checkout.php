@@ -20,7 +20,6 @@ use Tygh\Registry;
 use Tygh\Shippings\Shippings;
 use Tygh\Storage;
 use Tygh\Tygh;
-use Tygh\Enum\ProfileFieldSections;
 
 defined('BOOTSTRAP') or die('Access denied');
 
@@ -58,32 +57,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             return [CONTROLLER_STATUS_REDIRECT, 'auth.login_form?return_url=' . urlencode($_REQUEST['return_url'])];
         }
 
-        /** @var \Tygh\Ajax $ajax */
-        $ajax = Tygh::$app['ajax'];
-        $product_data = $ajax->getAssignedVar('product_data', []);
-
-        if (
-            empty($product_data)
-            && !empty($_REQUEST['product_data'])
-        ) {
-            $product_data = $_REQUEST['product_data'];
-        }
-
         // Add to cart button was pressed for single product on advanced list
         if (!empty($dispatch_extra)) {
-            if (empty($product_data[$dispatch_extra]['amount'])) {
-                $product_data[$dispatch_extra]['amount'] = 1;
+            if (empty($_REQUEST['product_data'][$dispatch_extra]['amount'])) {
+                $_REQUEST['product_data'][$dispatch_extra]['amount'] = 1;
             }
-            foreach ($product_data as $key => $data) {
+            foreach ($_REQUEST['product_data'] as $key => $data) {
                 if ($key != $dispatch_extra && $key != 'custom_files') {
-                    unset($product_data[$key]);
+                    unset($_REQUEST['product_data'][$key]);
                 }
             }
         }
 
         $prev_cart_products = empty($cart['products']) ? [] : $cart['products'];
 
-        $added_product_ids = fn_add_product_to_cart($product_data, $cart, $auth);
+        $added_product_ids = fn_add_product_to_cart($_REQUEST['product_data'], $cart, $auth);
 
         $previous_state = md5(serialize($cart['products']));
         $cart['change_cart_products'] = true;
@@ -139,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } elseif (
                 is_array($added_product_ids)
                 && !in_array(
-                    array_keys($added_product_ids, key($product_data)),
+                    array_keys($added_product_ids, key($_REQUEST['product_data'])),
                     $cart['products']
                 )
             ) {

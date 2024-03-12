@@ -1,3 +1,4 @@
+{$type = $type|default:"default"}
 {hook name="companies:company_name"}
 {if !$runtime.simple_ultimate && ($object.company_id || $object.company_name)}
     {if !$object.company_name}
@@ -10,10 +11,13 @@
     {/if}
 
     {if $auth.user_type !== "UserTypes::VENDOR"|enum}
-        {if $simple}
-            <small class="muted">{$object.company_name|default:$_company_name}</small>
+        {if $type === "basic"}
+            <span class="company-name">{$object.company_name|default:$_company_name}</span>
+        {else if $type === "simple" || $simple}
+            <small class="muted company-name">{$object.company_name|default:$_company_name}</small>
         {else}
-            <p class="muted"><small>{$object.company_name|default:$_company_name}</small></p>
+            {* default *}
+            <p class="muted company-name"><small>{$object.company_name|default:$_company_name}</small></p>
         {/if}
     {/if}
 {/if}

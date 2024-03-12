@@ -44,10 +44,17 @@
 <!--addons_list--></div>
 
 {/capture}
+
+{$saved_search = [
+    dispatch => "addons.manage",
+    view_type => "addons"
+]}
+
 {include file="common/mainbox.tpl"
     title=__("addons")
     content=$smarty.capture.mainbox
     sidebar=({include file="views/addons/components/manage/manage_sidebar.tpl"})
+    saved_search=$saved_search
     adv_buttons=({include file="views/addons/components/manage/manage_adv_buttons.tpl"})
     buttons=({include file="views/addons/components/manage/manage_buttons.tpl"})
     select_storefront=true

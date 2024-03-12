@@ -16,7 +16,7 @@
         <input type="hidden" name="favorite" value="{$new_favorite_status}"/>
         <input type="hidden" name="detailed" value="{$detailed}"/>
 
-        <button type="submit" class="btn btn-text btn-mini">
+        <button type="submit" class="btn btn-link btn-mini">
             {$icon_star_empty = "icon-star-empty{if $a.is_favorite === 'YesNo::YES'|enum} hidden{/if}"}
             {$icon_star = "icon-star{if $a.is_favorite !== 'YesNo::YES'|enum} hidden{/if}"}
             {include_ext file="common/icon.tpl"

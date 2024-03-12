@@ -17,6 +17,7 @@ defined('BOOTSTRAP') or die('Access denied');
 use Tygh\Addons\Tinkoff\Payments\EACQClient;
 use Tygh\Enum\NotificationSeverity;
 use Tygh\Enum\OrderStatuses;
+use Tygh\Enum\SiteArea;
 
 /**
  * @var array  $auth
@@ -49,7 +50,9 @@ if ($mode === 'get_notification') {
     }
 
     if (in_array($notification['Status'], ['AUTHORIZED', 'CONFIRMED']) && !in_array($order_info['status'], fn_get_settled_order_statuses())) {
-        fn_change_order_status($order_id, OrderStatuses::PAID);
+        if (fn_change_order_status($order_id, OrderStatuses::PAID)) {
+            db_query('DELETE FROM ?:user_session_products WHERE order_id = ?i AND type = ?s', $order_id, SiteArea::STOREFRONT);
+        }
     }
     if (in_array($notification['Status'], ['REVERSED', 'CANCELED', 'REJECTED', 'REFUNDED']) && in_array($order_info['status'], fn_get_settled_order_statuses())) {
         fn_update_order_payment_info($order_id, ['addons.tinkoff.funds_were_transferred' => '']);

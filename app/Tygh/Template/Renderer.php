@@ -30,6 +30,7 @@ use Twig\Node\Expression\GetAttrExpression;
 class Renderer
 {
     const LANGUAGE_VARIABLE_KEY = 'lang_code';
+    const LANGUAGE_DIRECTION_VARIABLE_KEY = 'language_direction';
     const CONTEXT_VARIABLE_KEY = '__context';
     const TEMPLATE_VARIABLE_KEY = '__template';
     const VARIABLE_COLLECTION_VARIABLE_KEY = '__variable_collection';
@@ -62,6 +63,7 @@ class Renderer
         $variables[self::CONTEXT_VARIABLE_KEY] = $context;
         $variables[self::VARIABLE_COLLECTION_VARIABLE_KEY] = $variable_collection;
         $variables[self::LANGUAGE_VARIABLE_KEY] = $context->getLangCode();
+        $variables[self::LANGUAGE_DIRECTION_VARIABLE_KEY] = $context->getLanguageDirection();
 
         return $this->render($template->getTemplate(), $variables);
     }

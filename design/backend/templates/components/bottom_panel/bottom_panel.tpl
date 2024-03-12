@@ -98,6 +98,8 @@
 {if $runtime.is_multiple_storefronts}
     {if $smarty.request.storefront_id}
         {$storefront_id=$smarty.request.storefront_id}
+    {elseif (fn_allowed_for('MULTIVENDOR:ULTIMATE'))}
+        {$storefront_id=$selected_storefront_id|default:$app["storefront"]->storefront_id}
     {else}
         {$storefront_id=$selected_storefront_id|default:$app["storefront.switcher.selected_storefront_id"]}
     {/if}

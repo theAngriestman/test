@@ -391,3 +391,7 @@ msgstr "You can’t add more products at this time. You may need to <a href=\"[u
 msgctxt "Languages::product_variations.error.limit_creating_new_products_exhausted"
 msgid "You can’t add more products at this time. You may need to upgrade the plan before adding new products."
 msgstr "You can’t add more products at this time. You may need to upgrade the plan before adding new products."
+
+msgctxt "Languages::product_variations.too_many_combinations_display"
+msgid "There are too many possible variations ([combinations_count]) to preview them here. However, you can still create all the possible variations that don't yet exist."
+msgstr "There are too many possible variations ([combinations_count]) to preview them here. However, you can still create all the possible variations that don't yet exist."

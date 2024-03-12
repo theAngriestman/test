@@ -57,7 +57,7 @@
 
 // New navigation button
 .help-center-nav-item__btn--new:before {
-    content: "\f111";
+    content: url('../templates/icons/circle.svg');
     width: var(--help-center-icon-small-width);
     height: var(--help-center-icon-small-width);
     position: absolute;
@@ -66,12 +66,12 @@
     font-size: var(--help-center-icon-small-width);
     line-height: var(--help-center-icon-small-width);
     transform: translateY(-50%);
+    filter: ~"contrast(0) sepia(100%) saturate(6) hue-rotate(180deg)";
 }
 
 // Navigation button active
 .help-center-nav-item.active .help-center-nav-item__btn {
-    color: #fff;
-    background: @textColor;
+    background: darken(@menuSidebarColorActive, 5%);
 }
 
 .help-center-nav-item.active .help-center-nav-item__btn--new:before {
@@ -111,20 +111,14 @@
 }
 
 .help-center-nav-item__btn--link:hover:after {
-    content: "\f08e";
+    content: url('../templates/icons/external_link.svg');
     width: var(--help-center-icon-small-width);
     height: var(--help-center-icon-small-width);
     position: absolute;
+    display: block;
     right: 11px;
     top: 16px;
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
     font-size: var(--help-center-icon-small-width);
     line-height: var(--help-center-icon-small-width);
-    vertical-align: baseline;
-    text-align: center;
-    text-decoration: none;
     transform: translateY(-50%);
 }

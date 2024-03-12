@@ -41,7 +41,7 @@
     var d = $.Deferred();
 
     if (request_data['result_ids'] == undefined) {
-      request_data['result_ids'] = 'header_subnav,header_navbar,actions_panel,storefront_url_*';
+      request_data['result_ids'] = 'top_bar,header_subnav,header_navbar,actions_panel,storefront_url_*';
     }
 
     request_data['full_render'] = true;

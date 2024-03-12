@@ -11,6 +11,23 @@
     {$show_product = $show_product|default:true}
     {$NAME_CHARACTERS_THRESHOLD = 30}
 
+    {* Review icons *}
+    {capture name="advantages_icon" assign="advantages_icon"}{strip}
+        <span class="cs-content-more__advantages-icon">
+            {include_ext file="common/icon.tpl" source="plus" tone="success"}
+        </span>
+    {/strip}{/capture}
+    {capture name="disadvantages_icon" assign="disadvantages_icon"}{strip}
+        <span class="cs-content-more__disadvantages-icon">
+            {include_ext file="common/icon.tpl" source="minus" tone="error"}
+        </span>
+    {/strip}{/capture}
+    {capture name="comment_icon" assign="comment_icon"}{strip}
+        <span class="cs-content-more__comment-icon">
+            {include_ext file="common/icon.tpl" source="info" tone="info"}
+        </span>
+    {/strip}{/capture}
+
     <section>
 
         <section>
@@ -38,8 +55,10 @@
 
             {* Message *}
             {foreach $available_message_types as $message_type}
+                {$message_text = $product_review.message.$message_type|escape|nl2br}
                 {include file="common/content_more.tpl"
                     text=$product_review.message.$message_type|escape|nl2br
+                    prefix=${$message_type}_icon
                     meta="cs-content-more__text--`$message_type`"
                 }
             {/foreach}

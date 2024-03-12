@@ -1,4 +1,5 @@
 {script src="js/tygh/tabs.js"}
+{$tabs_count = 1}
 
 {capture name="mainbox"}
 
@@ -125,7 +126,7 @@
     <form action="{""|fn_url}" method="post" name="subscribers_form_0" class="form-horizontal form-edit ">
     <input type="hidden" name="subscriber_id" value="0" />
     <input type="hidden" name="subscriber_data[list_ids][]" value="{$smarty.request.list_id}" />
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="tab_mailing_list_details_0" class="cm-js active"><a>{__("general")}</a></li>
         </ul>
@@ -183,4 +184,11 @@
     {include file="addons/newsletters/views/subscribers/components/subscribers_search_form.tpl" dispatch="subscribers.manage"}
 {/capture}
 
-{include file="common/mainbox.tpl" title=__("subscribers") content=$smarty.capture.mainbox buttons=$smarty.capture.buttons adv_buttons=$smarty.capture.adv_buttons sidebar=$smarty.capture.sidebar select_languages=true}
+{include file="common/mainbox.tpl"
+    title=__("subscribers")
+    content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
+    adv_buttons=$smarty.capture.adv_buttons
+    sidebar=$smarty.capture.sidebar
+    select_languages=true
+}

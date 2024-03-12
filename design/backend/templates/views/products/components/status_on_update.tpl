@@ -29,7 +29,7 @@
            value="{$status}"
     />
     <div class="cm-popup-box btn-group dropleft">
-        <a id="sw_{$input_name}" class="dropdown-toggle btn-text" data-toggle="dropdown">
+        <a id="sw_{$input_name}" class="dropdown-toggle btn-link" data-toggle="dropdown">
             {$smarty.capture.status_title nofilter}
             <span class="caret"></span>
         </a>

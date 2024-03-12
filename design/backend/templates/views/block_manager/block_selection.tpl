@@ -1,7 +1,8 @@
 {script src="js/tygh/tabs.js"}
+{$tabs_count = 2}
 
 <div id="block_selection{$grid_id}{$extra_id}">
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="user_existing_blocks_{$grid_id}{$extra_id}" class="cm-js active"><a>{if $smarty.request.manage && $smarty.request.manage == "Y"}{__("manage_existing_block")}{else}{__("use_existing_block")}{/if}</a></li>
             <li id="create_new_blocks_{$grid_id}{$extra_id}" class="cm-js"><a>{__("create_new_block")}</a></li>

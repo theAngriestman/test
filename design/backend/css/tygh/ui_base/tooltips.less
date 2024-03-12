@@ -71,16 +71,18 @@
     border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
 }
 
-
+.cs-tooltip__icon {
+    transform: scale(0.8);
+}
 
 @media (max-width: 950px) {
     html.touchevents {
-        .tooltip, .icon-question-sign {
+        .tooltip, .cs-icon--type-question-sign {
             .show-off();
         }
     }
 
-    .tooltip, .icon-question-sign {
+    .tooltip, .cs-icon--type-question-sign {
         .show-off();
     }
 }

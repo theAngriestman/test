@@ -104,6 +104,20 @@
 {/capture}
 
 {capture name="buttons"}
+    {$buttons = [
+        "seo.redirects_manager" => [
+            href => "seo_redirects.manage",
+            text => __("seo.view_redirects_manager")
+        ],
+        seo_robots => [
+            href => "robots.manage",
+            text => __("view_seo_robots")
+        ]
+    ]}
+
+    {* Export $navigation.dynamic.actions *}
+    {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
+
     {if $seo_data}
         {include file="buttons/save.tpl" but_name="dispatch[seo_rules.m_update]" but_role="action" but_target_form="seo_form" but_meta="cm-submit"}
     {/if}

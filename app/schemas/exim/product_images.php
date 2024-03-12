@@ -56,7 +56,10 @@ $schema = array(
             'description' => 'text_images_directory',
             'type' => 'input',
             'default_value' => $default_images_path,
-            'notes' => __('text_file_editor_notice', array('[href]' => fn_url('file_editor.manage?path=/'))),
+            'notes'         => __(
+                'text_file_editor_notice_with_image_size_info',
+                ['[href]' => fn_url('file_editor.manage?path=/'), '[file_size]' => fn_get_allowed_image_file_size(true, true)]
+            ),
         ),
         'remove_images' => array(
             'title' => 'exim_remove_additional_images',

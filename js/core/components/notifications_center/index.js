@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import { reducer, actions } from "./reducer";
 import { dismissNotifications, getNotifications } from "./api";
-import { NotificationsCenter, NotificationsCenterCounter, NotificationsMark } from "./component";
+import { NotificationsCenter, NotificationsCenterCounter } from "./component";
 
 var langVars = {
   loading: Tygh.tr('loading'),
@@ -44,24 +44,6 @@ const initNotificationsCenter = async function() {
     document.querySelector('[data-ca-notifications-center-counter]')
   );
 
-  ReactDOM.render(
-    (
-      <Provider store={NotificationsCenterStore}>
-        <NotificationsCenterCounter />
-      </Provider>
-    ),
-    document.querySelector('[data-ca-notifications-center-counter-mobile]')
-  );
-
-  ReactDOM.render(
-    (
-      <Provider store={NotificationsCenterStore}>
-        <NotificationsMark/>
-      </Provider>
-    ),
-    document.querySelector('[data-ca-notifications-mark]')
-  );
-
   Tygh.ceNotificationsCenterInited = true;
 }
 
@@ -75,17 +57,6 @@ $.ceEvent('on', 'ce.notifications_center.reloaded', function (callback) {
     });
 });
 
-$.ceEvent('on', 'ce.notifications_center.notifications_mark_reload', async function () {
-  ReactDOM.render(
-    (
-      <Provider store={NotificationsCenterStore}>
-        <NotificationsMark />
-      </Provider>
-    ),
-    document.querySelector('[data-ca-notifications-mark]')
-  );
-});
-
 $.ceEvent('on', 'ce.notifications_center.enabled', async function () {
   ReactDOM.render(
     (
@@ -97,16 +68,6 @@ $.ceEvent('on', 'ce.notifications_center.enabled', async function () {
   );
 });
 
-$.ceEvent('on', 'ce.notifications_center.mobile_enabled', async function () {
-  ReactDOM.render(
-    (
-      <Provider store={NotificationsCenterStore}>
-        <NotificationsCenter langVars={langVars} />
-      </Provider>
-    ),
-    document.querySelector('[data-ca-notifications-center-root-mobile]')
-  );
-});
 
 $.ceEvent('on', 'ce.notifications_center.dismiss', function (notification_id, reload) {
     if (!notification_id) {

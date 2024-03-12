@@ -82,4 +82,9 @@
     {/capture}
 {/capture}
 
-{include file="common/mainbox.tpl" title=__("mailing_lists") content=$smarty.capture.mainbox adv_buttons=$smarty.capture.adv_buttons select_languages=true}
+{include file="common/mainbox.tpl"
+    title=__("mailing_lists")
+    content=$smarty.capture.mainbox
+    adv_buttons=$smarty.capture.adv_buttons
+    select_languages=true
+}

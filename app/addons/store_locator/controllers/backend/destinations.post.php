@@ -16,15 +16,6 @@ use Tygh\Registry;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
 
-if (in_array($mode, ['add', 'update', 'manage'])) {
-    $dynamic_sections = Registry::ifGet('navigation.dynamic.sections', []);
-    $dynamic_sections['store_locator'] = [
-        'title' => __('store_locator'),
-        'href'  => 'store_locator.manage',
-    ];
-    Registry::set('navigation.dynamic.sections', $dynamic_sections);
-}
-
 if ($mode === 'update') {
     $tabs = Registry::ifGet('navigation.tabs', []);
     $tabs['pickup'] = [

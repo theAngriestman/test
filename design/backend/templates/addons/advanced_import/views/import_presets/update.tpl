@@ -178,7 +178,9 @@
                             </div>
 
                             <div id="images_path_dialog" class="hidden"></div>
-                            <p class="muted description">{__("advanced_import.text_popup_file_editor_notice_full_link", ["[target]" => "images_path", "[link_text]" => {__("file_editor")}])}</p>
+                            <p class="muted description">
+                                {__("advanced_import.text_popup_file_editor_notice_with_image_size_info", ["[target]" => "images_path", "[link_text]" => {__("file_editor")}, "[file_size]" => true|fn_get_allowed_image_file_size:true])}
+                            </p>
                             <p class="muted description">{__($images_path.description)}</p>
                         </div>
                     </div>

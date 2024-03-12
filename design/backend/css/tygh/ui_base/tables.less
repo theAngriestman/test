@@ -79,7 +79,16 @@
         }
     }
     th {
-        font-weight: bold;
+        font-size: @baseFontSize - 2px;
+        font-weight: 500;
+    }
+    thead th,
+    thead th a {
+        transition: color 1s;
+    }
+    thead:not(:hover) th,
+    thead:not(:hover) th a {
+        color: @grayLight;
     }
     tr:hover {
         .hidden-tools {
@@ -174,7 +183,7 @@
         box-sizing: content-box;
         overflow: visible;
         width: 0;
-        padding: 3px 0;
+        padding: 0;
     }
     
     &:not(&--disabled) + th {
@@ -191,6 +200,16 @@
     }
 }
 
+.table__check-items-column--show-checkbox.table__check-items-column--show-checkbox {
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.table__check-items-column--show-checkbox.table__check-items-column--show-checkbox + th {
+    padding-left: 8px;
+    min-width: auto;
+}
+
 .table__check-items-cell {
     && {
         width: 0;
@@ -199,11 +218,21 @@
     }
 }
 
+.table__check-items-cell--show-checkbox.table__check-items-cell--show-checkbox {
+    width: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 .table__check-items {
     && {
         position: absolute;
         margin: 0;
     }
+}
+
+.table__check-items--show-checkbox.table__check-items--show-checkbox {
+    position: static;
 }
 
 .table-fixed {
@@ -307,28 +336,25 @@
 // Text sort icon
 .th-text-overflow--desc,
 .th-text-overflow--asc {
-    padding-right: 14px;
+    padding-right: @iconSize;
 }
 
 .th-text-overflow--desc:after,
 .th-text-overflow--asc:after {
     position: absolute;
     right: 0;
-    width: 14px;
-    font-size: 14px;
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    text-align: center;
+    width: @iconSize;
+    height: @iconSize;
     opacity: 0.3;
+    transform: scale(0.8);
 }
 
 .th-text-overflow--desc:after {
-    content: "\f0d8";
+    content: url('../templates/icons/desc.svg');
 }
 
 .th-text-overflow--asc:after {
-    content: "\f0d7";
+    content: url('../templates/icons/asc.svg');
 }
 
 // First content column
@@ -348,7 +374,7 @@
 .table__head-sticky {
     @media (min-width: @TabletBreakpoint + 2) {
         position: sticky;
-        top: @headerOffset;
+        top: 89px; // headerOffset
         background: #fff;
         border-bottom: 1px solid @tableBorder;
         z-index: 1;
@@ -488,4 +514,12 @@
     &--centered {
         margin: auto;
     }
+}
+
+.table-responsive-wrapper {
+    max-width: 100%;
+}
+
+.manage-tools-list__icon {
+    pointer-events: none;
 }

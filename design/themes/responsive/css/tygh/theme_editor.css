@@ -92,7 +92,7 @@
 }
 
 .theme-editor a {
-    color: #08c;
+    color: #1d9ff8;
 }
 .teme-editor div,
 .theme-editor a,
@@ -676,7 +676,7 @@
 .te-select-dropdown li.te-selectbox-group:hover {
     padding: 5px 0 5px 5px;
     background: none;
-    color: #0088cc;
+    color: #1d9ff8;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 11px;
@@ -826,7 +826,7 @@ x:-moz-any-link {
 .te-pills li.active a {
     position: relative;
     display: inline-block;
-    background: #08c;
+    background: #1d9ff8;
     color: #fff;
     cursor: default;
 }
@@ -835,7 +835,7 @@ x:-moz-any-link {
     bottom: -5px;
     left: 50%;
     margin-left: -5px;
-    border-top: 5px solid #08c;
+    border-top: 5px solid #1d9ff8;
     border-right: 5px solid rgba(0, 0, 0, 0);
     border-left: 5px solid rgba(0, 0, 0, 0);
     content: "";
@@ -1187,7 +1187,7 @@ x:-moz-any-link {
 }
 .te-font-style-wrap:hover .te-font-style,
 .te-font-style-wrap .te-font-style-checkbox:checked + .te-font-style {
-    background: #08c;
+    background: #1d9ff8;
     color: #fff;
 }
 .te-font-style.bold {
@@ -1320,7 +1320,7 @@ x:-moz-any-link {
 }
 .te-bg-position-item:hover label,
 .te-bg-position-item input:checked + label {
-    background-color: #08c;
+    background-color: #1d9ff8;
 }
 .te-bg-position-item:hover i,
 .te-bg-position-item input:checked + label i,

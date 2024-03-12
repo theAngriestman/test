@@ -7,7 +7,7 @@
 {function name="profile_edit_link"}
     {if $is_edit}
     <div class="pull-right">
-        <a class="hand cm-tooltip icon-edit cm-dialog-opener{if $click_to} cm-external-click{/if}" data-ca-target-id="customer_info" data-ca-scroll="{$scroll_to}" {if $click_to}data-ca-external-click-id="{$click_to}"{/if} title="{__("edit")}"></a>
+        <a class="hand cm-tooltip cm-dialog-opener{if $click_to} cm-external-click{/if}" data-ca-target-id="customer_info" data-ca-scroll="{$scroll_to}" {if $click_to}data-ca-external-click-id="{$click_to}"{/if} title="{__("edit")}">{include_ext file="common/icon.tpl" source="edit"}</a>
     </div>
     {/if}
 {/function}

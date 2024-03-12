@@ -529,6 +529,13 @@ class Manager
         fn_set_hook('warehouses_manager_remove_warehouse', $warehouse_id);
     }
 
+    /**
+     * Recalculates the destination products amount.
+     *
+     * @param array<array-key, int> $product_ids Product IDs
+     *
+     * @return void
+     */
     public function recalculateDestinationProductsStocksByProductIds(array $product_ids)
     {
         $product_ids = array_filter($product_ids);
@@ -692,6 +699,15 @@ class Manager
             );
         }
 
+        /**
+         * Executes after updating data about the availability of products in warehouses.
+         *
+         * @param \Tygh\Addons\Warehouses\Manager $this              Warehouses manager instance
+         * @param array<array-key, string|bool>   $params            Recalculated parameters
+         * @param string                          $product_condition Product condition
+         */
+        fn_set_hook('warehouses_recalculate_destination_products_stocks', $this, $params, $product_condition);
+
         if (!empty($params['reset_stock_split_flag'])) {
             $this->db->query(
                 'UPDATE ?:products SET is_stock_split_by_warehouses = ?s'
@@ -719,7 +735,7 @@ class Manager
      *
      * @param int $product_id Product ID
      */
-    public function removeProductStocks($product_id)
+    public function removeProductStocks(int $product_id): void
     {
         $this->db->query(
             'UPDATE ?:products SET is_stock_split_by_warehouses = ?s'
@@ -731,6 +747,15 @@ class Manager
 
         $this->db->query('DELETE FROM ?:warehouses_products_amount WHERE product_id = ?i', $product_id);
         $this->db->query('DELETE FROM ?:warehouses_destination_products_amount WHERE product_id = ?i', $product_id);
+        $this->db->query('DELETE FROM ?:warehouses_sum_products_amount WHERE product_id = ?i', $product_id);
+
+        /**
+         * Executes after deleting product stocks.
+         *
+         * @param \Tygh\Addons\Warehouses\Manager $this       Warehouses manager instance
+         * @param int                             $product_id Product ID
+         */
+        fn_set_hook('warehouses_remove_product_stocks_post', $this, $product_id);
     }
 
     /**

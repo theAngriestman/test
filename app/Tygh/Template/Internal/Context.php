@@ -65,6 +65,14 @@ class Context implements IContext
     /**
      * @inheritDoc
      */
+    public function getLanguageDirection()
+    {
+        return fn_is_rtl_language($this->lang_code) ? 'rtl' : 'ltr';
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getArea()
     {
         return $this->area;

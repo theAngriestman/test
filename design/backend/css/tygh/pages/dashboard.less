@@ -2,7 +2,6 @@
 .dashboard {
     display: block;
     margin-top: 13px;
-    max-width: 1300px;
     margin: 0 auto;
     h4 {
         margin-top: 0;
@@ -22,8 +21,8 @@
     background: #fff;
     background-color: #fff;
     border: 1px solid #e0e7ef;
-    .border-radius(@baseBorderRadius);
-    .box-shadow(0 1px 1px rgba(0,0,0,.05));
+    border-radius: @baseBorderRadius;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
     text-align: center;
     margin-bottom: 20px;
 }
@@ -34,7 +33,7 @@
     color: #798c9c;
     text-align: center;
     line-height: 24px;
-    .border-radius(@baseBorderRadius @baseBorderRadius 0 0)
+    border-radius: @baseBorderRadius @baseBorderRadius 0 0;
 }
 .dashboard-card-content {
     padding: 0 10px 6px;
@@ -62,15 +61,15 @@
         padding: 20px;
         background-color: #fff;
         border: 1px solid #e0e7ef;
-        .border-radius(@baseBorderRadius);
-        .box-shadow(0 1px 1px rgba(0,0,0,.05));
+        border-radius: @baseBorderRadius;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
 }
 .dashboard-recent-orders {
     float: left;
     width: 100%;
     margin-bottom: 30px;
-    .nav-pills {
+    .nav-tabs {
         margin-bottom: 8px;
     }
     &.tabs {
@@ -136,10 +135,10 @@
     padding: 20px;
     background-color: #fff;
     border: 1px solid #e0e7ef;
-    .border-radius(@baseBorderRadius);
-    .box-shadow(0 1px 1px rgba(0,0,0,.05));
+    border-radius: @baseBorderRadius;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
     .table-wrap {
-        .border-radius(@baseBorderRadius);
+        border-radius: @baseBorderRadius;
         border: 1px solid #e0e7ef;
     }
 }
@@ -161,10 +160,10 @@
     padding: 20px;
     background-color: #fff;
     border: 1px solid #e0e7ef;
-    .border-radius(@baseBorderRadius);
-    .box-shadow(0 1px 1px rgba(0,0,0,.05));
+    border-radius: @baseBorderRadius;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
     .dashboard-activity-list {
-        .border-radius(@baseBorderRadius);
+        border-radius: @baseBorderRadius;
         overflow-y: scroll;
         height: 100%;
         min-height: 36px;
@@ -195,6 +194,11 @@
         border: 1px solid #ccc !important;
         color: #000 !important;
     }
+}
+
+// Navbar
+.nav__actions-dashboard-date-picker {
+    display: flex;
 }
 
 // daterange

@@ -143,21 +143,35 @@ class SraCartContent extends ASraEntity
         return array_map(
             function ($payment) {
                 $script = fn_get_processor_data($payment['payment_id']);
+                $allowed_payment_params = fn_get_schema('storefront_rest_api', 'allowed_payment_processor_params');
+                $processor_script = empty($script['processor_script']) ? null : $script['processor_script'];
 
-                return [
+                $result = [
                     'payment'         => $payment['payment'],
                     'description'     => $payment['description'],
                     'instructions'    => $payment['instructions'],
                     'p_surcharge'     => $payment['p_surcharge'],
                     'a_surcharge'     => $payment['a_surcharge'],
                     'surcharge_title' => $payment['surcharge_title'],
-                    'script'          => empty($script['processor_script'])
-                        ? null
-                        : $script['processor_script'],
+                    'script'          => $processor_script,
                     'template'        => empty($payment['template'])
                         ? null
                         : $payment['template'],
                 ];
+
+                if (!empty($script['processor_script']) && !empty($allowed_payment_params[$processor_script])) {
+                    foreach ($allowed_payment_params[$processor_script] as $_param_name => $_params) {
+                        if (is_array($_params)) {
+                            foreach ($_params as $_param) {
+                                $result[$_param_name][$_param] = $script[$_param_name][$_param] ?? null;
+                            }
+                        } else {
+                            $result[$_params] = $script[$_params] ?? null;
+                        }
+                    }
+                }
+
+                return $result;
             },
             $payment_methods
         );

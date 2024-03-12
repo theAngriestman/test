@@ -23,6 +23,10 @@
 {if $smarty.request.dynamic_object.object_id > 0}
     {assign var="dynamic_object" value=$smarty.request.dynamic_object}
 {/if}
+{$tabs_count = 1}
+{$tabs_count = ($smarty.capture.block_content && $smarty.capture.block_content|trim) ? $tabs_count + 1 : $tabs_count}
+{$tabs_count = ($block_scheme.settings) ? $tabs_count + 1 : $tabs_count}
+{$tabs_count = ($dynamic_object_scheme && !$hide_status) ? $tabs_count + 1 : $tabs_count}
 
 {capture name="block_content"}
     {if $block_scheme.content}
@@ -58,10 +62,10 @@
     {if $smarty.request.r_url}
         <input type="hidden" name="r_url" value="{$smarty.request.r_url}" class="cm-no-hide-input"/>
     {/if}
-    <div class="tabs cm-j-tabs cm-track">
+    <div class="tabs cm-j-tabs cm-track tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="block_general_{$html_id}" class="cm-js {if $active_tab == "block_general_`$html_id`"} active{/if}"><a>{__("general")}</a></li>
-            {if $smarty.capture.block_content|trim}<li id="block_contents_{$html_id}" class="cm-js{if $active_tab == "block_contents_`$html_id`"} active{/if}"><a>{__("content")}</a></li>{/if}
+            {if $smarty.capture.block_content && $smarty.capture.block_content|trim}<li id="block_contents_{$html_id}" class="cm-js{if $active_tab == "block_contents_`$html_id`"} active{/if}"><a>{__("content")}</a></li>{/if}
             {if $block_scheme.settings}
                 <li id="block_settings_{$html_id}" class="cm-js{if $active_tab == "block_settings_`$html_id`"} active{/if}"><a>{__("block_settings")}</a></li>
             {/if}
@@ -245,7 +249,7 @@
                         {$dynamic_object_scheme.picker_params.extra_url}
                     {/hook}
                 {/capture}
-                {$dynamic_object_scheme.picker_params.extra_url = $smarty.capture.picker_extra_url|trim}
+                {$dynamic_object_scheme.picker_params.extra_url = $smarty.capture.picker_extra_url && $smarty.capture.picker_extra_url|trim}
                 <div class="controls">
                 {include_ext
                     file=$dynamic_object_scheme.picker

@@ -19,9 +19,11 @@
 
         <span>
             {if $size !== "small"}
-                {include_ext file="common/icon.tpl"
-                    class="icon-thumbs-up muted"
-                }
+                <span class="flex-inline">
+                    {include_ext file="common/icon.tpl"
+                        class="icon-thumbs-up muted"
+                    }
+                </span>
             {/if}
             <span class="text-success">
                 {if $helpfulness.vote_up > 0}+{/if}{$helpfulness.vote_up}
@@ -30,9 +32,11 @@
 
         <span>
             {if $size !== "small"}
-                {include_ext file="common/icon.tpl"
-                    class="icon-thumbs-down muted"
-                }
+                <span class="flex-inline">
+                    {include_ext file="common/icon.tpl"
+                        class="icon-thumbs-down muted"
+                    }
+                </span>
             {/if}
             <span class="text-error">
                 {if $helpfulness.vote_down > 0}−{/if}{$helpfulness.vote_down}

@@ -28,7 +28,7 @@
         <tr valign="top">
             <th style="padding: 1px;" >{$table.parameter}</th>
             {foreach from=$table.intervals item=row}
-                <th class="center cm-tooltip" style="padding: 1px;">&nbsp;{$row.description}&nbsp;<a title="{$row.iso8601_from} &ndash; {$row.iso8601_to}" class="cm-tooltip">{include_ext file="common/icon.tpl" class="icon-question-sign"}</a></th>
+                <th class="center cm-tooltip" style="padding: 1px;">&nbsp;{$row.description}&nbsp;<a title="{$row.iso8601_from} &ndash; {$row.iso8601_to}" class="cm-tooltip flex-inline top">{include_ext file="common/icon.tpl" class="icon-question-sign cs-tooltip__icon"}</a></th>
             {/foreach}
         </tr>
         </thead>

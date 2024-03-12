@@ -59,14 +59,14 @@
                 title="{__("expand_collapse_list")}"
                 class="btn btn-expand hand cm-combination-options-{$id}"
             >
-                <span class="icon-caret-right"></span>
+                {include_ext file="common/icon.tpl" source="caret_right" class="events-none"}
             </span>
             <span id="off_extra_option_variants_{$id}_{$num}"
                 alt="{__("expand_collapse_list")}"
                 title="{__("expand_collapse_list")}"
                 class="btn btn-expand hand hidden cm-combination-options-{$id}"
             >
-                <span class="icon-caret-down"></span>
+                {include_ext file="common/icon.tpl" source="caret_down" class="events-none"}
             </span>
         </td>
         <td class="right cm-non-cb

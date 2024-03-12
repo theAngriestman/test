@@ -9,6 +9,7 @@
     &-logo-list {
         display: flex;
         align-items: center;
+        font-size: @baseFontSize;
     }
 
     // Logo
@@ -30,7 +31,7 @@
         &:not(&--dropdown-toggle) {
             display: none;
 
-            @media (min-width: 768px) {
+            @media (min-width: @DesktopBreakpoint + 1px) {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
@@ -90,14 +91,14 @@
 
         &--mobile {
 
-            @media (min-width: 768px) {
+            @media (min-width: @DesktopBreakpoint + 1px) {
                 display: none;
             }
         }
         &--desktop {
             display: none;
 
-            @media (min-width: 768px) {
+            @media (min-width: @DesktopBreakpoint + 1px) {
                 display: flex;
             }
         }
@@ -170,7 +171,7 @@
             display: flex;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: @DesktopBreakpoint + 1px) {
             display: none;
 
             &--threshold {
@@ -200,7 +201,7 @@
             left: 100%;
             left: ~"calc(100% - 28px + 4px)";   // 100% - Storefront picker button / 2 + padding
 
-            @media (min-width: 768px) {
+            @media (min-width: @DesktopBreakpoint + 1px) {
                 left: 50%;
                 left: ~"calc(50% - 7px)";
             }
@@ -217,7 +218,7 @@
             left: 100%;
             left: ~"calc(100% - 28px + 5px)";   // 100% - Storefront picker button / 2 + padding
 
-            @media (min-width: 768px) {
+            @media (min-width: @DesktopBreakpoint + 1px) {
                 left: 50%;
                 left: ~"calc(50% - 6px)";
             }
@@ -227,7 +228,7 @@
             top: 100%;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: @DesktopBreakpoint + 1px) {
             -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -243,7 +244,7 @@
     .select2-container--default &-dropdown-picker .select2-results>.select2-results__options {
          max-height: ~"calc(100vh - 130px)";    // 100vh - Mobile heading
 
-        @media (min-width: 768px) {
+        @media (min-width: @DesktopBreakpoint + 1px) {
             max-height: ~"calc(100vh - 208px)"; // 100vh - Desktop heading
         }
     }

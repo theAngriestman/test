@@ -177,7 +177,9 @@ abstract class BaseConnector implements IConnector
             . '/index.php?dispatch=product_updates.get_package&package_id=' . $schema['package_id']
             . '&edition=' . $this->product_edition
             . '&license_number=' . $this->license_number
-            . '&product_build=' . $this->product_build
+            . '&product_build=' . $this->product_build,
+            '',
+            Registry::ifGet('config.tweaks.download_upgrade_package_timeout', 180)
         );
 
         if (!empty($data)) {

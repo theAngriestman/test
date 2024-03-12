@@ -46,9 +46,11 @@
             {if !$external_render}
                 {* We need extra "hidden" div's for tooltips *}
                 {if $block_data.is_manageable|default:true}
-                    <div class="cm-tooltip cm-action icon-cog bm-action-properties action" title="{__("block_options")}"></div>
+                    <div class="cm-tooltip cm-action bm-action-properties action" title="{__("block_options")}">
+                        {include_ext file="common/icon.tpl" source="cog"}
+                    </div>
                 {/if}
-                <div class="cm-tooltip cm-action icon-off bm-action-switch{if $status != "A"} switch-off{/if}{if $dynamic_object} bm-dynamic-object{/if}{if !$dynamic_object && $block_data.items_count > 0} bm-confirm{/if} action" title="{__("enable_or_disable_block")}"{if $dynamic_object}data-ca-bm-object-id="{$dynamic_object.object_id}"{/if}>{$smarty.capture.confirm_message nofilter}</div>
+                <div class="cm-tooltip cm-action bm-action-switch{if $status != "A"} switch-off{/if}{if $dynamic_object} bm-dynamic-object{/if}{if !$dynamic_object && $block_data.items_count > 0} bm-confirm{/if} action" title="{__("enable_or_disable_block")}"{if $dynamic_object}data-ca-bm-object-id="{$dynamic_object.object_id}"{/if}>{include_ext file="common/icon.tpl" source="off"}{$smarty.capture.confirm_message nofilter}</div>
 
             {else}
                 <input type="hidden" name="block_data[block_id]" value="{$block_data.block_id}" id="ajax_update_block_{$external_id}"/>
@@ -65,14 +67,18 @@
                 }
             {/if}
             {if !$dynamic_object && !$external_render}
-                <div class="cm-tooltip cm-action icon-trash pull-right bm-action-delete extra action {if $block_data.single_for_location}bm-block-single-for-location{/if}" title="{__("delete_block")}"></div>
+                <div class="cm-tooltip cm-action pull-right bm-action-delete extra action {if $block_data.single_for_location}bm-block-single-for-location{/if}" title="{__("delete_block")}">
+                    {include_ext file="common/icon.tpl" source="trash"}
+                </div>
             {/if}
         </div>
         {if !$external_render}
         <div class="bm-compact-menu block-control-menu bm-control-menu {if $parent_grid.width > 2}hidden keep-hidden{/if}">
             <div class="action-showmenu action-control-menu">
                 <div class="btn-group action">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='icon-align-justify cm-tooltip' title="{__("editing_block")}"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="cm-tooltip" title="{__("editing_block")}">
+                    {include_ext file="common/icon.tpl" source="align_justify"}
+                </span></a>
                     <ul class="dropdown-menu droptop">
                         {if $block_data.is_manageable}
                             <li><a class="cm-action bm-action-properties">{__("block_options")}</a></li>

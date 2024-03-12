@@ -34,15 +34,22 @@
 }
 .alert-wrap {
     position: fixed;
-    z-index: 950;
-    max-width: @wide-width / 2;
+    z-index: @zindexFixedNavbar + 1; // z-index: 1032;
     transition: top linear 0.1s;
-    top: 97px;
+    top: 112px;
     right: 6px;
     left: 50%;
     
+    @media (min-width: @TabletBreakpoint) {
+        left: ~"calc(var(--main-menu-width) + 20px)";
+        right: 20px;
+        top: 112px;
+    }
+
     @media (min-width: @TabletBreakpoint + 1px) {
+        z-index: @zindexFixedNavbar - 1; // z-index: 1029;
         top: 139px;
+        left: 50%;
     }
 }
 .alert {
@@ -59,8 +66,8 @@
 // Alternate styles
 // -------------------------
 .alert-muted {
-  background-color: @mutedBackground;
-  border-color: @mutedBorder;
+  background-color: #f7f7f9;
+  border-color: #e1e1e8;
   color: @textColor;
 }
 .alert-muted h4 {

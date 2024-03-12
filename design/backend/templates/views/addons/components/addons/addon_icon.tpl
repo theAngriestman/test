@@ -8,9 +8,10 @@
 {* Icon size *}
 {$size = ($icon_large) ? "large" : "medium"}
 {$icon_width = ($icon_large) ? $ICON_SIZE_LARGE : $ICON_SIZE_MEDIUM}
+{$addon_status = ($addon.status) ? ($addon.status|lower) : ""}
 
 {* Wrapper attributes *}
-{$wrapper_class = "addons-addon-icon__wrapper addons-addon-icon__wrapper--`$addon.status|lower` addons-addon-icon__wrapper--`$size`"}
+{$wrapper_class = "addons-addon-icon__wrapper addons-addon-icon__wrapper--`$addon_status` addons-addon-icon__wrapper--`$size`"}
 {$title = ($show_description) ? $addon_full_description : ""}
 
 {* Wrapper link *}
@@ -24,7 +25,7 @@
 
 {* Image attributes *}
 {$image_dir_path = "`$images_dir`/addons/`$addon.addon`"}
-{$icon_class = "addons-addon-icon__image addons-addon-icon__image--`$addon.status|lower` addons-addon-icon__image--`$size`"}
+{$icon_class = "addons-addon-icon__image addons-addon-icon__image--`$addon_status` addons-addon-icon__image--`$size`"}
 
 {if $is_marketplace_addons}
     {$is_open_new_tab = true}

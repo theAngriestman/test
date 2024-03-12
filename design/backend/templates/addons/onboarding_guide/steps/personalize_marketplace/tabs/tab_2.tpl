@@ -69,9 +69,9 @@
             </div>
         </div>
         <div class="onboarding_section__action_block">
-            <button data-og-tab-navigation="1" type="button" class="button button-primary tab-navigation">{include_ext file="common/icon.tpl" class="icon-long-arrow-left"} {__("onboarding_guide.back")}</button>
-            <button data-og-tab-navigation="3" type="button" class="button button-primary tab-navigation">{__("onboarding_guide.next")} {include_ext file="common/icon.tpl" class="icon-long-arrow-right"}</button>
-            <button class="button button-secondary">{__("onboarding_guide.save")}</button>
+            <button data-og-tab-navigation="1" type="button" class="btn btn-primary tab-navigation">{include_ext file="common/icon.tpl" class="icon-long-arrow-left"} {__("onboarding_guide.back")}</button>
+            <button data-og-tab-navigation="3" type="button" class="btn btn-primary tab-navigation">{__("onboarding_guide.next")} {include_ext file="common/icon.tpl" class="icon-long-arrow-right"}</button>
+            <button class="btn">{__("onboarding_guide.save")}</button>
         </div>
     </form>
 <!--onboarding_guide_company_settings--></div>

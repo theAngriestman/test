@@ -12,6 +12,10 @@ msgctxt "Addons::description::store_locator"
 msgid "Allows you to mark your physical stores on the map and offer your customers to collect orders from there, if a corresponding shipping method is configured."
 msgstr "Allows you to mark your physical stores on the map and offer your customers to collect orders from there, if a corresponding shipping method is configured."
 
+msgctxt "Languages::store_locator_menu_description"
+msgid "Set up locations for pick up and manage inventory by location."
+msgstr "Set up locations for pick up and manage inventory by location."
+
 msgctxt "Languages::view_on_map"
 msgid "View on map"
 msgstr "View on map"

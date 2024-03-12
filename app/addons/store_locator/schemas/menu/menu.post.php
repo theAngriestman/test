@@ -17,7 +17,8 @@ $schema['top']['administration']['items']['store_locator'] = [
         'class' => 'is-addon'
     ],
     'href' => 'store_locator.manage',
-    'position' => 400
+    'position' => 1320,
+    'icon' => 'map_marker',
 ];
 
 $schema['top']['administration']['items']['import_data']['subitems']['pickup'] = [

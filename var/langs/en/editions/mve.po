@@ -28,6 +28,10 @@ msgctxt "Languages::vendor_administrators"
 msgid "Vendor's administrators"
 msgstr "Vendor's administrators"
 
+msgctxt "Languages::view_vendor_administrators"
+msgid "View vendor's administrators"
+msgstr "View vendor's administrators"
+
 msgctxt "Languages::vendor_administrators_menu_description"
 msgid "List of vendor's administrators, registered users with a vendor account."
 msgstr "List of vendor's administrators, registered users with a vendor account."
@@ -899,6 +903,10 @@ msgstr "Invite"
 msgctxt "Languages::pending_vendor_invitations"
 msgid "Pending vendor invitations"
 msgstr "Pending vendor invitations"
+
+msgctxt "Languages::view_pending_invitations"
+msgid "View pending invitations"
+msgstr "View pending invitations"
 
 msgctxt "Languages::pending_vendor_invitations_menu_description"
 msgid "Manage invitations to your marketplace for potential vendors."

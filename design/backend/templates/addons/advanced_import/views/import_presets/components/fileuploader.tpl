@@ -29,7 +29,8 @@
         <div class="upload-file-section" id="message_{$id_var_name}" title="">
             <p class="cm-fu-file hidden">
                 {include_ext file="common/icon.tpl"
-                    class="icon-remove-sign cm-tooltip hand"
+                    source="remove_sign"
+                    class="cm-tooltip hand flex-inline top"
                     id="clean_selection_`$id_var_name`"
                     title=__("remove_this_item")
                     data=[

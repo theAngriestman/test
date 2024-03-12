@@ -12,6 +12,10 @@ msgctxt "Addons::description::yml_export"
 msgid "Allows you to generate YML files for exporting your products to Yandex.Market."
 msgstr "Allows you to generate YML files for exporting your products to Yandex.Market."
 
+msgctxt "Languages::yml_export_menu_description"
+msgid "Create and export products feed within YML data format."
+msgstr "Create and export products feed within YML data format."
+
 msgctxt "Languages::yml_export"
 msgid "Yandex.Market"
 msgstr "Yandex.Market"
@@ -691,6 +695,10 @@ msgstr "Price lists"
 msgctxt "Languages::yml_export.offers_params"
 msgid "Offers params"
 msgstr "Offers params"
+
+msgctxt "Languages::yml_export.view_offers_params"
+msgid "View offers params"
+msgstr "View offers params"
 
 msgctxt "Languages::yml_export.param_enable_authorization"
 msgid "Authorization"

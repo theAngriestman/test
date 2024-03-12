@@ -169,8 +169,22 @@
 {/capture}
 {capture name="buttons"}
     {capture name="tools_items"}
+        {$buttons = []}
         {hook name="companies:manage_tools_list"}
+            {if "MULTIVENDOR"|fn_allowed_for}
+                {$buttons.vendor_administrators = [
+                    href => "profiles.manage?user_type=V",
+                    text => __("view_vendor_administrators")
+                ]}
+                {$buttons.invitations = [
+                    href => "companies.invitations",
+                    text => __('view_pending_invitations')
+                ]}
+            {/if}
         {/hook}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
     {/capture}
     {dropdown content=$smarty.capture.tools_items class="mobile-hide"}
 

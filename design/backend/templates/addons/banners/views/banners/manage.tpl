@@ -89,7 +89,9 @@
                     </div>
                 </td>
                 <td width="10%" class="right" data-th="{__("status")}">
-                    {include file="common/select_popup.tpl" id=$banner.banner_id status=$banner.status hidden=true object_id_name="banner_id" table="banners" popup_additional_class="`$no_hide_input` dropleft"}
+                    {hook name="banners:status"}
+                        {include file="common/select_popup.tpl" id=$banner.banner_id status=$banner.status hidden=true object_id_name="banner_id" table="banners" popup_additional_class="`$no_hide_input` dropleft"}
+                    {/hook}
                 </td>
             </tr>
             {/foreach}

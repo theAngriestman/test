@@ -6,12 +6,14 @@
     )
     && $smarty.cookies.pb_is_bottom_panel_open|default:"1"
 }
+{$scroll_header = $config.scroll_header|default:false}
 <!DOCTYPE html>
 <html lang="en"
     dir="{$language_direction}"
     class="{if $pb_is_bottom_panel_open}bp-panel-active{/if} {$html_class}"
 >
 <head>
+{hook name="index:head"}
 {strip}
 <title>
     {if $page_title}
@@ -29,7 +31,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="{$images_dir}/favicons/favicon-16x16.png">
 <link rel="manifest" href="{$images_dir}/favicons/site.webmanifest">
 <link rel="mask-icon" href="{$images_dir}/favicons/safari-pinned-tab.svg" color="#0fa4d6">
-<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
 {include file="common/styles.tpl"}
@@ -41,10 +43,11 @@ window.jsErrors = [];
 }*/
 </script>
 {/if}
+{/hook}
 </head>
 {include file="buttons/helpers.tpl"}
 
-{$class = "{if $smarty.cookies.layout_status == 1}menu-toggled{/if}{if $smarty.const.ACCOUNT_TYPE === "vendor"} vendor-area{/if}"}
+{$class = "{if $smarty.const.ACCOUNT_TYPE === "vendor"} vendor-area{/if}"}
 <body {if $class}class="{$class}"{/if} data-ca-scroll-to-elm-offset="120">
     {hook name="index:body_content"}
 
@@ -60,14 +63,11 @@ window.jsErrors = [];
         data-ca-element="mainContainer" id="main_column{if !$auth.user_id || $view_mode == 'simple'}_login{/if}">
     {if $view_mode != "simple"}
         <div class="admin-content">
+            {include file="top_bar.tpl"}
             {include file="menu.tpl"}
 
-            <div class="admin-content-wrap">
+            <div class="admin-content-wrap {if $scroll_header}admin-content-wrap--scroll-header{/if}">
                 {hook name="index:main_content"}{/hook}
-
-                {if $is_setup_wizard_panel_available}
-                    {include file="views/setup_wizard/components/widget_content.tpl"}
-                {/if}
 
                 {$content nofilter}
                 {$stats|default:"" nofilter}

@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: ja\n"
-"X-Crowdin-File: /release-4.17.2/core.po\n"
-"X-Crowdin-File-ID: 8104\n"
-"PO-Revision-Date: 2023-11-23 09:56\n"
+"X-Crowdin-File: /release-4.18.1/core.po\n"
+"X-Crowdin-File-ID: 8378\n"
+"PO-Revision-Date: 2024-02-02 11:17\n"
 
 msgctxt "LanguageName"
 msgid "Localized language name"
@@ -599,6 +599,22 @@ msgstr "詳細検索"
 msgctxt "Languages::advanced_search_options"
 msgid "Advanced search options"
 msgstr "詳細検索"
+
+msgctxt "Languages::search_add_filter"
+msgid "Add filter"
+msgstr ""
+
+msgctxt "Languages::search_range_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::search_range_to"
+msgid "To"
+msgstr ""
+
+msgctxt "Languages::dynamic_navigation_more"
+msgid "More"
+msgstr ""
 
 msgctxt "Languages::after_full_payment"
 msgid "After full payment"
@@ -1770,7 +1786,7 @@ msgstr "UPS"
 
 msgctxt "Languages::tools_carrier_ups_msg"
 msgid "To get Client ID and Client Secret, <a target=\"_blank\" href=\"[url]\">register an app in your UPS account</a>."
-msgstr "クライアント ID とクライアント シークレットを取得するには、 <a target=\"_blank\" href=\"[url]\">UPS アカウントにアプリを登録します</a>。"
+msgstr "クライアント ID とクライアント・シークレットを取得するには、 <a target=\"_blank\" href=\"[url]\">UPS アカウントにアプリを登録します</a>。"
 
 msgctxt "Languages::carrier_upsdeprecated"
 msgid "UPS [Deprecated]"
@@ -1778,7 +1794,7 @@ msgstr "UPS [Deprecated]"
 
 msgctxt "Languages::tools_carrier_upsdeprecated_msg"
 msgid "This shipping method will stop working in June 2024. To keep using UPS, please set up a shipping method that uses \"UPS\" rather than \"UPS [Deprecated]\" for rate calculation."
-msgstr "この配送方法は 2024 年 6 月に機能しなくなります。UPS を引き続き使用するには、料金計算に「UPS [Deprecated]」ではなく「UPS」を使用する配送方法を設定してください。"
+msgstr "この配送方法は 2024年6月に機能しなくなります。UPS を引き続き使用するには、料金計算に「UPS [Deprecated]」ではなく「UPS」を使用する配送方法を設定してください。"
 
 msgctxt "Languages::carrier_usps"
 msgid "USPS"
@@ -1859,6 +1875,10 @@ msgstr "カテゴリー名"
 msgctxt "Languages::cdn_settings"
 msgid "CDN settings"
 msgstr "CDNの設定"
+
+msgctxt "Languages::edit_cdn_settings"
+msgid "Edit CDN settings"
+msgstr ""
 
 msgctxt "Languages::central"
 msgid "Central"
@@ -2040,6 +2060,10 @@ msgctxt "Languages::choose_action"
 msgid "Choose action"
 msgstr "アクション"
 
+msgctxt "Languages::more_actions"
+msgid "More actions"
+msgstr ""
+
 msgctxt "Languages::choose_category"
 msgid "Choose category"
 msgstr "カテゴリーを選択してください"
@@ -2059,6 +2083,10 @@ msgstr "ライセンスモードを指定してください"
 msgctxt "Languages::cities"
 msgid "Cities"
 msgstr "市区町村"
+
+msgctxt "Languages::edit_cities"
+msgid "Edit cities"
+msgstr ""
 
 msgctxt "Languages::city"
 msgid "City"
@@ -2396,6 +2424,10 @@ msgctxt "Languages::countries"
 msgid "Countries"
 msgstr "国名"
 
+msgctxt "Languages::edit_countries"
+msgid "Edit countries"
+msgstr ""
+
 msgctxt "Languages::countries_menu_description"
 msgid "Manage the set of countries that are supported in your store."
 msgstr "国名の管理を行います。"
@@ -2535,6 +2567,10 @@ msgstr "CSVファイル"
 msgctxt "Languages::currencies"
 msgid "Currencies"
 msgstr "通貨"
+
+msgctxt "Languages::edit_currencies"
+msgid "Edit currencies"
+msgstr ""
 
 msgctxt "Languages::currency"
 msgid "Currency"
@@ -2832,6 +2868,10 @@ msgctxt "Languages::text_file_editor_notice"
 msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>"
 msgstr "<a href=\"[href]\">ファイルエディター</a> からファイルをアップロードまたはダウンロードできます。"
 
+msgctxt "Languages::text_file_editor_notice_with_image_size_info"
+msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>. The maximum size of image files is [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_file_editor_notice_full_link"
 msgid "You can upload and download files via [link]"
 msgstr "[link] からファイルをアップロードまたはダウンロードできます"
@@ -2861,8 +2901,8 @@ msgid "Customers"
 msgstr "お客様"
 
 msgctxt "Languages::customers_menu_title"
-msgid "Customers"
-msgstr "お客様"
+msgid "Users"
+msgstr ""
 
 msgctxt "Languages::my_customers"
 msgid "My customers"
@@ -3898,7 +3938,7 @@ msgstr "お客様のアカウントは無効です。 ショップ管理者ま�
 
 msgctxt "Languages::error_count_recover_password_ekeys"
 msgid "You've already requested password reset. If you haven't received an email, please try again in a few minutes."
-msgstr "すでにパスワードのリセットをリクエストしています。メールが届かない場合は、数分後にもう一度お試しください。"
+msgstr "すでにパスワードのリセットをリクエストしています。メールが届かない場合には、数分後に再度お試しください。"
 
 msgctxt "Languages::error_admin_not_created_email_already_used"
 msgid "Administrator account was not created. The email address belongs to another user. You can add the administrator for this company manually."
@@ -4419,6 +4459,10 @@ msgstr "ファイル名"
 msgctxt "Languages::files"
 msgid "Files"
 msgstr "ダウンロード"
+
+msgctxt "Languages::view_files"
+msgid "View files"
+msgstr ""
 
 msgctxt "Languages::sell_files"
 msgid "Files to sell"
@@ -5284,6 +5328,10 @@ msgctxt "Languages::language"
 msgid "Language"
 msgstr "言語"
 
+msgctxt "Languages::language_content"
+msgid "The language of content"
+msgstr ""
+
 msgctxt "Languages::languagecode"
 msgid "Language code"
 msgstr "言語コード"
@@ -5355,6 +5403,10 @@ msgstr "レイアウト"
 msgctxt "Languages::layouts"
 msgid "Layouts"
 msgstr "レイアウト"
+
+msgctxt "Languages::edit_layouts"
+msgid "Edit layouts"
+msgstr ""
 
 msgctxt "Languages::lbl_amazon_aws_access_public_key"
 msgid "AWS access public key"
@@ -5572,6 +5624,10 @@ msgctxt "Languages::rate_areas"
 msgid "Rate areas"
 msgstr "ロケーション"
 
+msgctxt "Languages::edit_rate_areas"
+msgid "Edit rate areas"
+msgstr ""
+
 msgctxt "Languages::statuses_management"
 msgid "Statuses"
 msgstr "ステータス"
@@ -5607,6 +5663,10 @@ msgstr "ロゴのロケーション（URL）"
 msgctxt "Languages::logs"
 msgid "Logs"
 msgstr "ログ"
+
+msgctxt "Languages::view_logs"
+msgid "View logs"
+msgstr ""
 
 msgctxt "Languages::log_action_backup"
 msgid "backup"
@@ -6820,6 +6880,10 @@ msgctxt "Languages::order_statuses"
 msgid "Order statuses"
 msgstr "注文ステータス"
 
+msgctxt "Languages::edit_order_statuses"
+msgid "Edit order statuses"
+msgstr ""
+
 msgctxt "Languages::order_statuses_menu_description"
 msgid "Add new or edit existing order statuses."
 msgstr "既存の注文ステータスの登録・編集を行います。"
@@ -7988,6 +8052,10 @@ msgctxt "Languages::product_options_forbidden_combination"
 msgid "The <strong>[product]</strong> product has options that are included in the forbidden combination. The product was deleted from the cart"
 msgstr "ご指定のオプションの組み合わせでは <strong>[product]</strong> はお買い求めいただけません。<br />他の組み合わせを指定してください。"
 
+msgctxt "Languages::zero_price_product_was_deleted"
+msgid "The <strong>[product]</strong> product has zero price. The product was deleted from the cart"
+msgstr ""
+
 msgctxt "Languages::product_disabled_options"
 msgid "The product <strong>[product]</strong> has options or option variants that are not available anymore, so it was removed from cart"
 msgstr "商品 <strong>[product]</strong> には利用できないオプションまたはオプションの選択肢が設定されていたためカートから削除されました。"
@@ -7999,6 +8067,10 @@ msgstr "点"
 msgctxt "Languages::product_subscriptions"
 msgid "Product subscriptions"
 msgstr "入荷通知メールの削除"
+
+msgctxt "Languages::view_product_subscriptions"
+msgid "View product subscriptions"
+msgstr ""
 
 msgctxt "Languages::product_summary"
 msgid "Product summary"
@@ -8031,10 +8103,6 @@ msgstr "会員情報"
 msgctxt "Languages::profile_fields"
 msgid "Profile fields"
 msgstr "会員情報フィールド"
-
-msgctxt "Languages::profile_fields_menu_description"
-msgid "Configure the set of fields included in the profile forms."
-msgstr "会員情報フィールドの登録・編集・削除を行います。"
 
 msgctxt "Languages::profile_info"
 msgid "Profile information"
@@ -8944,6 +9012,10 @@ msgctxt "Languages::search_by_order"
 msgid "Search by order"
 msgstr "注文単位で検索"
 
+msgctxt "Languages::search_by_customer"
+msgid "Search by customer"
+msgstr ""
+
 msgctxt "Languages::search_by_owner"
 msgid "Search by owner"
 msgstr "ショップで検索"
@@ -9128,6 +9200,14 @@ msgctxt "Languages::select_dates"
 msgid "Select dates"
 msgstr "期間指定"
 
+msgctxt "Languages::period_selector_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::period_selector_to"
+msgid "To"
+msgstr ""
+
 msgctxt "Languages::select_descr_lang"
 msgid "Select the description language"
 msgstr "説明用言語の選択"
@@ -9251,6 +9331,70 @@ msgstr "設定ウィザードには '基本設定 -> 設定ウィザード' か�
 msgctxt "Languages::settings_wizard_title"
 msgid "Settings wizard: Step [current_step] of [total_steps]"
 msgstr "設定ウィザード: ステップ [current_step] / [total_steps]"
+
+msgctxt "Languages::store_mode_menu_description"
+msgid "View and manage your licensing details."
+msgstr ""
+
+msgctxt "Languages::upgrade_center_menu_description"
+msgid "Get the latest versions of CS-Cart and its add-ons."
+msgstr ""
+
+msgctxt "Languages::import_data_menu_description"
+msgid "Import products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::export_data_menu_description"
+msgid "Export products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::languages_menu_description"
+msgid "Configure the available languages and edit any texts on your site."
+msgstr ""
+
+msgctxt "Languages::storage_menu_description"
+msgid "Back up your site data or restore a previous copy, manage files and CDN."
+msgstr ""
+
+msgctxt "Languages::settings_general"
+msgid "General"
+msgstr ""
+
+msgctxt "Languages::settings_general_menu_description"
+msgid "Configure your company info and basic principles of how your site works."
+msgstr ""
+
+msgctxt "Languages::payment_methods_menu_description"
+msgid "Set up the payment options available to your customers."
+msgstr ""
+
+msgctxt "Languages::shipping_methods_menu_description"
+msgid "Set up shipping options, their rates and availability by location."
+msgstr ""
+
+msgctxt "Languages::taxes_menu_description"
+msgid "Configure what taxes you show, how you do it, and tax rates by location."
+msgstr ""
+
+msgctxt "Languages::storefronts_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::stores_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::profile_fields_menu_description"
+msgid "Manage information collected from customers and sellers."
+msgstr ""
+
+msgctxt "Languages::notifications_menu_description"
+msgid "Manage the notifications sent to customers, administrators and sellers."
+msgstr ""
+
+msgctxt "Languages::logs_menu_description"
+msgid "Store activity log."
+msgstr ""
 
 msgctxt "Languages::share"
 msgid "Share"
@@ -9387,10 +9531,6 @@ msgstr "配送方法"
 msgctxt "Languages::shipping_methods"
 msgid "Shipping methods"
 msgstr "配送方法"
-
-msgctxt "Languages::shipping_methods_menu_description"
-msgid "Set of rules and parameters to calculate the cost of shipping."
-msgstr "配送方法の管理を行います。"
 
 msgctxt "Languages::shipping_name"
 msgid "Shipping name"
@@ -10312,6 +10452,10 @@ msgctxt "Languages::states"
 msgid "States"
 msgstr "都道府県"
 
+msgctxt "Languages::edit_states"
+msgid "Edit states"
+msgstr ""
+
 msgctxt "Languages::states_menu_description"
 msgid "Manage the set of states that are supported in your store."
 msgstr "都道府県/州に関する情報の管理を行います。"
@@ -10583,10 +10727,6 @@ msgstr "税金"
 msgctxt "Languages::taxes"
 msgid "Taxes"
 msgstr "税金"
-
-msgctxt "Languages::taxes_menu_description"
-msgid "Manage the set of taxes that are supported in your store."
-msgstr "注文時に適用される税金の管理を行います。"
 
 msgctxt "Languages::tax_exempt"
 msgid "Tax exempt"
@@ -10950,11 +11090,11 @@ msgstr "以下のURLにアクセスしてパスワードを再設定してくだ
 
 msgctxt "Languages::password_recovery.text_confirm"
 msgid "Somebody — hopefully you — has asked us to reset the password for your account at [site]. If it weren't you, then feel free to ignore this message."
-msgstr "誰かが、できればあなたですが、あなたのアカウントのパスワードを [site]にリセットするように私たちに依頼しました。あなた以外の場合は、このメッセージを無視していただいてかまいません。"
+msgstr "誰か（できればあなた）から、 [site]のあなたのアカウントのパスワードをリセットするように私たちに依頼がありました。あなたでない場合は、このメッセージを無視してください。"
 
 msgctxt "Languages::password_recovery.link_expire"
 msgid "But if you'd like to reset the password, follow the link below. It will expire in 15 minutes"
-msgstr "ただし、パスワードをリセットしたい場合は、以下のリンクに従ってください。 15分後に期限切れになります"
+msgstr "もし、パスワードをリセットしたい場合は、以下のリンクに従ってください。有効期限は15分です。"
 
 msgctxt "Languages::text_csrf_attack"
 msgid "Access denied: Possible CSRF attack"
@@ -11272,6 +11412,10 @@ msgctxt "Languages::text_not_allowed_to_upload_file_extension"
 msgid "It is not allowed to upload files with the <b>.[ext]</b> extension here."
 msgstr "拡張子が <b>.[ext]</b> のファイルのアップロードは許可されていません。"
 
+msgctxt "Languages::text_not_allowed_to_upload_file_size"
+msgid "It is not allowed to upload files that exceed the maximum allowed size of [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_not_valid_email"
 msgid "<b>[email]</b> is not a valid e-mail address."
 msgstr "<b>[email]</b> は有効なEメールアドレスではありません。"
@@ -11402,7 +11546,7 @@ msgstr "ロード中... 処理が完了するまでしばらくお待ちくだ�
 
 msgctxt "Languages::text_password_recovery_instructions_sent"
 msgid "Password recovery instructions have been sent to [email] address."
-msgstr "パスワードリカバリーが[email]に送信されました"
+msgstr "パスワード・リカバリーが[email]に送信されました"
 
 msgctxt "Languages::text_pay4later_notice"
 msgid "<b>Note</b>: In order to track your Deko orders with the shopping cart software, you have to take these steps:<br /><br />-&nbsp;Log in to Deko BackOffice<br />-&nbsp;Click on the <u>'Settings/Installations'</u> link in the <u>'Quick Links'</u> section.<br />-&nbsp;Set <u>'Return URL (Verified)'</u> setting to:<br /><b>[verified_url]</b><br />-&nbsp;Set <u>'Return URL (Decline)'</u> setting to:<br /><b>[decline_url]</b><br />-&nbsp;Set <u>'Return URL (Refer)'</u> setting to:<br /><b>[refer_url]</b><br />-&nbsp;Set <u>'Return URL (Cancel)'</u> setting to:<br /><b>[cancel_url]</b><br />-&nbsp;Set <u>'CSN URL'</u> setting to:<br /><b>[process_url]</b><br />-&nbsp;Click on the <u>'Save Changes'</u> button<br />"
@@ -12552,6 +12696,10 @@ msgctxt "Languages::thumbnail_width"
 msgid "Thumbnail width in scroller"
 msgstr "スクローラー内サムネイルの横幅"
 
+msgctxt "Languages::image_file_size_set_to_server_setting"
+msgid "Image file size set to [file_size] MB. This is the largest file size allowed by the server settings."
+msgstr ""
+
 msgctxt "Languages::tier_account"
 msgid "tier account"
 msgstr "ティアーアカウント"
@@ -12939,6 +13087,10 @@ msgstr "ダウンロード商品以外で重量が0に設定されている場�
 msgctxt "Languages::tt_views_products_update_categories"
 msgid "Categories to be displayed in the navigation breadcrumbs."
 msgstr "パン屑リストに表示されるカテゴリー"
+
+msgctxt "Languages::tt_views_products_update_images"
+msgid "The maximum size of image files is [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::tt_views_products_update_inventory"
 msgid "Track in stock product quantity. Enable the \"Enable inventory tracking\" option (Settings -> General) to modify."
@@ -13351,6 +13503,10 @@ msgstr "ユーザー"
 msgctxt "Languages::users_carts"
 msgid "Abandoned / Live carts"
 msgstr "カートの状況"
+
+msgctxt "Languages::users_carts_menu"
+msgid "Live carts"
+msgstr ""
 
 msgctxt "Languages::users_carts_menu_description"
 msgid "Lists of products that have not been purchased for some reason."
@@ -14788,6 +14944,10 @@ msgctxt "SettingsOptions::company_phone_2"
 msgid "Company phone 2"
 msgstr "電話(2)"
 
+msgctxt "SettingsOptions::image_file_size"
+msgid "Image file size"
+msgstr ""
+
 msgctxt "SettingsOptions::thumbnail_background_color"
 msgid "Thumbnail background color"
 msgstr "サムネイルの背景色"
@@ -15335,6 +15495,10 @@ msgstr "1〜10000000の数値を使用するか、自動入力の場合は空の
 msgctxt "SettingsTooltips::user_multiple_profiles"
 msgid "A profile is a combination of shipping and billing address."
 msgstr "プロフィールは、配送先住所と請求先住所の組み合わせです。"
+
+msgctxt "SettingsTooltips::image_file_size"
+msgid "The maximum size of an uploaded image file in megabytes. Leave empty to use the server settings."
+msgstr ""
 
 msgctxt "SettingsTooltips::thumbnail_background_color"
 msgid "Leave empty for transparent background."
@@ -16368,6 +16532,10 @@ msgctxt "Languages::templates"
 msgid "Templates"
 msgstr "テンプレート"
 
+msgctxt "Languages::edit_templates"
+msgid "Edit templates"
+msgstr ""
+
 msgctxt "Languages::payments.realex.referring_url"
 msgid "Please supply this URL to your Realex Payments account manager"
 msgstr "Please supply this URL to your Realex Payments account manager"
@@ -16551,6 +16719,10 @@ msgstr "あなたのショップのSEO設定"
 msgctxt "Languages::seo_robots"
 msgid "robots.txt"
 msgstr "robots.txt"
+
+msgctxt "Languages::view_seo_robots"
+msgid "View robots.txt"
+msgstr ""
 
 msgctxt "Languages::robots_title"
 msgid "Editing: robots.txt"
@@ -17156,6 +17328,10 @@ msgstr "このテーマはテーマエディターに対応していません"
 msgctxt "Languages::shipment_statuses"
 msgid "Shipment statuses"
 msgstr "配送ステータス"
+
+msgctxt "Languages::edit_shipment_statuses"
+msgid "Edit shipment statuses"
+msgstr ""
 
 msgctxt "Languages::email_templates"
 msgid "Email templates"
@@ -17952,6 +18128,10 @@ msgstr "一部のコアファイルが変更されています。この変更は
 msgctxt "Languages::file_changes_detector"
 msgid "File changes detector"
 msgstr "ファイル変更チェッカー"
+
+msgctxt "Languages::view_file_changes_detector"
+msgid "View file changes detector"
+msgstr ""
 
 msgctxt "Languages::privileges.view_file_changes"
 msgid "Can view"
@@ -21034,390 +21214,6 @@ msgctxt "Languages::license_expires"
 msgid "License expires"
 msgstr "ライセンス有効期限"
 
-msgctxt "Languages::sw.store_setup_wizard"
-msgid "Store setup wizard"
-msgstr "ECサイト設定ウィザード"
-
-msgctxt "Languages::sw.store_setup_wizard_short"
-msgid "Setup wizard"
-msgstr "設定ウィザード"
-
-msgctxt "Languages::sw.text_about_store_header"
-msgid "Fill out the contact information about your store"
-msgstr "ECサイトの連絡先を記入"
-
-msgctxt "Languages::sw.text_design_header"
-msgid "Select your storefront design and upload the logo"
-msgstr "ECサイトのデザインを選び、ロゴをアップロードする"
-
-msgctxt "Languages::sw.text_payments_header"
-msgid "Set up the service to recieve payments"
-msgstr "支払いを受けるためのサービス設定"
-
-msgctxt "Languages::sw.text_shippings_header"
-msgid "Select shipping services"
-msgstr "配送方法を選択"
-
-msgctxt "Languages::sw.text_business_model_header"
-msgid "Choose your business model and checkout flow"
-msgstr "ビジネスモデルと注文手続きの選択"
-
-msgctxt "Languages::sw.select_money_transfer_methods"
-msgid "Select one of the following models, and we'll handle most of the setup for you."
-msgstr "以下のモデルを選択すければ、ほとんどの設定を私たちが行います"
-
-msgctxt "Languages::sw.text_vendors_header"
-msgid "Set up how you work with vendors and their data"
-msgstr "出品者とそのデータをどのように扱うかを設定"
-
-msgctxt "Languages::sw.text_settings_header"
-msgid "Configure product catalog settings"
-msgstr "商品カタログの設定"
-
-msgctxt "Languages::sw.about_store"
-msgid "About store"
-msgstr "ECサイトについて"
-
-msgctxt "Languages::sw.company_name"
-msgid "Company name"
-msgstr "企業名"
-
-msgctxt "Languages::sw.google_analytics.tracking_code"
-msgid "Google Analytics account number"
-msgstr "Google AnalyticsのアカウントID"
-
-msgctxt "Languages::sw.business_model"
-msgid "Business Model"
-msgstr "ビジネスモデル"
-
-msgctxt "Languages::sw.vendors"
-msgid "Vendors"
-msgstr "出品者"
-
-msgctxt "Languages::sw.site_admin_email"
-msgid "Site administrator e-mail address"
-msgstr "サイト管理者のメールアドレス"
-
-msgctxt "Languages::sw.address_text"
-msgid "Company address (street, house, etc.)"
-msgstr "会社住所（番地、家など）"
-
-msgctxt "Languages::sw.country"
-msgid "Company country"
-msgstr "会社所在国"
-
-msgctxt "Languages::sw.state"
-msgid "Company state"
-msgstr "会社住所（都道府県）"
-
-msgctxt "Languages::sw.city"
-msgid "Company city"
-msgstr "会社住所（市区町村）"
-
-msgctxt "Languages::sw.zipcode"
-msgid "Company zip code"
-msgstr "会社住所（郵便番号）"
-
-msgctxt "Languages::sw.phone"
-msgid "Company phone"
-msgstr "会社電話番号"
-
-msgctxt "Languages::sw.phone_2"
-msgid "Company phone 2"
-msgstr "会社電話番号 2"
-
-msgctxt "Languages::sw.fax"
-msgid "Fax"
-msgstr "FAX"
-
-msgctxt "Languages::sw.website"
-msgid "Company website"
-msgstr "会社Webサイト"
-
-msgctxt "Languages::sw.company_start_year"
-msgid "Year when the store started its operation"
-msgstr "ECサイトの営業開始年"
-
-msgctxt "Languages::sw.collect_taxes_from_vendors"
-msgid "Collect taxes from vendors"
-msgstr "出品者からの税金徴収"
-
-msgctxt "Languages::sw.moderation"
-msgid "Moderation"
-msgstr "審査"
-
-msgctxt "Languages::sw.vendor_profile_updates_approval"
-msgid "Check changes to vendor profile"
-msgstr "出品者プロフィールの変更点を確認する"
-
-msgctxt "Languages::sw.products_prior_approval"
-msgid "Check new products"
-msgstr "新しい商品を確認する"
-
-msgctxt "Languages::sw.products_updates_approval"
-msgid "Check changes to existing products"
-msgstr "既存商品の変更点を確認する"
-
-msgctxt "Languages::sw.accounting"
-msgid "Accounting"
-msgstr "入出金管理"
-
-msgctxt "Languages::sw.lowers_allowed_balance"
-msgid "Minimum allowed vendor balance"
-msgstr "許容される最小出品者残高"
-
-msgctxt "Languages::sw.grace_period_to_refill_balance"
-msgid "Block vendor after days"
-msgstr "日後に出品者をブロック"
-
-msgctxt "Languages::sw.location"
-msgid "Location"
-msgstr "所在地"
-
-msgctxt "Languages::sw.enable_vendor_location_using_google_map"
-msgid "Let vendors set their location on Google Maps"
-msgstr "Google Mapsで出品者の所在地を設定"
-
-msgctxt "Languages::sw.vendor_profile_fields"
-msgid "Vendor profile fields"
-msgstr "出品者情報フィールド"
-
-msgctxt "Languages::sw.set_up_vendor_profile_fields"
-msgid "What information about vendors do you need?"
-msgstr "出品者に関する情報はどのようなものが必要でしょうか？"
-
-msgctxt "Languages::sw.notifications"
-msgid "Notifications"
-msgstr "通知"
-
-msgctxt "Languages::sw.admin_notifications"
-msgid "Admin notifications"
-msgstr "管理者通知"
-
-msgctxt "Languages::sw.vendor_notifications"
-msgid "Vendor notifications"
-msgstr "出品者通知"
-
-msgctxt "Languages::sw.selected_design"
-msgid "Current design"
-msgstr "現在のデザイン"
-
-msgctxt "Languages::sw.upload_logo"
-msgid "Upload logo"
-msgstr "ロゴのアップロード"
-
-msgctxt "Languages::sw.logo_theme"
-msgid "Main"
-msgstr "メイン"
-
-msgctxt "Languages::sw.logo_mail"
-msgid "Email"
-msgstr "メール"
-
-msgctxt "Languages::sw.select_image"
-msgid "Select image"
-msgstr "画像を選択"
-
-msgctxt "Languages::sw.select_right_design"
-msgid "Pick a design preset"
-msgstr "デザインプリセットの選択"
-
-msgctxt "Languages::sw.activate"
-msgid "Activate"
-msgstr "有効化"
-
-msgctxt "Languages::sw.apply"
-msgid "Apply"
-msgstr "適用"
-
-msgctxt "Languages::sw.preview"
-msgid "Preview"
-msgstr "プレビュー"
-
-msgctxt "Languages::sw.edit_design"
-msgid "Edit design"
-msgstr "デザイン編集"
-
-msgctxt "Languages::sw.design"
-msgid "Design"
-msgstr "デザイン"
-
-msgctxt "Languages::sw.error_updating_payment"
-msgid "Error occured during payment method update"
-msgstr "決済方法の更新時にエラーが発生しました"
-
-msgctxt "Languages::sw.payments"
-msgid "Payments"
-msgstr "支払方法"
-
-msgctxt "Languages::sw.payment_not_found"
-msgid "The Yandex.Money payment method not found"
-msgstr "Yandex.Moneyの支払い方法が見つかりません。"
-
-msgctxt "Languages::sw.over_payment_system"
-msgid "Use another payment system"
-msgstr "他の決済システムを利用する"
-
-msgctxt "Languages::sw.shippings"
-msgid "Shipping services"
-msgstr "配送サービス"
-
-msgctxt "Languages::sw.ems_russian_post"
-msgid "EMS Russian Post"
-msgstr "EMS ロシア郵便"
-
-msgctxt "Languages::sw.russian_post"
-msgid "Russian Post"
-msgstr "ロシア郵便"
-
-msgctxt "Languages::sw.edost"
-msgid "eDost"
-msgstr "eDost"
-
-msgctxt "Languages::sw.usps"
-msgid "USPS"
-msgstr "USPS"
-
-msgctxt "Languages::sw.ups"
-msgid "UPS"
-msgstr "UPS"
-
-msgctxt "Languages::sw.fedex"
-msgid "FedEx"
-msgstr "FedEx"
-
-msgctxt "Languages::sw.goto_shipping_methods"
-msgid "Go to shipping methods"
-msgstr "配送方法に行く"
-
-msgctxt "Languages::sw.configure"
-msgid "Configure"
-msgstr "設定"
-
-msgctxt "Languages::sw.settings"
-msgid "Settings"
-msgstr "設定"
-
-msgctxt "Languages::sw.enable"
-msgid "Enable"
-msgstr "有効"
-
-msgctxt "Languages::sw.disable"
-msgid "Disable"
-msgstr "無効"
-
-msgctxt "Languages::sw.activated"
-msgid "Activated"
-msgstr "有効化"
-
-msgctxt "Languages::sw.select_model"
-msgid "Select model"
-msgstr "モデル選択"
-
-msgctxt "Languages::sw.timezone"
-msgid "Time zone"
-msgstr "タイムゾーン"
-
-msgctxt "Languages::sw.order_start_id"
-msgid "Initial order ID value (leave empty for auto)"
-msgstr "注文IDの初期値（オートの場合は空欄のまま）"
-
-msgctxt "Languages::sw.min_order_amount"
-msgid "Minimum order amount"
-msgstr "最小発注量"
-
-msgctxt "Languages::sw.show_out_of_stock_products"
-msgid "Show out of stock products"
-msgstr "在庫切れ商品の表示"
-
-msgctxt "Languages::sw.enable_quick_view"
-msgid "Enable quick view"
-msgstr "クイックビューの有効化"
-
-msgctxt "Languages::sw.enable_inventory_tracking"
-msgid "Enable inventory tracking"
-msgstr "在庫管理を行う"
-
-msgctxt "Languages::sw.allow_negative_amount"
-msgid "Allow negative amount in inventory"
-msgstr "マイナス在庫を許可"
-
-msgctxt "Languages::sw.ym_merchant_country"
-msgid "Country"
-msgstr "国名"
-
-msgctxt "Languages::sw.ym_merchant_forma"
-msgid "Ownership"
-msgstr "所有"
-
-msgctxt "Languages::sw.send"
-msgid "Send"
-msgstr "送信"
-
-msgctxt "Languages::sw.remove_demo_data_text"
-msgid "Clean up orders, products, categories, user profiles, and related data"
-msgstr "注文、商品、カテゴリー、ユーザープロファイル、および関連データのクリーンアップ"
-
-msgctxt "Languages::sw.remove"
-msgid "Clean up"
-msgstr "クリーン・アップ"
-
-msgctxt "Languages::sw.demo_data_removed"
-msgid "Demo data removed."
-msgstr "デモデータの削除"
-
-msgctxt "Languages::sw.error_removing_demo_data"
-msgid "An error occurred while removing the demo data"
-msgstr "デモデータの削除中にエラーが発生しました"
-
-msgctxt "Languages::sw.confirm_demo_data_removal_title"
-msgid "Remove the data?"
-msgstr "データを削除しますか？"
-
-msgctxt "Languages::sw.text_confirm_demo_data_removal"
-msgid "All orders, products, product categories, customer profiles, and associated data (tags, comments, etc.) including the data added by you <b>will be permanently removed.</b> This operation cannot be undone. Are you sure you want to continue?"
-msgstr "あなたが追加したデータを含む、すべての注文、商品、商品カテゴリー、カスタマープロファイル、および関連データ（タグ、コメントなど）は<b>永久に削除されます</b>。この操作は元に戻すことができません。本当に続行しますか？"
-
-msgctxt "Languages::sw.delete_demo_data"
-msgid "Delete the  data"
-msgstr "データを削除"
-
-msgctxt "Languages::sw.keep_demo_data"
-msgid "Keep the data"
-msgstr "データを保管"
-
-msgctxt "Languages::sw.more_themes_in_marketplace"
-msgid "More themes in the Marketplace"
-msgstr "マーケットプレイスのその他のテーマ"
-
-msgctxt "Languages::sw.logo_recommended_size_text"
-msgid "recommended size [height]px × [width]px"
-msgstr "推奨サイズ [高さ]px × [幅]px"
-
-msgctxt "Languages::sw.money_goes_to_owner"
-msgid "Customer makes a single payment, all money goes to you"
-msgstr "お客様の一回の支払いで、全額があなたに入ります"
-
-msgctxt "Languages::sw.money_goes_to_owner_descr"
-msgid "The money owed to the vendor is tracked in the admin panel. A vendor can request money withdrawal through the admin panel. You forward the money to vendors as you see fit."
-msgstr "出品者に支払われたお金は、管理画面で追跡されます。出品者は、管理画面を通じてお金の引き出しを要求することができます。あなたは、適切な方法で出品者にお金を転送します。"
-
-msgctxt "Languages::sw.money_split_automaticaly"
-msgid "Customer makes a single payment, money is split automatically"
-msgstr "お客様の1回の支払いで、自動的にお金が分割されます。"
-
-msgctxt "Languages::sw.money_split_automaticaly_descr"
-msgid "This is achieved via [stripe_connect] payments and/or [paypal_commerce_platform], so each vendor must have a Stripe and/or PayPal account. We'll create these payment methods for you. You'll just need to configure them, and vendors will need to provide their account information."
-msgstr "これは[stripe_connect]支払と[paypal_commerce_platform]のどちらかで実現するため、各出品者はStripeとPayPalアカウントの両方又は片方を持っている必要があります。 私たちは、これらの支払方法を作成してあなたに提供します。あなたはそれを設定するだけでよく、出品者はアカウント情報を提供する必要があります。"
-
-msgctxt "Languages::sw.money_goes_to_vendor"
-msgid "Customer makes multiple payments (one to each vendor)"
-msgstr "お客様が複数回（各出品者に1回ずつ）支払いを行う"
-
-msgctxt "Languages::sw.money_goes_to_vendor_descr"
-msgid "Each vendor has to create own payment methods. Money goes directly to vendors, and marketplace commission gets added to vendors' debt. It becomes a vendor's responsibility to pay the marketplace."
-msgstr "各出品者は独自の支払方法を作成する必要があります。お金は直接出品者に支払われ、マーケットプレイスの手数料は出品者の負債に加算されます。マーケットプレイスへの支払いは、出品者の責任となります。"
-
 msgctxt "Languages::unsupported_browser_notice"
 msgid "<p>We have detected that the browser you are using is not fully supported by our Admin Panel. You can view this site using your current browser but it may not display properly, and you may not be able to fully use all features.</p><br><p>Admin Panel is best viewed using the following browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (latest version)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (latest version)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (latest version)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (latest version)</a></li></ul><br><p>Click on one of the links to download the browser of your choice. Once the download has completed, install the browser by running the setup program.</p><br><p>If you cannot upgrade your browser now, you can still access Admin Panel, but you may not be able to fully use all features.<br><br><a href=\"[url]\">Continue</a></p>"
 msgstr "<p>使用しているブラウザが管理画面で完全にサポートされていないことが検出されました。このサイトは現在のブラウザを使用して表示できますが、正しく表示されない場合があり、すべての機能を完全に使用できない場合があります。</p><br><p>管理画面は、次のブラウザを使用するのが最適です。</p><br><ul><li>&ndash;<a href=\\\"http://www.mozilla.org/en-US/\\\" target=\\\"_blank\\\">Mozilla Firefox（最新バージョン）</a></li><li>＆ndash; <a href=\\\"https://www.google.com/intl/en/chrome/browser/\\\" target=\\\"_blank\\\">Google Chrome（最新バージョン）</a></li><li>&ndash;<a href=\\\"https://www.microsoft.com/en-us/edge\\\" target=\\\"_blank\\\">Microsoft Edge（最新バージョン）</a></li><li>&ndash;<a href=\\\"https://www.apple.com/safari/\\\" target=\\\"_blank\\\">Safari（最新バージョン）</a></li></ul><br><p>ご希望のブラウザをクリックしてダウンロードしてください。ダウンロードが完了したら、セットアッププログラムを実行してブラウザをインストールします。</p><br><p>ブラウザを今すぐアップグレードできない場合でも、管理画面にアクセスできますが、すべての機能を完全に使用できない場合があります。<br><br><a href =\\\"[url]\\\">続行</a></p>"
@@ -21433,6 +21229,10 @@ msgstr "デフォルトとして設定"
 msgctxt "Languages::saved_search.set_as_non_default"
 msgid "Set as non-default"
 msgstr "非デフォルトとして設定"
+
+msgctxt "Languages::saved_search.more"
+msgid "More saved search"
+msgstr ""
 
 msgctxt "Languages::saved_search.set_as_default_confirm"
 msgid "Saved search \"[name]\" will open by default instead of the full list of objects. Is that what you'd like?"
@@ -21701,10 +21501,6 @@ msgstr "すべての新規出品者に使用する"
 msgctxt "Languages::show_vendor_info_if_shipping_no_required"
 msgid "Show information about vendors whose products do not require shipping"
 msgstr "送料が不要な商品の販売業者に関する情報を表示します"
-
-msgctxt "Languages::sw.marketplace_setup_wizard"
-msgid "Marketplace setup wizard"
-msgstr "セットアップ・ウィザード"
 
 msgctxt "Languages::sw.money_split_automaticaly_descr.ru"
 msgid "This is achieved via YooMoney for marketplaces, so each vendor must have a YooMoney account. We'll create a payment method for you. You'll just need to configure it, and vendors will need to provide their account information."
@@ -22108,15 +21904,15 @@ msgstr "Googleフォントは置き換えられませんでした。"
 
 msgctxt "Languages::disabled_product_not_added_to_cart"
 msgid "This product is disabled and cannot be added to the cart"
-msgstr "この製品は無効になっているため、カートに追加できません"
+msgstr "この商品は無効になっているため、カートに追加できません"
 
 msgctxt "Languages::ship_ups_access_token"
 msgid "UPS App access token"
-msgstr "UPS アプリのアクセス トークン"
+msgstr "UPS アプリのアクセス・トークン"
 
 msgctxt "Languages::ship_ups_access_token_expiration"
 msgid "UPS App access token expiration"
-msgstr "UPS アプリのアクセス トークンの有効期限"
+msgstr "UPS アプリのアクセス・トークンの有効期限"
 
 msgctxt "Languages::ship_ups_client_id"
 msgid "UPS App client ID"
@@ -22124,7 +21920,7 @@ msgstr "UPS アプリのクライアント ID"
 
 msgctxt "Languages::ship_ups_client_secret"
 msgid "UPS App client secret"
-msgstr "UPS アプリのクライアント シークレット"
+msgstr "UPS アプリのクライアント・シークレット"
 
 msgctxt "Languages::authorize"
 msgid "Authorize"

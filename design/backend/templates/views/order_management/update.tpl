@@ -29,6 +29,9 @@
     {if $cart.order_id || $cart.user_data}
         {assign var="is_edit" value=true}
     {/if}
+    {* Status *}
+    {include file="views/order_management/components/status.tpl"}
+
     <div id="om_ajax_customer_info">
         {* Customer info *}
         {include file="views/order_management/components/profiles_info.tpl" tabindex="2" user_data=$cart.user_data location="O" is_edit=$is_edit allow_reselect_customer=!$cart.order_id}
@@ -37,8 +40,8 @@
 
 {capture name="mainbox"}
 
-<div class="row-fluid orders-wrap">
-    <div class="span8">
+<div class="orders-wrap">
+    <div>
         <div class="buttons-container">
             {hook name="order_management:buttons_container"}
                 <div class="inline-block mobile-hide" id="button_trash_products">
@@ -90,7 +93,8 @@
             </div>
         {/if}
 
-        <div class="note clearfix">
+        {capture name="note"}
+        <div class="note clearfix row-fluid">
             <div class="span6">
                 <label for="customer_notes">{__("customer_notes")}</label>
                 <textarea class="span12" name="customer_notes" id="customer_notes" cols="40" rows="5">{$cart.notes}</textarea>
@@ -100,6 +104,7 @@
                 <textarea class="span12" name="update_order[details]" id="order_details" cols="40" rows="5">{$cart.details}</textarea>
             </div>
         </div>
+        {/capture}
 
         <div class="clearfix">
             {$notify_customer_status = false}
@@ -125,13 +130,8 @@
         </div>
     </div>
 
-    <div class="span4">
-        <div class="well orders-right-pane form-horizontal">
-            {* Status *}
-            <div class="statuses">
-                {include file="views/order_management/components/status.tpl"}
-            </div>
-
+    <div>
+        <div class="orders-right-pane form-horizontal">
             {* Payment method *}
             <div class="payments" id="om_ajax_update_payment">
                 {include file="views/order_management/components/payment_method.tpl"
@@ -144,6 +144,7 @@
                 {include file="views/order_management/components/shipping_method.tpl"}
             <!--om_ajax_update_shipping--></div>
         </div>
+        {$smarty.capture.note nofilter}
     </div>
 </div>
 
@@ -154,13 +155,12 @@
     {if $cart.order_id == ""}
         {$_but_text = __("create")}
         {$but_text_ = __("create_process_payment")}
-        {$_title = __("create_new_order")}
+        {$title_start = __("create_new_order")}
         {$_tabindex = "3"}
     {else}
         {$_but_text = __("save")}
         {$but_text_ = __("save_process_payment")}
         {$title_start = __("editing_order")}
-        {$title_end = "#`$cart.order_id`"}
         {$_tabindex = "3"}
     {/if}
 
@@ -176,29 +176,18 @@
     {include file="buttons/button.tpl" but_text=$_but_text but_name="dispatch[order_management.place_order.save]" but_role="button_main" tabindex=$_tabindex}
 {/capture}
 
-{capture name="mainbox_title"}
-    {if $cart.order_id == ""}
-        {__("add_new_order")}
-    {else}
-
-        {__("editing_order")} #{$cart.order_id} <span class="f-middle">{__("total")}: <span>{include file="common/price.tpl" value=$cart.total}</span>{if $cart.company_id}, {$cart.company_id|fn_get_company_name}{/if}</span>
-
+{capture name="mainbox_title"}{strip}
+    {if $cart.order_id == ""}{strip}
+    {/strip}{else}{strip}
+        #{$cart.order_id} {""}</span>
         <span class="f-small">
-        /{if $cart.company_id}{$cart.company_id|fn_get_company_name}){/if}
-        {if $status_settings.appearance_type == "I" && $cart.doc_ids[$status_settings.appearance_type]}
-        ({__("invoice")} #{$cart.doc_ids[$status_settings.appearance_type]})
-        {elseif $status_settings.appearance_type == "C" && $cart.doc_ids[$status_settings.appearance_type]}
-        ({__("credit_memo")} #{$cart.doc_ids[$status_settings.appearance_type]})
-        {/if}
-        {__("by")} {if $cart.user_data.user_id}{/if}{$cart.user_data.firstname} {$cart.user_data.lastname} {if $cart.user_data.user_id}{/if}
         / {$cart.order_timestamp|date_format:"`$settings.Appearance.date_format`"}, {$cart.order_timestamp|date_format:"`$settings.Appearance.time_format`"}
         </span>
-
-    {/if}
-{/capture}
+    {/strip}{/if}
+{/strip}{/capture}
 
 <div id="order_update">
-{include file="common/mainbox.tpl" title_start=$title_start title_end=$title_end title=$smarty.capture.mainbox_title sidebar=$smarty.capture.sidebar content=$smarty.capture.mainbox buttons=$smarty.capture.buttons sidebar_position="left" sidebar_icon="icon-user"}
+{include file="common/mainbox.tpl" title_start=$title_start title_end=$smarty.capture.mainbox_title sidebar=$smarty.capture.sidebar content=$smarty.capture.mainbox buttons=$smarty.capture.buttons sidebar_icon="icon-user"}
 <!--order_update--></div>
 
 </form>

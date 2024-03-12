@@ -37,7 +37,7 @@ class ReadAllButton extends Component {
   render() {
     return (
       <button
-        className="cc-read-all-button btn btn-text"
+        className="cc-read-all-button btn btn-link"
         onMouseUp={this.props.onMouseUp}
         onClick={this.props.onClick}
       >{this.props.text}</button>
@@ -126,7 +126,7 @@ class Collapsable extends Component {
         </span>
         {this.state.process && (
           <button
-            className="cc-enable-collapse btn btn-text"
+            className="cc-enable-collapse btn btn-link"
             onMouseUp={(e) => {
               e.stopPropagation();
               e.preventDefault();
@@ -157,7 +157,7 @@ class Notification extends Component {
           {this.props.notification.datetime}
         </span>
         <span className="pull-right cc-delete">
-          <span className="ty-icon icon-remove-sign cc-delete"></span>
+          <svg fill="currentColor" className="cs-icon__svg cc-delete" focusable="false" aria-hidden="true" viewBox="0 0 20 20"><path d="m.833984 9.99998c0-5.06261 4.104056-9.166667 9.166716-9.166667 5.0626 0 9.1666 4.104057 9.1666 9.166667 0 5.06262-4.104 9.16662-9.1666 9.16662-5.06266 0-9.166716-4.104-9.166716-9.16662zm7.255276-3.08924c-.32544-.32543-.85308-.32543-1.17852 0-.32543.32544-.32543.85308 0 1.17852l1.91075 1.91074-1.91075 1.9107c-.32543.3255-.32543.8531 0 1.1786.32544.3254.85308.3254 1.17852 0l1.91074-1.9108 1.9107 1.9108c.3255.3254.8531.3254 1.1786 0 .3254-.3255.3254-.8531 0-1.1786l-1.9108-1.9107 1.9108-1.91074c.3254-.32544.3254-.85308 0-1.17852-.3255-.32543-.8531-.32543-1.1786 0l-1.9107 1.91075z"></path></svg>
         </span>
 
         <div style={{ paddingTop: '5px' }}>
@@ -534,28 +534,3 @@ export const NotificationsCenterCounter = connect(
     }
   }
 )(Counter);
-
-class Marker extends Component {
-  render() {
-    return (
-      this.props.state.unreadCount
-        ? <div className="cc-notify-marker-content"></div>
-        : ''
-    );
-  }
-}
-
-export const NotificationsMark = connect(
-  // mapStateToProps
-  (state, ownProps) => {
-    return {
-      state
-    };
-  },
-  // mapDispatchToProps
-  (dispatch, ownProps) => {
-    return {
-      dispatch
-    }
-  }
-)(Marker);

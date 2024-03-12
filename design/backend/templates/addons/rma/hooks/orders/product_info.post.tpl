@@ -2,16 +2,18 @@
     {if !$return_statuses}{assign var="return_statuses" value=$smarty.const.STATUSES_RETURN|fn_get_simple_statuses}{/if}
 
     <p class="shift-top">
-        {include_ext file="common/icon.tpl"
-            class="icon-caret-right hand cm-combination"
-            title=__("expand_sublist_of_items")
-            id="on_ret_`$key`"
-        }
-        {include_ext file="common/icon.tpl"
-            class="icon-caret-down hand hidden cm-combination"
-            title=__("collapse_sublist_of_items")
-            id="off_ret_`$key`"
-        }
+        <span class="flex-inline top">
+            {include_ext file="common/icon.tpl"
+                class="icon-caret-right hand cm-combination"
+                title=__("expand_sublist_of_items")
+                id="on_ret_`$key`"
+            }
+            {include_ext file="common/icon.tpl"
+                class="icon-caret-down hand hidden cm-combination"
+                title=__("collapse_sublist_of_items")
+                id="off_ret_`$key`"
+            }
+        </span>
         <a id="sw_ret_{$key}" class="cm-combination">{__("returns_info")}</a>
     </p>
     <div class="table-responsive-wrapper">

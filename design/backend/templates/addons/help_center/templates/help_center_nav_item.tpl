@@ -8,7 +8,11 @@
                     ${data.external ? 'help-center-icon help-center-nav-item__btn--external' : ''}
                 " ${data.isDisabled ? 'data-ca-stop-event-propagation="true"' : ''}>`
             }
-                <span class="cs-icon help-center-nav-item__icon ${data.icon ? data.icon : 'icon-file-text'}"></span>
+                <img src="${Tygh.images_dir.replace('media/images', 'templates/icons/' + (data.icon && data.icon.startsWith('icon-') ? data.icon.slice('icon-'.length).replace('-', '_') : 'file_text') + '.svg')}"
+                    width="20"
+                    height="20"
+                    class="cs-icon help-center-nav-item__icon"
+                />
                 <span class="cs-icon help-center-nav-item__text"
                     data-ca-help-center-blocks-counter="${data.blocks_counter_text ? data.blocks_counter_text : ''}"
                 >${data.name}</span>

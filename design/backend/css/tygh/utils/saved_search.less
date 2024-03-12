@@ -27,3 +27,79 @@ html:not(.touchevents) .saved-search__item:not(:hover) .nav-list__btn:not(.saved
 .saved-search__pin--pinned {
     color: @grayLight;
 }
+
+.saved-search-horizontal {
+    margin-bottom: 0;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    .saved-search-horizontal {
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+}
+
+.saved-search__item-name--new .cs-icon__hidden-accessible {
+    width: 0 !important;
+}
+
+.saved-search__item--horizontal {
+    white-space: nowrap;
+}
+
+.saved-search__item-name--horizontal {
+    white-space: nowrap;
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .saved-search__item-name--horizontal.saved-search__item-name--horizontal {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .nav-tabs > li > .saved-search__item-name--new,
+    .nav-pills > li > .saved-search__item-name--new {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+// Base on ".nav-tabs > li > a" styles
+.saved-search__item-name--horizontal {
+    margin: 0;
+    padding: 5px 16px;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+    border-radius: @baseBorderRadius;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: background 0.1s linear;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+
+    &:hover,
+    &:focus {
+        .gradientBar(@btnBorder, @btnBorder, @grayDark, 0 1px 1px rgba(255,255,255,.75));
+        border-color: @btnBackgroundHighlight;
+    }
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .saved-search__item-name--horizontal {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: @fontSizeSmall;
+    }
+}
+
+.nav-tabs .saved-search__item-more .dropdown-toggle .caret,
+.nav-pills .saved-search__item-more .dropdown-toggle .caret {
+    margin-top: 8px;
+}

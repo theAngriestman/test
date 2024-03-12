@@ -3,7 +3,7 @@
     {$hide_inputs = $hide_inputs|default:false}
     {$image_hide_inputs_class = ($hide_inputs) ? "cs-append-language__icon--hide-inputs cm-tooltip" : ""}
     {if !$simple_tooltip}
-        {include_ext file="common/icon.tpl"
+        {include_ext file="common/icon_deprecated.tpl"
             class="flag flag-{$languages[$smarty.const.DESCR_SL].country_code|lower}"
             assign="flag"
         }

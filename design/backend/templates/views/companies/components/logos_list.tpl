@@ -18,7 +18,7 @@
                 {if $image}
                 <img class="solid-border" src="{$image.image_path}" width="152">
                 {else}
-                <div class="no-image">{include_ext file="common/icon.tpl" class="glyph-image" title=__("no_image")}</div>
+                <div class="no-image">{include_ext file="common/icon_deprecated.tpl" class="glyph-image" title=__("no_image")}</div>
                 {/if}
             </div>
             <div class="image-alt">

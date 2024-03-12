@@ -5,6 +5,7 @@
 <form action="{""|fn_url}" method="post" name="shipments_form" class="form-horizontal form-edit">
 <input type="hidden" name="shipment_data[order_id]" value="{$order_info.order_id}" />
 
+{* Deprecated *}
 {foreach from=$order_info.shipping key="shipping_id" item="shipping"}
     {if $shipping.packages_info.packages}
         {assign var="has_packages" value=true}

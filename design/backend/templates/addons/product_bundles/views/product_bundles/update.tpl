@@ -17,6 +17,7 @@
 {$item_product = ($product_data) ? ([["product_id" => $product_id, "product" => "`$product_data.product`", "price" => {$product_data.price}, "amount" => "1", "aoc" => "{$aoc}"]]) : ([])}
 {$bundle_products = $item.products|default:$item_product}
 {$return_url = $return_url|default:$config.current_url}
+{$tabs_count = 2}
 
 <div class="content-product-bundle" id="content_group_product_bundle_{$id}">
     <form action="{""|fn_url}" method="post" name="item_update_form_product_bundle" id="item_update_form_product_bundle_{$id}" class="form-horizontal form-edit {if !$allow_save}cm-hide-inputs{/if}" enctype="multipart/form-data">
@@ -25,7 +26,7 @@
         <input type="hidden" class="cm-no-hide-input" name="product_id" value="{$product_id}" />
         <input type="hidden" class="cm-no-hide-input" name="return_url" value="{$return_url}">
 
-        <div class="tabs cm-j-tabs">
+        <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
             <ul class="nav nav-tabs">
                 <li id="tab_general_{$id}" class="cm-js active"><a>{__("general")}</a></li>
                 <li id="tab_products_{$id}" class="cm-js"><a>{__("products")}</a></li>

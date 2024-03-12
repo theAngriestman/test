@@ -14,8 +14,8 @@
                 <input
                     type="radio"
                     name="recaptcha_use_for[{$variant}]"
-                    value="{"Addons\\Recaptcha\\RecaptchaTypes::RECAPTCHA_TYPE_V2"|enum}"
-                    {if $settings.$variant == "Addons\\Recaptcha\\RecaptchaTypes::RECAPTCHA_TYPE_V2"|enum}checked="checked"{/if}
+                    value="recaptcha_v2"
+                    {if $settings.$variant === "recaptcha_v2"}checked="checked"{/if}
                     id="addon_option_recaptcha_use_for_{$variant}"
                     data-ca-recaptcha-settings="use_for_{$variant}"
                     {if $is_update_for_all_available}
@@ -27,8 +27,8 @@
                 <input
                     type="radio"
                     name="recaptcha_use_for[{$variant}]"
-                    value="{"Addons\\Recaptcha\\RecaptchaTypes::RECAPTCHA_TYPE_V3"|enum}"
-                    {if $settings.$variant == "Addons\\Recaptcha\\RecaptchaTypes::RECAPTCHA_TYPE_V3"|enum}checked="checked"{/if}
+                    value="recaptcha_v3"
+                    {if $settings.$variant === "recaptcha_v3"}checked="checked"{/if}
                     id="addon_option_recaptcha_use_for_{$variant}"
                     data-ca-recaptcha-settings="use_for_{$variant}"
                     {if $is_update_for_all_available}
@@ -41,7 +41,7 @@
                     type="radio"
                     name="recaptcha_use_for[{$variant}]"
                     value=""
-                    {if $settings.$variant != "Addons\\Recaptcha\\RecaptchaTypes::RECAPTCHA_TYPE_V2"|enum && $settings.$variant != "Addons\\Recaptcha\\RecaptchaTypes::RECAPTCHA_TYPE_V3"|enum}
+                    {if $settings.$variant != "recaptcha_v2" && $settings.$variant != "recaptcha_v3"}
                         checked="checked"
                     {/if}
                     id="addon_option_recaptcha_use_for_{$variant}"

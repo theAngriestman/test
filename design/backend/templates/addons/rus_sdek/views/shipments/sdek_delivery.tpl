@@ -1,5 +1,5 @@
 {capture name="mainbox"}
-    {include_ext file="common/icon.tpl" class="exicon-`$search.sort_order_rev`" assign=c_icon}
+    {include_ext file="common/icon.tpl" class="icon-`$search.sort_order_rev`" assign=c_icon}
     {include_ext file="common/icon.tpl" class="icon-dummy" assign=c_dummy}
     <form action="{""|fn_url}" method="post" name="sdek_status_form" class="form-horizontal form-edit">
     {include file="common/pagination.tpl" save_current_page=true save_current_url=true}

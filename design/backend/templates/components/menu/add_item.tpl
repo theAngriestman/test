@@ -5,12 +5,11 @@
     $id
     $has_subitems
 
-    $link_class
     $popup_title
 *}
     {$has_subitems = $has_subitems|default:false}
     {$is_subitem = $is_subitem|default:false}
-    {$li_class = ($navigation_accordion) ? "accordion-group" : "dropdown"}
+    {$level = $level|default:1}
     {$extra_params = $extra_params|default:[]}
     {$extra_params_query = ""}
     {foreach $extra_params as $key=>$value}
@@ -18,30 +17,26 @@
         {$extra_params_query = "$extra_params_query&$temp"}
     {/foreach}
 
-    <li class="{$li_class} nav__header-main-menu-subitem bm-block-manager__block-add" data-ca-sortable-is-active="0">
-        {if $is_subitem}
-            {$link_class = "nav__menu-subitem"}
-            {$popup_title = "{__("admin_menu.add_item_for_menu_title")}: `$menu_name`"}
-        {else}
-            {$link_class = "nav__menu-item"}
-            {$popup_title = __("admin_menu.add_item_title")}
-        {/if}
+    <div class="accordion-group main-menu-{$level}__item bm-block-manager__block-add" data-ca-sortable-is-active="0">
+        <div>
+            {if $is_subitem}
+                {$popup_title = "{__("admin_menu.add_item_for_menu_title")}: `$menu_name`"}
+            {else}
+                {$popup_title = __("admin_menu.add_item_title")}
+            {/if}
 
-        {if $navigation_accordion && $has_items}
-            {$link_class = "`$link_class` nav__menu-item--accordion"}
-        {elseif !$is_subitem}
-            {$link_class = "`$link_class` dropdown-toggle"}
-        {/if}
-
-        {include file="common/popupbox.tpl"
-            act="edit"
-            text=$popup_title
-            link_text="{__("admin_menu.add_item")}..."
-            href="block_manager.update_custom_block?object_type=menu_item&block_id=0&return_url=`$current_dispatch``$extra_params_query`"
-            content=""
-            id="`$id`_second_level_add"
-            link_class="`$link_class` nav__menu-add"
-        }
-    </li>
+            {include file="common/popupbox.tpl"
+                act="edit"
+                text=$popup_title
+                link_text="{__("admin_menu.add_item")}..."
+                href="block_manager.update_custom_block?object_type=menu_item&block_id=0&return_url=`$current_dispatch``$extra_params_query`"
+                content=""
+                id="`$id`_second_level_add"
+                link_class="main-menu-`$level`__link"
+                icon="icon-plus"
+                no_icon_link=true
+            }
+        </div>
+    </div>
 {/if}
 {/strip}

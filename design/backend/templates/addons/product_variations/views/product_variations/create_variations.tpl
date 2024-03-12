@@ -1,4 +1,6 @@
-<div class="tabs cm-j-tabs">
+{$tabs_count = ($is_allow_generate_variations) ? 2 : 1}
+
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         {if $is_allow_generate_variations}
             <li id="tab_create_new_{$product_data.product_id}" class="cm-js active">

@@ -1,6 +1,11 @@
+{$tabs_count = 1}
+{$tabs_count = ($content.files) ? $tabs_count + 1 : $tabs_count}
+{$tabs_count = ($content.migrations) ? $tabs_count + 1 : $tabs_count}
+{$tabs_count = ($content.languages) ? $tabs_count + 1 : $tabs_count}
+
 <div id="package_content_{$package_id|replace:".":"_"}">
 
-	<div class="tabs cm-j-tabs">
+	<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
         	{if $content.files}
             	<li id="tab_files" class="cm-js active"><a>{__("files")}</a></li>

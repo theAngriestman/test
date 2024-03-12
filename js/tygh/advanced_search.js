@@ -2,7 +2,13 @@
   (function ($) {
     function _popup_switch_search(to_popup) {
       var placeholder = to_popup ? $('#simple_search_popup') : $('#simple_search_common');
-      $('#simple_search').appendTo(placeholder);
+      var $simple_search = $('#simple_search');
+
+      if (placeholder.find($simple_search).length) {
+        return;
+      }
+
+      $simple_search.appendTo(placeholder);
     }
 
     var methods = {
@@ -25,7 +31,7 @@
         var match = true;
         var sbm_button = $('input[type=submit]:first', $('#' + input_id).parents('form:first'));
         $('.cm-view-name', $('#' + views_id)).each(function () {
-          if ($(this).text().toLowerCase() == $('#' + input_id).val().toLowerCase()) {
+          if ($(this).text().toLowerCase().trim() == $('#' + input_id).val().toLowerCase()) {
             match = confirm(_.tr('object_exists'));
 
             if (match) {
@@ -52,13 +58,14 @@
     };
   })($);
 
-  $(document).ready(function () {
-    if ($('#adv_search').length) {
-      $.ceAdvancedSearch('init_popup_search', 'adv_search');
+  $.ceEvent('on', 'ce.commoninit', function (context) {
+    if (!$('#adv_search', context).length) {
+      return;
     }
 
-    $('#adv_search_save').on('click', function () {
-      $.ceAdvancedSearch('check_views', 'view_name', 'views');
-    });
+    $.ceAdvancedSearch('init_popup_search', 'adv_search');
+  });
+  $(_.doc).on('click', '#adv_search_save', function () {
+    $.ceAdvancedSearch('check_views', 'view_name', 'views');
   });
 })(Tygh, Tygh.$);

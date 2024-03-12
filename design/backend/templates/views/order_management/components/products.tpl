@@ -30,7 +30,11 @@
         </div>
         <div class="order-product-info">
             <a href="{"products.update?product_id=`$cp.product_id`"|fn_url}">{$cp.product nofilter}</a>
-            <a class="cm-confirm cm-post hidden-tools icon-remove-sign order-management-delete" href="{"order_management.delete?cart_ids[]=`$key`"|fn_url}" title="{__("delete")}"></a>
+            <a class="cm-confirm cm-post hidden-tools order-management-delete" href="{"order_management.delete?cart_ids[]=`$key`"|fn_url}" title="{__("delete")}">
+            <span class="flex-inline top">
+            {include_ext file="common/icon.tpl" source="remove_sign"}
+            </span>
+            </a>
             <div class="products-hint">
             {hook name="orders:product_info"}
                 {if $cp.product_code}<p class="products-hint__code">{__("sku")}:{$cp.product_code}</p>{/if}

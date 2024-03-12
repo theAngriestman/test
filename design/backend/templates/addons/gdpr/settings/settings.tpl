@@ -8,7 +8,8 @@
         {foreach $gdpr_settings as $agreement_name => $agreement}
             <h4 class="subheader hand" data-toggle="collapse" data-target="#collapsable_addon_option_gdpr_{$agreement_name}">
                 {__($agreement.description_langvar)}
-            <span class="exicon-collapse"></span></h4>
+                {include_ext file="common/icon.tpl" source="caret_down"}
+            </h4>
             <div id="collapsable_addon_option_gdpr_{$agreement_name}" class="in collapse">
                 <fieldset>
                     <div id="container_addon_option_gdpr_{$agreement_name}_enable" class="control-group setting-wide">

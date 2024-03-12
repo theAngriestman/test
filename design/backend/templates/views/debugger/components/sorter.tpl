@@ -12,14 +12,15 @@
 <a class="cm-ajax cm-ajax-cache" href="{"`$url`?order_by=`$field`,`$order_direction`&debugger_hash=`$debugger_hash`"|fn_url}" data-ca-target-id="{$target_id}">
     {$text}
     {if $direction == "none"}
-        {include_ext file="common/icon.tpl" class="icon-asc"}{include_ext file="common/icon.tpl"
-            class="icon-desc"
+        {include_ext file="common/icon.tpl" source="icon-asc"}
+        {include_ext file="common/icon.tpl"
+            source="icon-desc"
             data=[
-                "style" => "margin-left: -7px;"
+                style => "margin-left: -2px;"
             ]
         }
     {else}
-        {include_ext file="common/icon.tpl" class="icon-`$order_direction`"}
+        {include_ext file="common/icon.tpl" source=$order_direction}
     {/if}
 </a>
 {/strip}

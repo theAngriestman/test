@@ -80,6 +80,14 @@ class Context implements IContext
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getLanguageDirection()
+    {
+        return fn_is_rtl_language($this->order->lang_code) ? 'rtl' : 'ltr';
+    }
+
+    /**
      * Gets order currency.
      *
      * @return string Currency code

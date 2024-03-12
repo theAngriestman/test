@@ -1,199 +1,161 @@
-// Btn
+// Bootstrap styles
 .btn {
-    padding-left: round(@baseLineHeight / 1.7);
-    padding-right: round(@baseLineHeight / 1.7);
-    color: @textButtonColor;
-    background-color: #fff;
-    background-image: none;
-    text-shadow: none;
+    display: inline-flex;
+    padding: 5px 13px;
     box-shadow: none;
-    .box-shadow(none);
-    border: 1px solid @btnBorder;
-    .caret {
-        margin-top: @baseLineHeight / 2 - 2px;
-        border-top: 4px solid @textButtonColor;
-    }
-    &.disabled, &[disabled] {
-        background: #fafbfc;
-        [class^="exicon-"],[class*=" exicon-"], [class^="icon-"], [class*=" icon-"] {
-            color: #999;
-        }
-    }
-    &:hover {
-        color: @textButtonColor;
-        background-color: #f5f6f7;
+    min-width: @baseLineHeight + 2 * (5px + 1px);   // min-width: 32px;
+    min-height: @baseLineHeight + 2 * (5px + 1px);  // min-height: 32px;
 
-        &.disabled,
-        &[disabled] {
-            color: #333;
-            background: #fafbfc;
-        }
-    }
+    // Hover/focus state
+    &:hover,
     &:focus {
-        color: @textButtonColor;
-        outline: none;
-        background-color: #f0f1f2;
-        .box-shadow(none);
+        background-position: 0;
+        transition: background 0.1s linear;
+    }
+
+    // Active state
+    &.active,
+    &:active {
+        box-shadow: inset 0 1px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
     }
 }
-.btn-link--contents {
-    padding: 0;
-    margin: 0;
-    display: inline;
-    padding-bottom: 5px;
-}
-.btn.active,
-.btn:active {
-    color: @textButtonColor;
-    background-color: #f5f6f7;
-    background-image: none;
-    outline: 0;
-    .box-shadow(none);
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+    padding: @paddingLarge;
+    // 11px from @paddingLarge
+    min-width: @baseLineHeight + 2 * (11px + 1px);   // min-width: 44px;
+    min-height: @baseLineHeight + 2 * (11px + 1px);  // min-height: 44px;
 }
 
-.btn-link,
-.btn-link:active,
-.btn-link[disabled] {
-  background-color: transparent;
-  background-image: none;
-  .box-shadow(none);
+// Small
+.btn-small {
+    padding: @paddingSmall;
+    // 2px from @paddingSmall
+    min-width: @baseLineHeight + 2 * (2px + 1px);   // min-width: 26px;
+    min-height: @baseLineHeight + 2 * (2px + 1px);  // min-height: 26px;
 }
+
+// Mini
+.btn-mini {
+    padding: @paddingMini;
+    // 0px from @paddingMini
+    min-width: @baseLineHeight + 2 * (0px + 1px);   // min-width: 22px;
+    min-height: @baseLineHeight + 2 * (0px + 1px);  // min-height: 22px;
+}
+
+// Block button
+// -------------------------
+
+.btn-block {
+    padding-left: 0;
+    padding-right: 0;
+}
+  
+
+// Button groups
+
+// Reposition the caret
+.btn .caret {
+    margin-left: 4px;
+}
+.btn-group.open {
+
+    // The clickable button for toggling the menu
+    // Remove the gradient and set the same inset shadow as the :active state
+    .dropdown-toggle {
+      box-shadow: inset 0 1px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+    }
+}
+
+.btn-group > .btn + .dropdown-toggle {
+    box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 0 0 rgba(255,255,255,.2), 0 0 2px rgba(0,0,0,.05);
+}
+
+// Labels
+
+// Colors
+// Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+.label,
+.badge {
+    // Important (red)
+    &-important         { background-color: @btnDangerBackground; }
+    &-important[href]   { background-color: @errorText; }
+    // Warnings (orange)
+    &-warning           { background-color: @btnWarningBackground; }
+    &-warning[href]     { background-color: @orange; }
+    // Success (green)
+    &-success           { background-color: @btnSuccessBackground; }
+    &-success[href]     { background-color: @successText; }
+    // Info (turquoise)
+    &-info              { background-color: @btnInfoBackground; }
+    &-info[href]        { background-color: @infoText; }
+    // Inverse (black)
+    &-inverse           { background-color: @grayDark; }
+    &-inverse[href]     { background-color: @grayDark; }
+}
+
+
+
+// Custom styles
+
+.btn__icon {
+    display: inline-flex;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.btn__icon--text {
+    vertical-align: text-bottom;
+}
+
 .btn-link {
-  border-color: transparent;
-}
-.btn-link:hover,
-.btn-link:focus {
-  color: @linkColorHover;
-  text-decoration: underline;
-  background-color: transparent;
-}
-.btn-link[disabled]:hover,
-.btn-link[disabled]:focus {
-  color: @grayDark;
-  text-decoration: none;
-}
-
-.btn-primary,
-.btn-primary:active,
-.btn-primary.active,
-
-.btn-primary.disabled,
-.btn-primary[disabled] {
-    color: @btnPrimaryText;
-    background-color: @btnPrimaryBackground;
-    border: 1px solid @btnPrimaryBackground;
-
-    [class^="icon-"] {
-        color: #fff;
-    }
-    &:hover, &:focus {
-        color: #fff;
-        background-color: darken(@btnPrimaryBackground, 6%);
-        border: 1px solid darken(@btnPrimaryBackground, 6%);
-    }
-    > .inverse-icon {
-        color: white;
-    }
-}
-.btn-text {
-    background: none !important;
-    border: 0px !important;
-    display: inline-block;
-    margin-top: -2px;
-    padding-right: 0px;
-    padding-left: 0px;
-    //.box-shadow(none !important);
-    color: @textButtonColor;
-    text-decoration: none !important;
-    font-size: @baseFontSize;
-    &:hover {
-        color: darken(@textButtonColor, 6%);
-    }
     .caret {
         margin-top: @baseLineHeight / 2 - 2px;
-        border-top-color: @textButtonCaretColor;
-        border-bottom-color: @textButtonCaretColor;
+        border-top-color: #1010107b;;
+        border-bottom-color: #1010107b;
         line-height: 5px !important;
         opacity: 1;
     }
 }
-.btn-small {
-    font-size: @baseFontSize;
-    .caret {
-        margin-top: @baseLineHeight / 2 - 2px;
-    }
+.btn-toolbar .btn-link {
+  font-size: @baseFontSize;
 }
 .btn-checkbox {
     position: relative;
     margin: -4px -8px;
     input[type="checkbox"] {
         position: absolute;
-        top: 4px;
+        top: 9px;
         left: 7px;
         z-index: 5;
     }
     .caret {
-        margin-left: 100%;
+        margin-left: ~"calc(100% - 3px)";
+        margin-top: 10px;
+    }
+    .caret--show-checkbox {
+        margin-left: 31px; // Depends on the width and position of the dropdown toggle, checkbox and caret.
+        margin-top: 13px;
     }
     .dropdown-toggle {
-        .box-shadow(none);
-        .border-radius(@baseBorderRadius);
+        box-shadow: none;
+        border-radius: @baseBorderRadius;
         padding: 3px 13px 3px 6px;
         width: 50px;
         height: @inputHeight;
         border: 1px solid white ;
         background: transparent;
     }
+    .dropdown-toggle--show-checkbox {
+        padding: 0;
+    }
     .dropdown-menu, .caret {
         visibility: hidden;
     }
-}
-.btn-text.dropdown-toggle {
-    .icon-user {
-        color: #00a0d0;
-    }
-}
-.dropdown > .btn-text {
-    white-space: nowrap;
-}
-.btn-success{
-    background-color: @successButton;
-    color: #fff;
-    border-color: @successButton;
-    &:hover, &:focus {
-        color: #fff;
-        background-color: darken(@successButton, 6%);
-        border: 1px solid darken(@successButton, 6%);
-    }
-    &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover {
-        opacity: 0.5;
-        color: #fff;
-        background-color: darken(@successButton, 6%);
-        border: 1px solid darken(@successButton, 6%);
-    }
-}
-.btn-group {
-    .btn-text {
-        font-size: @baseFontSize;
-    }
-    .btn.dropdown-toggle:first-child,
-    .btn.dropdown-toggle:last-child {
-        .border-radius(@baseBorderRadius);
-    }
-    &.open {
-        .dropdown-toggle {
-            .box-shadow(none);
-        }
-    }
-}
-.btn-group > .btn-mini {
-    font-size: @fontSizeMini;
-}
-.btn-group > .btn-small {
-    font-size: @fontSizeSmall;
-}
-.btn-group > .btn-large {
-    font-size: @fontSizeLarge;
 }
 .btn-indent {
     margin-bottom: 10px;
@@ -207,8 +169,10 @@
 
             .dropdown-menu {
                 top: auto;
-                left: 17px;
                 right: 17px;
+            }
+            .dropdown-menu.dropdown-menu {
+                left: 17px;
             }
         }
     }
@@ -232,11 +196,6 @@
         }
     }
 }
-
-.input-color {
-    .box-shadow(none);
-    width: 50px;
-}
 .checkbox-list label{
     display: inline-block;
     margin-right: 10px;
@@ -251,7 +210,6 @@
 }
 // show dropdown menu on hover
 .btn-hover {
-    padding-bottom: 2px;
     &:hover ul.dropdown-menu{
         display: block;
     }
@@ -264,24 +222,8 @@
     white-space: nowrap;
 }
 
-
-// FF bug with btn height
-input[type="submit"].btn {
-    height: @inputHeight;
-}
 textarea {
     resize: vertical;
-}
-.btn-toolbar {
-    .hidden + .btn,
-    .hidden + .btn-group {
-        margin-left: 5px;
-    }
-    // ff bug with height
-    .btn-group input.btn {
-        box-sizing: border-box;
-        height: 30px;
-    }
 }
 .btn-toolbar .tab-tools {
     > .btn + .btn,
@@ -338,11 +280,6 @@ textarea {
         margin-bottom: 0;
     }
 }
-.rigth-bar {
-    .clearfix();
-    float: right;
-    margin-bottom: 15px;
-}
 
 // List with button
 .list-with-btns {
@@ -355,9 +292,6 @@ textarea {
         width: 143px;
         vertical-align: top;
     }
-    .list-btns {
-
-    }
 }
 
 .form-edit.form-horizontal .controls .btn-group {
@@ -365,9 +299,11 @@ textarea {
 }
 
 .btn-expand {
-    display: flex;
-    width: @inputHeight;
-    height: @inputHeight;
+    display: inline-flex;
+    min-width: @inputHeight;
+    min-height: @inputHeight;
+    padding-left: 6px;
+    padding-right: 6px;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -375,7 +311,7 @@ textarea {
     background: transparent;
 
     &--header {
-        height: 22px;
+        min-height: 22px;
         vertical-align: top;
     }
 
@@ -385,7 +321,7 @@ textarea {
 
     &-wrapper {
         display: inline-block;
-        width: @inputHeight;
+        min-width: @inputHeight;
         height: 22px;
         text-align: center;
         vertical-align: top;
@@ -394,24 +330,6 @@ textarea {
 
 button.label, button.badge {
     border: 0;
-}
-
-.btn-group.open {
-    .btn-primary.dropdown-toggle {
-        background-color: darken(@btnPrimaryBackground, 6%);
-    }
-}
-
-.btn-primary,
-.btn-warning,
-.btn-danger,
-.btn-info,
-.btn-success,
-.btn-inverse {
-    .caret {
-        border-top-color: #fff;
-        border-bottom-color: #fff;
-    }
 }
 
 .btn-group > {

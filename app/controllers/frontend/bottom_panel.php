@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return [CONTROLLER_STATUS_NO_PAGE];
         }
 
-        $ekey = fn_generate_ekey($user_id, 'U', SECONDS_IN_DAY);
+        $ekey = fn_generate_ekey($user_id, RECOVERY_PASSWORD_EKEY_TYPE, RECOVERY_PASSWORD_TTL);
 
         $redirect_url = Url::buildUrn('bottom_panel.redirect', [
             'url'     => !empty($_REQUEST['url']) ? $_REQUEST['url'] : '',

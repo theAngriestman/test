@@ -43,6 +43,27 @@ array                         $config                       Runtime configuratio
     </form>
 {/capture}
 
+{capture name="actions"}
+    {$buttons = []}
+    {hook name="storefronts:actions"}
+    {$buttons.currencies = [
+        href => "currencies.manage",
+        text => __("edit_currencies")
+    ]}
+    {$buttons.order_statuses = [
+        href => "statuses.manage?type=`$smarty.const.STATUSES_ORDER`",
+        text => __("edit_order_statuses")
+    ]}
+    {$buttons.shipment_statuses = [
+        href => "statuses.manage?type=`$smarty.const.STATUSES_SHIPMENT`",
+        text => __("edit_shipment_statuses")
+    ]}
+    {/hook}
+
+    {* Export $navigation.dynamic.actions *}
+    {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
+{/capture}
+
 {if empty($auth.storefront_id)}
     {capture name="adv_buttons"}
         {hook name="storefronts:manage_adv_buttons"}

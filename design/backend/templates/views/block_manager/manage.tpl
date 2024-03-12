@@ -1,6 +1,8 @@
 {$show_layout_controls = !$dynamic_object.object_id && ("ULTIMATE"|fn_allowed_for || !$runtime.company_id)}
 {$m_url = $smarty.request.manage_url|escape:"url"}
 {$storefront_id = $storefront->storefront_id|default:0}
+{$tabs_count = $navigation.tabs|@count}
+{$tabs_count = (show_layout_controls) ? $tabs_count + 1 : $tabs_count}
 
 {script src="js/tygh/block_manager.js"}
 
@@ -123,6 +125,10 @@
 {include file="common/popupbox.tpl" text=__("import_layout") content=$smarty.capture.import_layout id="import_layout_manager"}
 
 {capture name="buttons"}
+    {if $location.dispatch === "products.view"}
+        {include file="buttons/button.tpl" but_text=__("product_tabs") but_role="action" but_href="tabs.manage"}
+    {/if}
+
     {* Display this buttons only on block manager page *}
     {if $show_layout_controls}
         {if $location.is_frontend_editing_allowed}
@@ -179,7 +185,7 @@
 {script src="js/tygh/tabs.js"}
 
 
-<div class="cm-j-tabs tabs tabs-with-conf">
+<div class="cm-j-tabs tabs tabs-with-conf tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <input type="hidden" id="s_layout" name="s_layout" value="{$location.layout_id}" />
         {foreach from=$navigation.tabs item=tab key=key name=tabs}

@@ -9,8 +9,8 @@ msgid "PayPal Checkout"
 msgstr "PayPal Checkout"
 
 msgctxt "Addons::description::paypal_checkout"
-msgid "Allows you to accept payments through PayPal. Customers can pay with a card or with their PayPal account."
-msgstr "Allows you to accept payments through PayPal. Customers can pay with a card or with their PayPal account."
+msgid "A PayPal solution for online stores. Lets you accept payments through PayPal and other means."
+msgstr "A PayPal solution for online stores. Lets you accept payments through PayPal and other means."
 
 msgctxt "SettingsSections::paypal_checkout::general"
 msgid "General"
@@ -143,3 +143,55 @@ msgstr "PayPal"
 msgctxt "Languages::paypal_checkout.paypal_cookie_description"
 msgid "PayPal is a payment provider. It allows us to accept payments, if you choose a payment method powered by PayPal. Here is <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">PayPal privacy statement</a>."
 msgstr "PayPal is a payment provider. It allows us to accept payments, if you choose a payment method powered by PayPal. Here is <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">PayPal privacy statement</a>."
+
+msgctxt "Languages::paypal_checkout.funding.paylater"
+msgid "Pay Later"
+msgstr "Pay Later"
+
+msgctxt "Languages::paypal_checkout.funding.mercadopago"
+msgid "Mercado Pago"
+msgstr "Mercado Pago"
+
+msgctxt "Languages::paypal_checkout.funding.blik"
+msgid "BLIK"
+msgstr "BLIK"
+
+msgctxt "Languages::paypal_checkout.settings.style"
+msgid "Button appearance"
+msgstr "Button appearance"
+
+msgctxt "Languages::paypal_checkout.style.shape"
+msgid "Shape"
+msgstr "Shape"
+
+msgctxt "Languages::paypal_checkout.shape.pill"
+msgid "Pill"
+msgstr "Pill"
+
+msgctxt "Languages::paypal_checkout.shape.rect"
+msgid "Rectangular"
+msgstr "Rectangular"
+
+msgctxt "Languages::paypal_checkout.style.color"
+msgid "Color"
+msgstr "Color"
+
+msgctxt "Languages::paypal_checkout.color.gold"
+msgid "Gold"
+msgstr "Gold"
+
+msgctxt "Languages::paypal_checkout.color.blue"
+msgid "Blue"
+msgstr "Blue"
+
+msgctxt "Languages::paypal_checkout.color.silver"
+msgid "Silver"
+msgstr "Silver"
+
+msgctxt "Languages::paypal_checkout.color.black"
+msgid "Black"
+msgstr "Black"
+
+msgctxt "Languages::paypal_checkout.style.height"
+msgid "Height"
+msgstr "Height"

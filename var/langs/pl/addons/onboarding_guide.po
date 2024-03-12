@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: pl\n"
-"X-Crowdin-File: /release-4.17.2/addons/onboarding_guide.po\n"
-"X-Crowdin-File-ID: 8098\n"
-"PO-Revision-Date: 2023-11-23 09:56\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-02-02 11:18\n"
 
 msgctxt "Addons::name::onboarding_guide"
 msgid "Onboarding guide"
@@ -78,7 +78,7 @@ msgstr "Skorzystaj z narzędzi niewymagających kodu, aby dostosować marketplac
 
 msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
 msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
-msgstr "Skorzystaj z narzędzi niewymagających kodu i dostosuj sklep internetowy do swoich potrzeb. Edytuj dowolne teksty; przestawiać bloki; zmieniać kolory, czcionki i styl. Gdy widzisz witrynę sklepu jako administrator, możesz w dowolnym momencie korzystać z tych narzędzi."
+msgstr "Skorzystaj z narzędzi niewymagających kodu i dostosuj sklep internetowy do swoich potrzeb. Edytuj dowolne teksty; przestawiaj bloki; zmieniaj kolory, czcionki i styl. Gdy widzisz witrynę sklepu jako administrator, możesz w dowolnym momencie korzystać z tych narzędzi."
 
 msgctxt "Languages::onboarding_guide.theme_and_logo"
 msgid "Theme & logo"
@@ -274,7 +274,7 @@ msgstr "Jako właściciel marketplace możesz kontrolować wszystkie produkty sp
 
 msgctxt "Languages::onboarding_guide.sb_manage_products_description"
 msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
-msgstr "Produkty to sposób, w jaki Twój sklep internetowy zarabia pieniądze; obejmują towary, usługi lub cokolwiek innego oferowanego za określoną cenę. Możesz dodawać produkty pojedynczo lub zbiorczo."
+msgstr "Sprzedaż produktów to sposób, w jaki Twój sklep internetowy zarabia pieniądze; obejmują towary, usługi lub cokolwiek innego oferowanego za określoną cenę. Możesz dodawać produkty pojedynczo lub zbiorczo."
 
 msgctxt "Languages::onboarding_guide.add_one_product"
 msgid "Add one product"
@@ -342,11 +342,11 @@ msgstr "Skonfiguruj wysyłkę"
 
 msgctxt "Languages::onboarding_guide.configure_shippings_description"
 msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
-msgstr "CS-Cart zapewnia Twoim klientom stawki za wysyłkę w zależności od adresu klienta i zamówienia. Możesz samodzielnie ustawić zasady dotyczące tych stawek lub otrzymywać stawki w czasie rzeczywistym od firm spedycyjnych, takich jak UPS lub DHL. Możesz także sprawić, że metody wysyłki będą dostępne w niektórych lokalizacjach, a niedostępne w innych."
+msgstr "CS-Cart zapewnia możliwość ustawienia stawki za wysyłkę w zależności od adresu klienta i zamówienia. Możesz samodzielnie ustawić zasady dotyczące tych stawek lub otrzymywać stawki w czasie rzeczywistym od firm spedycyjnych, takich jak UPS lub DHL. Możesz także sprawić, że metody wysyłki będą dostępne w niektórych lokalizacjach, a niedostępne w innych."
 
 msgctxt "Languages::onboarding_guide.configure_shippings_label"
 msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
-msgstr "Skonfigurujmy metodę wysyłki o nazwie „Odbiór ze sklepu”, aby zobaczyć, jak to działa."
+msgstr "Skonfigurujmy metodę wysyłki o nazwie \"Odbiór ze sklepu\", aby zobaczyć, jak to działa."
 
 msgctxt "Languages::onboarding_guide.configure_shippings"
 msgid "Configure shipping methods"

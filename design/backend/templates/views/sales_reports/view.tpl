@@ -42,8 +42,16 @@
     {dropdown content=$smarty.capture.tools_list}
 {/capture}
 
-{capture name="sidebar"}
-    {include file="views/sales_reports/components/sales_reports_search_form.tpl" period=$report.period search=$report}
+{capture name="search_filters"}
+    {include file="views/sales_reports/components/sales_reports_search_form.tpl"
+        period=$report.period
+        search=$report
+    }
 {/capture}
 
-{include file="common/mainbox.tpl" title=__("reports") content=$smarty.capture.mainbox buttons=$smarty.capture.buttons sidebar=$smarty.capture.sidebar}
+{include file="common/mainbox.tpl"
+    title=__("reports")
+    content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
+    search_filters=$smarty.capture.search_filters
+}

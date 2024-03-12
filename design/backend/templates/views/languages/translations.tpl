@@ -43,7 +43,7 @@
                             <input type="checkbox" name="names[]" value="{$var.name}" class="checkbox cm-item hide">
                         </td>
                         <td data-th="{__("value")}">
-                            <textarea name="lang_data[{$key}][value]" rows="3" class="span7">{$var.value}</textarea>
+                            <textarea name="lang_data[{$key}][value]" rows="3" class="input-fill">{$var.value}</textarea>
                         </td>
                         <td data-th="{__("language_variable")}">
                             <input type="hidden" name="lang_data[{$key}][name]" value="{$var.name}">
@@ -158,7 +158,18 @@
 
 {capture name="buttons"}
     {capture name="tools_list"}
-        <li>{btn type="list" text=__("on_site_live_editing") href="customization.update_mode?type=live_editor&status=enable"|fn_url target="_blank" method="POST"}</li>
+        {$buttons = []}
+        {$buttons.live_editor = [
+            type => "list",
+            href => "customization.update_mode?type=live_editor&status=enable"|fn_url,
+            text => __("on_site_live_editing"),
+            target => "_blank",
+            method => "POST"
+        ]}
+        {$buttons.manage_languages.href = "languages.manage"}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
     {/capture}
     {dropdown content=$smarty.capture.tools_list}
 

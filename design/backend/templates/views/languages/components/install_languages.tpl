@@ -26,7 +26,7 @@
                             {$language.name}
                         </td>
                         <td data-th="{__("country")}">
-                            {include_ext file="common/icon.tpl"
+                            {include_ext file="common/icon_deprecated.tpl"
                                 class="flag flag-`$language.country_code|strtolower`"
                             }{$countries[$language.country_code]}
                         </td>

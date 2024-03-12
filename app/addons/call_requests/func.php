@@ -185,7 +185,7 @@ function fn_get_call_requests($params = array(), $lang_code = CART_LANGUAGE)
         . $limit
     );
 
-    $company_id = fn_get_runtime_company_id();
+    $company_id = (int) fn_get_runtime_company_id();
 
     if (!empty($items)) {
         $cart_product_ids = [];

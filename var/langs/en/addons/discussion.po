@@ -60,6 +60,10 @@ msgctxt "Languages::comments_and_reviews"
 msgid "Comments and reviews"
 msgstr "Comments and reviews"
 
+msgctxt "Languages::discussion.comments_and_reviews_menu"
+msgid "Comments"
+msgstr "Comments"
+
 msgctxt "Languages::discussion_title_home_page"
 msgid "Testimonials"
 msgstr "Testimonials"

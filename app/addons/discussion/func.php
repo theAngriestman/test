@@ -2019,18 +2019,23 @@ function fn_discussion_seo_get_schema_org_markup_items_post($product_data, $show
 
     if (!empty($product_data['discussion']['posts'])) {
         foreach ($product_data['discussion']['posts'] as $post) {
-            $product_item['review'][] = [
-                '@type'        => 'http://schema.org/Review',
-                'author'       => [
+            $discussion_post = [
+                '@type'  => 'http://schema.org/Review',
+                'author' => [
                     '@type' => 'http://schema.org/Person',
                     'name'  => $post['name'],
-                ],
-                'reviewRating' => [
+                ]
+            ];
+
+            if (!empty($post['rating_value'])) {
+                $discussion_post['reviewRating'] = [
                     '@type'       => 'http://schema.org/Rating',
                     'ratingValue' => (float) $post['rating_value'],
                     'bestRating'  => 5,
-                ],
-            ];
+                ];
+            }
+
+            $product_item['review'][] = $discussion_post;
         }
     }
 

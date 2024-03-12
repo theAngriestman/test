@@ -16,6 +16,7 @@
 {else}
     {assign var="active_tab" value='tab_general_`$id`'}
 {/if}
+{$tabs_count = 3}
 
 <div id="content_group{$id}">
 {if $data_shipments.$shipment_id}
@@ -32,7 +33,7 @@
         <input type="hidden" name="add_sdek_info[{$shipment.shipment_id}][Order][SendCityCode]" value="{$data_shipment.send_city_code}" />
         <input type="hidden" name="add_sdek_info[{$shipment.shipment_id}][Order][TariffTypeCode]" value="{$data_shipment.tariff_id}" />
 
-        <div class="tabs cm-j-tabs cm-track">
+        <div class="tabs cm-j-tabs cm-track tabs--enable-fill tabs--count-{$tabs_count}">
             <ul class="nav nav-tabs">
                 <li id="tab_general_{$id}" class="cm-js {if $active_tab == "tab_general_`$id`"} active{/if}"><a>{__("general")}</a></li>
                 <li id="tab_call_customer_{$id}" class="cm-js {if $active_tab == "tab_call_customer_`$id`"} active{/if}"><a>{__("addons.rus_sdek.call_customer")}</a></li>

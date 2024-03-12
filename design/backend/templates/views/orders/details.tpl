@@ -30,8 +30,8 @@
 <input type="hidden" name="selected_section" value="{$selected_section}" />
 
 <div class="{if $selected_section !== "general"}hidden{/if}" id="content_general">
-    <div class="row-fluid">
-        <div class="span8">
+    <div>
+        <div>
             {* Products info *}
             <div class="table-responsive-wrapper">
                 <table width="100%" class="table table-middle table--relative table-responsive table--order-details-products">
@@ -182,7 +182,8 @@
                 </div>
             </div>
 
-            <div class="note clearfix">
+            {capture name="note"}
+            <div class="note clearfix row-fluid">
                 <div class="span6">
                     <label for="notes">{__("customer_notes")}</label>
                     <textarea class="span12" name="update_order[notes]" id="notes" cols="40" rows="5">{$order_info.notes}</textarea>
@@ -192,6 +193,7 @@
                     <textarea class="span12" name="update_order[details]" id="details" cols="40" rows="5">{$order_info.details}</textarea>
                 </div>
             </div>
+            {/capture}
 
             </div>
             {/hook}
@@ -202,28 +204,8 @@
     {/hook}
 
         </div>
-        <div class="span4">
-            <div class="well orders-right-pane form-horizontal">
-                <div class="control-group">
-                    <div class="control-label"><h4 class="subheader">{__("status")}</h4></div>
-                    <div class="controls">
-                        {hook name="orders:order_status"}
-                            {$get_additional_statuses=true}
-                            {$order_status_descr=$smarty.const.STATUSES_ORDER|fn_get_simple_statuses:$get_additional_statuses:true}
-                            {$extra_status=$config.current_url|escape:"url"}
-                            {if "MULTIVENDOR"|fn_allowed_for}
-                                {$notify_vendor=true}
-                            {else}
-                                {$notify_vendor=false}
-                            {/if}
-
-                            {$statuses = []}
-                            {$order_statuses=$smarty.const.STATUSES_ORDER|fn_get_statuses:$statuses:$get_additional_statuses:true}
-                            {include file="common/select_popup.tpl" suffix="o" id=$order_info.order_id status=$order_info.status items_status=$order_status_descr update_controller="orders" notify=true notify_department=true notify_vendor=$notify_vendor status_target_id="content_downloads" extra="&return_url=`$extra_status`" statuses=$order_statuses popup_additional_class="dropleft" text_wrap=true}
-                        {/hook}
-                    </div>
-                </div>
-
+        <div>
+            <div class="orders-right-pane form-horizontal">
                 <div class="control-group shift-top">
                     {include file="common/subheader.tpl" title=__("payment_information")}
                 </div>
@@ -383,8 +365,12 @@
                                     {/if}
                                     <div class="clearfix">
                                     {if "shipments.add"|fn_check_view_permissions}
-                                        {include_ext file="common/icon.tpl" class="icon icon-angle-right" assign=link_text_icon}
-                                        {include file="common/popupbox.tpl" id="add_shipment_`$shipping.group_key`" content="" link_text="`$shipment_btn``$link_text_icon`" act="link" href=" " link_class="pull-`$align`"}
+                                        {capture name="link_text_icon"}{strip}
+                                            <span class="flex-inline top">
+                                                {include_ext file="common/icon.tpl" class="icon icon-angle-right"}
+                                            </span>
+                                        {/strip}{/capture}
+                                        {include file="common/popupbox.tpl" id="add_shipment_`$shipping.group_key`" content="" link_text="`$shipment_btn``$smarty.capture.link_text_icon`" act="link" href=" " link_class="pull-`$align`"}
                                     {/if}
                                     </div>
                                 {/if}
@@ -429,6 +415,7 @@
             {hook name="orders:customer_shot_info"}
             {/hook}
         </div>
+        {$smarty.capture.note nofilter}
     </div>
 <!--content_general--></div>
 
@@ -509,23 +496,24 @@
 {include file="common/tabsbox.tpl" content=$smarty.capture.tabsbox active_tab=$selected_section track=true}
 
 {/capture}
-{capture name="mainbox_title"}
-    {__("order")} &lrm;#{$order_info.order_id} <span class="f-middle">{__("total")}: <span>{include file="common/price.tpl" value=$order_info.total}</span>{if $order_info.company_id} / {$order_info.company_id|fn_get_company_name}{/if}</span>
+{capture name="mainbox_title"}{strip}
+    {__("order")} &lrm;#{$order_info.order_id} <span class="f-middle">{__("total")}: <span>{include file="common/price.tpl" value=$order_info.total}</span>{if $order_info.company_id} / {$order_info.company_id|fn_get_company_name} {""}{/if}</span>
 
     <span class="f-small">
     {if $status_settings.appearance_type == "I" && $order_info.doc_ids[$status_settings.appearance_type]}
-        ({__("invoice")} #{$order_info.doc_ids[$status_settings.appearance_type]})
+        ({__("invoice")} #{$order_info.doc_ids[$status_settings.appearance_type]}) {""}
     {elseif $status_settings.appearance_type == "C" && $order_info.doc_ids[$status_settings.appearance_type]}
-        ({__("credit_memo")} #{$order_info.doc_ids[$status_settings.appearance_type]})
+        ({__("credit_memo")} #{$order_info.doc_ids[$status_settings.appearance_type]}) {""}
     {/if}
     {assign var="timestamp" value=$order_info.timestamp|date_format:"`$settings.Appearance.date_format`"|escape:url}
     / {$order_info.timestamp|date_format:"`$settings.Appearance.date_format`"},{$order_info.timestamp|date_format:"`$settings.Appearance.time_format`"}
     </span>
-{/capture}
+{/strip}{/capture}
 
 {capture name="sidebar"}
     {$sidebar_meta = "sidebar--order-details"}
     {hook name="orders:details_sidebar"}
+    {include file="views/orders/components/order_status.tpl"}
     {include file="views/order_management/components/profiles_info.tpl" user_data=$order_info location="I" form_id="order_info_form"}
     {/hook}
 {/capture}
@@ -584,7 +572,14 @@
     </div>
 {/capture}
 
-{include file="common/mainbox.tpl" title=$smarty.capture.mainbox_title content=$smarty.capture.mainbox buttons=$smarty.capture.buttons adv_buttons=$smarty.capture.adv_buttons sidebar=$smarty.capture.sidebar sidebar_position="left" sidebar_icon="icon-user"}
+{include file="common/mainbox.tpl"
+    title=$smarty.capture.mainbox_title
+    content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
+    adv_buttons=$smarty.capture.adv_buttons
+    sidebar=$smarty.capture.sidebar
+    sidebar_icon="icon-user"
+}
 
 {hook name="orders:detailed_after_content"}
 {/hook}

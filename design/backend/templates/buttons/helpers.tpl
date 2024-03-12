@@ -1,6 +1,8 @@
 {* buttons *}
 {function name="btn" text="" href="" title="" onclick="" target="" class="" data=[] form="" method="" raw=false}
-    {$method = $method|upper}
+    {if $method}
+        {$method = $method|upper}
+    {/if}
 
     {if $href|fn_check_view_permissions:{$method|default:"GET"} && $dispatch|fn_check_view_permissions:{$method|default:"POST"}}
     {* base buttons *}
@@ -102,7 +104,7 @@
 
     {* shortcut for add button with text *}
     {if $type == "text_add"}
-        {btn type="text" text=$text class="btn btn-primary `$class`" icon="icon-plus icon-white" icon_first=true href=$href method=$method}
+        {btn type="text" text=$text class="btn btn-primary `$class`" icon="icon-plus" icon_first=true href=$href method=$method}
     {/if}
 
     {/if}
@@ -112,7 +114,7 @@
 {function name="dropdown" text="" title="" class="" content="" icon="" no_caret=false placement="left"}
     {if $content|strip_tags:false|replace:"&nbsp;":""|trim != ""}
         <div class="btn-group{if $placement == "left"} dropleft{/if} {$class}" {if $id}id="{$id}"{/if}>
-            <a href="#" class="btn dropdown-toggle" data-toggle="dropdown" {if $title}title="{$title}"{/if}>
+            <a href="#" class="btn dropdown-toggle {$class_toggle}" data-toggle="dropdown" {if $title}title="{$title}"{/if}>
                 {$icon = $icon|default:"icon-cog dropdown-icon--tools"}
                 {include_ext file="common/icon.tpl"
                     class="dropdown-icon `$icon`"

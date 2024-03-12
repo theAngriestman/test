@@ -62,7 +62,7 @@
         width: chartwidth,
         height: 208
       },
-      colors: ['#939ba2', '#33c49b'],
+      colors: ['#a1d6fd', '#4faef9'],
       tooltip: {
         showColorCode: true
       },
@@ -92,7 +92,6 @@
           fontSize: 12
         }
       },
-      pointSize: 6,
       vAxis: {
         minValue: 0,
         baselineColor: '#eaeef0',

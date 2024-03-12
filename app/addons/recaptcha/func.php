@@ -117,7 +117,7 @@ function fn_recaptcha_get_use_for_settings($storefront_id = null)
         if (isset($addon_use_for_value[$key])) {
             $settings[$key] = $addon_use_for_value[$key];
         } else {
-            $settings[$key] = RecaptchaTypes::RECAPTCHA_TYPE_V2;
+            $settings[$key] = 'recaptcha_v2';
         }
     }
 

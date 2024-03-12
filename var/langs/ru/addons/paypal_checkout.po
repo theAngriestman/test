@@ -8,17 +8,17 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: /release-4.17.2/addons/paypal_checkout.po\n"
-"X-Crowdin-File-ID: 8010\n"
-"PO-Revision-Date: 2023-11-23 09:57\n"
+"X-Crowdin-File: /release-4.18.1/addons/paypal_checkout.po\n"
+"X-Crowdin-File-ID: 8282\n"
+"PO-Revision-Date: 2024-02-02 11:18\n"
 
 msgctxt "Addons::name::paypal_checkout"
 msgid "PayPal Checkout"
 msgstr "PayPal Checkout"
 
 msgctxt "Addons::description::paypal_checkout"
-msgid "Allows you to accept payments through PayPal. Customers can pay with a card or with their PayPal account."
-msgstr "Позволяет принимать платежи через PayPal. Покупатели платят картой или через учётную запись PayPal."
+msgid "A PayPal solution for online stores. Lets you accept payments through PayPal and other means."
+msgstr "Модуль PayPal для интернет-магазинов. Позволяет принимать платежи через PayPal и прочее."
 
 msgctxt "SettingsSections::paypal_checkout::general"
 msgid "General"
@@ -151,4 +151,56 @@ msgstr "PayPal"
 msgctxt "Languages::paypal_checkout.paypal_cookie_description"
 msgid "PayPal is a payment provider. It allows us to accept payments, if you choose a payment method powered by PayPal. Here is <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">PayPal privacy statement</a>."
 msgstr "PayPal — это платёжная система. Она позволяет нам принимать оплату, если вы выберете соответствующий способ оплаты. Вот <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">заявление PayPal о конфиденциальности</a>."
+
+msgctxt "Languages::paypal_checkout.funding.paylater"
+msgid "Pay Later"
+msgstr "Оплатить позже"
+
+msgctxt "Languages::paypal_checkout.funding.mercadopago"
+msgid "Mercado Pago"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.funding.blik"
+msgid "BLIK"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.settings.style"
+msgid "Button appearance"
+msgstr "Внешний вид кнопки"
+
+msgctxt "Languages::paypal_checkout.style.shape"
+msgid "Shape"
+msgstr "Форма"
+
+msgctxt "Languages::paypal_checkout.shape.pill"
+msgid "Pill"
+msgstr "Без углов"
+
+msgctxt "Languages::paypal_checkout.shape.rect"
+msgid "Rectangular"
+msgstr "Прямоугольник"
+
+msgctxt "Languages::paypal_checkout.style.color"
+msgid "Color"
+msgstr "Цвет"
+
+msgctxt "Languages::paypal_checkout.color.gold"
+msgid "Gold"
+msgstr "Золотой"
+
+msgctxt "Languages::paypal_checkout.color.blue"
+msgid "Blue"
+msgstr "Синий"
+
+msgctxt "Languages::paypal_checkout.color.silver"
+msgid "Silver"
+msgstr "Серебристый"
+
+msgctxt "Languages::paypal_checkout.color.black"
+msgid "Black"
+msgstr "Чёрный"
+
+msgctxt "Languages::paypal_checkout.style.height"
+msgid "Height"
+msgstr "Высота"
 

@@ -1,6 +1,6 @@
-@dashboardBorderColor: #e0e7ef;
-@dashboardPrimaryColor: #33c49b;
-@dashboardSecondaryColor: lighten(@textMutedColor, 15%);   // #939ba2
+@dashboardBorderColor: @tableBorder;
+@dashboardPrimaryColor: @btnSuccessBackground;
+@dashboardSecondaryColor: lighten(spin(desaturate(lighten(@textColor, 30%), 25%), -15%), 15%); // textMutedColor + lighten
 
 :root {
     --dashboard-responsive-column: column;

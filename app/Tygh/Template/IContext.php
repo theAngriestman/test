@@ -30,6 +30,13 @@ interface IContext
     public function getLangCode();
 
     /**
+     * Get language direction.
+     *
+     * @return string Language direction
+     */
+    public function getLanguageDirection();
+
+    /**
      * Gets area.
      *
      * @return string Area identifier.

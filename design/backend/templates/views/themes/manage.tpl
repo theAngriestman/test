@@ -10,10 +10,12 @@
 
 {$theme = $available_themes.current}
 {$theme_name = $available_themes.current.theme_name}
+{$redirect_url=$config.current_url|escape:url}
 
 {if $smarty.const.AREA === "SiteArea::ADMIN_PANEL"|enum}
     {$act_as_vendor = $auth.user_type === "UserTypes::VENDOR"|enum && $auth.act_as_user}
 {/if}
+{$tabs_count = 1}
 
 {if $conflicts}
 <div class="row-fluid">
@@ -78,7 +80,7 @@
             <input type="hidden" name="result_ids" value="themes_list,elm_sidebar">
 
             <div class="add-new-object-group">
-                <div class="tabs cm-j-tabs">
+                <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
                     <ul class="nav nav-tabs">
                         <li id="tab_clone_theme_{$theme_name}" class="cm-js active"><a>{__("general")}</a></li>
                     </ul>
@@ -157,7 +159,7 @@
                                     {/foreach}
 
                                     {if $has_styles}
-                                        {include file="common/select_popup.tpl" id=$available_layout.layout_id status=$available_layout.style_id items_status=$styles_descr update_controller="themes.styles" status_target_id="theme_description_container,themes_list" statuses=$available_themes.current.styles btn_meta="btn-text o-status-`$o.status`"|lower default_status_text=__("none")}
+                                        {include file="common/select_popup.tpl" id=$available_layout.layout_id status=$available_layout.style_id items_status=$styles_descr update_controller="themes.styles" status_target_id="theme_description_container,themes_list" statuses=$available_themes.current.styles btn_meta="btn btn-link o-status-`$o.status`"|lower default_status_text=__("none")}
                                     {else}
                                         <span class="muted">{__("theme_no_styles_text")}</span>
                                     {/if}
@@ -386,10 +388,13 @@
             <ul class="unstyled list-with-btns">
                 <li>
                     <div class="list-description">
-                        {__("rebuild_cache_automatically")} {include_ext file="common/icon.tpl"
-                            class="cm-tooltip icon-question-sign"
-                            title=__("rebuild_cache_automatically_tooltip")
-                        }
+                        {__("rebuild_cache_automatically")}
+                        <span class="flex-inline">
+                            {include_ext file="common/icon.tpl"
+                                class="cm-tooltip icon-question-sign"
+                                title=__("rebuild_cache_automatically_tooltip")
+                            }
+                        </span>
                     </div>
                     <div class="switch switch-mini cm-switch-change list-btns" id="rebuild_cache_automatically">
                         <input type="checkbox" name="compile_check" value="1" {if $dev_modes.compile_check}checked="checked"{/if}/>
@@ -466,14 +471,36 @@
 {/capture}
 
 {capture name="buttons"}
-    {if $can_manage_themes}
     {capture name="tools_list"}
+        {$buttons = []}
+
         {hook name="themes:tools_list"}
-        <li>{btn type="dialog" text=__("clone_theme") target_id="content_elm_clone_theme_`$theme_name`"}</li>
+        {$buttons.layouts = [
+            href => "block_manager.manage",
+            text => __('edit_layouts')
+        ]}
+        {$buttons.templates.href = "templates.manage"}
+        {$buttons.templates = [
+            href => "templates.manage",
+            text => __('edit_templates')
+        ]}
+        {$buttons.clear_cache.href = "storage.clear_cache?redirect_url=`$redirect_url`"}
+        {$buttons.clear_thumbnails.href = "storage.clear_thumbnails?redirect_url=`$redirect_url`"}
+
+        {if $can_manage_themes}
+            {$buttons.clone_theme = [
+                type => "dialog",
+                text => __("clone_theme"),
+                target_id => "content_elm_clone_theme_`$theme_name`"
+            ]}
+        {/if}
+
         {/hook}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
     {/capture}
     {dropdown content=$smarty.capture.tools_list}
-    {/if}
     {if $theme_logos}
         {include file="buttons/save.tpl" but_name="dispatch[themes.update_logos]" but_role="action" but_target_form="update_logos_form" but_meta="cm-submit"}
     {/if}

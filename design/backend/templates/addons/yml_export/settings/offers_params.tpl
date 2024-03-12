@@ -2,7 +2,9 @@
     {if !empty($yml2_offer_features[$offer])}
     <h4 class="subheader hand" data-toggle="collapse" data-target="#collapsable_addon_option_yml_export_{$offer}">
         {__($offer_name)}
-        <span class="exicon-collapse"></span>
+        <span class="flex-inline">
+            {include_ext file="common/icon.tpl" source="caret-down"}
+        </span>
     </h4>
 
     <div id="collapsable_addon_option_yml_export_{$offer}" class="in collapse" style="height: auto;">

@@ -5,12 +5,12 @@ msgstr "Project-Id-Version: tygh\n"
 "Language: en_US"
 
 msgctxt "Addons::name::paypal"
-msgid "PayPal payments"
-msgstr "PayPal payments"
+msgid "PayPal legacy payments [Deprecated]"
+msgstr "PayPal legacy payments [Deprecated]"
 
 msgctxt "Addons::description::paypal"
-msgid "Lets you accept payments via PayPal Express Checkout, PayPal Pro, PayPal Standard, PayPal Advanced, and PayPal Payflow Pro."
-msgstr "Lets you accept payments via PayPal Express Checkout, PayPal Pro, PayPal Standard, PayPal Advanced, and PayPal Payflow Pro."
+msgid "Lets you accept payments via legacy PayPal integrations, such as PayPal Express Checkout, PayPal Pro, PayPal Advanced, and Payflow Pro. We recommend PayPal Checkout instead."
+msgstr "Lets you accept payments via legacy PayPal integrations, such as PayPal Express Checkout, PayPal Pro, PayPal Advanced, and Payflow Pro. We recommend PayPal Checkout instead."
 
 msgctxt "SettingsOptions::paypal::override_customer_info"
 msgid "Override customer info"

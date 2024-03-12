@@ -30,12 +30,13 @@ function fn_check_field_type(value, tab_id)
     {assign var="hide_inputs" value="cm-hide-inputs"}
     {assign var="hide_multiple_buttons" value="hidden"}
 {/if}
+{$tabs_count = 2}
 
 {capture name="mainbox"}
 
 <form action="{""|fn_url}" enctype="multipart/form-data" method="post" name="add_fields_form" class="form-horizontal form-edit  {$hide_inputs}">
 
-<div class="cm-j-tabs cm-track tabs">
+<div class="cm-j-tabs cm-track tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_new_profile{$id}" class="cm-js active"><a>{__("general")}</a></li>
         <li id="tab_variants{$id}"

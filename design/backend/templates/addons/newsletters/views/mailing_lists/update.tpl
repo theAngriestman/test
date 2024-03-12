@@ -5,12 +5,13 @@
 {else}
     {assign var="id" value=0}
 {/if}
+{$tabs_count = 1}
 
 <div id="content_group{$id}">
 <form action="{""|fn_url}" method="post" enctype="multipart/form-data" name="mailing_lists_form_{$id}" class="form-horizontal form-edit ">
 <input type="hidden" name="list_id" value="{$id}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_campaign_details_{$id}" class="cm-js active"><a>{__("general")}</a></li>
     </ul>

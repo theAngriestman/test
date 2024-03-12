@@ -444,9 +444,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if ($mode == 'manage') {
     /** @var \Tygh\SmartyEngine\Core $view */
     $view = Tygh::$app['view'];
-    if (fn_allowed_for('MULTIVENDOR')) {
-        fn_companies_set_navigation_sections('vendors');
-    }
 
     $params = $_REQUEST;
     if (fn_allowed_for('ULTIMATE')) {
@@ -839,8 +836,6 @@ if (fn_allowed_for('MULTIVENDOR')) {
         }
         return [CONTROLLER_STATUS_OK];
     } elseif ($mode == 'invitations') {
-        fn_companies_set_navigation_sections('invitations');
-
         list($invitations, $search) = VendorServicesProvider::getInvitationsRepository()->getListWithPagination(
             $_REQUEST,
             Registry::get('settings.Appearance.admin_elements_per_page')
@@ -879,26 +874,4 @@ if (fn_allowed_for('ULTIMATE')) {
 
         exit;
     }
-}
-
-/**
- * Set links into sidebar menu on the vendors and invitations pages
- *
- * @param string $active_section Set active section of the page
- */
-function fn_companies_set_navigation_sections($active_section)
-{
-    $navigation_sections = [
-        'vendors' => [
-            'title' => __('vendors'),
-            'href'  => fn_url('companies.manage'),
-        ],
-        'invitations' => [
-            'title' => __('pending_vendor_invitations'),
-            'href'  => fn_url('companies.invitations')
-        ]
-    ];
-
-    Registry::set('navigation.dynamic.sections', $navigation_sections);
-    Registry::set('navigation.dynamic.active_section', $active_section);
 }

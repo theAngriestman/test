@@ -57,7 +57,12 @@ function fn_shopify_import_filter_data(array $import_data, array $params = [])
     list($vendor_id, $vendor) = fn_shopify_import_get_vendor_data($filtering_params, $params);
     $filtering_params['import_company_id'] = $vendor_id ?: Registry::get('runtime.company_id');
 
-    $feature_names_list = fn_shopify_import_get_features_internal_names_list($filtering_params);
+    $feature_names_list = fn_get_product_features_internal_names(
+        [
+            'company_id' => (int) $filtering_params['import_company_id']
+        ],
+        DEFAULT_LANGUAGE
+    );
     $can_create_feature = true;
     if (
         Registry::get('runtime.company_id') && $vendor_id
@@ -122,32 +127,6 @@ function fn_shopify_import_filter_data(array $import_data, array $params = [])
     ]);
 
     return $result;
-}
-
-/**
- * Gets list of all features internal names.
- *
- * @param array  $filtering_params Filtering params
- * @param string $lang_code        Two letters language code
- *
- * @return array
- *
- * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint
- * @phpcsSuppress SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification
- */
-function fn_shopify_import_get_features_internal_names_list(array $filtering_params, $lang_code = DESCR_SL)
-{
-    list($features,) = fn_get_product_features(
-        [
-            'plain'         => true,
-            'exclude_group' => true,
-            'company_id'    => $filtering_params['import_company_id']
-        ],
-        0,
-        $lang_code
-    );
-
-    return array_column($features, 'internal_name');
 }
 
 /**
@@ -331,7 +310,7 @@ function fn_shopify_import_filter_options(
     array $line,
     $line_count,
     array $fields_schema,
-    array $feature_names_list,
+    array &$feature_names_list,
     $can_create_feature,
     array $filtering_params,
     $vendor

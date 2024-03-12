@@ -48,7 +48,7 @@
     <div class="top-panel demo-panel">
         <div id="minimize_block" class="top-panel__wrapper{if $smarty.cookies.minimize_block} hidden{/if}">
             <div class="top-panel__logo">
-                <a href="https://www.cs-cart.com/compare.html" class="top-panel__logo-link" target="_blank">{include_ext file="common/icon.tpl" class="glyph-basket top-panel__icon-basket"}</a>
+                <a href="https://www.cs-cart.com/compare.html" class="top-panel__logo-link" target="_blank">{include_ext file="common/icon_deprecated.tpl" class="glyph-basket top-panel__icon-basket"}</a>
             </div>
             <h4 class="top-panel__title">
                 {__("demo_panel.demo_store_panel")}
@@ -65,11 +65,11 @@
                     {/if}
                 </span>
 
-                <a id="off_minimize_block" class="top-panel__close top-panel-action_item cm-combination-panel cm-save-state cm-ss-reverse">{include_ext file="common/icon.tpl" class="glyph-cancel"}</a>
+                <a id="off_minimize_block" class="top-panel__close top-panel-action_item cm-combination-panel cm-save-state cm-ss-reverse">{include_ext file="common/icon_deprecated.tpl" class="glyph-cancel"}</a>
             </div>
         </div>
         <a id="on_minimize_block" class="minimize-label cm-combination-panel cm-save-state cm-ss-reverse{if !$smarty.cookies.minimize_block} hidden{/if}">
-            {include_ext file="common/icon.tpl" class="glyph-down-open minimize-label__icon"}
+            {include_ext file="common/icon_deprecated.tpl" class="glyph-down-open minimize-label__icon"}
         </a>
     </div>
 {/strip}

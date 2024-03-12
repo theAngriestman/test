@@ -71,6 +71,19 @@
     }
 }
 
+.products-list__image--link {
+    display: inline-flex;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    box-shadow: 0 0 0 1px @grayLighter;
+    border-radius: @baseBorderRadius;
+    overflow: hidden;
+}
+
+.product-name-column.product-name-column {
+    line-height: 1.25;
+}
+
 .product-list {
 
     &__name {
@@ -94,6 +107,34 @@
     &__labels--secondary {
         opacity: 0.75;
     }
+}
+
+.company-name-column.company-name-column {
+    line-height: 1.25;
+}
+
+.p-status-dropdown:hover,
+.p-status-dropdown:focus {
+    text-decoration: none;
+}
+
+.products-status-on-manage__view-status:before,
+.p-status-dropdown:before {
+    content: '●';
+    padding-right: 6px;
+    font-size: @fontSizeMini;
+}
+
+.p-status-dropdown-a:before {
+    color: @btnSuccessBackground;
+}
+
+.p-status-dropdown-h:before {
+    color: @btnInfoBackground;
+}
+
+.p-status-dropdown-d:before {
+    color: @grayLight;
 }
 
 .products-update {

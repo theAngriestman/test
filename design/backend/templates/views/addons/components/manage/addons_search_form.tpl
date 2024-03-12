@@ -86,7 +86,7 @@
 
         <div class="sidebar-field advanced-search-field">
             <input class="btn" type="submit" name="dispatch[{$dispatch}]" value="{__("admin_search_button")}">
-            <a class="btn btn-text" href="{"addons.manage.reset_view"|fn_url}">{__("reset")}</a>
+            <a class="btn btn-link" href="{"addons.manage.reset_view"|fn_url}">{__("reset")}</a>
         </div>
     </form>
 </div>

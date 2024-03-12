@@ -2,7 +2,7 @@
 
 {capture name="ajax_select_content"}
 
-<a {if $span_wrapping == false}id="sw_{$id}_wrap_"{/if} class="{if $type != "list"}btn-text{/if} dropdown-toggle" data-toggle="dropdown">
+<a {if $span_wrapping == false}id="sw_{$id}_wrap_"{/if} class="{if $type != "list"}btn btn-link{/if} dropdown-toggle" data-toggle="dropdown">
     {if $span_wrapping}
         <span id="sw_{$id}_wrap_">{$text|truncate:40:"...":true}</span>
         {if $dropdown_icon}

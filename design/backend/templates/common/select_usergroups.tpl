@@ -39,7 +39,7 @@
 
 {if $select_mode}
     <div class="btn-group">
-    <a class="btn-text dropdown-toggle" data-toggle="dropdown">
+    <a class="btn btn-link dropdown-toggle" data-toggle="dropdown">
     {if $ug_ids}
         {assign var="ug_count" value=$ug_ids|count}
     {else}

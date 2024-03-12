@@ -168,12 +168,10 @@ class CartsHookHandler
         $new_variation_cart_id = key($ids);
         $i = 0;
         $cart_products = [];
+
         foreach ($cart['products'] as $cart_id => $cart_product_data) {
             if ($i++ === $cart['prev_variation_position']) {
                 $cart_products[$new_variation_cart_id] = $cart['products'][$new_variation_cart_id];
-            }
-            if ($cart_id === $new_variation_cart_id) {
-                continue;
             }
             $cart_products[$cart_id] = $cart_product_data;
         }

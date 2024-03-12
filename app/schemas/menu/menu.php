@@ -47,10 +47,12 @@ defined('BOOTSTRAP') or die('Access denied');
     </li>
 */
 
+/**
+ * @var array<string, array<string, array>> $schema
+ */
 $schema = [
     'top' => [
         'addons' => [
-            'href'  => 'addons.manage',
             'items' => [
                 'downloaded_add_ons' => [
                     'href'     => 'addons.manage',
@@ -69,306 +71,88 @@ $schema = [
                     'position' => 20,
                 ],
             ],
+            'icon' => 'puzzle_piece',
         ],
         'administration' => [
+            'title' => __('settings'),
             'items' => [
-                'addons_divider' => [
-                    'type' => 'divider',
-                    'position' => 110,
-                ],
-                'payment_methods' => [
-                    'href' => 'payments.manage',
-                    'position' => 200,
-                ],
-                'shippings_taxes' => [
-                    'href' => 'shippings.manage',
+                'store_mode' => [
+                    'position' => 100,
                     'type' => 'title',
-                    'position' => 300,
-                    'subitems' => [
-                        'shipping_methods' => [
-                            'href' => 'shippings.manage',
-                            'position' => 100,
-                        ],
-                        'taxes' => [
-                            'href' => 'taxes.manage',
-                            'position' => 150,
-                        ],
-                        'locations_divider' => [
-                            'type' => 'divider',
-                            'position' => 200,
-                        ],
-                        'countries' => [
-                            'href' => 'countries.manage',
-                            'position' => 300,
-                        ],
-                        'states' => [
-                            'href' => 'states.manage',
-                            'position' => 400,
-                        ],
-                        'locations' => [
-                            'title' => __('rate_areas'),
-                            'href' => 'destinations.manage',
-                            'position' => 500,
-                        ],
-                        'localizations' => [
-                            'href' => 'localizations.manage',
-                            'position' => 600,
+                    'title' => __('account'),
+                    'href' => 'settings.change_store_mode',
+                    'icon' => 'user',
+                    'attrs' => [
+                        'class_href' => 'cm-dialog-opener cm-dialog-auto-size',
+                        'href' => [
+                            'data-ca-target-id' => 'store_mode_dialog',
                         ],
                     ],
-                ],
-                'statuses_management' => [
-                    'href' => 'statuses.manage',
-                    'type' => 'title',
-                    'position' => 400,
-                    'subitems' => [
-                        'order_statuses' => [
-                            'href' => 'statuses.manage?type=' . STATUSES_ORDER,
-                            'position' => 100,
-                        ],
-                        'shipment_statuses' => [
-                            'href' => 'statuses.manage?type=' . STATUSES_SHIPMENT,
-                            'position' => 200,
-                        ],
-                    ],
-                ],
-                'statuses_divider' => [
-                    'type' => 'divider',
-                    'position' => 410,
-                ],
-                'profile_fields' => [
-                    'href' => 'profile_fields.manage',
-                    'position' => 500,
-                ],
-                'notifications' => [
-                    'href' => 'notification_settings.manage',
-                    'type' => 'title',
-                    'position' => 505,
-                    'subitems' => [
-                        'customer_notifications' => [
-                            'href' => 'notification_settings.manage?receiver_type=' . UserTypes::CUSTOMER,
-                            'position' => 100,
-                        ],
-                        'admin_notifications' => [
-                            'href' => 'notification_settings.manage?receiver_type=' . UserTypes::ADMIN,
-                            'position' => 200,
-                        ],
-                        'code_snippets' => [
-                            'href' => 'email_templates.snippets',
-                            'position' => 400,
-                        ],
-                        'documents' => [
-                            'href' => 'documents.manage',
-                            'position' => 500,
-                        ],
-                    ],
-                ],
-                'profile_fields_divider' => [
-                    'type' => 'divider',
-                    'position' => 510,
-                ],
-                'currencies' => [
-                    'href' => 'currencies.manage',
-                    'position' => 600,
-                ],
-                'languages' => [
-                    'href' => 'languages.manage',
-                    'type' => 'title',
-                    'title' => __('texts_languages'),
-                    'position' => 700,
-                    'subitems' => [
-                        'edit_on_site' => [
-                            'href' => 'customization.update_mode?type=live_editor&status=enable',
-                            'attrs' => [
-                                'href' => [ // Attributes for <a>
-                                    'target' => '_blank',
-                                ],
-                            ],
-                            'position' => 10,
-                        ],
-                        'edit_on_site_divider' => [
-                            'type' => 'divider',
-                            'position' => 20,
-                        ],
-                        'translations' => [
-                            'title' => __('edit_texts'),
-                            'href' => 'languages.translations',
-                            'position' => 100,
-                        ],
-                        'manage_languages' => [
-                            'href' => 'languages.manage',
-                            'position' => 200,
-                        ],
-                    ],
-                ],
-                'languages_divider' => [
-                    'type' => 'divider',
-                    'position' => 710,
-                ],
-                'logs' => [
-                    'href' => 'logs.manage',
-                    'position' => 800,
-                ],
-                'logs_divider' => [
-                    'type' => 'divider',
-                    'position' => 900,
-                ],
-                'files' => [
-                    'href' => 'file_editor.manage',
-                    'position' => 990,
-                ],
-                'backup_restore' => [
-                    'href' => 'datakeeper.manage',
-                    'position' => 1000,
-                ],
-                'storage' => [
-                    'href' => 'storage.index',
-                    'type' => 'title',
-                    'position' => 1100,
-                    'subitems' => [
-                        'cdn_settings' => [
-                            'href' => 'storage.cdn',
-                            'position' => 100,
-                        ],
-                        'configure_divider' => [
-                            'type' => 'divider',
-                            'position' => 110,
-                        ],
-                        'clear_cache' => [
-                            'href' => 'storage.clear_cache?redirect_url=%CURRENT_URL',
-                            'position' => 200,
-                        ],
-                        'clear_thumbnails' => [
-                            'href' => 'storage.clear_thumbnails?redirect_url=%CURRENT_URL',
-                            'position' => 300,
-                        ],
-                    ],
-                ],
-                'storage_divider' => [
-                    'type' => 'divider',
-                    'position' => 1200,
-                ],
-                'import_data' => [
-                    'href' => 'exim.import',
-                    'position' => 1300,
-                    'subitems' => [
-                        'orders' => [
-                            'href' => 'exim.import?section=orders',
-                            'position' => 200,
-                        ],
-                        'products_deprecated' => [
-                            'href' => 'exim.import?section=products',
-                            'position' => 700,
-                        ],
-                        'features' => [
-                            'href' => 'exim.import?section=features',
-                            'position' => 100,
-                        ],
-                        'translations' => [
-                            'href' => 'exim.import?section=translations',
-                            'position' => 300,
-                        ],
-                        'states' => [
-                            'href' => 'exim.import?section=states',
-                            'position' => 400,
-                        ],
-                        'users' => [
-                            'href' => 'exim.import?section=users',
-                            'position' => 500,
-                        ],
-                    ],
-                ],
-                'export_data' => [
-                    'href' => 'exim.export',
-                    'position' => 1400,
-                    'subitems' => [
-                        'orders' => [
-                            'href' => 'exim.export?section=orders',
-                            'position' => 200,
-                        ],
-                        'products' => [
-                            'href' => 'exim.export?section=products',
-                            'position' => 300,
-                        ],
-                        'features' => [
-                            'href' => 'exim.export?section=features',
-                            'position' => 100,
-                        ],
-                        'translations' => [
-                            'href' => 'exim.export?section=translations',
-                            'position' => 400,
-                        ],
-                        'states' => [
-                            'href' => 'exim.export?section=states',
-                            'position' => 500,
-                        ],
-                        'users' => [
-                            'href' => 'exim.export?section=users',
-                            'position' => 600,
-                        ],
-                    ],
-                ],
-                'sync_data' => [
-                    'href'     => 'sync_data.manage',
-                    'position' => 1500,
-                ],
-                'sync_data_divider' => [
-                    'type' => 'divider',
-                    'position' => 1600,
-                ],
-                'file_changes_detector' => [
-                    'href' => 'tools.view_changes?check_types=C,D',
-                    'position' => 1700,
                 ],
                 'upgrade_center' => [
                     'href' => 'upgrade_center.manage',
-                    'position' => 1800,
+                    'position' => 200,
+                    'icon' => 'cloud_download',
+                ],
+                'languages' => [
+                    'href' => 'languages.translations',
+                    'title' => __('texts_languages'),
+                    'position' => 300,
+                    'icon' => 'globe',
+                ],
+                'import_data' => [
+                    'href' => 'exim.import?section=products',
+                    'position' => 400,
+                    'icon' => 'download',
+                ],
+                'export_data' => [
+                    'href' => 'exim.export?section=products',
+                    'position' => 500,
+                    'icon' => 'upload',
+                ],
+                'storage' => [
+                    'href' => 'datakeeper.manage',
+                    'position' => 600,
+                    'icon' => 'hdd',
+                ],
+                'settings_general' => [
+                    'href' => 'settings.manage?section_id=General',
+                    'position' => 1000,
+                    'icon' => 'gear',
+                ],
+                'payment_methods' => [
+                    'href' => 'payments.manage',
+                    'position' => 1100,
+                    'icon' => 'credit_card',
+                ],
+                'shipping_methods' => [
+                    'href' => 'shippings.manage',
+                    'position' => 1200,
+                    'icon' => 'truck',
+                ],
+                'taxes' => [
+                    'href' => 'taxes.manage',
+                    'position' => 1300,
+                    'icon' => 'briefcase',
+                ],
+                'profile_fields' => [
+                    'href' => 'profile_fields.manage',
+                    'position' => 1400,
+                    'icon' => 'list_alt',
+                ],
+                'notifications' => [
+                    'href' => 'notification_settings.manage?receiver_type=' . UserTypes::CUSTOMER,
+                    'position' => 1500,
+                    'icon' => 'bell',
+                ],
+                'logs' => [
+                    'href' => 'logs.manage',
+                    'position' => 1600,
+                    'icon' => 'list_ul',
                 ],
             ],
             'position' => 600,
-        ],
-        'design' => [
-            'items' => [
-                'themes' => [
-                    'href' => 'themes.manage',
-                    'position' => 100,
-                ],
-                'layouts' => [
-                    'href' => 'block_manager.manage',
-                    'position' => 200,
-                    'subitems' => [
-                        'layouts' => [
-                            'href' => 'block_manager.manage',
-                            'position' => 100,
-                        ],
-                        'manage_blocks' => [
-                            'href' => 'block_manager.blocks',
-                            'position' => 200,
-                        ],
-                    ],
-                ],
-                'templates' => [
-                    'href' => 'templates.manage',
-                    'position' => 300,
-                ],
-                'templates_divider' => [
-                    'type' => 'divider',
-                    'position' => 310,
-                ],
-                'menus' => [
-                    'href' => 'menus.manage',
-                    'alt' => 'static_data.manage?section=A',
-                    'position' => 400,
-                ],
-                'product_tabs' => [
-                    'href' => 'tabs.manage',
-                    'position' => 500,
-                ],
-                'product_tabs_divider' => [
-                    'type' => 'divider',
-                    'position' => 510,
-                ],
-            ],
-            'position' => 800,
+            'icon' => 'gear',
         ],
         'settings' => [
             'items' => [
@@ -446,21 +230,12 @@ $schema = [
                 'settings_wizard' => [
                     'href'     => 'settings_wizard.view',
                     'position' => 1700,
+                    'type' => 'setting',
                     'title'    => __('settings_wizard'),
                 ],
-                'store_mode' => [
-                    'position' => 999999,
-                    'type' => 'title',
-                    'href' => 'settings.change_store_mode',
-                    'attrs' => [
-                        'class_href' => 'cm-dialog-opener cm-dialog-auto-size',
-                        'href' => [
-                            'data-ca-target-id' => 'store_mode_dialog',
-                        ],
-                    ],
-                ]
             ],
             'position' => 700,
+            'icon' => 'gear',
         ],
     ],
 
@@ -471,6 +246,7 @@ $schema = [
                     'href' => 'orders.manage',
                     'alt' => 'order_management',
                     'position' => 100,
+                    'title' => __('orders'),
                 ],
                 'sales_reports' => [
                     'href' => 'sales_reports.view',
@@ -483,21 +259,23 @@ $schema = [
                 'users_carts' => [
                     'href' => 'cart.cart_list',
                     'position' => 500,
+                    'title' => __('users_carts_menu'),
                 ],
             ],
             'position' => 100,
+            'icon' => 'inbox',
         ],
         'products' => [
             'title' => __('products_menu_title'),
             'items' => [
-                'categories' => [
-                    'href' => 'categories.manage',
-                    'position' => 100,
-                ],
                 'products' => [
                     'href' => 'products.manage',
                     'alt' => 'product_options.inventory,product_options.exceptions,products.update,products.m_update,products.add',
                     'position' => 200,
+                ],
+                'categories' => [
+                    'href' => 'categories.manage',
+                    'position' => 250,
                 ],
                 'features' => [
                     'href' => 'product_features.manage',
@@ -513,19 +291,20 @@ $schema = [
                 ],
             ],
             'position' => 200,
+            'icon' => 'tag',
         ],
         'customers' => [
             'title' => __('customers_menu_title'),
             'items' => [
+                'customers' => [
+                    'href' => 'profiles.manage?user_type=C',
+                    'alt' => 'profiles.update?user_type=C',
+                    'position' => 100,
+                ],
                 'administrators' => [
                     'href' => 'profiles.manage?user_type=A',
                     'alt' => 'profiles.update?user_type=A',
                     'position' => 200,
-                ],
-                'customers' => [
-                    'href' => 'profiles.manage?user_type=C',
-                    'alt' => 'profiles.update?user_type=C',
-                    'position' => 300,
                 ],
                 'usergroups' => [
                     'href' => 'usergroups.manage',
@@ -533,30 +312,31 @@ $schema = [
                 ],
             ],
             'position' => 300,
+            'icon' => 'user',
         ],
         'website' => [
             'items' => [
+                'themes' => [
+                    'href' => 'themes.manage',
+                    'position' => 100,
+                ],
                 'pages' => [
                     'href' => 'pages.manage?get_tree=multi_level',
                     'alt'  => 'pages.manage,pages.update,pages.add',
-                    'position' => 100,
+                    'position' => 200,
+                ],
+                'menus' => [
+                    'href' => 'menus.manage',
+                    'alt' => 'static_data.manage?section=A',
+                    'position' => 400,
                 ],
                 'seo' => [
                     'href' => 'robots.manage',
                     'position' => 500,
-                    'subitems' => [
-                        'seo_robots' => [
-                            'href' => 'robots.manage',
-                            'position' => 600
-                        ],
-                    ]
-                ],
-                'sitemap' => [
-                    'href' => 'sitemap.manage',
-                    'position' => 1000,
                 ],
             ],
             'position' => 500,
+            'icon' => 'desktop',
         ],
         'marketing' => [
             'items' => [
@@ -566,31 +346,71 @@ $schema = [
                 ],
             ],
             'position' => 400,
+            'icon' => 'bullhorn',
         ],
     ],
 ];
 
-$profile_types = fn_get_schema('profiles', 'profile_types');
-if (count($profile_types) > 1) {
-    $schema['top']['administration']['items']['profile_fields']['type'] = 'title';
-    foreach ($profile_types as $profile_code => $profile_type) {
-        $schema['top']['administration']['items']['profile_fields']['subitems']['profile_types_section_' . $profile_type['name']] = [
-            'href' => 'profile_fields.manage?profile_type=' . $profile_code,
-        ];
-    }
-}
+// Deprecated menu items
+$schema['top']['administration']['items']['shippings_taxes'] = [
+    'type' => 'title',
+    'position' => 5300,
+    'subitems' => [
+        'localizations' => [
+            'href' => 'localizations.manage',
+            'position' => 600,
+        ],
+    ]
+];
+$schema['top']['administration']['items']['statuses_management'] = [
+    'type' => 'title',
+    'position' => 5400,
+    'subitems' => [
+    ]
+];
+$schema['top']['administration']['items']['currencies'] = [
+    'type' => 'title',
+    'position' => 5600,
+];
+$schema['top']['administration']['items']['files'] = [
+    'type' => 'title',
+    'position' => 5990,
+];
+$schema['top']['administration']['items']['backup_restore'] = [
+    'type' => 'title',
+    'position' => 6000,
+];
+$schema['top']['administration']['items']['sync_data'] = [
+    'type' => 'title',
+    'position' => 6500,
+];
+$schema['top']['administration']['items']['file_changes_detector'] = [
+    'type' => 'title',
+    'position' => 6700,
+];
+
+$schema['top']['design'] = [
+    'items' => [
+    ],
+    'position' => 800,
+    'icon' => 'edit_sign',
+];
 
 if (empty(fn_get_schema('sync_data', 'sync_data'))) {
     unset($schema['top']['administration']['items']['sync_data']);
 }
 
-if (Registry::get('config.tweaks.disable_localizations') == true) {
+if (Registry::get('config.tweaks.disable_localizations') === true) {
     unset($schema['top']['administration']['items']['shippings_taxes']['subitems']['localizations']);
 }
 
-if (Registry::get('settings.Appearance.email_templates') == 'old') {
-    unset($schema['top']['design']['items']['email_templates']);
-    unset($schema['top']['design']['items']['documents']);
+if (Registry::get('settings.Appearance.email_templates') === 'old') {
+    if (isset($schema['top']['design']['items']['email_templates'])) {
+        unset($schema['top']['design']['items']['email_templates']);
+    }
+    if (isset($schema['top']['design']['items']['documents'])) {
+        unset($schema['top']['design']['items']['documents']);
+    }
     unset($schema['top']['administration']['items']['notifications']['subitems']['documents']);
     unset($schema['top']['administration']['items']['notifications']['subitems']['code_snippets']);
 }

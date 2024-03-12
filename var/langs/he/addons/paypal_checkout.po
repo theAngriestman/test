@@ -8,17 +8,17 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: he\n"
-"X-Crowdin-File: /release-4.17.2/addons/paypal_checkout.po\n"
-"X-Crowdin-File-ID: 8010\n"
-"PO-Revision-Date: 2023-11-23 09:55\n"
+"X-Crowdin-File: /release-4.18.1/addons/paypal_checkout.po\n"
+"X-Crowdin-File-ID: 8282\n"
+"PO-Revision-Date: 2024-02-02 11:17\n"
 
 msgctxt "Addons::name::paypal_checkout"
 msgid "PayPal Checkout"
 msgstr "PayPal Checkout"
 
 msgctxt "Addons::description::paypal_checkout"
-msgid "Allows you to accept payments through PayPal. Customers can pay with a card or with their PayPal account."
-msgstr "מאפשר לך לקבל תשלומים דרך PayPal. לקוחות יכולים לשלם באמצעות כרטיס או באמצעות חשבון PayPal שלהם."
+msgid "A PayPal solution for online stores. Lets you accept payments through PayPal and other means."
+msgstr ""
 
 msgctxt "SettingsSections::paypal_checkout::general"
 msgid "General"
@@ -151,4 +151,56 @@ msgstr "PayPal"
 msgctxt "Languages::paypal_checkout.paypal_cookie_description"
 msgid "PayPal is a payment provider. It allows us to accept payments, if you choose a payment method powered by PayPal. Here is <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">PayPal privacy statement</a>."
 msgstr "PayPal היא ספקית תשלומים. זה מאפשר לנו לקבל תשלומים, אם תבחר באמצעי תשלום המופעל על ידי PayPal. הנה<a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">הצהרת פרטיות של PayPal</a>."
+
+msgctxt "Languages::paypal_checkout.funding.paylater"
+msgid "Pay Later"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.funding.mercadopago"
+msgid "Mercado Pago"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.funding.blik"
+msgid "BLIK"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.settings.style"
+msgid "Button appearance"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.style.shape"
+msgid "Shape"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.shape.pill"
+msgid "Pill"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.shape.rect"
+msgid "Rectangular"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.style.color"
+msgid "Color"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.color.gold"
+msgid "Gold"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.color.blue"
+msgid "Blue"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.color.silver"
+msgid "Silver"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.color.black"
+msgid "Black"
+msgstr ""
+
+msgctxt "Languages::paypal_checkout.style.height"
+msgid "Height"
+msgstr ""
 

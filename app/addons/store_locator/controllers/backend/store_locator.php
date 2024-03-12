@@ -201,21 +201,3 @@ if ($mode == 'manage') {
         'states'       => fn_get_all_states(true, DESCR_SL),
     ]);
 }
-
-if (in_array($mode, ['add', 'update', 'manage'])) {
-    $dynamic_sections = Registry::ifGet('navigation.dynamic.sections', []);
-    $dynamic_sections['shippings'] = [
-        'title' => __('shipping_methods'),
-        'href'  => 'shippings.manage',
-    ];
-    $dynamic_sections['destinations'] = [
-        'title' => __('rate_areas'),
-        'href'  => 'destinations.manage',
-    ];
-    $dynamic_sections['store_locator'] = [
-        'title' => __('store_locator'),
-        'href'  => 'store_locator.manage',
-    ];
-    Registry::set('navigation.dynamic.active_section', 'store_locator');
-    Registry::set('navigation.dynamic.sections', $dynamic_sections);
-}

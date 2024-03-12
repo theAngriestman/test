@@ -23,11 +23,17 @@
                 <span class="overlay"></span>
                 <span class="item">
                 {if $item.type == "D"}
-                    {include_ext file="common/icon.tpl" class="icon-caret-right"}
+                    <span class="flex-inline top">
+                        {include_ext file="common/icon.tpl" class="icon-caret-right"}
+                    </span>
                 {elseif $file_ext == "gif" || $file_ext == "jpg" || $file_ext == "jpeg" || $file_ext == "png"}
-                    {include_ext file="common/icon.tpl" class="icon-picture"}
+                    <span class="flex-inline top">
+                        {include_ext file="common/icon.tpl" class="icon-picture"}
+                    </span>
                 {else}
-                    {include_ext file="common/icon.tpl" class="icon-file"}
+                    <span class="flex-inline top">
+                        {include_ext file="common/icon.tpl" class="icon-file"}
+                    </span>
                 {/if}
                     <span>{$item.name}</span>
                 </span>

@@ -1,4 +1,5 @@
 {capture name="mainbox"}
+{$tabs_count = 1}
 
 <form action="{""|fn_url}" method="post" name="update_campaign_form_{$id}" class="" id="update_campaign_form">
 
@@ -80,7 +81,7 @@
     {if $is_allow_add_campaign}
         {capture name="add_new_picker"}
             <form action="{""|fn_url}" method="post" class="form-horizontal form-edit" name="add_campaign_form">
-                <div class="tabs cm-j-tabs">
+                <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
                     <ul class="nav nav-tabs">
                         <li id="tab_steps_new" class="cm-js active"><a>{__("general")}</a></li>
                     </ul>
@@ -110,4 +111,10 @@
 {/capture}
 
 {/capture}
-{include file="common/mainbox.tpl" title=__("newsletters") content=$smarty.capture.mainbox buttons=$smarty.capture.buttons adv_buttons=$smarty.capture.adv_buttons select_languages=true}
+{include file="common/mainbox.tpl"
+    title=__("campaigns")
+    content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
+    adv_buttons=$smarty.capture.adv_buttons
+    select_languages=true
+}

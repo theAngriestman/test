@@ -11,6 +11,7 @@
 {capture name="mainbox"}
 
 {$has_permission = fn_check_permissions("em_subscribers", "delete", "admin", "POST")}
+{$tabs_count = 1}
 
 <form action="{""|fn_url}" method="post" name="subscribers_form">
 {include file="common/pagination.tpl" save_current_page=true save_current_url=true}
@@ -105,7 +106,7 @@
 
     <form action="{""|fn_url}" method="post" name="subscribers_form_0" class="form-horizontal form-edit ">
     <input type="hidden" name="subscriber_id" value="0" />
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="tab_mailing_list_details_0" class="cm-js active"><a>{__("general")}</a></li>
         </ul>

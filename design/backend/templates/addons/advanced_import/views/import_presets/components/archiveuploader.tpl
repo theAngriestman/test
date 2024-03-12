@@ -60,7 +60,8 @@
                 {$download_link = "import_presets.get_archive?preset_id=`$id`&file=`$archive.name`&file_type=`$archive.type`"}
 
                 {if !($po.required === "YesNo::YES"|enum && $archives|count == 1)}{include_ext file="common/icon.tpl"
-                    class="icon-remove-sign cm-tooltip hand"
+                    source="remove_sign"
+                    class="cm-tooltip hand flex-inline top"
                     id="clean_selection_`$id_var_name`_`$archive.file`"
                     title=__("remove_this_item")
                     data=[
@@ -76,11 +77,12 @@
         <div class="upload-file-section" id="message_{$id_var_name}" title="">
             <p class="cm-fu-file hidden">
                 {include_ext file="common/icon.tpl"
-                    class="icon-remove-sign cm-tooltip hand"
+                    source="remove_sign"
+                    class="cm-tooltip hand flex-inline top"
                     id="clean_selection_`$id_var_name`"
                     title=__("remove_this_item")
                     data=[
-                    "onclick" => "Tygh.fileuploader.clean_selection(this.id); Tygh.fileuploader.check_required_field('{$id_var_name}', '{$label_id}');"
+                        "onclick" => "Tygh.fileuploader.clean_selection(this.id); Tygh.fileuploader.check_required_field('{$id_var_name}', '{$label_id}');"
                     ]
                     icon_text=""
                 }&nbsp;<span class="upload-filename"></span>
@@ -105,6 +107,6 @@
     </div>
 
     <p class="mute micro-note">
-        {__("text_allowed_to_upload_file_extension", ["[ext]" => 'zip, tgz, gz'])}
+        {__("advanced_import.text_allowed_to_upload_file_extension_with_image_size_info", ["[ext]" => 'zip, tgz, gz', "[file_size]" => true|fn_get_allowed_image_file_size:true])}
     </p>
 </div>

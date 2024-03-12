@@ -133,8 +133,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         }
 
         if (elm.hasClass('cm-ajax') && $('#' + content_id).length == 0) {
-          // Create tab content if it is not exist
-          tabs_elm.after('<div id="' + content_id + '"></div>');
+          var $tabsContent = tabs_elm.closest('#content_top_navigation').next('.cm-tabs-content').length ? tabs_elm.closest('#content_top_navigation').next('.cm-tabs-content') : tabs_elm; // Create tab content if it is not exist
+
+          $tabsContent.after('<div id="' + content_id + '"></div>');
 
           _cloneTools(tab_id, active_id);
 

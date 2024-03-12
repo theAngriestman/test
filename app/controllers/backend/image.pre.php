@@ -30,6 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit;
         }
 
+        if (!fn_is_image_file_size_allowed($file['size'])) {
+            exit;
+        }
+
         $file = fn_move_uploaded_file($file);
 
         Tygh::$app['ajax']->assign('local_data', $file);

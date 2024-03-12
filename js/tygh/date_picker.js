@@ -160,6 +160,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           });
         }
 
+        if ($self.data('caLinkedCalendars') !== 'undefined') {
+          element_params.linkedCalendars = !!$self.data('caLinkedCalendars');
+        }
+
         var settings = $.extend(true, {}, element_params, params);
         $self.daterangepicker(settings, function (start, end, label) {
           var query_params;

@@ -26,15 +26,21 @@
             {* We need extra "hidden" div for tooltips *}
             <div class="grid-control-menu-actions">
                 <div class="btn-group action">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='icon-plus cm-tooltip' data-ce-tooltip-position="top" title="{__("add_grid_block")}"></span></a>
+                    <a href="#" class="dropdown-toggle cm-tooltip" data-toggle="dropdown" data-ce-tooltip-position="top" title="{__("add_grid_block")}">{include_ext file="common/icon.tpl" source="plus"}</a>
                     <ul class="dropdown-menu droptop">
                         <li><a href="" class="cm-action bm-action-add-grid">{__("insert_grid")}</a></li>
                         <li><a href="" class="cm-action bm-action-add-block">{__("insert_block")}</a></li>
                     </ul>
                 </div>
-                <div class="cm-action bm-action-properties cm-tooltip icon-cog action" data-ce-tooltip-position="top" title="{__("grid_options")}"></div>
-                <div class="cm-action bm-action-switch cm-tooltip icon-off action" data-ce-tooltip-position="top" title="{__("enable_or_disable_grid")}"></div>
-                <div class="cm-action bm-action-delete cm-tooltip pull-right icon-trash extra action" data-ce-tooltip-position="top" title="{__("delete_grid")}"></div>
+                <div class="cm-action bm-action-properties cm-tooltip action" data-ce-tooltip-position="top" title="{__("grid_options")}">
+                    {include_ext file="common/icon.tpl" source="cog"}
+                </div>
+                <div class="cm-action bm-action-switch cm-tooltip action" data-ce-tooltip-position="top" title="{__("enable_or_disable_grid")}">
+                    {include_ext file="common/icon.tpl" source="off"}
+                </div>
+                <div class="cm-action bm-action-delete cm-tooltip pull-right extra action" data-ce-tooltip-position="top" title="{__("delete_grid")}">
+                    {include_ext file="common/icon.tpl" source="trash"}
+                </div>
             </div>
         {/if}
     </div>

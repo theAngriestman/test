@@ -46,6 +46,7 @@
         result_ids="simple_dashboard"
         start_date=$time_from
         end_date=$time_to
+        linked_calendars=false
     }
     {script src="js/tygh/backend/dashboard/daterange_picker.js"}
 {/capture}

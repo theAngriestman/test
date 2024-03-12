@@ -21,32 +21,6 @@ $schema['central']['marketing']['items']['newsletters'] = array(
     'href' => 'newsletters.manage',
     'position' => 201,
     'alt' => 'mailing_lists.manage,subscribers.manage',
-    'subitems' => array(
-        'newsletters' => array(
-            'href' => 'newsletters.manage?type=N',
-            'position' => 203
-        ),
-        'templates' => array(
-            'href' => 'newsletters.manage?type=T',
-            'position' => 204
-        ),
-        'autoresponders' => array(
-            'href' => 'newsletters.manage?type=A',
-            'position' => 205
-        ),
-        'campaigns' => array(
-            'href' => 'newsletters.campaigns',
-            'position' => 206
-        ),
-        'mailing_lists' => array(
-            'href' => 'mailing_lists.manage',
-            'position' => 207
-        ),
-        'subscribers_menu_item_text' => array(
-            'href' => 'subscribers.manage',
-            'position' => 208
-        ),
-    )
 );
 
 if (fn_allowed_for('MULTIVENDOR') && !Registry::get('runtime.company_id') || fn_allowed_for('ULTIMATE')) {

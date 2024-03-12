@@ -3,7 +3,7 @@
     {assign var="id" value=$div_id|default:"pagination_contents"}
     {assign var="c_url" value=$current_url|default:$config.current_url|fn_query_remove:"page"}
     {assign var="pagination" value=$search|fn_generate_pagination}
-    {$show_pagination_open = $show_pagination_open|default:true}
+    {$show_pagination_open = $show_pagination_open|default:false}
     {$show_pagination_open = $show_pagination_open scope=parent}
 
     {if $smarty.capture.pagination_open == "Y"}

@@ -25,7 +25,7 @@
         <div class="controls">
             {if $id}
                 <input type="hidden" name="usergroup_data[type]" value="{$usergroup.type}"/>
-                <div class="controls-text">
+                <div class="shift-input">
                     {$usergroup_types[$usergroup.type]}
                 </div>
             {else}

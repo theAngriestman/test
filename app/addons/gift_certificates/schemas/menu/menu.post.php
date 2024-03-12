@@ -19,12 +19,5 @@ $schema['central']['marketing']['items']['gift_certificates'] = [
         'class' => 'is-addon',
     ],
 ];
-$schema['top']['administration']['items']['statuses_management']['subitems']['gift_certificate_statuses'] = [
-    'href'     => 'statuses.manage?type=' . STATUSES_GIFT_CERTIFICATE,
-    'position' => 300,
-    'attrs'    => [
-        'class' => 'is-addon',
-    ],
-];
 
 return $schema;

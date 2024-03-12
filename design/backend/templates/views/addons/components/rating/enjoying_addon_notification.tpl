@@ -105,7 +105,7 @@
             text=__("addons.write_review")
             content=$smarty.capture.addons_write_review
             link_text="☆☆☆☆☆"
-            link_class="btn-large btn-text"
+            link_class="btn-large btn-link"
             act="general"
             title=false
         }

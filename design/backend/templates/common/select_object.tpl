@@ -1,32 +1,47 @@
 {if $items|sizeof > 1}{strip}
 
 {/strip}{$is_submenu = $is_submenu|default:false}
-{$button_style = ($button_style === false) ? "" : $button_style|default:"btn-text"}
+{$button_style = ($button_style === false) ? "" : $button_style|default:"btn-link"}
 {$show_button_text = $show_button_text|default:true}
 {$show_button_symbol = $show_button_symbol|default:true}
+{$show_caret = $show_caret|default:true}
+{$pull_right = $pull_right|default:true}
 {if $style == "graphic"}{strip}
 {/strip}<div class="btn-group {$class}" {if $select_container_id}id="{$select_container_id}"{/if}>
-    <a class="btn dropdown-toggle {$button_style} {$button_class}" id="sw_select_{$selected_id}_wrap_{$suffix}" data-toggle="dropdown">
+    <a class="btn dropdown-toggle {$button_style} {$button_class}" id="sw_select_{$selected_id}_wrap_{$suffix}" data-toggle="dropdown">{strip}
         {if $display_icons}
             {$icon_class=$items.$selected_id.icon_class|default:"flag flag-{$items.$selected_id.country_code|lower}"}
             {if $icon_class}
-                {include_ext file="common/icon.tpl"
-                    class=$icon_class
-                    data=[
-                        "data-ca-target-id" => "sw_select_`$selected_id`_wrap_`$suffix`"
-                    ]
-                }
+                {if $icon_deprecated !== false && $icon_class|strpos:"flag" !== false}
+                    {$icon_deprecated = true}
+                {/if}
+                {if $icon_deprecated}
+                    {include_ext file="common/icon_deprecated.tpl"
+                        class=$icon_class
+                        data=[
+                            "data-ca-target-id" => "sw_select_`$selected_id`_wrap_`$suffix`"
+                        ]
+                    }
+                {else}
+                    {include_ext file="common/icon.tpl"
+                        class=$icon_class
+                        data=[
+                            "data-ca-target-id" => "sw_select_`$selected_id`_wrap_`$suffix`"
+                        ]
+                    }
+                {/if}
             {/if}
         {/if}
-        {if $show_button_text}{$items.$selected_id.$key_name}{/if}{if $show_button_symbol && $items.$selected_id.symbol}&nbsp;({$items.$selected_id.symbol nofilter}){/if}
-        <span class="caret"></span>
-    </a>
+        {if $show_button_text}{$items.$selected_id.$key_name}{/if}{if $show_button_symbol && $items.$selected_id.symbol}&nbsp;({$items.$selected_id.symbol nofilter}){/if}{if $show_caret}
+        &nbsp;<span class="caret"></span>{/if}
+    {/strip}</a>
         {if $key_name == "company"}
             <input id="filter" class="input-text cm-filter" type="text" style="width: 85%"/>
         {/if}
         <ul class="dropdown-menu cm-select-list {if $display_icons}popup-icons{/if} {$dropdown_menu_class}">
+            {if $extra_pre}{$extra_pre nofilter}{/if}
             {foreach $items as $id => $item}
-                <li class="{$dropdown_menu_item_class}">
+                <li class="{if $id == $selected_id}active{/if} {$dropdown_menu_item_class}">
                     <a name="{$id}"
                        href="{"`$link_tpl``$id`"|fn_url}"
                        class="{$dropdown_menu_item_link_class} {if $target_id}cm-ajax{/if}"
@@ -40,7 +55,14 @@
                         {if $display_icons}
                             {$icon_class=$item.icon_class|default:"flag flag-{$item.country_code|lower}"}
                             {if $icon_class}
-                                {include_ext file="common/icon.tpl" class=$icon_class}
+                                {if $icon_deprecated !== false && $icon_class|strpos:"flag" !== false}
+                                    {$icon_deprecated = true}
+                                {/if}
+                                {if $icon_deprecated}
+                                    {include_ext file="common/icon_deprecated.tpl" class=$icon_class}
+                                {else}
+                                    {include_ext file="common/icon.tpl" class=$icon_class}
+                                {/if}
                             {/if}
                         {/if}
                         {$item.$key_name}{if $item.symbol}&nbsp;({$item.symbol nofilter}){/if}
@@ -84,7 +106,7 @@
                 <b class="caret"></b>
             {/if}
         </a>
-        <ul class="dropdown-menu cm-select-list pull-right {$dropdown_menu_class}">
+        <ul class="dropdown-menu cm-select-list {if $pull_right}pull-right{/if} {$dropdown_menu_class}">
             {foreach $items as $id => $item}
 
                 {* Link and suffix with the same identifier. Example: UI and content languages *}
@@ -98,7 +120,14 @@
                         {if $display_icons}
                             {$icon_class=$item.icon_class|default:"flag flag-{$item.country_code|lower}"}
                             {if $icon_class}
-                                {include_ext file="common/icon.tpl" class=$icon_class}
+                                {if $icon_deprecated !== false && $icon_class|strpos:"flag" !== false}
+                                    {$icon_deprecated = true}
+                                {/if}
+                                {if $icon_deprecated}
+                                    {include_ext file="common/icon_deprecated.tpl" class=$icon_class}
+                                {else}
+                                    {include_ext file="common/icon.tpl" class=$icon_class}
+                                {/if}
                             {/if}
                         {/if}
                         {$item.$key_name}{if $item.symbol}&nbsp;({$item.symbol nofilter}){/if}
@@ -135,39 +164,6 @@
         {/foreach}
     </ul>
 </div>
-{elseif $style === "accordion"}
-{$is_active_menu_class = ($plain_name === $selected_tab) ? "active" : ""}
-
-<li class="accordion-group  nav__header-main-menu-item {$is_active_menu_class} {$class}">
-    <a href="#{$plain_name|lower}" 
-        class="nav__menu-item nav__menu-item--accordion nav__header-main-menu-item {$is_active_menu_class} {$button_class}"
-        data-toggle="collapse"  
-    >
-        {$plain_name nofilter}
-    </a>
-    <ul class="collapse nav__header-main-menu-submenu {$is_active_menu_class}{if $is_active_menu_class === 'active' } in{/if}"
-        id="{$plain_name|lower}"
-    >
-        {foreach $items as $id => $item}
-            {$is_active_submenu_class = ($id === $selected_id) ? "active" : ""}
-
-            {$link = "`$link_tpl``$id`"|fn_url}
-            {$link = ($link_suffix) ? ($link|fn_link_attach:"`$link_suffix``$id`") : $link}
-
-            <li class="{$id} accordion-group nav__header-main-menu-subitem {$is_active_submenu_class}">
-                <a class="nav__menu-subitem {$is_active_submenu_class}" name="{$id}" href="{$link}">
-                    {if $display_icons}
-                        {$icon_class=$item.icon_class|default:"flag flag-{$item.country_code|lower}"}
-                        {if $icon_class}
-                            {include_ext file="common/icon.tpl" class=$icon_class}
-                        {/if}
-                    {/if}
-                    {$item.$key_name}{if $item.symbol}&nbsp;({$item.symbol nofilter}){/if}
-                </a>
-            </li>
-        {/foreach}
-    </ul>
-</li>
 {/if}{strip}
 
 {/strip}{/if}

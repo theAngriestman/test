@@ -3,7 +3,7 @@
         {foreach $block_types as $type => $block}
             {capture name="block_edit_link"}
                 <div class="select-block-box">
-                    {include_ext file="common/icon.tpl" class="bmicon-`$block.type|replace:'_':'-'`"}
+                    {include_ext file="common/icon_deprecated.tpl" class="bmicon-`$block.type|replace:'_':'-'`"}
                 </div>
                 <div class="select-block-description">
                     <strong title="{$block.name}">{$block.name|truncate:20:"...":true|escape:html|replace:'...':'&hellip;' nofilter}</strong>

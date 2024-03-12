@@ -280,7 +280,7 @@
 
                 <div class="sidebar-field advanced-search-field">
                     <input class="btn" type="submit" name="dispatch[upgrade_center.manage]" value="{__("admin_search_button")}">
-                    <a class="btn btn-text" href="{"upgrade_center.manage.reset_view"|fn_url}">{__("reset")}</a>
+                    <a class="btn btn-link" href="{"upgrade_center.manage.reset_view"|fn_url}">{__("reset")}</a>
                 </div>
             </form>
         </div>

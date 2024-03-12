@@ -18,6 +18,7 @@
     {$hide_inputs_class = "cm-hide-inputs"}
     {$hide_categories_delete = true}
 {/if}
+{$tabs_count = 2}
 
 <div id="content_group{$id}">
 
@@ -31,7 +32,7 @@
 {/if}
 <input type="hidden" class="cm-no-hide-input" name="redirect_url" value="{$smarty.request.return_url|default:$redirect_url}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_details_{$id}" class="cm-js active"><a>{__("general")}</a></li>
         <li id="tab_categories_{$id}" class="cm-js"><a>{__("categories")}</a></li>

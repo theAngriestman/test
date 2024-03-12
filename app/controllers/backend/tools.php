@@ -85,15 +85,6 @@ if ($mode === 'phpinfo') {
 }
 
 if ($mode === 'show_quick_menu') {
-    if (Registry::get('runtime.action') === 'edit') {
-        Tygh::$app['view']->assign('edit_quick_menu', true);
-    } else {
-        Tygh::$app['view']->assign('expand_quick_menu', true);
-    }
-
-    if (empty($_REQUEST['no_popup'])) {
-        Tygh::$app['view']->assign('show_quick_popup', true);
-    }
     Tygh::$app['view']->display('common/quick_menu.tpl');
     exit;
 }
@@ -119,7 +110,6 @@ if ($mode === 'remove_quick_menu_item') {
     db_query('DELETE FROM ?:quick_menu WHERE menu_id = ?i ?p', $_REQUEST['id'], $where);
     db_query("DELETE FROM ?:common_descriptions WHERE object_id = ?i AND object_holder = 'quick_menu'", $_REQUEST['id']);
 
-    Tygh::$app['view']->assign('edit_quick_menu', true);
     Tygh::$app['view']->assign('quick_menu', fn_get_quick_menu_data());
     Tygh::$app['view']->display('common/quick_menu.tpl');
     exit;

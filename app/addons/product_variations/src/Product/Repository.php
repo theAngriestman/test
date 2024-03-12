@@ -198,15 +198,10 @@ class Repository
         ]);
 
         if (YesNo::toBool(Registry::get('addons.product_variations.variations_show_all_possible_feature_variants'))) {
-            $product_ids = ServiceProvider::getGroupRepository()->findGroupProductIdsByGroupIds($group_ids);
+            $product_group_ids_map = ServiceProvider::getGroupRepository()->findAndMapGroupProductIdsByGroupIds($group_ids);
             $all_products = [];
 
-            foreach ($product_ids as $product_id) {
-                if (count($group_ids) > 1) {
-                    $group_id = ServiceProvider::getGroupRepository()->findGroupIdByProductId($product_id);
-                } else {
-                    $group_id = reset($group_ids);
-                }
+            foreach ($product_group_ids_map as $product_id => $group_id) {
                 $all_products[$product_id] = [
                     'product_id'         => $product_id,
                     'variation_group_id' => $group_id,

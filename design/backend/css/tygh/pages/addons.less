@@ -66,26 +66,20 @@
 }
 
 .tablesorter-header-inner::after {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 14px;
-    min-height: 14px;
+    display: inline-block;
+    width: @iconSize;
+    height: @iconSize;
     position: absolute;
-    right: -14px;
+    right: -@iconSize;
     bottom: 0;
     opacity: 0.3;
 
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-
     .tablesorter-headerAsc & {
-        content: '\f0d8';
+        content: url('../templates/icons/asc.svg');
     }
 
     .tablesorter-headerDesc & {
-        content: '\f0d7';
+        content: url('../templates/icons/desc.svg');
     }
 }
 
@@ -102,3 +96,12 @@
     }
 }
 
+.addons-list__view-more-addons {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.addons-market {
+    margin-bottom: 0;
+}

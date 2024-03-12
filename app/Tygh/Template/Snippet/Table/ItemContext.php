@@ -86,6 +86,14 @@ class ItemContext implements IContext
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getLanguageDirection()
+    {
+        return fn_is_rtl_language($this->parent_context->getLangCode()) ? 'rtl' : 'ltr';
+    }
+
+    /**
      * Fetches item's sequence counter
      *
      * @return int

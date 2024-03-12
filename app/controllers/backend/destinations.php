@@ -130,18 +130,3 @@ if ($mode === 'update') {
     $ajax->assign('total_objects', $total_objects);
     return [CONTROLLER_STATUS_NO_CONTENT];
 }
-
-if (in_array($mode, ['add', 'update', 'manage'])) {
-    $dynamic_sections = Registry::ifGet('navigation.dynamic.sections', []);
-    $dynamic_sections['shippings'] = [
-        'title' => __('shipping_methods'),
-        'href'  => 'shippings.manage',
-    ];
-    $dynamic_sections['destinations'] = [
-        'title' => __('rate_areas'),
-        'href'  => 'destinations.manage',
-    ];
-
-    Registry::set('navigation.dynamic.active_section', 'destinations');
-    Registry::set('navigation.dynamic.sections', $dynamic_sections);
-}

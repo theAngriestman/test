@@ -66,7 +66,7 @@
                                 {$language.name} {if $language.lang_code == $smarty.const.DEFAULT_LANGUAGE}({__("Default")}){/if}
                             </td>
                             <td width="20%" data-th="{__("country")}">
-                                {include_ext file="common/icon.tpl"
+                                {include_ext file="common/icon_deprecated.tpl"
                                     class="flag flag-`$language.country_code|strtolower`"
                                 }{$countries[$language.country_code]}
                             </td>
@@ -166,7 +166,13 @@
     </div>
 {/capture}
 
-{include file="common/mainbox.tpl" title=__("languages") content=$smarty.capture.mainbox buttons=$smarty.capture.buttons adv_buttons=$smarty.capture.adv_buttons sidebar=$smarty.capture.sidebar}
+{include file="common/mainbox.tpl"
+    title=__("languages")
+    content=$smarty.capture.mainbox
+    buttons=$smarty.capture.buttons
+    adv_buttons=$smarty.capture.adv_buttons
+    sidebar=$smarty.capture.sidebar
+}
 
 <script>
     (function($, _){

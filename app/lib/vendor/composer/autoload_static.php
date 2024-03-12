@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd9703f72648feb587d1af9945bec6816
+class ComposerStaticInitc2b5622a4db5415a839835257887aea3
 {
     public static $files = array (
         '72142d7b40a3a0b14e91825290b5ad82' => __DIR__ . '/..' . '/cakephp/core/functions.php',
@@ -3407,11 +3407,11 @@ class ComposerStaticInitd9703f72648feb587d1af9945bec6816
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd9703f72648feb587d1af9945bec6816::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd9703f72648feb587d1af9945bec6816::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd9703f72648feb587d1af9945bec6816::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInitd9703f72648feb587d1af9945bec6816::$fallbackDirsPsr0;
-            $loader->classMap = ComposerStaticInitd9703f72648feb587d1af9945bec6816::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc2b5622a4db5415a839835257887aea3::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc2b5622a4db5415a839835257887aea3::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc2b5622a4db5415a839835257887aea3::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInitc2b5622a4db5415a839835257887aea3::$fallbackDirsPsr0;
+            $loader->classMap = ComposerStaticInitc2b5622a4db5415a839835257887aea3::$classMap;
 
         }, null, ClassLoader::class);
     }

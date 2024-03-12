@@ -5,6 +5,7 @@
 {/if}
 
 {assign var="block_type" value=$block.block_type|default:$block_type}
+{$tabs_count = 1}
 <div id="content_group{$id}{$block_type}_{$location}">
 <form action="{""|fn_url}" enctype="multipart/form-data" method="post" class="form-horizontal form-edit " name="block_{$location}_{$id}{$block_type}_update_form">
 <input type="hidden" name="block[block_type]" value="{$block_type}" />
@@ -28,7 +29,7 @@
     <input type="hidden" name="redirect_url" value="{$redirect_url}" />
 {/if}
 
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li class="cm-js active"><a>{__("general")}</a></li>
         </ul>

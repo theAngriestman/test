@@ -9,6 +9,7 @@
 {else}
     {assign var="allow_edit" value=false}
 {/if}
+{$tabs_count = (!$question_data || $question_data.type != "T") ? 2 : 1}
 
 <div id="content_group{$id}">
 
@@ -17,7 +18,7 @@
 <input type="hidden" name="page_id" value="{$question_data.page_id|default:$smarty.request.page_id}" />
 <input type="hidden" name="selected_section" value="poll_questions" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="details_{$id}" class="cm-js active"><a>{__("general")}</a></li>
         {if !$question_data || $question_data.type != "T"}

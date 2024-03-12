@@ -143,6 +143,23 @@ class BackendMenu
             $menu = $this->cleanUpTopLevelMenus($menu);
         }
 
+        // FIXME: Workaround for backward compatibility
+        $menu['secondary'] = $menu['top'];
+        if (!empty($menu['secondary']['administration']['items'])) {
+            unset($menu['secondary']['administration']['items']);
+            $menu['secondary']['administration']['href'] = 'administration.view';
+        }
+        if (!empty($menu['secondary']['settings']['items'])) {
+            unset($menu['secondary']['settings']);
+        }
+        if (!empty($menu['top']) && !empty($menu['top']['addons'])) {
+            $menu['central']['addons'] = $menu['top']['addons'];
+            unset($menu['secondary']['addons']);
+        }
+
+        unset($menu['top']['administration']['items']['import_data']['subitems']);
+        unset($menu['top']['administration']['items']['export_data']['subitems']);
+
         return [$menu, $actions, $this->_selected];
     }
 

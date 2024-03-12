@@ -31,8 +31,8 @@
                     </th>
                     <th width="40%">
                         <div class="btn-expand-wrapper">
-                            <span id="off_carts" alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" class="hidden hand cm-combinations-carts btn-expand btn-expand--header"/><span class="icon-caret-down"></span></span>
-                            <span id="on_carts" alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" class="cm-combinations-carts btn-expand btn-expand--header"><span class="icon-caret-right"></span></span>
+                            <span id="off_carts" alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" class="hidden hand cm-combinations-carts btn-expand btn-expand--header">{include_ext file="common/icon.tpl" source="caret_down" class="cs-icon--small"}</span>
+                            <span id="on_carts" alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" class="cm-combinations-carts btn-expand btn-expand--header">{include_ext file="common/icon.tpl" source="caret_right" class="cs-icon--small"}</span>
                         </div>
                         {include file="common/table_col_head.tpl" type="customer"}
                     </th>
@@ -83,17 +83,17 @@
                 <td width="40%" data-th="{__("customer")}">
                     <div class="cart__customer">
                         {if "ULTIMATE"|fn_allowed_for}
-                            <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_user_{$customer.user_id}_{$customer.company_id}" class="cm-combination-carts btn-expand" onclick="Tygh.$.ceAjax('request', '{"cart.cart_list?user_id=`$customer.user_id`&c_company_id=`$customer.company_id`"|fn_url nofilter}', {$ldelim}result_ids: 'cart_products_{$customer.user_id}_{$customer.company_id},wishlist_products_{$customer.user_id}_{$customer.company_id}', caching: true{$rdelim});"><span class="icon-caret-right"></span></a>
-                            <a href="#" alt="{__("collapse_sublist_of_items")}" title="{__("collapse_sublist_of_items")}" id="off_user_{$customer.user_id}_{$customer.company_id}" class="hidden cm-combination-carts btn-expand"><span class="icon-caret-down"></span></a>
+                            <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_user_{$customer.user_id}_{$customer.company_id}" class="cm-combination-carts btn-expand" onclick="Tygh.$.ceAjax('request', '{"cart.cart_list?user_id=`$customer.user_id`&c_company_id=`$customer.company_id`"|fn_url nofilter}', {$ldelim}result_ids: 'cart_products_{$customer.user_id}_{$customer.company_id},wishlist_products_{$customer.user_id}_{$customer.company_id}', caching: true{$rdelim});">{include_ext file="common/icon.tpl" source="caret_right" class="cs-icon--small"}</a>
+                            <a href="#" alt="{__("collapse_sublist_of_items")}" title="{__("collapse_sublist_of_items")}" id="off_user_{$customer.user_id}_{$customer.company_id}" class="hidden cm-combination-carts btn-expand">{include_ext file="common/icon.tpl" source="caret_down" class="cs-icon--small"}</a>
                         {/if}
 
                         {if !"ULTIMATE"|fn_allowed_for}
                             {if $customer.storefront_id}
-                                <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_user_{$customer.user_id}" class="cm-combination-carts btn-expand" onclick="Tygh.$.ceAjax('request', '{"cart.cart_list?user_id=`$customer.user_id`&storefront_id=`$customer.storefront_id`"|fn_url nofilter}', {$ldelim}result_ids: 'cart_products_{$customer.user_id},wishlist_products_{$customer.user_id}', caching: true{$rdelim});"><span class="icon-caret-right"></span></a>
+                                <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_user_{$customer.user_id}" class="cm-combination-carts btn-expand" onclick="Tygh.$.ceAjax('request', '{"cart.cart_list?user_id=`$customer.user_id`&storefront_id=`$customer.storefront_id`"|fn_url nofilter}', {$ldelim}result_ids: 'cart_products_{$customer.user_id},wishlist_products_{$customer.user_id}', caching: true{$rdelim});">{include_ext file="common/icon.tpl" source="caret_right" class="cs-icon--small"}</a>
                             {else}
-                                <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_user_{$customer.user_id}" class="cm-combination-carts btn-expand" onclick="Tygh.$.ceAjax('request', '{"cart.cart_list?user_id=`$customer.user_id`"|fn_url nofilter}', {$ldelim}result_ids: 'cart_products_{$customer.user_id},wishlist_products_{$customer.user_id}', caching: true{$rdelim});"><span class="icon-caret-right"></span></a>
+                                <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_user_{$customer.user_id}" class="cm-combination-carts btn-expand" onclick="Tygh.$.ceAjax('request', '{"cart.cart_list?user_id=`$customer.user_id`"|fn_url nofilter}', {$ldelim}result_ids: 'cart_products_{$customer.user_id},wishlist_products_{$customer.user_id}', caching: true{$rdelim});">{include_ext file="common/icon.tpl" source="caret_right" class="cs-icon--small"}</a>
                             {/if}
-                            <a href="#" alt="{__("collapse_sublist_of_items")}" title="{__("collapse_sublist_of_items")}" id="off_user_{$customer.user_id}" class="hidden cm-combination-carts btn-expand"><span class="icon-caret-down"></span></a>
+                            <a href="#" alt="{__("collapse_sublist_of_items")}" title="{__("collapse_sublist_of_items")}" id="off_user_{$customer.user_id}" class="hidden cm-combination-carts btn-expand">{include_ext file="common/icon.tpl" source="caret_down" class="cs-icon--small"}</a>
                         {/if}
 
                         <div class="cart__customer-data-wrapper">

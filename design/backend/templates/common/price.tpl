@@ -15,8 +15,8 @@
 {/strip}
 {/capture}
 
-{if $view == "input"}
-    <input type="text" id="{$input_id}" name="{$input_name}" value="{$value}" class="cm-numeric {$class}" placeholder="{$placeholder}" {if $show_currency}data-a-sign="{$currencies.$primary_currency.symbol|strip_tags nofilter}"{/if} {if $currencies.$primary_currency.after == "Y"}data-p-sign="s"{/if} data-a-dec="." data-a-sep="," {if $product_id}data-ct-product="{$product_id}"{/if}>
-{else}
-    {$smarty.capture.currencies nofilter}
-{/if}
+{if $view == "input"}{strip}
+    {/strip}<input type="text" id="{$input_id}" name="{$input_name}" value="{$value}" class="cm-numeric {$class}" placeholder="{$placeholder}" {if $show_currency}data-a-sign="{$currencies.$primary_currency.symbol|strip_tags nofilter}"{/if} {if $currencies.$primary_currency.after == "Y"}data-p-sign="s"{/if} data-a-dec="." data-a-sep="," {if $product_id}data-ct-product="{$product_id}"{/if}>{strip}
+{/strip}{else}{strip}
+    {/strip}{$smarty.capture.currencies nofilter}{strip}
+{/strip}{/if}

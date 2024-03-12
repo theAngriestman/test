@@ -2335,3 +2335,30 @@ function fn_check_product_feature_by_feature_params($feature_type, $feature_purp
 
     return $is_exist;
 }
+
+/**
+ * Gets internal feature names by params excluding feature groups.
+ *
+ * @param array{company_id?: int|array<int>} $params    Company identifiers
+ * @param string                             $lang_code Language code
+ *
+ * @return array<string>
+ */
+function fn_get_product_features_internal_names(array $params = [], $lang_code = DESCR_SL)
+{
+    $default_params = [
+        'company_id' => 0
+    ];
+
+    $params = array_merge($default_params, $params);
+
+    return db_get_fields(
+        'SELECT ?:product_features_descriptions.internal_name FROM ?:product_features'
+        . ' LEFT JOIN ?:product_features_descriptions ON ?:product_features_descriptions.feature_id = ?:product_features.feature_id'
+        . ' AND ?:product_features_descriptions.lang_code = ?s'
+        . ' WHERE ?:product_features.feature_type != ?s AND ?:product_features.company_id IN (?n)',
+        $lang_code,
+        ProductFeatures::GROUP,
+        $params['company_id']
+    );
+}

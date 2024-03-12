@@ -135,7 +135,7 @@
                         {include file="views/companies/components/company_name.tpl" object=$user}
                     {/if}
                 </td>
-                <td width="{$email_col_width}" data-th="{__("email")}"><a class="row-status" href="mailto:{$user.email|escape:url}">{$user.email}</a></td>
+                <td width="{$email_col_width}" data-th="{__("email")}" class="wrap"><a class="row-status" href="mailto:{$user.email|escape:url}">{$user.email}</a></td>
                 <td width="14%" class="row-status" data-th="{__("last_login")}">{if $user.last_login}{$user.last_login|date_format:"`$settings.Appearance.date_format`, `$settings.Appearance.time_format`"}{else}{/if}</td>
                 <td width="15%" class="row-status" data-th="{__("phone")}">
                     <a href="tel:{$user.phone}"><bdi>{$user.phone}</bdi></a>
@@ -254,6 +254,17 @@
         {/capture}
         {dropdown content=$smarty.capture.tools_list class="mobile-hide bulkedit-dropdown--legacy hide"}
     {/if}
+    {if "MULTIVENDOR"|fn_allowed_for && $smarty.request.user_type === "UserTypes::CUSTOMER"|enum}
+        {$buttons = [
+            vendor_administrators => [
+                href => "profiles.manage?user_type=V",
+                text => __("view_vendor_administrators")
+            ]
+        ]}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons}
+    {/if}
 {/capture}
 </form>
 {/capture}
@@ -275,11 +286,29 @@
     {/hook}
 {/capture}
 
+{$saved_search = [
+    dispatch => "profiles.manage",
+    view_type => "users"
+]}
+
+{capture name="search_filters"}
+    {include file="views/profiles/components/users_search_form.tpl"
+        dispatch="profiles.manage"
+    }
+{/capture}
+
 {capture name="sidebar"}
     {hook name="profiles:manage_sidebar"}
-    {include file="common/saved_search.tpl" dispatch="profiles.manage" view_type="users"}
-    {include file="views/profiles/components/users_search_form.tpl" dispatch="profiles.manage"}
     {/hook}
 {/capture}
 
-{include file="common/mainbox.tpl" title=$_title content=$smarty.capture.mainbox sidebar=$smarty.capture.sidebar adv_buttons=$smarty.capture.adv_buttons buttons=$smarty.capture.buttons content_id="manage_users"}
+{include file="common/mainbox.tpl"
+    title=$_title
+    content=$smarty.capture.mainbox
+    sidebar=$smarty.capture.sidebar
+    saved_search=$saved_search
+    search_filters=$smarty.capture.search_filters
+    adv_buttons=$smarty.capture.adv_buttons
+    buttons=$smarty.capture.buttons
+    content_id="manage_users"
+}

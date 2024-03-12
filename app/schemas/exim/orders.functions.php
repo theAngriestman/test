@@ -38,6 +38,21 @@ function fn_exim_orders_get_data($order_id, $type)
     }
 }
 
+/**
+ * @param string[] $conditions Conditions
+ *
+ * @return void
+ */
+function fn_exim_orders_set_storefront_condition(array &$conditions)
+{
+    $storefront_id = Tygh::$app['session']['auth']['storefront_id'];
+
+    if (!$storefront_id) {
+        return;
+    }
+
+    $conditions[] = db_quote('orders.storefront_id = ?i', $storefront_id);
+}
 //
 // Get order data information
 // Parameters:
@@ -165,8 +180,17 @@ function fn_exim_orders_set_docs($order_id, $data, $type)
     return true;
 }
 
-function fn_import_check_storefront_id(&$data)
+/**
+ * @param array<string, array<string, string|int|null>> $data           Order data
+ * @param bool                                          $skip_record    Skip record
+ * @param array<string, int>                            $processed_data Processed data
+ *
+ * @return void
+ */
+function fn_import_check_storefront_id(array &$data, &$skip_record, array &$processed_data)
 {
+    $storefront_id = (int) Tygh::$app['session']['auth']['storefront_id'];
+
     foreach ($data as $lang_code => $order_data) {
 
         if (empty($order_data['storefront_id'])) {
@@ -177,7 +201,9 @@ function fn_import_check_storefront_id(&$data)
             $default_storefront = $repository->findDefault();
 
             $data[$lang_code]['storefront_id'] = $default_storefront->storefront_id;
-
+        } elseif ($storefront_id && $storefront_id !== (int) $data[$lang_code]['storefront_id']) {
+            $skip_record = true;
+            $processed_data['S']++;
         }
     }
 }

@@ -921,15 +921,61 @@ function fn_get_default_product_options($product_id, $get_all = false, array $pr
     if ($exceptions_type === ProductOptionsExceptionsTypes::FORBIDDEN) {
         if (!empty($options)) {
             // Forbidden combinations
-            $_options = array_keys($options);
-            $_variants = array_values($options);
-            if (!empty($_variants)) {
+
+            // Don't search for allowed combinations in special cases:
+            // 1. If there is a forbidden combination with all variants set as "Any variant".
+            // 2. If there are forbidden combinations with all variants set as "Any variant" except one.
+            $options_clone = $options;
+            $get_allowed_combinations = true;
+            foreach ($exceptions as $forbidden_combination) {
+                $unique_combination_values = array_unique($forbidden_combination);
+                if (!in_array((string) OPTION_EXCEPTION_VARIANT_ANY, $unique_combination_values)) {
+                    continue;
+                }
+
+                if (count($unique_combination_values) === 1) {
+                    $get_allowed_combinations = false;
+                } elseif (count($unique_combination_values) === 2) {
+                    foreach ($unique_combination_values as $_option_id => $_variant) {
+                        if ($_variant === (string) OPTION_EXCEPTION_VARIANT_ANY) {
+                            continue;
+                        }
+
+                        if (count($options_clone[$_option_id]) === 1) {
+                            $get_allowed_combinations = false;
+                        }
+                        unset($options_clone[$_option_id][$_variant]);
+                    }
+                }
+            }
+            unset($options_clone);
+
+            if ($get_allowed_combinations) {
+                // Sort option variants by frequency of occurrence in exceptions
+                // Workaround for cases with many "Any option" exception variants
+                $option_variants_sorted = [];
+                foreach ($options as $option_id => $option_variants) {
+                    foreach (array_keys($option_variants) as $variant) {
+                        $count = 0;
+                        foreach ($exceptions as $_exception) {
+                            if ((string) $variant !== $_exception[$option_id]) {
+                                continue;
+                            }
+                            $count++;
+                        }
+                        $option_variants_sorted[$option_id][$variant] = $count;
+                    }
+                    asort($option_variants_sorted[$option_id]);
+                }
+
+                $_options = array_keys($options);
+                $_variants = array_values($option_variants_sorted);
                 foreach ($_variants as $key => $variants) {
                     $_variants[$key] = array_keys($variants);
                 }
-            }
 
-            list($result) = fn_get_allowed_options_combination($_options, $_variants, [], 0, $exceptions, []);
+                [$result] = fn_get_allowed_options_combination($_options, $_variants, [], 0, $exceptions, []);
+            }
         }
     } else {
         // Allowed combinations
@@ -1672,7 +1718,7 @@ function fn_get_allowed_options_combination($options, $variants, $string, $itera
     foreach ($variants[$iteration] as $variant_id) {
         if (count($options) - 1 > $iteration) {
             $string[$iteration][$options[$iteration]] = $variant_id;
-            list($_c, $is_result) = fn_get_allowed_options_combination($options, $variants, $string, $iteration + 1, $exceptions, $inventory_combinations);
+            [$_c, $is_result] = fn_get_allowed_options_combination($options, $variants, $string, $iteration + 1, $exceptions, $inventory_combinations);
             if ($is_result) {
                 return array($_c, $is_result);
             }

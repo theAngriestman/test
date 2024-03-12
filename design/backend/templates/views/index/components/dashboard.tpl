@@ -45,7 +45,7 @@
                     width: chartwidth,
                     height: 208
                 },
-                colors: ['#ff9494','#33c49b'],
+                colors: ['#f84f8c','#5cb432'],
                 tooltip: {
                     showColorCode: true
                 },
@@ -407,7 +407,7 @@
                 {if !empty($order_statuses)}
                     <div class="dashboard-recent-orders cm-j-tabs tabs">
                         <h4>{__("recent_orders")}</h4>
-                        <ul class="nav nav-pills">
+                        <ul class="nav nav-tabs">
                             <li id="tab_recent_all" class="active cm-js"><a href="#status_all" data-toggle="tab">{__("all")}</a></li>
                             {foreach from=$order_statuses item="status"}
                                 <li id="tab_recent_{$status.status}" class="cm-js"><a href="#status_{$status.status}" data-toggle="tab">{$status.description}</a></li>

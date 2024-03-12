@@ -179,12 +179,18 @@
         {capture name="add_new_picker_2"}
             {include file="views/product_features/update.tpl" feature=[] in_popup=true return_url=$config.current_url}
         {/capture}
-        {include file="common/popupbox.tpl" id="add_new_feature" text=__("new_feature") title=__("new_feature") content=$smarty.capture.add_new_picker_2 act="general" icon="icon-plus"}
+        {include file="common/popupbox.tpl" id="add_new_feature" text=__("new_feature") title=__("new_feature") content=$smarty.capture.add_new_picker_2 act="general" icon="icon-plus" link_class="btn-primary"}
     {/capture}
 
-    {capture name="sidebar"}
-        {include file="common/saved_search.tpl" dispatch="product_features.manage" view_type="product_features"}
-        {include file="views/product_features/components/product_features_search_form.tpl" dispatch="product_features.manage"}
+    {$saved_search = [
+        dispatch => "product_features.manage",
+        view_type => "product_features"
+    ]}
+
+    {capture name="search_filters"}
+        {include file="views/product_features/components/product_features_search_form.tpl"
+            dispatch="product_features.manage"
+        }
     {/capture}
     
     {capture name="buttons"}
@@ -193,9 +199,26 @@
                 {hook name="product_features:list_extra_links"}
                 {/hook}
             {/if}
+            {$buttons = [
+                feature_groups => [
+                    href => "product_features.groups",
+                    text => __("view_feature_groups")
+                ]
+            ]}
+
+            {* Export $navigation.dynamic.actions *}
+            {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons|array_merge:$buttons}
         {/capture}
         {dropdown content=$smarty.capture.tools_list class="mobile-hide"}
     {/capture}
 
 {/capture}
-{include file="common/mainbox.tpl" title=__("features") content=$smarty.capture.mainbox select_languages=true buttons=$smarty.capture.buttons adv_buttons=$smarty.capture.adv_buttons sidebar=$smarty.capture.sidebar}
+{include file="common/mainbox.tpl"
+    title=__("features")
+    content=$smarty.capture.mainbox
+    select_languages=true
+    buttons=$smarty.capture.buttons
+    adv_buttons=$smarty.capture.adv_buttons
+    saved_search=$saved_search
+    search_filters=$smarty.capture.search_filters
+}

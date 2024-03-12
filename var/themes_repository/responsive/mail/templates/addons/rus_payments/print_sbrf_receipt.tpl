@@ -22,7 +22,7 @@
                     .receipt-list {padding: 0; margin: 0}
                     .text-button {
                         font-family: Arial;
-                        color: #08c;
+                        color: #1d9ff8;
                         font-size: 11px !important;
                         text-decoration: none;
                     }

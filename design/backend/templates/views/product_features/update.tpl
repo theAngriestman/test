@@ -37,6 +37,7 @@
 {/if}
 
 {$action_context = $action_context|default:$smarty.request._action_context}
+{$tabs_count = 3}
 
 {capture name="mainbox"}
 
@@ -54,7 +55,7 @@
 {/if}
 <input type="hidden" class="cm-no-hide-input" name="redirect_url" value="{$return_url|default:$smarty.request.return_url}" />
 
-<div class="tabs cm-j-tabs cm-track">
+<div class="tabs cm-j-tabs cm-track tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_feature_details_{$id}" class="cm-js {if $active_tab == "tab_feature_details_`$id`"} active{/if}"><a>{__("general")}</a></li>
         <li id="tab_feature_variants_{$id}" class="cm-js {if $feature.feature_type && $selectable_group|strpos:$feature.feature_type === false || !$feature}hidden{/if} {if $active_tab == "tab_feature_variants_`$id`"} active{/if}"><a>{__("variants")}</a></li>

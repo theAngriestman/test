@@ -153,7 +153,7 @@
                             {/if}
                         </div>
 
-                        {if $smarty.capture.$product_labels|trim}
+                        {if $smarty.capture.$product_labels|default:""|trim}
                             <div class="ty-float-left">
                                 {$smarty.capture.$product_labels nofilter}
                             </div>

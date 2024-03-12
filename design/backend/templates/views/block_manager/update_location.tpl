@@ -3,6 +3,7 @@
 {else}
     {$html_id = $location.location_id}
 {/if}
+{$tabs_count = ($dynamic_object_scheme) ? 2 : 1}
 
 <form action="{""|fn_url}" method="post" enctype="multipart/form-data" class=" form-horizontal" name="location_{$html_id}_update_form">
 <div id="location_properties_{$html_id}">
@@ -11,7 +12,7 @@
     <input type="hidden" name="location" value="{$location.location_id}" />
     <input type="hidden" name="location_data[location_id]" value="{$location.location_id}" />
 
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="location_general_{$html_id}" class="cm-js active"><a>{__("general")}</a></li>
             {if $dynamic_object_scheme}

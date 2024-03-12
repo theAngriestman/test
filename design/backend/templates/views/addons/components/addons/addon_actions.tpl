@@ -1,4 +1,4 @@
-{$target_id="addons_list,header_navbar,header_subnav,addons_counter,elm_developer_pages,elm_all_dev_pages"}
+{$target_id="addons_list,top_bar,header_navbar,header_subnav,addons_counter,elm_developer_pages,elm_all_dev_pages"}
 {$c_url = $config.current_url}
 
 {if $runtime.company_id}

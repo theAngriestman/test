@@ -615,9 +615,6 @@ $(document).ready(function() {
             margin-right: 10px;
         }
 
-        .icons-bar a {
-            margin-right: 5px;
-        }
         .unedited-element, .undeleted-element {
             cursor: not-allowed;
         }

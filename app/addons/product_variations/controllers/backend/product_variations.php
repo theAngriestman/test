@@ -386,19 +386,24 @@ if ($mode === 'manage') {
 
     /** @var \Tygh\SmartyEngine\Core $view */
     $view = Tygh::$app['view'];
+    $combinations = $generation_form->getCombinations();
+    $selected_features = $generation_form->getFeatures();
     $view->assign([
         'product_data'                 => $product_data,
         'feature_value_collection'     => $generation_form->getFeatureValueCollection(),
         'group'                        => $generation_form->getGroup(),
-        'combinations'                 => $generation_form->getCombinations(),
-        'selected_features'            => $generation_form->getFeatures(),
+        'combinations'                 => $combinations,
+        'all_combinations_count'       => count($combinations),
+        'selected_features'            => $selected_features,
         'new_combinations_count'       => $generation_form->getNewCombinationsCount(),
-        'feature_ids'                  => array_keys($generation_form->getFeatures()),
+        'feature_ids'                  => array_keys($selected_features),
         'features_variant_ids'         => $generation_form->getFeaturesVariantsMap(),
         'exists_features_variant_ids'  => $generation_form->getExistsFeaturesVariantsMap(),
         'is_allow_generate_variations' => $product_type->isAllowGenerateVariations(),
         'is_all_combinations_active'   => $generation_form->isAllCombinationsActive(),
     ]);
+
+    $view->assign('combinations_count_allowed_for_display', 100);
 
     if (defined('AJAX_REQUEST')) {
         Tygh::$app['view']->display('addons/product_variations/views/product_variations/create_variations.tpl');

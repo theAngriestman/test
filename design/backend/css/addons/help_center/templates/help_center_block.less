@@ -62,7 +62,7 @@
 }
 
 .help-center-block__inner--open-icon:after {
-    content: "\f105";
+    content: url('../templates/icons/angle_right.svg');
     width: var(--help-center-icon-large-width);
     height: var(--help-center-icon-large-width);
     position: absolute;
@@ -117,19 +117,16 @@
     background: @textColor;
 }
 .help-center-block__video-wrapper:after {
-    content: "\f144";
+    content: url('../templates/icons/play_sign.svg');
     display: block;
     position: absolute;
     top: 16px;
     right: 16px;
-    font-size: 42px;
-    line-height: 37px;
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    color: #fff;
+    width: 42px;
+    height: 42px;
     border-radius: 999px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 0 32px 0 rgba(0, 0, 0, 0.1);
+    filter: ~"contrast(0) brightness(2)";
 }
 
 .help-center-block__video {
@@ -161,7 +158,7 @@
 }
 
 .help-center-block__preheader {
-    color: @textMutedColor;
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
     text-transform: uppercase;
     word-break: break-all;
     word-break: break-word;
@@ -186,7 +183,7 @@
 }
 
 .help-center-block__title--new:before {
-    content: "\f111";
+    content: url('../templates/icons/circle.svg');
     width: var(--help-center-icon-small-width);
     height: var(--help-center-icon-small-width);
     position: absolute;
@@ -197,6 +194,7 @@
     color: var(--help-center-main-color);
     visibility: visible;
     transform: translateY(-50%);
+    filter: ~"contrast(0) sepia(100%) saturate(6) hue-rotate(180deg)";
 }
 
 .help-center-block__title--secondary {

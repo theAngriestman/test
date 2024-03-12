@@ -1,8 +1,8 @@
-{$show_last_viewed_items = $show_last_viewed_items|default:true}
-<div class="btn-group" id="last_edited_items">
-    <a class="btn cm-back-link">{include_ext file="common/icon.tpl" class="icon-arrow-left"}</a>
+{$show_last_viewed_items = $show_last_viewed_items|default:false}
+<div class="btn-group last-viewed-items" id="last_edited_items">
+    <a class="btn btn-link last-viewed-items__back-link cm-back-link">{include_ext file="common/icon.tpl" class="icon-arrow-left"}</a>
     {if $show_last_viewed_items}
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+        <a class="btn btn-link last-viewed-items__dropdown dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
         <ul class="dropdown-menu">
         {if $breadcrumbs|sizeof >= 1}
             {foreach from=$breadcrumbs item="bc" name="bcn" key="key"}

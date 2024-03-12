@@ -128,6 +128,7 @@ class Connection
      * @var array<int>
      */
     protected $deadlock_error_codes = [
+        1205,
         1213
     ];
 

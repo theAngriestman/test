@@ -52,13 +52,13 @@
     <td class="import-preset__file" data-th="{__("advanced_import.file")}">
         {if $preset.file}
             {include_ext file="common/icon.tpl"
-                class="glyph-cancel cm-adv-import-filename-delete"
+                source="remove_sign"
+                class="cm-adv-import-filename-delete hand flex-inline top"
                 id="clean_selection"
                 title=__("remove_this_item")
                 data=[
                     "onclick" => "$.ceAdvancedImport('removeFile', `$preset.preset_id`);"
                 ]
-                icon_text="&nbsp;"
             }
         {/if}
         {if $preset.file_type == "Addons\\AdvancedImport\\PresetFileTypes::URL"|enum}

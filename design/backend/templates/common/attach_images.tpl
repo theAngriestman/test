@@ -83,7 +83,7 @@ image_type - optional
                     {if $pair.image_id}
                         {include file="common/image.tpl" image=$pair.icon image_id=$pair.image_id image_width=85}
                     {else}
-                        <div class="no-image">{include_ext file="common/icon.tpl" class="glyph-image" title=__("no_image") icon_text=""}</div>
+                        <div class="no-image">{include_ext file="common/icon_deprecated.tpl" class="glyph-image" title=__("no_image") icon_text=""}</div>
                     {/if}
                 </div>
             {/if}
@@ -120,7 +120,7 @@ image_type - optional
                     {if $pair.detailed_id}
                         {include file="common/image.tpl" image=$pair.detailed image_id=$pair.detailed_id image_width=85}
                     {else}
-                        <div class="no-image">{include_ext file="common/icon.tpl" class="glyph-image" title=__("no_image") icon_text=""}</div>
+                        <div class="no-image">{include_ext file="common/icon_deprecated.tpl" class="glyph-image" title=__("no_image") icon_text=""}</div>
                     {/if}
                 </div>
             {/if}

@@ -485,18 +485,16 @@ function fn_exim_get_product_features($product_id, $features_delimiter, $lang_co
 /**
  * Import product features
  *
- * @param int       $product_id         Product identifier
- * @param array     $data               Array of delimited lists of product features and their values
- * @param string    $features_delimiter Delimiter symbol
- * @param string    $lang_code          Language code
- * @param string    $store_name         Store name
+ * @param int           $product_id         Product identifier
+ * @param array<string> $data               Array of delimited lists of product features and their values
+ * @param string        $features_delimiter Delimiter symbol
+ * @param string        $lang_code          Language code
+ * @param string        $store_name         Store name
  *
- * @return boolean Always true
+ * @return bool Always true
  */
-function fn_exim_set_product_features($product_id, $data, $features_delimiter, $lang_code, $store_name = '')
+function fn_exim_set_product_features($product_id, array $data, $features_delimiter, $lang_code, $store_name = '')
 {
-    reset($data);
-    $main_lang = key($data);
     $runtime_company_id = fn_get_runtime_company_id();
 
     if ($runtime_company_id) {
@@ -504,6 +502,27 @@ function fn_exim_set_product_features($product_id, $data, $features_delimiter, $
     } else {
         $company_id = fn_get_company_id_by_name($store_name);
     }
+
+    fn_exim_set_product_features_by_company($product_id, $data, $features_delimiter, $lang_code, $company_id);
+
+    return true;
+}
+
+/**
+ * Update product features by import
+ *
+ * @param int           $product_id         Product identifier
+ * @param array<string> $data               Array of delimited lists of product features and their values
+ * @param string        $features_delimiter Delimiter symbol
+ * @param string        $lang_code          Language code
+ * @param int           $company_id         Company identifier
+ *
+ * @return bool Always true
+ */
+function fn_exim_set_product_features_by_company($product_id, array $data, $features_delimiter, $lang_code, $company_id)
+{
+    reset($data);
+    $main_lang = key($data);
 
     $features = fn_exim_parse_features($data, $features_delimiter);
 
@@ -532,7 +551,6 @@ function fn_exim_set_product_features($product_id, $data, $features_delimiter, $
 
         if ($feature === false) {
             unset($features[$key]);
-            continue;
         }
     }
     unset($feature);
@@ -1979,11 +1997,11 @@ function fn_exim_save_product_features_values($product_id, array $features, $lan
 /**
  * Find product feature by params
  *
- * @param string    $name       Product feature name
- * @param string    $type       Product feature type
- * @param int       $group_id   Product feature group identification
- * @param string    $lang_code  Language code
- * @param int|null  $company_id Company identifier
+ * @param string   $name       Product feature name
+ * @param string   $type       Product feature type
+ * @param int      $group_id   Product feature group identification
+ * @param string   $lang_code  Language code
+ * @param int|null $company_id Company identifier
  * @param string   $field_name Field name of features name: internal_name or description
  *
  * @return array
@@ -2002,6 +2020,8 @@ function fn_exim_find_feature($name, $type, $group_id, $lang_code, $company_id =
 
     if (fn_allowed_for('ULTIMATE')) {
         $condition .= fn_get_company_condition('?:product_features.company_id');
+    } elseif (fn_allowed_for('MULTIVENDOR') && !empty($company_id)) {
+        $condition .= fn_get_company_condition('pf.company_id', true, $company_id);
     }
 
     $result = db_get_row(

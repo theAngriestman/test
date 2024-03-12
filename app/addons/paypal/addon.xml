@@ -6,7 +6,6 @@
     <priority>100</priority>
     <status>active</status>
     <name>Paypal</name>
-    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
 
     <settings edition_type="ROOT,STOREFRONT">
         <sections>

@@ -30,6 +30,7 @@ if ($is_customer_communication_active || $is_admin_communication_active) {
     $schema['central']['vendor_communication'] = [
         'title' => __('vendor_communication.message_center_name'),
         'position' => 250,
+        'icon' => 'comment_alt',
     ];
 
     $auth = & Tygh::$app['session']['auth'];

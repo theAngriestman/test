@@ -1171,7 +1171,7 @@ function fn_get_request_uri($request_uri)
 function fn_check_requested_url($area = AREA)
 {
     if (!defined('API') && $area == 'C' && !empty($_SERVER['REQUEST_URI']) && !empty($_SERVER['SCRIPT_NAME'])) {
-        $request_path = rtrim(@parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+        $request_path = rtrim((string) @parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
         if ($request_path != $_SERVER['SCRIPT_NAME']) {
             $index_script = Registry::get('config.customer_index');

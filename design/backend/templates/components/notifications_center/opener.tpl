@@ -1,18 +1,16 @@
-{$show_menu_caret = $show_menu_caret|default:true}
-
-<li class="dropdown dropdown-top-menu-item hover-show--disabled notifications-center__opener-wrapper cm-dropdown-skip-processing">
-    <a class="dropdown-toggle dropdown-top-menu-item-link" data-toggle="dropdown">
-        <span
-            class="icon icon-bell-alt cc-notify" 
-            title="{__("notifications_center.notifications")}"
-            data-ca-notifications-center-counter
-        >
+<div class="top-bar__btn-wrapper btn-group dropdown-top-menu-item notifications-center__opener-wrapper cm-dropdown-skip-processing">
+    <button class="dropdown-toggle dropdown-top-menu-item-link top-bar__btn notifications-center__opener-btn"
+        data-toggle="dropdown"
+        type="button"
+        title="{__("notifications_center.notifications")}"
+    >
+        <span class="top-bar__btn-inner notifications-center__opener-btn-inner">
+            <span>
+                {include_ext file="common/icon.tpl" source="bell_alt"}
+                <span data-ca-notifications-center-counter></span>
+            </span>
         </span>
-        <span class="" ></span>
-        {if $show_menu_caret}
-            <b class="caret"></b>
-        {/if}
-    </a>
+    </button>
     <ul class="dropdown-menu pull-right notifications-center__root" data-ca-notifications-center-root>
         <div class="cc-dropdown">
             <div class="cc-dropdown__title-wrapper" text="{__("notifications_center.notifications")}">
@@ -23,7 +21,7 @@
             </div>
         </div>
     </ul>
-</li>
+</div>
 
 <script>
 (function (_, $) {
@@ -37,7 +35,7 @@
     });
 
     $.ceEvent('one', 'ce.commoninit', function (context) {
-        $(context).find('.notifications-center__opener-wrapper a').on('click', function () {
+        $(context).find('.notifications-center__opener-wrapper .notifications-center__opener-btn').on('click', function () {
             if (Tygh.ceNotificationsCenterInited) {
                 $.ceEvent('trigger', 'ce.notifications_center.enabled');
             }

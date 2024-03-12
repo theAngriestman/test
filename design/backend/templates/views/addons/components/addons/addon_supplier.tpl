@@ -11,16 +11,20 @@
             </span>
         {/if}
         {if $a.identified || $a.is_core_addon}
-            {include_ext file="common/icon.tpl"
-                class="icon-ok addons-addon-supplier__identified addons-addon-supplier__identified--`$a.status|lower`"
-                title=__("verified_developer")
-            }
+            <span class="flex-inline">
+                {include_ext file="common/icon.tpl"
+                    class="icon-ok addons-addon-supplier__identified addons-addon-supplier__identified--`$a.status|lower`"
+                    title=__("verified_developer")
+                }
+            </span>
         {/if}
         {if $a.personal_review}
-            {include_ext file="common/icon.tpl"
-                class="icon-comment addons-addon-supplier__has-admin-review"
-                title=__("addon_has_admin_review")
-            }
+            <span class="flex-inline">
+                {include_ext file="common/icon.tpl"
+                    class="icon-comment addons-addon-supplier__has-admin-review"
+                    title=__("addon_has_admin_review")
+                }
+            </span>
         {/if}
     </div>
 {/if}

@@ -27,8 +27,23 @@
 }
 
 .dropdown-menu .object-picker--companies .select2-selection--single {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: @dropdownItemPadding;
+  padding-bottom: @dropdownItemPadding;
+  height: auto;
+  border-radius: @baseBorderRadius;
+}
+
+.dropdown-menu .object-picker--companies .select2-container--default.select2-container:hover .select2-selection--single .select2-selection__arrow b {
+  border-left-color: @dropdownLinkColorHover;
+}
+
+.object-picker__simple--companies {
+  height: auto;
+}
+
+.object-picker--companies .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: ~"calc(6px * 2 + 26px)";
+  transform: translateY(-1px);
 }
 
 .object-picker__companies-name-content {

@@ -1,6 +1,7 @@
+{$tabs_count = $subsections|@count}
 <div class="hidden" data-ca-addons="tabsSetting" id="content_settings">
 
-    <div class="tabs cm-j-tabs {if $subsections|count == 1}hidden{else}cm-track{/if}" data-ca-addons="tabsSettingNested" data-ca-tabs-input-name>
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count} {if $subsections|count == 1}hidden{else}cm-track{/if}" data-ca-addons="tabsSettingNested" data-ca-tabs-input-name>
         <ul class="nav nav-tabs">
             {foreach from=$subsections key="section" item="subs"}
                 {$tab_id = "`$_addon`_`$section`"}

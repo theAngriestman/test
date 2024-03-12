@@ -3,17 +3,18 @@
 {$dynamic_object = $dynamic_object|default:""}
 {$non_editable = $non_editable_status|default:false}
 {$popup_additional_class = $popup_additional_status_class|default:""}
+{$unknown_status = "U"}
 
 {hook name="products:status_name_container"}
 {if $non_editable || $display == "text"}
-    <span class="view-status">
+    <span class="view-status products-status-on-manage__view-status products-status-on-manage__view-status--{$status|default:$unknown_status|lower}">
         {hook name="products:status_name"}
             {$items_status.$status|default:$default_status_text}
         {/hook}
     </span>
 {else}
     {$prefix = $prefix|default:"select"}
-    {$btn_meta = $btn_meta|default:"btn-text"}
+    {$btn_meta = $btn_meta|default:"btn-link"}
     {$status_target_id = $status_target_id|default:($st_result_ids|default:"")}
     {$update_controller = $update_controller|default:"tools"}
 
@@ -23,14 +24,15 @@
         {if !$hide_for_vendor}
             <a href="#"
                 {if $id}id="sw_{$prefix}_{$id}_wrap"{/if}
-                class="{$btn_meta} btn dropdown-toggle {if $id}cm-combination{/if}"
+                class="{$btn_meta} btn dropdown-toggle {if $id}cm-combination{/if}
+                p-status-dropdown p-status-dropdown-{$status|default:$unknown_status|lower}"
                 data-toggle="dropdown"
-            >
+            >{strip}
         {/if}
             {$items_status.$status|default:$default_status_text}
         {if !$hide_for_vendor}
-            <span class="caret"></span>
-            </a>
+            <span class="caret status-caret"></span>
+            {/strip}</a>
         {/if}
         {/hook}
 
@@ -44,15 +46,13 @@
                 {foreach $items_status as $status_id => $status_name}
                     <li {if $status == $status_id}class="disabled"{/if}>
                         {hook name="products:status_select_item"}
-                            <a class="status-link-{$status_id|lower} {$status_meta} {if $confirm}cm-confirm{/if} {if $status == $status_id}active{else}cm-ajax cm-post {if $ajax_full_render}cm-ajax-full-render{/if}{/if}"
+                            <a class="status-link-{$status_id|lower} p-status-link p-status-link-{$status_id|lower} {$status_meta} {if $confirm}cm-confirm{/if} {if $status == $status_id}active{else}cm-ajax cm-post {if $ajax_full_render}cm-ajax-full-render{/if}{/if}"
                             {if $status_target_id}
                                 data-ca-target-id="{$status_target_id}"
                             {/if}
                             href="{fn_url("{$update_controller}.update_status?id={$id}&status={$status_id}{$extra_params}{$dynamic_object}")}"
                             onclick="return fn_check_object_status(this, '{$status_id|lower}', '{if $statuses}{$statuses[$status_id].params.color|default:''}{/if}');"
-                            >
-                            {$status_name}
-                            </a>
+                            >{$status_name}</a>
                         {/hook}
                     </li>
                 {/foreach}

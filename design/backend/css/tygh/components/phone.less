@@ -35,6 +35,44 @@
     max-height: ~"calc((4px + var(--base-line-height)) * (var(--list-items) + 0.5) + 12px)";
 }
 
+// Fix overlapping of the phone menu with the main menu. Set minimum width
+.phone-number-with-country-selection-li-link {
+    overflow-x: hidden;
+}
+
+@media (width: @TabletBreakpoint) {
+    .controls .btn-group.btn-group--phone-mask.open .dropdown-menu {
+        right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .btn-group--phone-mask .dropdown-menu {
+        max-width: 454px;
+    }
+}
+
+@media (min-width: 901px) {
+    .btn-group--phone-mask .dropdown-menu {
+        max-width: 597px;
+    }
+}
+
+@media (min-width: 768px) {
+    .input-append--phone-mask.input-phone-container--default .btn-group--phone-mask .dropdown-menu {
+        max-width: 230px;
+    }
+}
+
+@media (min-width: 901px) {
+    .input-append--phone-mask.input-phone-container--default .btn-group--phone-mask .dropdown-menu {
+        // max-width: Breakpoint - (Main menu + Sidebar + Gaps + Field)
+        // max-width: 1341px  - (240px + 290px + 16px * 5 + (551px - 220px) )
+        max-width: 400px;
+    }
+}
+
+// Setup wizard panel
 @media (min-width: 768px) {
     .setup-wizard-panel .sw_size_2 input.input-phone--phone-number-with-country-selection {
         width: 100%;

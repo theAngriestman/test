@@ -22,7 +22,15 @@
 
 .muted,
 .muted a {
-    color: @textMutedColor;
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+}
+
+.content-variant-wrap .muted {
+    display: inline-block;
+    text-transform: uppercase;
+    margin: 0 10px 0 0;
+    line-height: @inputHeight;
+    min-width: 100px;
 }
 
 .shift-right {
@@ -167,6 +175,16 @@ strong {
     display: inline-block;
 }
 
+// Double selectboxes
+.chevron-icons {
+    padding-top: 71px;
+    vertical-align: top;
+}
+
+.unedited-element, .undeleted-element {
+    cursor: not-allowed;
+}
+
 // Cm
 .cm-opacity {
     opacity: 0.4;
@@ -191,8 +209,6 @@ strong {
     input[type="radio"],
     [class^="icon-"],
     [class*=" icon-"],
-    [class^="exicon-"],
-    [class*=" exicon-"],
     img {
         opacity: 0.4;
     }
@@ -214,6 +230,87 @@ strong {
     }
 }
 
+.status-dropdown:hover,
+.status-dropdown:focus {
+    text-decoration: none;
+}
+
+.view-status {
+    text-wrap: nowrap;
+}
+
+.view-status--a:before,
+.view-status--d:before,
+.view-status--h:before,
+.view-status--p:before,
+.view-status--n:before,
+.view-status--f:before,
+.c-view-status--s:before,
+.status-dropdown-a:before,
+.status-dropdown-d:before,
+.status-dropdown-h:before,
+.status-dropdown-p:before,
+.status-dropdown-n:before,
+.status-dropdown-f:before,
+.c-status-dropdown-s:before,
+.status-link-a:before,
+.status-link-d:before,
+.status-link-h:before,
+.status-link-p:before,
+.status-link-n:before,
+.status-link-f:before,
+.c-status-link-s:before {
+    content: '●';
+    padding-right: 6px;
+    font-size: @fontSizeMini;
+}
+
+.status-caret {
+    transform: translateX(6px);
+}
+
+.view-status--a:before,
+.status-dropdown-a:before,
+.status-link-a:before {
+    color: @btnSuccessBackground;
+}
+
+.view-status--d:before,
+.status-dropdown-d:before,
+.status-link-d:before {
+    color: @grayLight;
+}
+
+.view-status--h:before,
+.status-dropdown-h:before,
+.status-link-h:before {
+    color: @btnInfoBackground;
+}
+
+.view-status--p:before,
+.status-dropdown-p:before,
+.status-link-p:before {
+    color: @orange;
+}
+
+.view-status--n:before,
+.status-dropdown-n:before,
+.status-link-n:before {
+    color: @blue;
+}
+
+.view-status--f:before,
+.status-dropdown-f:before,
+.status-link-f:before {
+    color: lighten(@purple, 10%);
+}
+
+.c-view-status--s:before,
+.c-status-dropdown-s:before,
+.c-status-link-s:before {
+    color: @btnDangerBackground;
+}
+
 // IE 9
 .ie9 {
     /* Fix vertical-align of icons inside sidebar or button in IE9 */
@@ -221,13 +318,10 @@ strong {
     [class*=" icon-"] {
         margin-top: -1px !important;
     }
-    .exicon-clone {
-        margin-top: -2px;
-    }
     .btn {
         line-height: 19px;
     }
-    .conditions-tree .conditions-tree-group .btn-text {
+    .conditions-tree .conditions-tree-group .btn-link {
         margin-top: 4px;
     }
 }
@@ -236,10 +330,14 @@ strong {
     left: auto;
     right: 100%;
     margin: 0;
-    .border-radius(6px 0 6px 6px);
+    border-radius: 6px 0 6px 6px;
 }
 
 /* Daterangepicker */
+
+.daterangepicker.daterangepicker .ranges li.active {
+    background-color: @mainColor;
+}
 
 .daterangepicker {
     .drp-calendar.drp-calendar {
@@ -247,7 +345,7 @@ strong {
     }
     td.active.active,
     td.active.active:hover {
-        background-color: @topPanelMenuBackgroundStart;
+        background-color: #1d9ff8; // topPanelMenuBackgroundStart
     }
 
     @media (max-width: 563px) {
@@ -284,6 +382,13 @@ strong {
 
 .scroll-data--fullwidth {
     width: 100%;
+    max-width: ~"calc(100vw - (16px * 4))";
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    .scroll-data--fullwidth {
+        max-width: ~"calc(100vw - (var(--main-menu-width) + 16px * 4 + 16px))";
+    }
 }
 
 .cm-scroll-horizontal {
@@ -309,10 +414,6 @@ strong {
 
 .payout .status-link-p {
     display: none;
-}
-
-.icon-many-user:before {
-    content: "\f0c0";
 }
 
 .cm-table-thead tr {
@@ -374,6 +475,10 @@ strong {
     display: flex;
 }
 
+.flex-inline {
+    display: inline-flex;
+}
+
 .flex-wrap {
     flex-wrap: wrap;
 }
@@ -416,4 +521,41 @@ strong {
 
 .copy-on-type__target-text:not(:empty):after {
     content: '.';
+}
+
+.type-error {
+    color: #b94a48 !important;
+}
+
+.mobile-visible,
+.mobile-visible-inline {
+    display: none;
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .mobile-visible-inline {
+        display: inline-block;
+    }
+
+    .mobile-visible {
+        display: block;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+.micro-note {
+    color: #666;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.manage-tools-list {
+    margin-left: 16px;
+}
+
+.events-none {
+    pointer-events: none;
 }

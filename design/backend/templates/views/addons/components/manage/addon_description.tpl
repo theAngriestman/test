@@ -27,10 +27,12 @@
         </a>
 
         {if $a.recently_installed}
-            {include_ext file="common/icon.tpl"
-                class="icon-circle addons-addon-description__new-addon addons-addon-description__new-addon--`$a.status|lower`"
-                title=__("new_addon")
-            }
+            <span class="flex-inline">
+                {include_ext file="common/icon.tpl"
+                    class="icon-circle addons-addon-description__new-addon addons-addon-description__new-addon--`$a.status|lower`"
+                    title=__("new_addon")
+                }
+            </span>
         {/if}
     </div>
     <div class="addons-addon-description__description">

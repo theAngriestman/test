@@ -1,4 +1,5 @@
 {script src="js/tygh/tabs.js"}
+{$tabs_count = 1}
 {capture name="mainbox"}
 
 {** userlog description section **}
@@ -129,7 +130,7 @@
             <input type="hidden" name="user_id" value="{$smarty.request.user_id}">
             <input type="hidden" name="redirect_url" value="{$config.current_url}">
 
-            <div class="tabs cm-j-tabs">
+            <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
                 <ul class="nav nav-tabs">
                     <li id="tab_general" class="cm-js active"><a>{__("general")}</a></li>
                 </ul>

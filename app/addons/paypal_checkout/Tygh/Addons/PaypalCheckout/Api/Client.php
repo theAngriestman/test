@@ -43,6 +43,11 @@ class Client
     protected $expiry_time;
 
     /**
+     * @var string $bn_code Partner integration code
+     */
+    private $bn_code = 'CSCART_PPC';
+
+    /**
      * @var bool $is_test If true, sandbox request will be performed
      */
     protected $is_test;
@@ -218,6 +223,7 @@ class Client
                 'headers' => [
                     'PayPal-Request-Id: ' . time(),
                     'Content-type: application/json',
+                    'PayPal-Partner-Attribution-Id: ' . $this->bn_code,
                     'Authorization: Bearer ' . $this->access_token,
                 ],
             ]

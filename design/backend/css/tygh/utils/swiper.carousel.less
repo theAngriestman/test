@@ -59,12 +59,18 @@
         font-size: @arrow-size;
     }
 
+    &__button-prev.swiper-button-prev:after,
+    &__button-next.swiper-button-next:after {
+        width: @arrow-size;
+        height: @arrow-size;
+    }
+
     &__button-prev.swiper-button-prev:after {
-        content: '\e020';
+        content: url('../templates/icons/chevron_left.svg');
     }
     
     &__button-next.swiper-button-next:after {
-        content: '\e01f';
+        content: url('../templates/icons/chevron_right.svg');
     }
 
     &__slide.swiper-slide {
@@ -91,7 +97,7 @@
         left: @button-indent;
 
         &.swiper-button-prev:after {
-            content: '\e01f';
+            content: url('../templates/icons/chevron_right.svg');
         }
     }
 
@@ -100,7 +106,7 @@
         right: @button-indent;
 
         &.swiper-button-next:after {
-            content: '\e020';
+            content: url('../templates/icons/chevron_left.svg');
         }
     }
 

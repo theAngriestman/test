@@ -19,18 +19,8 @@ $schema['top']['administration']['items']['yml_export'] = [
         'class' => 'is-addon'
     ],
     'href' => 'yml.manage',
-    'type' => 'title',
-    'position' => 1550,
-    'subitems' => [
-        'yml_export.price_list' => [
-            'href' => 'yml.manage',
-            'position' => 10,
-        ],
-        'yml_export.offers_params' => [
-            'href' => 'yml.offers_params',
-            'position' => 20,
-        ]
-    ],
+    'position' => 10200,
+    'icon' => 'th_list',
 ];
 
 return $schema;

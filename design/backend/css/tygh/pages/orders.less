@@ -24,6 +24,10 @@
     }
 }
 .orders-right-pane {
+    background: lighten(@grayLighter, 3%);
+    padding: 20px;
+    border-radius: @baseBorderRadius;
+
     .control-group {
         margin-bottom: 5px;
         padding: 3px 0px;
@@ -32,6 +36,7 @@
         padding-top: 0px;
         width: 110px;
         text-align: left;
+        line-height: 1.4;
     }
     hr {
         margin: 15px 0 10px 0;
@@ -40,6 +45,7 @@
         margin-bottom: 2px;
         margin-left: 120px;
         word-wrap: break-word;
+        line-height: 1.4;
         input[type="text"].input-small {
             width: 131px;
         }
@@ -102,3 +108,86 @@
         }
     }
 }
+
+.orders-products-list__image--img {
+    height: 32px;
+}
+
+// Small screen width optimization
+@media (min-width: 1340px + 1px) and (max-width: 1600px - 1px) {
+    // Sidebar width optimization
+    .sidebar--order-details {
+        font-size: @baseFontSize - 1px;
+    }
+
+    // Order details width optimization
+    .order-info-form {
+        font-size: @baseFontSize - 1px;
+    }
+
+    // Products list width optimization
+    .table--order-details-products th,
+    .table--order-details-products td {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .table--order-details-products tr th:first-child,
+    .table--order-details-products tr td:first-child {
+        padding-left: 0;
+    }
+
+    .table--order-details-products tr th:last-child,
+    .table--order-details-products tr td:last-child {
+        padding-right: 0;
+    }
+
+    .order-product-info {
+        font-size: @baseFontSize - 2px;
+    }
+}
+
+#order_update {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.order-manager {
+    display: flex;
+    width: 100%;
+
+    .object-picker--profiles {
+        flex-grow: 1;
+    }
+    &-assign-btn {
+        margin-left: 3px;
+    }
+    &:only-child {
+        .object-picker--profiles {
+            width: 85%;
+        }
+    }
+}
+
+.table-manage-orders {
+    .manager-order {
+        overflow-wrap: break-word;
+        max-width: 150px;
+    }
+
+    .order-status {
+        overflow-wrap: break-word;
+        max-width: 150px;
+        border-color: transparent;
+    }
+}
+
+.o-status-link:before,
+.o-status-dropdown:before {
+    content: '●';
+    padding-right: 6px;
+    font-size: @fontSizeMini;
+    line-height: @fontSizeMini;
+}
+

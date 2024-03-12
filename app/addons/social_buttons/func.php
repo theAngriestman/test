@@ -179,10 +179,10 @@ function fn_get_sb_description($params)
 
     if ($params['object'] === 'products') {
         $product = Tygh::$app['view']->getTemplateVars('product');
-        $description = htmlspecialchars(strip_tags($product['full_description']), ENT_COMPAT);
+        $description = htmlspecialchars(strip_tags($product['full_description'] ?? ''), ENT_COMPAT);
     } elseif ($params['object'] === 'pages') {
         $page = Tygh::$app['view']->getTemplateVars('page');
-        $description = htmlspecialchars(strip_tags($page['description']), ENT_COMPAT);
+        $description = htmlspecialchars(strip_tags($page['description'] ?? ''), ENT_COMPAT);
     }
 
     return $description;

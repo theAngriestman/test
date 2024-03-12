@@ -1,6 +1,6 @@
 <div class="sidebar-row">
-<form action="{""|fn_url}" method="post" name="report_form_{$report.report_id}">
 <h6>{__("admin_search_title")}</h6>
+<form action="{""|fn_url}" method="post" name="report_form_{$report.report_id}">
     {capture name="simple_search"}
         <input type="hidden" name="report_id" value="{$report.report_id}">
         <input type="hidden" name="selected_section" value="">

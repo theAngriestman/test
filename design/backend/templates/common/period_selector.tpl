@@ -49,13 +49,15 @@
             {$date_meta = "input-small"}
         {/if}
 
-        {include file="common/calendar.tpl" date_id="`$id_prefix`f_date" date_name="`$prefix`time_from" date_val=$search.$time_from  start_year=$settings.Company.company_start_year extra="onchange=\"Tygh.$('#`$id_prefix`period_selects').val('C');\"" date_meta=$date_meta}
-        {if $display == "form"}
-            -
-        {else}
-            &nbsp;&nbsp;-&nbsp;&nbsp;
-        {/if}
-        {include file="common/calendar.tpl" date_id="`$id_prefix`t_date" date_name="`$prefix`time_to" date_val=$search.$time_to  start_year=$settings.Company.company_start_year extra="onchange=\"Tygh.$('#`$id_prefix`period_selects').val('C');\"" date_meta=$date_meta}
+        {include file="common/calendar.tpl" date_id="`$id_prefix`f_date" date_name="`$prefix`time_from" date_val=$search.$time_from  start_year=$settings.Company.company_start_year extra="onchange=\"Tygh.$('#`$id_prefix`period_selects').val('C');\"" date_meta=$date_meta placeholder=__("period_selector_from")}{strip}
+        <span class="period-selector__divider">
+            {if $display == "form"}
+                -
+            {else}
+                &nbsp;&nbsp;-&nbsp;&nbsp;
+            {/if}
+        </span>
+        {/strip}{include file="common/calendar.tpl" date_id="`$id_prefix`t_date" date_name="`$prefix`time_to" date_val=$search.$time_to  start_year=$settings.Company.company_start_year extra="onchange=\"Tygh.$('#`$id_prefix`period_selects').val('C');\"" date_meta=$date_meta placeholder=__("period_selector_to")}
 
         {if $display != "form"}
                 </div>

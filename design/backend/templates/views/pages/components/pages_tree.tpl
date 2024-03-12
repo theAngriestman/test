@@ -50,8 +50,8 @@
                         {/if}
                         <th width="70%" class="left">
                             {if !$hide_show_all && $search.get_tree == "multi_level"}
-                                <span alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" id="on_page{$combination_suffix}" class="cm-combinations-pages{$combination_suffix}{if $expand_all} hidden{/if}" ><span class="icon-caret-right "></span></span>
-                                <span alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" id="off_page{$combination_suffix}" class="cm-combinations-pages{$combination_suffix}{if !$expand_all} hidden{/if}" ><span class="icon-caret-down "></span></span>
+                                <span alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" id="on_page{$combination_suffix}" class="cm-combinations-pages{$combination_suffix}{if $expand_all} hidden{/if}" >{include_ext file="common/icon.tpl" source="caret_right"}</span>
+                                <span alt="{__("expand_collapse_list")}" title="{__("expand_collapse_list")}" id="off_page{$combination_suffix}" class="cm-combinations-pages{$combination_suffix}{if !$expand_all} hidden{/if}" >{include_ext file="common/icon.tpl" source="caret_down"}</span>
                             {/if}
                             {__("name")}
                         </th>
@@ -95,8 +95,8 @@
                                 {if $except_id}
                                     {$except_url="&except_id=`$except_id`"}
                                 {/if}
-                                <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_page{$combination_suffix}_{$page.page_id}" class="cm-combination-pages{$combination_suffix} {if $expand_all && !$hide_show_all}hidden{/if}" {if $page.has_children}onclick="Tygh.$.ceAjax('request', '{"$_dispatch?parent_id=`$page.page_id`&get_tree=multi_level`$except_url`&display=`$display`&checkbox_name=`$checkbox_name`&combination_suffix=`$combination_suffix`{if $is_exclusive_page_type}&page_type={$page.page_type}{/if}"|fn_url nofilter}', {$ldelim}result_ids: 'page{$combination_suffix}_{$page.page_id}', caching: true{$rdelim});"{/if}><span class="icon-caret-right"></span></a>
-                                <a href="#" alt="{__("collapse_sublist_of_items")}" title="{__("collapse_sublist_of_items")}" id="off_page{$combination_suffix}_{$page.page_id}" class="cm-combination-pages{$combination_suffix} {if !$expand_all || $hide_show_all}hidden{/if}"><span class="icon-caret-down"></span> </a>
+                                <a href="#" alt="{__("expand_sublist_of_items")}" title="{__("expand_sublist_of_items")}" id="on_page{$combination_suffix}_{$page.page_id}" class="cm-combination-pages{$combination_suffix} {if $expand_all && !$hide_show_all}hidden{/if}" {if $page.has_children}onclick="Tygh.$.ceAjax('request', '{"$_dispatch?parent_id=`$page.page_id`&get_tree=multi_level`$except_url`&display=`$display`&checkbox_name=`$checkbox_name`&combination_suffix=`$combination_suffix`{if $is_exclusive_page_type}&page_type={$page.page_type}{/if}"|fn_url nofilter}', {$ldelim}result_ids: 'page{$combination_suffix}_{$page.page_id}', caching: true{$rdelim});"{/if}><span class="flex-inline top">{include_ext file="common/icon.tpl" source="caret_right" class="cs-icon--small"}</span></a>
+                                <a href="#" alt="{__("collapse_sublist_of_items")}" title="{__("collapse_sublist_of_items")}" id="off_page{$combination_suffix}_{$page.page_id}" class="cm-combination-pages{$combination_suffix} {if !$expand_all || $hide_show_all}hidden{/if}"><span class="flex-inline top">{include_ext file="common/icon.tpl" source="caret_down" class="cs-icon--small"}</span></a>
                             {elseif $search.get_tree == "multi_level"}
                                 <span style="padding-{$direction}: 14px;">&nbsp;</span>
                             {/if}

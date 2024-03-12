@@ -248,6 +248,7 @@
       var checkoutScript = _.doc.createElement('script');
 
       checkoutScript.setAttribute('src', url);
+      checkoutScript.setAttribute('data-partner-attribution-id', 'CSCART_PPC');
       checkoutScript.onload = checkoutScriptLoadCallback;
 
       _.doc.head.appendChild(checkoutScript);

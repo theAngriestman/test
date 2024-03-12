@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-ru\n"
 "X-Crowdin-Project-ID: 54044\n"
 "X-Crowdin-Language: ru\n"
-"X-Crowdin-File: /release-4.17.2/addons/commerceml.po\n"
-"X-Crowdin-File-ID: 8112\n"
-"PO-Revision-Date: 2023-11-23 10:00\n"
+"X-Crowdin-File: /release-4.18.1/addons/commerceml.po\n"
+"X-Crowdin-File-ID: 8384\n"
+"PO-Revision-Date: 2024-02-02 11:23\n"
 
 msgctxt "Addons::name::commerceml"
 msgid "CommerceML (1C, MoySklad, Business.ru)"
@@ -234,7 +234,7 @@ msgstr "Все вариации товара получат общее имя н
 
 msgctxt "Languages::commerceml.cml_catalog_use_product_variation_name_from.offers"
 msgid "Use offer names"
-msgstr "Использовать названия предолжений"
+msgstr "Использовать названия предложений"
 
 msgctxt "Languages::commerceml.cml_catalog_use_product_variation_name_from.offers.tooltip"
 msgid "All variations of a product will use their unique offer names from offers.xml"

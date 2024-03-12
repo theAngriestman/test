@@ -5,6 +5,7 @@
     <default_language>en</default_language>
     <priority>100</priority>
     <status>active</status>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
     <functions>
         <item for="install">fn_paypal_checkout_install</item>
         <item for="uninstall">fn_paypal_checkout_uninstall</item>

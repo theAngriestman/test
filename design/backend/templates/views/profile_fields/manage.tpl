@@ -25,7 +25,7 @@
         {$area_col_width = $rest_width / $profile_types[$profile_type]["allowed_areas"]|count}
         {capture name="profile_fields_table"}
         <div class="table-responsive-wrapper longtap-selection" id="profile_fields">
-            <table width="100%" class="table table-middle table--relative table-responsive">
+            <table width="100%" class="table table-middle table--relative table-responsive profile-fields__table-header">
                 <thead
                         data-ca-bulkedit-default-object="true"
                         data-ca-bulkedit-component="defaultObject"

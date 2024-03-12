@@ -65,41 +65,30 @@
     padding: 0;
 }
 
-// Open popup button
-.help-center-popup__btn {
-    padding: ((@navbarHeight - @baseLineHeight) / 2) 16px ((@navbarHeight - @baseLineHeight) / 2);  // padding: 9px 16px 9px;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-}
-
 // Open popup icon
 .help-center-popup__icon {
-    position: relative;
-    margin-top: -2px;
-    width: var(--help-center-popup-btn-icon-width);
-    height: var(--help-center-popup-btn-icon-width);
-    font-size: var(--help-center-popup-btn-icon-width);
-    line-height: var(--help-center-popup-btn-icon-width);
-    vertical-align: middle;
-    color: @topPanelTextColorLight !important;
+    color: @mainColor !important;
 }
 
-.help-center-popup__icon.help-center-popup__icon.help-center-popup__icon {
-    // Revert .show-off();
-    visibility: visible !important;
-    display: inline-block !important;
-    top: 0 !important;
-    left: 0 !important;
+.main-menu-1__icon.icon-question-sign {
+    color: @linkColor !important;
+}
+
+@media (max-width: 950px) {
+    .help-center-popup__icon.help-center-popup__icon.help-center-popup__icon,
+    .main-menu-1__icon.main-menu-1__icon.icon-question-sign {
+        display: inline-block !important;
+        visibility: visible !important;
+    }
 }
 
 .help-center-popup__icon:after {
     content: attr(data-ca-help-center-counter);
     position: absolute;
-    right: -4px;
-    top: -7px;
+    right: 6px;
+    top: 2px;
     min-width: 1.36em;
-    max-width: ~"calc(100% + 16px + 4px)";
+    max-width: 100%;
     padding-left: 4px;
     padding-right: 4px;
     border-radius: 999px;
@@ -110,5 +99,5 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: #fff;
-    background-color:@errorText;
+    background-color: @errorText;
 }

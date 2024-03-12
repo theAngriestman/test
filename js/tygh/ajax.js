@@ -82,6 +82,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         if (params.hidden === false) {
           $.toggleStatusBox('show', {
+            show_overlay: params.show_overlay,
             overlay: params.overlay
           });
         }
@@ -262,6 +263,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         };
         $.ceNotification('closeAll');
         $.toggleStatusBox('show', {
+          show_overlay: params.show_overlay,
           overlay: params.overlay
         });
 

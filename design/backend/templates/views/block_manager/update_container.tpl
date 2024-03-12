@@ -4,13 +4,14 @@
 {else}
     {assign var="id" value=0}
 {/if}
+{$tabs_count = 1}
 
 <div id="container_properties_{$id}">
 <form action="{""|fn_url}" method="post" enctype="multipart/form-data" class="form-horizontal form-edit " name="container_update_form">
 <input type="hidden" id="s_layout" name="s_layout" value="{$location.layout_id}" />
 <input type="hidden" name="container_data[container_id]" value="{$id}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li class="cm-js active"><a>{__("general")}</a></li>
     </ul>

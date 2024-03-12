@@ -23,17 +23,6 @@ if (!defined('BOOTSTRAP')) { die('Access denied'); }
 fn_define('KEEP_UPLOADED_FILES', true);
 fn_define('NEW_FEATURE_GROUP_ID', 'OG');
 
-$navigation_sections = [
-    'features' => [
-        'title' => __('features'),
-        'href'  => fn_url('product_features.manage'),
-    ],
-    'groups'   => [
-        'title' => __('feature_groups'),
-        'href'  => fn_url('product_features.groups'),
-    ],
-];
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     fn_trusted_vars('feature_data');
     $return_url = 'product_features.manage';
@@ -364,9 +353,6 @@ if ($mode === 'quick_add' || $mode === 'add') {
         Tygh::$app['view']->assign('picker_selected_companies', fn_ult_get_controller_shared_companies($_REQUEST['feature_id']));
     }
 } elseif ($mode === 'manage') {
-    Registry::set('navigation.dynamic.sections', $navigation_sections);
-    Registry::set('navigation.dynamic.active_section', 'features');
-
     $params = $_REQUEST;
     $params['get_descriptions'] = true;
     $params['search_in_subcats'] = true;
@@ -387,9 +373,6 @@ if ($mode === 'quick_add' || $mode === 'add') {
         Tygh::$app['ajax']->assign('force_redirection', fn_url('product_features.manage'));
     }
 } elseif ($mode === 'groups') {
-    Registry::set('navigation.dynamic.sections', $navigation_sections);
-    Registry::set('navigation.dynamic.active_section', 'groups');
-
     $params = $_REQUEST;
     $params['get_descriptions'] = true;
     $params['search_in_subcats'] = true;

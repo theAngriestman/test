@@ -278,7 +278,7 @@
 
   function openHelpCenterMobile() {
     // Close mobile menu
-    $('.navbar-admin-top').toggleClass('open');
+    $('.cs-main-menu').toggleClass('open');
     $('body').toggleClass('noscrolling'); // Open dialog
 
     var _e = $('[data-ca-help-center="popupBtn"]');

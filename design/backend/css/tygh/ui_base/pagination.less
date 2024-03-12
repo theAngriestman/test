@@ -1,3 +1,11 @@
+// Bootstrap styles
+.pagination ul > li > a,
+.pagination ul > li > span {
+  padding: 5px 12px;
+}
+
+// Custom styles
+
 //pagination
 .pagination-wrap {
 
@@ -64,6 +72,9 @@
 
     }
 }
+.pagination-selector {
+    border-color:@paginationBorder;
+}
 .paginate-top .dropdown-menu {
     top: auto;
     bottom: 100%;
@@ -79,7 +90,7 @@
     .btn-group {
         vertical-align: top;
     }
-    .btn.btn-text.dropdown-toggle {
+    .btn.btn-link.dropdown-toggle {
         font-size: @baseFontSize;
         line-height: @baseLineHeight;
         font-weight: normal;

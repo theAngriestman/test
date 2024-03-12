@@ -169,7 +169,7 @@
 <script>
     $.ceEvent('on', 'ce.formajaxpost_internal_template_form', function () {
         $.ceEvent('trigger', 'ce.notifications_center.reloaded', [function () {
-            $('.notifications-center__opener-wrapper a').trigger('click');
+            $('.notifications-center__opener-wrapper .notifications-center__opener-btn').trigger('click');
         }])
     });
 </script>

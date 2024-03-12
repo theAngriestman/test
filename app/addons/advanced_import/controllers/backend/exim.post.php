@@ -17,6 +17,15 @@ use Tygh\Registry;
 
 defined('BOOTSTRAP') or die('Access denied');
 
-if (Registry::get('navigation.dynamic.sections.products.href') && ($mode == 'import')) {
+$products_deprecated_href = Registry::get('navigation.dynamic.sections.products.href');
+if ($products_deprecated_href && ($mode === 'import')) {
     Registry::set('navigation.dynamic.sections.products.href', 'import_presets.manage&object_type=products');
+    Registry::set('navigation.dynamic.sections.products_deprecated', [
+        'href' => $products_deprecated_href,
+        'title' => __('products_deprecated'),
+    ]);
+
+    if ($_REQUEST['section'] === 'products') {
+        Registry::set('navigation.dynamic.active_section', 'products_deprecated');
+    }
 }

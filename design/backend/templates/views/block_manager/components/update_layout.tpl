@@ -3,6 +3,7 @@
 {else}
     {$id = 0}
 {/if}
+{$tabs_count = 1}
 
 <script>
 Tygh.tr({
@@ -14,7 +15,7 @@ Tygh.tr({
 <input type="hidden" name="layout_id" value="{$id}">
 
 <div class="add-new-object-group">
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="tab_update_layout_{$id}" class="cm-js active"><a>{__("general")}</a></li>
         </ul>

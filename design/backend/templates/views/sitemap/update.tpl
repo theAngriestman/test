@@ -3,13 +3,14 @@
 {else}
     {assign var="id" value=0}
 {/if}
+{$tabs_count = 2}
 
 <div id="content_group{$id}">
 
     <form action="{""|fn_url}" enctype="multipart/form-data" method="post" name="links_form" class="form-horizontal form-edit">
     <input type="hidden" name="section_id" value="{$id}" />
 
-    <div class="tabs cm-j-tabs">
+    <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
         <ul class="nav nav-tabs">
             <li id="tab_general_{$id}" class="cm-js active"><a>{__("general")}</a></li>
             <li id="tab_links_{$id}" class="cm-js"><a>{__("section_links")}</a></li>

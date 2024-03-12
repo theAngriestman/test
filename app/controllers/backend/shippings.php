@@ -443,21 +443,6 @@ if ($mode == 'configure') {
     }
 }
 
-if (in_array($mode, ['add', 'update', 'manage'])) {
-    $dynamic_sections = Registry::ifGet('navigation.dynamic.sections', []);
-    $dynamic_sections['shippings'] = [
-        'title' => __('shipping_methods'),
-        'href'  => 'shippings.manage',
-    ];
-    $dynamic_sections['destinations'] = [
-        'title' => __('rate_areas'),
-        'href'  => 'destinations.manage',
-    ];
-
-    Registry::set('navigation.dynamic.active_section', 'shippings');
-    Registry::set('navigation.dynamic.sections', $dynamic_sections);
-}
-
 function fn_delete_rate_values($delete_rate_data, $shipping_id, $destination_id)
 {
     $rate_values = db_get_field("SELECT rate_value FROM ?:shipping_rates WHERE shipping_id = ?i AND destination_id = ?i", $shipping_id, $destination_id);

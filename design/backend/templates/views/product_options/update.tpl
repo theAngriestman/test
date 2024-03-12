@@ -16,6 +16,11 @@
 
 {$action_context = $action_context|default:$smarty.request._action_context}
 {$allow_save = $option_data|fn_allow_save_object:"product_options" && fn_check_permissions("product_options", "update", "admin", "POST")}
+{$tabs_count = ($option_data.option_type == "ProductOptionTypes::SELECTBOX"|enum
+    || $option_data.option_type == "ProductOptionTypes::RADIO_GROUP"|enum
+    || $option_data.option_type == "ProductOptionTypes::CHECKBOX"|enum
+    || !$option_data
+    || !$option_data.option_type) ? 2 : 1}
 <div id="content_group_product_option_{$id}">
 
 <form action="{""|fn_url}" 
@@ -44,7 +49,7 @@
     {/if}
 {/if}
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_option_details_{$id}" class="cm-js active"><a>{__("general")}</a></li>
         {if $option_data.option_type == "ProductOptionTypes::SELECTBOX"|enum
@@ -260,14 +265,16 @@
                         <div id="on_st_{$id}" {""}
                             alt="{__("expand_collapse_list")}" {""}
                             title="{__("expand_collapse_list")}" {""}
-                            class="hand cm-combinations-options-{$id} icon-caret-right btn-expand btn-expand--header"
+                            class="hand cm-combinations-options-{$id} btn-expand btn-expand--header"
                         >
+                            {include_ext file="common/icon.tpl" source="caret_right" class="events-none"}
                         </div>
                         <div id="off_st_{$id}" {""}
                             alt="{__("expand_collapse_list")}" {""}
                             title="{__("expand_collapse_list")}" {""}
-                            class="hand hidden cm-combinations-options-{$id} icon-caret-down btn-expand btn-expand--header"
+                            class="hand hidden cm-combinations-options-{$id} btn-expand btn-expand--header"
                         >
+                            {include_ext file="common/icon.tpl" source="caret_down" class="events-none"}
                         </div>
                     </div>
                 </th>
@@ -355,14 +362,14 @@
                         title="{__("expand_collapse_list")}" {""}
                         class="btn btn-expand hand cm-combination-options-{$id}"
                     >
-                        <span class="icon-caret-right"></span>
+                        {include_ext file="common/icon.tpl" source="caret_right" class="events-none"}
                     </span>
                     <span id="off_extra_option_variants_{$id}_{$num}" {""}
                         alt="{__("expand_collapse_list")}" {""}
                         title="{__("expand_collapse_list")}" {""}
                         class="btn btn-expand hand hidden cm-combination-options-{$id}"
                     >
-                        <span class="icon-caret-down"></span>
+                        {include_ext file="common/icon.tpl" source="caret_down" class="events-none"}
                     </span>
                     <input type="hidden" {""}
                         name="option_data[variants][{$num}][variant_id]" {""}

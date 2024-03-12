@@ -40,7 +40,7 @@
     <div class="cm-te-messages">
         <div class="te-empty-folder empty-text">
             <h2>{__("open_file_or_create_new")}</h2>
-            {include file="common/popupbox.tpl" id="add_new_file" text=__("new_file") content="" link_text=__("create_file") act="general" link_class="cm-dialog-auto-size btn-primary" icon="icon-plus icon-white"}
+            {include file="common/popupbox.tpl" id="add_new_file" text=__("new_file") content="" link_text=__("create_file") act="general" link_class="cm-dialog-auto-size btn-primary" icon="icon-plus"}
 
             {hook name="templates:directory_action"}{/hook}
         </div>

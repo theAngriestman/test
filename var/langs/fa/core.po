@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: fa\n"
-"X-Crowdin-File: /release-4.17.2/core.po\n"
-"X-Crowdin-File-ID: 8104\n"
-"PO-Revision-Date: 2023-11-23 09:56\n"
+"X-Crowdin-File: /release-4.18.1/core.po\n"
+"X-Crowdin-File-ID: 8378\n"
+"PO-Revision-Date: 2024-02-02 11:18\n"
 
 msgctxt "LanguageName"
 msgid "Localized language name"
@@ -599,6 +599,22 @@ msgstr "جستجوی پیشرفته"
 msgctxt "Languages::advanced_search_options"
 msgid "Advanced search options"
 msgstr "گزینه های  جستجو پیشرفته"
+
+msgctxt "Languages::search_add_filter"
+msgid "Add filter"
+msgstr ""
+
+msgctxt "Languages::search_range_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::search_range_to"
+msgid "To"
+msgstr ""
+
+msgctxt "Languages::dynamic_navigation_more"
+msgid "More"
+msgstr ""
 
 msgctxt "Languages::after_full_payment"
 msgid "After full payment"
@@ -1860,6 +1876,10 @@ msgctxt "Languages::cdn_settings"
 msgid "CDN settings"
 msgstr "تنظیمات CND"
 
+msgctxt "Languages::edit_cdn_settings"
+msgid "Edit CDN settings"
+msgstr ""
+
 msgctxt "Languages::central"
 msgid "Central"
 msgstr "مرکزی"
@@ -2040,6 +2060,10 @@ msgctxt "Languages::choose_action"
 msgid "Choose action"
 msgstr "انتخاب عمل"
 
+msgctxt "Languages::more_actions"
+msgid "More actions"
+msgstr ""
+
 msgctxt "Languages::choose_category"
 msgid "Choose category"
 msgstr "انتخاب رده"
@@ -2059,6 +2083,10 @@ msgstr "لطفا نحوه صدور مجوز خود را انتخاب کنید"
 msgctxt "Languages::cities"
 msgid "Cities"
 msgstr "شهرها"
+
+msgctxt "Languages::edit_cities"
+msgid "Edit cities"
+msgstr ""
 
 msgctxt "Languages::city"
 msgid "City"
@@ -2396,6 +2424,10 @@ msgctxt "Languages::countries"
 msgid "Countries"
 msgstr "کشورها"
 
+msgctxt "Languages::edit_countries"
+msgid "Edit countries"
+msgstr ""
+
 msgctxt "Languages::countries_menu_description"
 msgid "Manage the set of countries that are supported in your store."
 msgstr "مدیریت مجموعه ای از کشورهایی که در فروشگاه های شما پشتیبانی می شوند."
@@ -2535,6 +2567,10 @@ msgstr "فایل CSV"
 msgctxt "Languages::currencies"
 msgid "Currencies"
 msgstr "واحد پول"
+
+msgctxt "Languages::edit_currencies"
+msgid "Edit currencies"
+msgstr ""
 
 msgctxt "Languages::currency"
 msgid "Currency"
@@ -2832,6 +2868,10 @@ msgctxt "Languages::text_file_editor_notice"
 msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>"
 msgstr "شما می توانید فایل ها را از طریق <a href=\"[href]\"> ویرایشگر فایل</a> آپلود و دانلود کنید"
 
+msgctxt "Languages::text_file_editor_notice_with_image_size_info"
+msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>. The maximum size of image files is [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_file_editor_notice_full_link"
 msgid "You can upload and download files via [link]"
 msgstr "شما می توانید فایل ها را از طریق [link]آپلود و دانلود کنید"
@@ -2861,8 +2901,8 @@ msgid "Customers"
 msgstr "مشتریان"
 
 msgctxt "Languages::customers_menu_title"
-msgid "Customers"
-msgstr "مشتریان"
+msgid "Users"
+msgstr ""
 
 msgctxt "Languages::my_customers"
 msgid "My customers"
@@ -4420,6 +4460,10 @@ msgctxt "Languages::files"
 msgid "Files"
 msgstr "فایل ها"
 
+msgctxt "Languages::view_files"
+msgid "View files"
+msgstr ""
+
 msgctxt "Languages::sell_files"
 msgid "Files to sell"
 msgstr "فایل های فروش"
@@ -5284,6 +5328,10 @@ msgctxt "Languages::language"
 msgid "Language"
 msgstr "زبان"
 
+msgctxt "Languages::language_content"
+msgid "The language of content"
+msgstr ""
+
 msgctxt "Languages::languagecode"
 msgid "Language code"
 msgstr "کد زبان"
@@ -5355,6 +5403,10 @@ msgstr "چیدمان"
 msgctxt "Languages::layouts"
 msgid "Layouts"
 msgstr "چیدمان ها"
+
+msgctxt "Languages::edit_layouts"
+msgid "Edit layouts"
+msgstr ""
 
 msgctxt "Languages::lbl_amazon_aws_access_public_key"
 msgid "AWS access public key"
@@ -5572,6 +5624,10 @@ msgctxt "Languages::rate_areas"
 msgid "Rate areas"
 msgstr "مناطق را رتبه بندی کنید"
 
+msgctxt "Languages::edit_rate_areas"
+msgid "Edit rate areas"
+msgstr ""
+
 msgctxt "Languages::statuses_management"
 msgid "Statuses"
 msgstr "وضعیت ها"
@@ -5607,6 +5663,10 @@ msgstr "مکان (آدرس) نشان"
 msgctxt "Languages::logs"
 msgid "Logs"
 msgstr "ارم ها"
+
+msgctxt "Languages::view_logs"
+msgid "View logs"
+msgstr ""
 
 msgctxt "Languages::log_action_backup"
 msgid "backup"
@@ -6820,6 +6880,10 @@ msgctxt "Languages::order_statuses"
 msgid "Order statuses"
 msgstr "وضعیت های سفارش"
 
+msgctxt "Languages::edit_order_statuses"
+msgid "Edit order statuses"
+msgstr ""
+
 msgctxt "Languages::order_statuses_menu_description"
 msgid "Add new or edit existing order statuses."
 msgstr "افزودن جدید یا ویرایش موجود وضعیت سفارش."
@@ -7988,6 +8052,10 @@ msgctxt "Languages::product_options_forbidden_combination"
 msgid "The <strong>[product]</strong> product has options that are included in the forbidden combination. The product was deleted from the cart"
 msgstr "از <strong> [کالا] </ strong> در محصول دارای گزینه هایی که در ترکیب ممنوع گنجانده شده است. این محصول از سبد خرید حذف شد"
 
+msgctxt "Languages::zero_price_product_was_deleted"
+msgid "The <strong>[product]</strong> product has zero price. The product was deleted from the cart"
+msgstr ""
+
 msgctxt "Languages::product_disabled_options"
 msgid "The product <strong>[product]</strong> has options or option variants that are not available anymore, so it was removed from cart"
 msgstr "کالا و <strong> [کالا] </ strong> شما گزینه های انتخابی مغایر یا انواع گزینه ای است که دیگر در دسترس نیست،بنابراین آن از سبد خرید حذف شد"
@@ -7999,6 +8067,10 @@ msgstr "محصول"
 msgctxt "Languages::product_subscriptions"
 msgid "Product subscriptions"
 msgstr "اشتراک های محصول"
+
+msgctxt "Languages::view_product_subscriptions"
+msgid "View product subscriptions"
+msgstr ""
 
 msgctxt "Languages::product_summary"
 msgid "Product summary"
@@ -8031,10 +8103,6 @@ msgstr "جزئیات نمایه"
 msgctxt "Languages::profile_fields"
 msgid "Profile fields"
 msgstr "مشخصات نمایه"
-
-msgctxt "Languages::profile_fields_menu_description"
-msgid "Configure the set of fields included in the profile forms."
-msgstr "پیکربندی مجموعه فیلدهای موجود در فرم مشخصات."
 
 msgctxt "Languages::profile_info"
 msgid "Profile information"
@@ -8944,6 +9012,10 @@ msgctxt "Languages::search_by_order"
 msgid "Search by order"
 msgstr "جستجو بر اساس سفارش"
 
+msgctxt "Languages::search_by_customer"
+msgid "Search by customer"
+msgstr ""
+
 msgctxt "Languages::search_by_owner"
 msgid "Search by owner"
 msgstr "جستجو بر اساس مالک"
@@ -9128,6 +9200,14 @@ msgctxt "Languages::select_dates"
 msgid "Select dates"
 msgstr "انتخاب تاريخ"
 
+msgctxt "Languages::period_selector_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::period_selector_to"
+msgid "To"
+msgstr ""
+
 msgctxt "Languages::select_descr_lang"
 msgid "Select the description language"
 msgstr "انتخاب زبان توضیحات"
@@ -9251,6 +9331,70 @@ msgstr "جادو در منوی 'تنظیمات-> جادوی تنظیمات' دو
 msgctxt "Languages::settings_wizard_title"
 msgid "Settings wizard: Step [current_step] of [total_steps]"
 msgstr "جادوی تنظیمات: گام [current_step] از [total_steps]"
+
+msgctxt "Languages::store_mode_menu_description"
+msgid "View and manage your licensing details."
+msgstr ""
+
+msgctxt "Languages::upgrade_center_menu_description"
+msgid "Get the latest versions of CS-Cart and its add-ons."
+msgstr ""
+
+msgctxt "Languages::import_data_menu_description"
+msgid "Import products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::export_data_menu_description"
+msgid "Export products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::languages_menu_description"
+msgid "Configure the available languages and edit any texts on your site."
+msgstr ""
+
+msgctxt "Languages::storage_menu_description"
+msgid "Back up your site data or restore a previous copy, manage files and CDN."
+msgstr ""
+
+msgctxt "Languages::settings_general"
+msgid "General"
+msgstr ""
+
+msgctxt "Languages::settings_general_menu_description"
+msgid "Configure your company info and basic principles of how your site works."
+msgstr ""
+
+msgctxt "Languages::payment_methods_menu_description"
+msgid "Set up the payment options available to your customers."
+msgstr ""
+
+msgctxt "Languages::shipping_methods_menu_description"
+msgid "Set up shipping options, their rates and availability by location."
+msgstr ""
+
+msgctxt "Languages::taxes_menu_description"
+msgid "Configure what taxes you show, how you do it, and tax rates by location."
+msgstr ""
+
+msgctxt "Languages::storefronts_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::stores_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::profile_fields_menu_description"
+msgid "Manage information collected from customers and sellers."
+msgstr ""
+
+msgctxt "Languages::notifications_menu_description"
+msgid "Manage the notifications sent to customers, administrators and sellers."
+msgstr ""
+
+msgctxt "Languages::logs_menu_description"
+msgid "Store activity log."
+msgstr ""
 
 msgctxt "Languages::share"
 msgid "Share"
@@ -9387,10 +9531,6 @@ msgstr "روش ارسال"
 msgctxt "Languages::shipping_methods"
 msgid "Shipping methods"
 msgstr "روش های ارسال"
-
-msgctxt "Languages::shipping_methods_menu_description"
-msgid "Set of rules and parameters to calculate the cost of shipping."
-msgstr "مجموعه ای از قوانین و پارامترهای برای محاسبه هزینه ارسال."
 
 msgctxt "Languages::shipping_name"
 msgid "Shipping name"
@@ -10312,6 +10452,10 @@ msgctxt "Languages::states"
 msgid "States"
 msgstr "ایالات/استان ها"
 
+msgctxt "Languages::edit_states"
+msgid "Edit states"
+msgstr ""
+
 msgctxt "Languages::states_menu_description"
 msgid "Manage the set of states that are supported in your store."
 msgstr "مدیریت مجموعه ای از استان ها/ایالاتی که در فروشگاه های شما پشتیبانی می شوند."
@@ -10583,10 +10727,6 @@ msgstr "مالیات"
 msgctxt "Languages::taxes"
 msgid "Taxes"
 msgstr "مالیات ها"
-
-msgctxt "Languages::taxes_menu_description"
-msgid "Manage the set of taxes that are supported in your store."
-msgstr "مدیریت مجموعه ای از مالیات هایی که در فروشگاه شما پشتیبانی می شوند."
 
 msgctxt "Languages::tax_exempt"
 msgid "Tax exempt"
@@ -11271,6 +11411,10 @@ msgstr "موردی یافت نشد"
 msgctxt "Languages::text_not_allowed_to_upload_file_extension"
 msgid "It is not allowed to upload files with the <b>.[ext]</b> extension here."
 msgstr "آپلود فایل با <b>مجاز نیست. پسوند[ext]</b> در اینجا."
+
+msgctxt "Languages::text_not_allowed_to_upload_file_size"
+msgid "It is not allowed to upload files that exceed the maximum allowed size of [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::text_not_valid_email"
 msgid "<b>[email]</b> is not a valid e-mail address."
@@ -12552,6 +12696,10 @@ msgctxt "Languages::thumbnail_width"
 msgid "Thumbnail width in scroller"
 msgstr "عرض تصویر بند انگشتی در پیشین"
 
+msgctxt "Languages::image_file_size_set_to_server_setting"
+msgid "Image file size set to [file_size] MB. This is the largest file size allowed by the server settings."
+msgstr ""
+
 msgctxt "Languages::tier_account"
 msgid "tier account"
 msgstr "ردیف حساب"
@@ -12939,6 +13087,10 @@ msgstr "محصولات غیر قابل دانلود با وزن صفر به عن
 msgctxt "Languages::tt_views_products_update_categories"
 msgid "Categories to be displayed in the navigation breadcrumbs."
 msgstr "دسته بندی هایی که باید در بخش ناوبری نمایش داده شوند."
+
+msgctxt "Languages::tt_views_products_update_images"
+msgid "The maximum size of image files is [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::tt_views_products_update_inventory"
 msgid "Track in stock product quantity. Enable the \"Enable inventory tracking\" option (Settings -> General) to modify."
@@ -13351,6 +13503,10 @@ msgstr "کاربران"
 msgctxt "Languages::users_carts"
 msgid "Abandoned / Live carts"
 msgstr "چرخ دستی های رها شده / زنده"
+
+msgctxt "Languages::users_carts_menu"
+msgid "Live carts"
+msgstr ""
 
 msgctxt "Languages::users_carts_menu_description"
 msgid "Lists of products that have not been purchased for some reason."
@@ -14788,6 +14944,10 @@ msgctxt "SettingsOptions::company_phone_2"
 msgid "Company phone 2"
 msgstr "تلفن شرکت"
 
+msgctxt "SettingsOptions::image_file_size"
+msgid "Image file size"
+msgstr ""
+
 msgctxt "SettingsOptions::thumbnail_background_color"
 msgid "Thumbnail background color"
 msgstr "رنگ پس زمینه تصویر بند انگشتی"
@@ -15335,6 +15495,10 @@ msgstr "از عددی بین 1 تا 10000000 استفاده کنید یا برا
 msgctxt "SettingsTooltips::user_multiple_profiles"
 msgid "A profile is a combination of shipping and billing address."
 msgstr "نمایه ترکیبی از آدرس حمل و نقل و صورتحساب است."
+
+msgctxt "SettingsTooltips::image_file_size"
+msgid "The maximum size of an uploaded image file in megabytes. Leave empty to use the server settings."
+msgstr ""
 
 msgctxt "SettingsTooltips::thumbnail_background_color"
 msgid "Leave empty for transparent background."
@@ -16368,6 +16532,10 @@ msgctxt "Languages::templates"
 msgid "Templates"
 msgstr "قالب ها"
 
+msgctxt "Languages::edit_templates"
+msgid "Edit templates"
+msgstr ""
+
 msgctxt "Languages::payments.realex.referring_url"
 msgid "Please supply this URL to your Realex Payments account manager"
 msgstr "لطفا این آدرس را به مدیر حساب پرداخت Realex عرضه کنید"
@@ -16551,6 +16719,10 @@ msgstr "تنظیمات SEO فروشگاه."
 msgctxt "Languages::seo_robots"
 msgid "robots.txt"
 msgstr "robots.txt"
+
+msgctxt "Languages::view_seo_robots"
+msgid "View robots.txt"
+msgstr ""
 
 msgctxt "Languages::robots_title"
 msgid "Editing: robots.txt"
@@ -17156,6 +17328,10 @@ msgstr "این طرح زمینه از ویرایشگر تم پشتیبانی ن�
 msgctxt "Languages::shipment_statuses"
 msgid "Shipment statuses"
 msgstr "وضعیت حمل و نقل"
+
+msgctxt "Languages::edit_shipment_statuses"
+msgid "Edit shipment statuses"
+msgstr ""
 
 msgctxt "Languages::email_templates"
 msgid "Email templates"
@@ -17952,6 +18128,10 @@ msgstr "برخی از فایل های اصلی شما تغییر کرده اند
 msgctxt "Languages::file_changes_detector"
 msgid "File changes detector"
 msgstr "آشکارساز تغییرات فایل"
+
+msgctxt "Languages::view_file_changes_detector"
+msgid "View file changes detector"
+msgstr ""
 
 msgctxt "Languages::privileges.view_file_changes"
 msgid "Can view"
@@ -21033,390 +21213,6 @@ msgctxt "Languages::license_expires"
 msgid "License expires"
 msgstr "مجوز منقضی می شود"
 
-msgctxt "Languages::sw.store_setup_wizard"
-msgid "Store setup wizard"
-msgstr "جادوگر راه اندازی فروشگاه"
-
-msgctxt "Languages::sw.store_setup_wizard_short"
-msgid "Setup wizard"
-msgstr "جادوگر راه اندازی"
-
-msgctxt "Languages::sw.text_about_store_header"
-msgid "Fill out the contact information about your store"
-msgstr "اطلاعات تماس فروشگاه خود را پر کنید"
-
-msgctxt "Languages::sw.text_design_header"
-msgid "Select your storefront design and upload the logo"
-msgstr "طرح ویترین فروشگاه خود را انتخاب کرده و لوگو را آپلود کنید"
-
-msgctxt "Languages::sw.text_payments_header"
-msgid "Set up the service to recieve payments"
-msgstr "سرویس را برای دریافت پرداخت ها تنظیم کنید"
-
-msgctxt "Languages::sw.text_shippings_header"
-msgid "Select shipping services"
-msgstr "خدمات حمل و نقل را انتخاب کنید"
-
-msgctxt "Languages::sw.text_business_model_header"
-msgid "Choose your business model and checkout flow"
-msgstr "مدل کسب و کار و جریان پرداخت خود را انتخاب کنید"
-
-msgctxt "Languages::sw.select_money_transfer_methods"
-msgid "Select one of the following models, and we'll handle most of the setup for you."
-msgstr "یکی از مدل های زیر را انتخاب کنید، و ما بیشتر تنظیمات را برای شما انجام می دهیم."
-
-msgctxt "Languages::sw.text_vendors_header"
-msgid "Set up how you work with vendors and their data"
-msgstr "نحوه کار با فروشندگان و داده های آنها را تنظیم کنید"
-
-msgctxt "Languages::sw.text_settings_header"
-msgid "Configure product catalog settings"
-msgstr "تنظیمات کاتالوگ محصول را پیکربندی کنید"
-
-msgctxt "Languages::sw.about_store"
-msgid "About store"
-msgstr "درباره فروشگاه"
-
-msgctxt "Languages::sw.company_name"
-msgid "Company name"
-msgstr "نام شرکت"
-
-msgctxt "Languages::sw.google_analytics.tracking_code"
-msgid "Google Analytics account number"
-msgstr "شماره حساب Google Analytics"
-
-msgctxt "Languages::sw.business_model"
-msgid "Business Model"
-msgstr "مدل تجاری"
-
-msgctxt "Languages::sw.vendors"
-msgid "Vendors"
-msgstr "فروشندگان"
-
-msgctxt "Languages::sw.site_admin_email"
-msgid "Site administrator e-mail address"
-msgstr "آدرس ایمیل مدیر سایت"
-
-msgctxt "Languages::sw.address_text"
-msgid "Company address (street, house, etc.)"
-msgstr "آدرس شرکت (خیابان، منزل و ...)"
-
-msgctxt "Languages::sw.country"
-msgid "Company country"
-msgstr "کشور شرکت"
-
-msgctxt "Languages::sw.state"
-msgid "Company state"
-msgstr "ایالت شرکت"
-
-msgctxt "Languages::sw.city"
-msgid "Company city"
-msgstr "شهر شرکت"
-
-msgctxt "Languages::sw.zipcode"
-msgid "Company zip code"
-msgstr "کد پستی شرکت"
-
-msgctxt "Languages::sw.phone"
-msgid "Company phone"
-msgstr "تلفن شرکت"
-
-msgctxt "Languages::sw.phone_2"
-msgid "Company phone 2"
-msgstr "تلفن شرکت 2"
-
-msgctxt "Languages::sw.fax"
-msgid "Fax"
-msgstr "فکس"
-
-msgctxt "Languages::sw.website"
-msgid "Company website"
-msgstr "وب سایت شرکت"
-
-msgctxt "Languages::sw.company_start_year"
-msgid "Year when the store started its operation"
-msgstr "سالی که فروشگاه شروع به کار کرد"
-
-msgctxt "Languages::sw.collect_taxes_from_vendors"
-msgid "Collect taxes from vendors"
-msgstr "از فروشندگان مالیات بگیرید"
-
-msgctxt "Languages::sw.moderation"
-msgid "Moderation"
-msgstr "اعتدال"
-
-msgctxt "Languages::sw.vendor_profile_updates_approval"
-msgid "Check changes to vendor profile"
-msgstr "تغییرات نمایه فروشنده را بررسی کنید"
-
-msgctxt "Languages::sw.products_prior_approval"
-msgid "Check new products"
-msgstr "محصولات جدید را بررسی کنید"
-
-msgctxt "Languages::sw.products_updates_approval"
-msgid "Check changes to existing products"
-msgstr "تغییرات محصولات موجود را بررسی کنید"
-
-msgctxt "Languages::sw.accounting"
-msgid "Accounting"
-msgstr "حسابداری"
-
-msgctxt "Languages::sw.lowers_allowed_balance"
-msgid "Minimum allowed vendor balance"
-msgstr "حداقل موجودی مجاز فروشنده"
-
-msgctxt "Languages::sw.grace_period_to_refill_balance"
-msgid "Block vendor after days"
-msgstr "فروشنده را بعد از روز مسدود کنید"
-
-msgctxt "Languages::sw.location"
-msgid "Location"
-msgstr "محل"
-
-msgctxt "Languages::sw.enable_vendor_location_using_google_map"
-msgid "Let vendors set their location on Google Maps"
-msgstr "به فروشندگان اجازه دهید موقعیت مکانی خود را در Google Maps تنظیم کنند"
-
-msgctxt "Languages::sw.vendor_profile_fields"
-msgid "Vendor profile fields"
-msgstr "فیلدهای نمایه فروشنده"
-
-msgctxt "Languages::sw.set_up_vendor_profile_fields"
-msgid "What information about vendors do you need?"
-msgstr "چه اطلاعاتی در مورد فروشندگان نیاز دارید؟"
-
-msgctxt "Languages::sw.notifications"
-msgid "Notifications"
-msgstr "اطلاعیه"
-
-msgctxt "Languages::sw.admin_notifications"
-msgid "Admin notifications"
-msgstr "اطلاعیه های مدیریت"
-
-msgctxt "Languages::sw.vendor_notifications"
-msgid "Vendor notifications"
-msgstr "اطلاعیه های فروشنده"
-
-msgctxt "Languages::sw.selected_design"
-msgid "Current design"
-msgstr "طراحی فعلی"
-
-msgctxt "Languages::sw.upload_logo"
-msgid "Upload logo"
-msgstr "لوگو را بارگذاری کنید"
-
-msgctxt "Languages::sw.logo_theme"
-msgid "Main"
-msgstr "اصلی"
-
-msgctxt "Languages::sw.logo_mail"
-msgid "Email"
-msgstr "پست الکترونیک"
-
-msgctxt "Languages::sw.select_image"
-msgid "Select image"
-msgstr "تصویر را انتخاب کنید"
-
-msgctxt "Languages::sw.select_right_design"
-msgid "Pick a design preset"
-msgstr "یک پیش تنظیم طراحی را انتخاب کنید"
-
-msgctxt "Languages::sw.activate"
-msgid "Activate"
-msgstr "فعال کنید"
-
-msgctxt "Languages::sw.apply"
-msgid "Apply"
-msgstr "درخواست دادن"
-
-msgctxt "Languages::sw.preview"
-msgid "Preview"
-msgstr "پیش نمایش"
-
-msgctxt "Languages::sw.edit_design"
-msgid "Edit design"
-msgstr "طراحی را ویرایش کنید"
-
-msgctxt "Languages::sw.design"
-msgid "Design"
-msgstr "طرح"
-
-msgctxt "Languages::sw.error_updating_payment"
-msgid "Error occured during payment method update"
-msgstr "هنگام به‌روزرسانی روش پرداخت خطایی روی داد"
-
-msgctxt "Languages::sw.payments"
-msgid "Payments"
-msgstr "مبلغ پرداختی"
-
-msgctxt "Languages::sw.payment_not_found"
-msgid "The Yandex.Money payment method not found"
-msgstr "روش پرداخت Yandex.Money پیدا نشد"
-
-msgctxt "Languages::sw.over_payment_system"
-msgid "Use another payment system"
-msgstr "از سیستم پرداخت دیگری استفاده کنید"
-
-msgctxt "Languages::sw.shippings"
-msgid "Shipping services"
-msgstr "خدمات حمل و نقل"
-
-msgctxt "Languages::sw.ems_russian_post"
-msgid "EMS Russian Post"
-msgstr "پست روسیه EMS"
-
-msgctxt "Languages::sw.russian_post"
-msgid "Russian Post"
-msgstr "پست روسیه"
-
-msgctxt "Languages::sw.edost"
-msgid "eDost"
-msgstr "eDost"
-
-msgctxt "Languages::sw.usps"
-msgid "USPS"
-msgstr "USPS"
-
-msgctxt "Languages::sw.ups"
-msgid "UPS"
-msgstr "یو پی اس"
-
-msgctxt "Languages::sw.fedex"
-msgid "FedEx"
-msgstr "فدرال اکسپرس"
-
-msgctxt "Languages::sw.goto_shipping_methods"
-msgid "Go to shipping methods"
-msgstr "به روش های حمل و نقل بروید"
-
-msgctxt "Languages::sw.configure"
-msgid "Configure"
-msgstr "پیکربندی کنید"
-
-msgctxt "Languages::sw.settings"
-msgid "Settings"
-msgstr "تنظیمات"
-
-msgctxt "Languages::sw.enable"
-msgid "Enable"
-msgstr "فعال کردن"
-
-msgctxt "Languages::sw.disable"
-msgid "Disable"
-msgstr "غیر فعال کردن"
-
-msgctxt "Languages::sw.activated"
-msgid "Activated"
-msgstr "فعال شد"
-
-msgctxt "Languages::sw.select_model"
-msgid "Select model"
-msgstr "مدل را انتخاب کنید"
-
-msgctxt "Languages::sw.timezone"
-msgid "Time zone"
-msgstr "منطقه زمانی"
-
-msgctxt "Languages::sw.order_start_id"
-msgid "Initial order ID value (leave empty for auto)"
-msgstr "مقدار شناسه اولیه سفارش (برای خودکار خالی بگذارید)"
-
-msgctxt "Languages::sw.min_order_amount"
-msgid "Minimum order amount"
-msgstr "حداقل مقدار سفارش"
-
-msgctxt "Languages::sw.show_out_of_stock_products"
-msgid "Show out of stock products"
-msgstr "نمایش محصولات موجود در انبار"
-
-msgctxt "Languages::sw.enable_quick_view"
-msgid "Enable quick view"
-msgstr "نمایش سریع را فعال کنید"
-
-msgctxt "Languages::sw.enable_inventory_tracking"
-msgid "Enable inventory tracking"
-msgstr "فعال کردن ردیابی موجودی"
-
-msgctxt "Languages::sw.allow_negative_amount"
-msgid "Allow negative amount in inventory"
-msgstr "مقدار منفی را در موجودی مجاز کنید"
-
-msgctxt "Languages::sw.ym_merchant_country"
-msgid "Country"
-msgstr "کشور"
-
-msgctxt "Languages::sw.ym_merchant_forma"
-msgid "Ownership"
-msgstr "مالکیت"
-
-msgctxt "Languages::sw.send"
-msgid "Send"
-msgstr "ارسال"
-
-msgctxt "Languages::sw.remove_demo_data_text"
-msgid "Clean up orders, products, categories, user profiles, and related data"
-msgstr "سفارش‌ها، محصولات، دسته‌ها، نمایه‌های کاربر و داده‌های مرتبط را تمیز کنید"
-
-msgctxt "Languages::sw.remove"
-msgid "Clean up"
-msgstr "پاک کردن"
-
-msgctxt "Languages::sw.demo_data_removed"
-msgid "Demo data removed."
-msgstr "داده های نمایشی حذف شد."
-
-msgctxt "Languages::sw.error_removing_demo_data"
-msgid "An error occurred while removing the demo data"
-msgstr "هنگام حذف داده‌های نمایشی خطایی روی داد"
-
-msgctxt "Languages::sw.confirm_demo_data_removal_title"
-msgid "Remove the data?"
-msgstr "داده ها حذف شود؟"
-
-msgctxt "Languages::sw.text_confirm_demo_data_removal"
-msgid "All orders, products, product categories, customer profiles, and associated data (tags, comments, etc.) including the data added by you <b>will be permanently removed.</b> This operation cannot be undone. Are you sure you want to continue?"
-msgstr "همه سفارش‌ها، محصولات، دسته‌های محصول، نمایه‌های مشتری، و داده‌های مرتبط (برچسب‌ها، نظرات و غیره) از جمله داده‌های اضافه شده توسط شما <b>برای همیشه حذف خواهند شد.</b> این عملیات قابل واگرد نیست. آیا مطمئن هستید که میخواهید ادامه دهید؟"
-
-msgctxt "Languages::sw.delete_demo_data"
-msgid "Delete the  data"
-msgstr "داده ها را حذف کنید"
-
-msgctxt "Languages::sw.keep_demo_data"
-msgid "Keep the data"
-msgstr "داده ها را نگه دارید"
-
-msgctxt "Languages::sw.more_themes_in_marketplace"
-msgid "More themes in the Marketplace"
-msgstr "موضوعات بیشتر در بازار"
-
-msgctxt "Languages::sw.logo_recommended_size_text"
-msgid "recommended size [height]px × [width]px"
-msgstr "اندازه توصیه شده [height]پیکسل × [width]پیکسل"
-
-msgctxt "Languages::sw.money_goes_to_owner"
-msgid "Customer makes a single payment, all money goes to you"
-msgstr "مشتری یک پرداخت انجام می دهد، تمام پول به شما می رسد"
-
-msgctxt "Languages::sw.money_goes_to_owner_descr"
-msgid "The money owed to the vendor is tracked in the admin panel. A vendor can request money withdrawal through the admin panel. You forward the money to vendors as you see fit."
-msgstr "پول بدهکار به فروشنده در پنل مدیریت ردیابی می شود. فروشنده می تواند از طریق پنل مدیریت درخواست برداشت پول کند. شما هر طور که صلاح می دانید پول را برای فروشندگان ارسال می کنید."
-
-msgctxt "Languages::sw.money_split_automaticaly"
-msgid "Customer makes a single payment, money is split automatically"
-msgstr "مشتری یک پرداخت را انجام می دهد، پول به طور خودکار تقسیم می شود"
-
-msgctxt "Languages::sw.money_split_automaticaly_descr"
-msgid "This is achieved via [stripe_connect] payments and/or [paypal_commerce_platform], so each vendor must have a Stripe and/or PayPal account. We'll create these payment methods for you. You'll just need to configure them, and vendors will need to provide their account information."
-msgstr "این از طریق [stripe_connect] پرداخت و/یا [paypal_commerce_platform]به دست می آید، بنابراین هر فروشنده باید یک حساب Stripe و/یا PayPal داشته باشد. ما این روش‌های پرداخت را برای شما ایجاد می‌کنیم. شما فقط باید آنها را پیکربندی کنید و فروشندگان باید اطلاعات حساب خود را ارائه کنند."
-
-msgctxt "Languages::sw.money_goes_to_vendor"
-msgid "Customer makes multiple payments (one to each vendor)"
-msgstr "مشتری چندین پرداخت انجام می دهد (یکی برای هر فروشنده)"
-
-msgctxt "Languages::sw.money_goes_to_vendor_descr"
-msgid "Each vendor has to create own payment methods. Money goes directly to vendors, and marketplace commission gets added to vendors' debt. It becomes a vendor's responsibility to pay the marketplace."
-msgstr "هر فروشنده باید روش های پرداخت خود را ایجاد کند. پول مستقیماً به دست فروشندگان می رسد و کمیسیون بازار به بدهی فروشندگان اضافه می شود. پرداخت به بازار به عهده فروشنده است."
-
 msgctxt "Languages::unsupported_browser_notice"
 msgid "<p>We have detected that the browser you are using is not fully supported by our Admin Panel. You can view this site using your current browser but it may not display properly, and you may not be able to fully use all features.</p><br><p>Admin Panel is best viewed using the following browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (latest version)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (latest version)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (latest version)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (latest version)</a></li></ul><br><p>Click on one of the links to download the browser of your choice. Once the download has completed, install the browser by running the setup program.</p><br><p>If you cannot upgrade your browser now, you can still access Admin Panel, but you may not be able to fully use all features.<br><br><a href=\"[url]\">Continue</a></p>"
 msgstr "<p>ما متوجه شده ایم که مرورگری که استفاده می کنید به طور کامل توسط پنل مدیریت ما پشتیبانی نمی شود. شما می توانید این سایت را با استفاده از مرورگر فعلی خود مشاهده کنید، اما ممکن است به درستی نمایش داده نشود، و ممکن است نتوانید به طور کامل از همه ویژگی ها استفاده کنید.</p><br><p>پنل مدیریت بهتر است با استفاده از مرورگرهای زیر مشاهده شود:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (آخرین نسخه)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (آخرین نسخه)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (آخرین نسخه)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">سافاری (آخرین نسخه)</a></li></ul><br><p>برای دانلود مرورگر مورد نظر خود روی یکی از لینک ها کلیک کنید. پس از اتمام دانلود، با اجرای برنامه راه اندازی، مرورگر را نصب کنید.</p><br><p>اگر اکنون نمی توانید مرورگر خود را ارتقا دهید، همچنان می توانید به پنل مدیریت دسترسی داشته باشید، اما ممکن است نتوانید به طور کامل از همه ویژگی ها استفاده کنید.<br><br><a href=\"[url]\">ادامه</a></p>"
@@ -21432,6 +21228,10 @@ msgstr "تنظیم به عنوان پیشفرض"
 msgctxt "Languages::saved_search.set_as_non_default"
 msgid "Set as non-default"
 msgstr "به عنوان غیر پیش فرض تنظیم کنید"
+
+msgctxt "Languages::saved_search.more"
+msgid "More saved search"
+msgstr ""
 
 msgctxt "Languages::saved_search.set_as_default_confirm"
 msgid "Saved search \"[name]\" will open by default instead of the full list of objects. Is that what you'd like?"
@@ -21700,10 +21500,6 @@ msgstr "استفاده برای همه فروشندگان جدید"
 msgctxt "Languages::show_vendor_info_if_shipping_no_required"
 msgid "Show information about vendors whose products do not require shipping"
 msgstr "نمایش اطلاعات مربوط به فروشندگانی که محصولاتشان به ارسال نیاز ندارد"
-
-msgctxt "Languages::sw.marketplace_setup_wizard"
-msgid "Marketplace setup wizard"
-msgstr "جادوگر راه اندازی بازار"
 
 msgctxt "Languages::sw.money_split_automaticaly_descr.ru"
 msgid "This is achieved via YooMoney for marketplaces, so each vendor must have a YooMoney account. We'll create a payment method for you. You'll just need to configure it, and vendors will need to provide their account information."

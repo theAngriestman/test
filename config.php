@@ -128,7 +128,7 @@ define('INSTALL_DB_EXECUTION', SECONDS_IN_HOUR); // 1 hour
 //define('DEBUG_MODE', true);
 
 //Uncomment to enable error reporting.
-define('DEVELOPMENT', true);
+//define('DEVELOPMENT', true);
 
 // Theme description file name
 define('THEME_MANIFEST', 'manifest.json');
@@ -163,9 +163,9 @@ define('CS_PHP_VERSION', phpversion());
 
 // Product information
 define('PRODUCT_NAME', 'CS-Cart');
-define('PRODUCT_VERSION', '4.17.2.SP1');
-define('PRODUCT_RELEASE_TIMESTAMP', 1701129600);
-define('PRODUCT_STATUS', 'dev');
+define('PRODUCT_VERSION', '4.18.1.Beta');
+define('PRODUCT_RELEASE_TIMESTAMP', 1707264000);
+define('PRODUCT_STATUS', '');
 
 
 define('PRODUCT_EDITION', 'ULTIMATE');
@@ -283,8 +283,8 @@ $config['updates_server'] = 'https://updates.cs-cart.com';
 
 // external resources, related to product
 $config['resources'] = array(
-    'docs_url'                      => 'https://docs.cs-cart.ru/4.17.x/',
-    'knowledge_base'                => 'https://docs.cs-cart.com/4.17.x/install/index.html',
+    'docs_url'                      => 'https://docs.cs-cart.ru/4.18.x/',
+    'knowledge_base'                => 'https://docs.cs-cart.com/4.18.x/install/index.html',
     'faq'                           => 'https://www.cs-cart.ru/vopros-otvet.html',
     'updates_server'                => 'https://updates.cs-cart.com',
     'twitter'                       => 'cscart',
@@ -299,18 +299,18 @@ $config['resources'] = array(
     'mve_plus_license_url'          => 'https://multivendor.cs-cart.ru',
     'mve_ultimate_license_url'      => 'https://multivendor.cs-cart.ru',
     'marketplace_url'               => 'https://marketplace.cs-cart.com',
-    'admin_protection_url'          => 'https://docs.cs-cart.com/4.17.x/install/security.html#step-1-rename-admin-php',
-    'widget_mode_url'               => 'https://docs.cs-cart.com/4.17.x/user_guide/look_and_feel/layouts/widget_mode/index.html',
+    'admin_protection_url'          => 'https://docs.cs-cart.com/4.18.x/install/security.html#step-1-rename-admin-php',
+    'widget_mode_url'               => 'https://docs.cs-cart.com/4.18.x/user_guide/look_and_feel/layouts/widget_mode/index.html',
     'developers_catalog'            => 'https://marketplace.cs-cart.com/developers-catalog.html',
     'upgrade_center_specialist_url' => 'https://marketplace.cs-cart.com/developers-catalog.html?services=M',
     'upgrade_center_team_url'       => 'https://www.cs-cart.com/index.php?dispatch=communication.tickets&submit_ticket=Y',
-    'kb_https_failed_url'           => 'https://docs.cs-cart.com/4.17.x/install/possible_issues/secure_connection_failed.html',
+    'kb_https_failed_url'           => 'https://docs.cs-cart.com/4.18.x/install/possible_issues/secure_connection_failed.html',
     'curl_error_interpretation'     => 'https://curl.haxx.se/libcurl/c/libcurl-errors.html',
     'product_buy_url'               => 'https://www.cs-cart.ru/cs-cart-rus-pack.html?utm_source=trial',
     'forum'                         => 'https://forum.cs-cart.ru',
     'bug_tracker_url'               => 'https://forum.cs-cart.com/index.php?app=tracker&module=post&section=post&do=postnew&pid=11&new_module_versions_id=138',
     'core_addons_supplier_url'      => 'https://helpdesk.cs-cart.com',
-    'docs_guideline'                => 'https://docs.cs-cart.com/4.17.x/developer_guide/getting_started/guidelines.html',
+    'docs_guideline'                => 'https://docs.cs-cart.com/4.18.x/developer_guide/getting_started/guidelines.html',
     'translate'                     => 'https://translate.cs-cart.com',
     'changelog_url'                 => 'https://www.cs-cart.ru/docs/latest/history/',
     'video_tutorials'               => 'https://www.cs-cart.ru/videos/admin',
@@ -321,8 +321,9 @@ $config['lazy_thumbnails'] = array(
     'max_height' => 720
 );
 
-// Enable simple dashboard
+// Enable UI components
 $config['simple_dashboard'] = true;
+$config['enable_quick_menu'] = false;
 
 // Debugger token
 $config['debugger_token'] = 'debug';

@@ -3,6 +3,7 @@
 {$id = ($payment) ? $payment.payment_id : "0"}
 {$storefront_owner_id = $payment.storefront_owner_id|default:false}
 {$allow_save = $payment|fn_allow_save_object:"payments"}
+{$tabs_count = (fn_allowed_for("MULTIVENDOR:ULTIMATE") || $is_sharing_enabled) ? 3 : 2}
 
 <div id="content_group{$id}">
 
@@ -15,7 +16,7 @@
     >
         <input type="hidden" name="payment_id" value="{$id}" />
 
-        <div class="tabs cm-j-tabs">
+        <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
             <ul class="nav nav-tabs">
                 <li id="tab_details_{$id}" class="cm-js active">
                     <a>{__("general")}</a>

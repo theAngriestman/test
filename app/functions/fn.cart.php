@@ -178,6 +178,7 @@ function fn_get_cart_product_data($hash, &$product, $skip_promotion, &$cart, &$a
             )
         ) {
             fn_delete_cart_product($cart, $hash);
+            $cart['save_cart_content'] = true;
 
             return false;
         }
@@ -193,7 +194,11 @@ function fn_get_cart_product_data($hash, &$product, $skip_promotion, &$cart, &$a
         $amount = !empty($product['amount_total']) ? $product['amount_total'] : $product['amount'];
         $_pdata['price'] = fn_get_product_price($product['product_id'], $amount, $auth);
 
-        $_pdata['base_price'] = (isset($product['stored_price']) && $product['stored_price'] == 'Y') ? $product['price'] : $_pdata['price'];
+        if (isset($product['stored_price']) && YesNo::toBool($product['stored_price'])) {
+            $_pdata['base_price'] = $product['price'];
+        } else {
+            $_pdata['base_price'] = $_pdata['price'];
+        }
 
         /**
          * Executes after getting product data from database.
@@ -280,9 +285,15 @@ function fn_get_cart_product_data($hash, &$product, $skip_promotion, &$cart, &$a
             }
         }
 
-        $product['price'] = ($_pdata['zero_price_action'] == 'A' && isset($product['custom_user_price']))
-            ? $product['custom_user_price']
-            : floatval($_pdata['price']);
+        if (
+            $_pdata['zero_price_action'] === ProductZeroPriceActions::ASK_TO_ENTER_PRICE
+            && $_pdata['price'] <= 0
+            && isset($product['custom_user_price'])
+        ) {
+            $product['price'] = $product['custom_user_price'];
+        } else {
+            $product['price'] = (float) $_pdata['price'];
+        }
 
         $cart['products'][$hash]['price'] = $product['price'];
 
@@ -303,6 +314,20 @@ function fn_get_cart_product_data($hash, &$product, $skip_promotion, &$cart, &$a
         $_pdata['weight'] = fn_apply_options_modifiers($product['product_options'], $_pdata['weight'], 'W', array(), array('product_data' => $product));
         $_pdata['amount'] = $product['amount'];
         $_pdata['price'] = $_pdata['original_price'] = fn_format_price($product['price']);
+
+        if ($_pdata['price'] <= 0 && $_pdata['zero_price_action'] === ProductZeroPriceActions::NOT_ALLOW_ADD_TO_CART) {
+            fn_set_notification(
+                NotificationSeverity::WARNING,
+                __('warning'),
+                __('zero_price_product_was_deleted', [
+                    '[product]' => $_pdata['product']
+                ])
+            );
+            fn_delete_cart_product($cart, $hash);
+            $cart['save_cart_content'] = true;
+
+            return false;
+        }
 
         $_pdata['stored_price'] = $product['stored_price'];
 
@@ -4640,6 +4665,11 @@ function fn_calculate_cart_content(
     // this hash will be used to trigger shipping recalculation
     if (isset($cart['user_data'])) {
         $cart['location_hash'] = fn_checkout_get_location_hash($cart['user_data']);
+    }
+
+    if (!empty($cart['save_cart_content'])) {
+        fn_save_cart_content($cart, $auth['user_id']);
+        unset($cart['save_cart_content']);
     }
 
     /**

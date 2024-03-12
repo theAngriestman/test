@@ -1071,8 +1071,9 @@ function fn_attach_image_pairs($name, $object_type, $object_id = 0, $lang_code =
 {
     // @TODO: get rid of direct $_REQUEST array usage inside this function and fn_filter_uploaded_data too
     $allowed_extensions = ImageHelper::getSupportedFormats($object_type);
-    $icons = fn_filter_uploaded_data($name . '_image_icon', $allowed_extensions);
-    $detailed = fn_filter_uploaded_data($name . '_image_detailed', $allowed_extensions);
+    $allowed_file_size_bytes = fn_get_allowed_image_file_size();
+    $icons = fn_filter_uploaded_data($name . '_image_icon', $allowed_extensions, true, true, $allowed_file_size_bytes);
+    $detailed = fn_filter_uploaded_data($name . '_image_detailed', $allowed_extensions, true, true, $allowed_file_size_bytes);
     $pairs_data = !empty($_REQUEST[$name . '_image_data']) ? $_REQUEST[$name . '_image_data'] : [];
 
     return fn_update_image_pairs($icons, $detailed, $pairs_data, $object_id, $object_type, $object_ids, true, $lang_code);
@@ -1312,4 +1313,65 @@ function fn_clear_image_pairs_request_data($name = '')
         }
         unset($_REQUEST[$item_name]);
     }
+}
+
+/**
+ * Checks if image file size in bytes is allowed.
+ *
+ * @param string $file_size_bytes Image file size in bytes
+ *
+ * @return bool
+ */
+function fn_is_image_file_size_allowed($file_size_bytes)
+{
+    if (fn_get_allowed_image_file_size() < $file_size_bytes) {
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * Gets minimal allowed image file size from both settings and server.
+ *
+ * @param bool $in_megabytes Return result in megabytes
+ * @param bool $rounded      Whether to round value
+ *
+ * @return float
+ */
+function fn_get_allowed_image_file_size($in_megabytes = false, $rounded = false)
+{
+    $settings_image_file_size = (float) Registry::get('settings.Thumbnails.image_file_size');
+    $server_image_file_size = fn_get_allowed_server_image_file_size(true);
+
+    if (!empty($settings_image_file_size)) {
+        $image_file_size = $in_megabytes
+            ? min($settings_image_file_size, $server_image_file_size)
+            : min($settings_image_file_size, $server_image_file_size) * (1024 * 1024);
+    } else {
+        $image_file_size = fn_get_allowed_server_image_file_size($in_megabytes);
+    }
+
+    if ($rounded) {
+        $image_file_size = round($image_file_size, 2, PHP_ROUND_HALF_DOWN);
+    }
+
+    return $image_file_size;
+}
+
+/**
+ * Gets minimal allowed image file size from server.
+ *
+ * @param bool $in_megabytes Return result in megabytes
+ *
+ * @return float
+ */
+function fn_get_allowed_server_image_file_size($in_megabytes = false)
+{
+    $upload_max_filesize_bytes = fn_return_bytes(ini_get('upload_max_filesize'));
+    $post_max_size_bytes = fn_return_bytes(ini_get('post_max_size'));
+
+    return $in_megabytes
+        ? (float) min($upload_max_filesize_bytes, $post_max_size_bytes) / (1024 * 1024)
+        : (float) min($upload_max_filesize_bytes, $post_max_size_bytes);
 }

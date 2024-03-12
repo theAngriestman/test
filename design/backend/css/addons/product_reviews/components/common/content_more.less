@@ -2,35 +2,31 @@
     common/content_more.tpl
 */
 
-.cs-content-more__text--advantages:before,
-.cs-content-more__text--disadvantages:before,
-.cs-content-more__text--comment:before {
-    font-family: FontAwesome;
+.cs-content-more__advantages-icon,
+.cs-content-more__disadvantages-icon,
+.cs-content-more__comment-icon {
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-font-smoothing: antialiased;
-    width: 20px;
-    font-size: 12px;
+    vertical-align: top;
+    margin-right: 4px;
+    background-color: @infoBackground;
     border-radius: 10px;
+}
+
+.cs-content-more__advantages-icon .cs-icon__svg,
+.cs-content-more__disadvantages-icon .cs-icon__svg,
+.cs-content-more__comment-icon .cs-icon__svg {
     vertical-align: top;
 }
 
-.cs-content-more__text--advantages:before {
-    content: var(--cs-product-reviews-advantages);
-    color: @successText;
+.cs-content-more__advantages-icon {
     background-color: @successBackground;
 }
 
-.cs-content-more__text--disadvantages:before {
-    content: var(--cs-product-reviews-disadvantages);
-    color: @errorText;
+.cs-content-more__disadvantages-icon {
     background-color: @errorBackground;
 }
 
-.cs-content-more__text--comment:before {
-    content: var(--cs-product-reviews-info);
-    color: @infoText;
+.cs-content-more__comment-icon {
     background-color: @infoBackground;
 }
 

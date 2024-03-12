@@ -17,7 +17,7 @@ $schema['central']['website']['items']['tags'] = array(
         'class'=>'is-addon'
     ),
     'href' => 'tags.manage',
-    'position' => 100
+    'position' => 450
 );
 
 return $schema;

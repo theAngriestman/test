@@ -121,6 +121,9 @@
                 data-ca-object-picker-allow-clear="{$allow_clear}"
                 data-ca-object-picker-predefined-variants="{$predefined_variant_items|array_reverse|to_json}"
             {/if}
+            {if $attributes}
+                {$attributes|render_tag_attrs nofilter}
+            {/if}
         >
             {foreach $item_ids as $item_id}
                 <option value="{$item_id}" selected="selected"></option>

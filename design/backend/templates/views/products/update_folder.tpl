@@ -5,6 +5,7 @@
 {/if}
 
 {$allow_save=$product_file_folder|fn_allow_save_object:""}
+{$tabs_count = 1}
 
 <form action="{""|fn_url}" method="post" class="form-horizontal form-edit cm-check-changes {if !$allow_save} cm-hide-inputs{/if}" name="folders_form_{$id}" enctype="multipart/form-data">
 <input type="hidden" name="product_id" value="{$product_id}" />
@@ -12,7 +13,7 @@
 <input type="hidden" name="folder_id" value="{$id}" />
 <input type="hidden" name="product_file_folder[product_id]" value="{$product_id}" />
 
-<div class="tabs cm-j-tabs">
+<div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_details_{$id}" class="cm-js active"><a>{__("general")}</a></li>
     </ul>

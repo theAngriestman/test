@@ -8,10 +8,21 @@
 {$order_statuses = $smarty.const.STATUSES_ORDER|fn_get_statuses:$statuses:true:true}
 {$can_change_status = "orders.update_status"|fn_check_view_permissions:"POST"}
 
+{$search_form_dispatch = "orders.manage"}
+{$saved_search = [
+    dispatch => $search_form_dispatch,
+    view_type => "orders"
+]}
+
+{capture name="search_filters"}
+    {include file="views/orders/components/orders_search_form.tpl"
+        search=$search
+        dispatch=$search_form_dispatch
+    }
+{/capture}
+
 {capture name="sidebar"}
     {hook name="orders:manage_sidebar"}
-    {include file="common/saved_search.tpl" dispatch="orders.manage" view_type="orders"}
-    {include file="views/orders/components/orders_search_form.tpl" dispatch="orders.manage"}
     {/hook}
 {/capture}
 
@@ -33,8 +44,13 @@
             <table width="100%" class="table table-middle table--relative table-responsive table--overflow-hidden table-manage-orders">
             <thead data-ca-bulkedit-default-object="true" data-ca-bulkedit-component="defaultObject">
             <tr>
-                <th class="left mobile-hide table__check-items-column">
-                    {include file="common/check_items.tpl" check_statuses=$order_status_descr meta="table__check-items"}
+                <th width="3%" class="left mobile-hide table__check-items-column table__check-items-column--show-checkbox">
+                    {include file="common/check_items.tpl"
+                        show_checkbox=true
+                        check_statuses=$order_status_descr
+                        meta="table__check-items table__check-items--show-checkbox"
+                        class="check-items--show-checkbox"
+                    }
                     <input type="checkbox"
                         class="bulkedit-toggler hide"
                         data-ca-bulkedit-disable="[data-ca-bulkedit-default-object=true]"
@@ -50,7 +66,7 @@
                 <th width="15%">
                     {include file="common/table_col_head.tpl" type="date"}
                 </th>
-                <th width="17%">
+                <th width="28%">
                     {include file="common/table_col_head.tpl" type="customer"}
                 </th>
                 <th width="14%">
@@ -59,7 +75,6 @@
 
                 {hook name="orders:manage_header"}{/hook}
 
-                <th class="mobile-hide">&nbsp;</th>
                 <th width="10%" class="right">
                     {include file="common/table_col_head.tpl" type="total"}
                 </th>
@@ -73,10 +88,24 @@
                 data-ca-longtap-target="input.cm-item"
                 data-ca-id="{$o.order_id}"
             >
-                <td class="left mobile-hide table__check-items-cell">
-                    <input type="checkbox" name="order_ids[]" value="{$o.order_id}" class="cm-item cm-item-status-{$o.status|lower} hide" /></td>
+                <td width="3%" class="left mobile-hide table__check-items-cell table__check-items-cell--show-checkbox">
+                    <input type="checkbox" name="order_ids[]" value="{$o.order_id}" class="cm-item cm-item-status-{$o.status|lower}" /></td>
                 <td width="15%" data-th="{__("id")}">
                     <a href="{"orders.details?order_id=`$o.order_id`"|fn_url}" class="underlined">{__("order")} <bdi>#{$o.order_id}</bdi></a>
+                    {capture name="tools_items"}
+                        {hook name="orders:list_extra_links"}
+                            <li>{btn type="list" href="order_management.edit?order_id=`$o.order_id`" text={__("edit")}}</li>
+                            <li>{btn type="list" href="order_management.edit?order_id=`$o.order_id`&copy=1" text={__("copy")}}</li>
+                            {$current_redirect_url=$config.current_url|escape:url}
+                        {/hook}
+                    {/capture}
+                    {dropdown content=$smarty.capture.tools_items
+                        icon="icon-chevron-down muted manage-tools-list__icon"
+                        no_caret=true
+                        class="manage-tools-list hidden-tools"
+                        class_toggle="btn-mini"
+                        placement="right"
+                    }
                     {if $order_statuses[$o.status].params.appearance_type == "I" && $o.invoice_id}
                         <p class="muted">{__("invoice")} #{$o.invoice_id}</p>
                     {elseif $order_statuses[$o.status].params.appearance_type == "C" && $o.credit_memo_id}
@@ -99,6 +128,7 @@
                             extra="&return_url=`$extra_status`"
                             statuses=$order_statuses
                             btn_meta="btn btn-info o-status-`$o.status` order-status"|lower
+                            type="o"
                             text_wrap=true
                     }
                     {if $o.issuer_id}
@@ -110,7 +140,7 @@
                     {/if}
                 </td>
                 <td width="15%" class="nowrap" data-th="{__("date")}">{$o.timestamp|date_format:"`$settings.Appearance.date_format`, `$settings.Appearance.time_format`"}</td>
-                <td width="17%" data-th="{__("customer")}">
+                <td width="28%" data-th="{__("customer")}">
                     {if $o.email}<a href="mailto:{$o.email|escape:url}">@</a> {/if}
                     {if $o.company}<p class="muted">{$o.company}</p>{/if}
                     {if $o.user_type !== "UserTypes::CUSTOMER"|enum
@@ -127,20 +157,6 @@
 
                 {hook name="orders:manage_data"}{/hook}
 
-                <td class="center" data-th="{__("tools")}">
-                    {capture name="tools_items"}
-                        <li>{btn type="list" href="orders.details?order_id=`$o.order_id`" text={__("view")}}</li>
-                        {hook name="orders:list_extra_links"}
-                            <li>{btn type="list" href="order_management.edit?order_id=`$o.order_id`" text={__("edit")}}</li>
-                            <li>{btn type="list" href="order_management.edit?order_id=`$o.order_id`&copy=1" text={__("copy")}}</li>
-                            {$current_redirect_url=$config.current_url|escape:url}
-                            <li>{btn type="list" href="orders.delete?order_id=`$o.order_id`&redirect_url=`$current_redirect_url`" class="cm-confirm" text={__("delete")} method="POST"}</li>
-                        {/hook}
-                    {/capture}
-                    <div class="hidden-tools">
-                        {dropdown content=$smarty.capture.tools_items}
-                    </div>
-                </td>
                 <td width="10%" class="right" data-th="{__("total")}">
                     {include file="common/price.tpl" value=$o.total}
                 </td>
@@ -204,7 +220,14 @@
 
 {capture name="adv_buttons"}
     {hook name="orders:manage_tools"}
-        {include file="common/tools.tpl" tool_href="order_management.new" prefix="bottom" hide_tools="true" title=__("add_order") icon="icon-plus"}
+        {include file="common/tools.tpl"
+            tool_href="order_management.new"
+            prefix="bottom"
+            hide_tools="true"
+            title=__("add_order")
+            icon="icon-plus"
+            tool_override_meta="btn btn-primary"
+        }
     {/hook}
 {/capture}
 
@@ -213,12 +236,46 @@
 
 {capture name="buttons"}
     {capture name="tools_list"}
-        <li class="bulkedit-action--legacy hide">{btn type="list" text=__("view_purchased_products") dispatch="dispatch[orders.products_range]" form="orders_list_form"}</li>
-        <li class="bulkedit-action--legacy hide divider"></li>
-        <li class="bulkedit-action--legacy hide mobile-hide">{btn type="list" text=__("export_selected") dispatch="dispatch[orders.export_range]" form="orders_list_form"}</li>
-        <li class="bulkedit-action--legacy hide mobile-hide">{btn type="delete_selected" dispatch="dispatch[orders.m_delete]" form="orders_list_form"}</li>
+        {$buttons = []}
         {hook name="orders:list_tools"}
+
+        {$has_permission_an_import = $has_permission_an_import|default:fn_check_permissions("exim", "import", "admin", "POST")}
+        {if $has_permission_an_import}
+            {$buttons.import.href = "exim.import&section=orders"}
+        {/if}
+        {$buttons.export.href = "exim.export&section=orders"}
+
+        {* For search.results page *}
+        {* FIXME *}
+        {$is_search_results = ($smarty.request.result_ids === "content_manage_orders,tools_manage_orders_buttons")}
+        {if $is_search_results}
+            {$buttons_legacy = [
+                view_purchased_products => [
+                    type => "list",
+                    dispatch => "dispatch[orders.products_range]",
+                    form => "orders_list_form" ,
+                    wrapper_class => "bulkedit-action--legacy hide"
+                ],
+                export_selected => [
+                    type => "list",
+                    dispatch => "dispatch[orders.export_range]",
+                    form => "orders_list_form" ,
+                    wrapper_class => "bulkedit-action--legacy hide mobile-hide"
+                ],
+                delete_selected => [
+                    type => "delete_selected",
+                    dispatch => "dispatch[orders.m_delete]",
+                    form => "orders_list_form" ,
+                    wrapper_class => "bulkedit-action--legacy hide mobile-hide"
+                ]
+            ]}
+        {else}
+            {$buttons_legacy = []}
+        {/if}
         {/hook}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons|array_merge:$buttons_legacy}
     {/capture}
     {dropdown content=$smarty.capture.tools_list class="bulkedit-dropdown--legacy hide"}
 {/capture}
@@ -228,6 +285,8 @@
     sidebar=$smarty.capture.sidebar
     content=$smarty.capture.mainbox
     buttons=$smarty.capture.buttons
+    saved_search=$saved_search
+    search_filters=$smarty.capture.search_filters
     adv_buttons=$smarty.capture.adv_buttons
     content_id="manage_orders"
     select_storefront=true

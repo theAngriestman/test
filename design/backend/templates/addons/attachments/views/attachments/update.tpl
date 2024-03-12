@@ -3,6 +3,7 @@
 {else}
     {assign var="id" value="0"}
 {/if}
+{$tabs_count = 1}
 
 <form action="{""|fn_url}" method="post" class="form-horizontal form-edit  {$hide_inputs}" name="attachments_form_{$id}" enctype="multipart/form-data">
 <input type="hidden" name="fake" value="1" />
@@ -12,7 +13,7 @@
 <input type="hidden" name="attachment_id" value="{$id}" />
 <input type="hidden" name="redirect_url" value="{$config.current_url}" />
 
-<div class="tabs cm-j-tabs clear">
+<div class="tabs cm-j-tabs clear tabs--enable-fill tabs--count-{$tabs_count}">
     <ul class="nav nav-tabs">
         <li id="tab_details_{$id}" class="cm-js active"><a>{__("general")}</a></li>
     </ul>

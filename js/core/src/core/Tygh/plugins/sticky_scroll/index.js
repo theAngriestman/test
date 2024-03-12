@@ -17,7 +17,6 @@ export const methods = {
 
         // browser doesnt support
         if (notSupport) {
-            $('body').toggleClass('sticky-no-support');
             return; 
         }
 

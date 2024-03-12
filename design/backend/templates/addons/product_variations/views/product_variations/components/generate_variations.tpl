@@ -100,38 +100,42 @@
 
             <div class="cm-variations-generator__combinations" id="generate_variations__combinations_container">
                 {if $combinations}
-                    <p>{__("product_variations.generator.table.title")}</p>
-                    <div class="table-responsive-wrapper">
-                        <table width="100%" class="table table-middle table--relative table-responsive">
-                            <thead>
-                            <tr>
-                                <th width="2%">{include file="common/check_items.tpl" style="checkbox" checked=$is_all_combinations_active}</th>
-                                <th width="2%">&nbsp;</th>
-                                <th width="20%" class="nowrap"><span>{__("features")}</span></th>
-                                <th width="25%" class="nowrap"><span>{__("name")}</span></th>
-                                <th width="16%" class="nowrap">{__("sku")}</th>
-                                <th width="13%" class="nowrap">{__("price")} ({$currencies.$primary_currency.symbol nofilter})</th>
-                                <th width="9%" class="nowrap">{__("quantity")}</th>
-                            </tr>
-                            </thead>
-                            {$combinations_count = $combinations|count}
-                            {foreach $combinations as $combination}
-                                {if !$combination.parent_combination_id}
-                                    {if !$combination@first}
-                                        </tbody>
-                                    {/if}
+                    {if $all_combinations_count > $combinations_count_allowed_for_display}
+                        <p>{__("product_variations.too_many_combinations_display", ["[combinations_count]" => $all_combinations_count])}</p>
+                    {else}
+                        <p>{__("product_variations.generator.table.title")}</p>
+                        <div class="table-responsive-wrapper">
+                            <table width="100%" class="table table-middle table--relative table-responsive">
+                                <thead>
+                                <tr>
+                                    <th width="2%">{include file="common/check_items.tpl" style="checkbox" checked=$is_all_combinations_active}</th>
+                                    <th width="2%">&nbsp;</th>
+                                    <th width="20%" class="nowrap"><span>{__("features")}</span></th>
+                                    <th width="25%" class="nowrap"><span>{__("name")}</span></th>
+                                    <th width="16%" class="nowrap">{__("sku")}</th>
+                                    <th width="13%" class="nowrap">{__("price")} ({$currencies.$primary_currency.symbol nofilter})</th>
+                                    <th width="9%" class="nowrap">{__("quantity")}</th>
+                                </tr>
+                                </thead>
+                                {$combinations_count = $combinations|count}
+                                {foreach $combinations as $combination}
+                                    {if !$combination.parent_combination_id}
+                                        {if !$combination@first}
+                                            </tbody>
+                                        {/if}
 
-                                    <tbody class="combinations-table__parent-combination">
+                                        <tbody class="combinations-table__parent-combination">
+                                            {include file="addons/product_variations/views/product_variations/components/combination_item.tpl" combinations_count=$combinations_count}
+                                        </tbody>
+                                        <tbody data-ca-switch-id="product_variations_group_{$combination.combination_id}">
+                                    {else}
                                         {include file="addons/product_variations/views/product_variations/components/combination_item.tpl" combinations_count=$combinations_count}
-                                    </tbody>
-                                    <tbody data-ca-switch-id="product_variations_group_{$combination.combination_id}">
-                                {else}
-                                    {include file="addons/product_variations/views/product_variations/components/combination_item.tpl" combinations_count=$combinations_count}
-                                {/if}
-                            {/foreach}
-                            </tbody>
-                        </table>
-                    </div>
+                                    {/if}
+                                {/foreach}
+                                </tbody>
+                            </table>
+                        </div>
+                    {/if}
                 {/if}
             <!--generate_variations__combinations_container--></div>
 

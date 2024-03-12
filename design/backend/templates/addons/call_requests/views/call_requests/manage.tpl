@@ -137,14 +137,16 @@
                                     >
                                         {__("products_in_cart")}
                                     </button>
-                                    {include_ext file="common/icon.tpl"
-                                        class="icon-caret-down cm-combination"
-                                        id="on_call_req_`$request.request_id`"
-                                    }
-                                    {include_ext file="common/icon.tpl"
-                                        class="icon-caret-up cm-combination hidden"
-                                        id="off_call_req_`$request.request_id`"
-                                    }
+                                    <span class="flex-inline top">
+                                        {include_ext file="common/icon.tpl"
+                                            class="icon-caret-down cm-combination cs-icon--small"
+                                            id="on_call_req_`$request.request_id`"
+                                        }
+                                        {include_ext file="common/icon.tpl"
+                                            class="icon-caret-up cm-combination hidden cs-icon--small"
+                                            id="off_call_req_`$request.request_id`"
+                                        }
+                                    </span>
                                 </div>
                             {/if}
                         </td>

@@ -10,12 +10,11 @@
 {include file="common/pagination.tpl" save_current_page=true save_current_url=true div_id=$smarty.request.content_id}
 
 {$c_url = $config.current_url|fn_query_remove:"sort_by":"sort_order"}
-{$rev = $smarty.request.content_id|default:"pagination_contents"}
+{$rev = $smarty.request.content_id|default:"pagination_contents,content_top_navigation"}
 {$has_available_products = empty($runtime.company_id) || in_array($runtime.company_id, array_column($products, 'company_id'))}
 {$image_width = $settings.Thumbnails.product_admin_mini_icon_width}
 {$image_height = $settings.Thumbnails.product_admin_mini_icon_height}
 {$show_list_price_column = $show_list_price_column|default:true}
-{$product_add_button_as_dropdown = $product_add_button_as_dropdown|default:true}
 
 {if $products}
     {capture name="products_table"}
@@ -24,11 +23,13 @@
             <thead data-ca-bulkedit-default-object="true" data-target=".products-table" data-ca-bulkedit-component="defaultObject">
             <tr>
                 {hook name="products:manage_head"}
-                <th class="left mobile-hide table__check-items-column{if !$has_available_products} table__check-items-column--disabled{/if}">
+                <th width="3%" class="left mobile-hide table__check-items-column table__check-items-column--show-checkbox {if !$has_available_products} table__check-items-column--disabled{/if}">
                     {include file="common/check_items.tpl"
+                        show_checkbox=true
                         check_statuses=''|fn_get_default_status_filters:true
                         is_check_disabled=!$has_select_permission
-                        meta="table__check-items"
+                        meta="table__check-items table__check-items--show-checkbox"
+                        class="check-items--show-checkbox"
                     }
 
                     <input type="checkbox"
@@ -37,7 +38,7 @@
                         data-ca-bulkedit-enable="[data-ca-bulkedit-expanded-object=true]"
                     />
                 </th>
-                <th class="table__column-without-title"></th>
+                <th width="{$image_width + 18}" class="table__column-without-title"></th>
                 {if $search.cid && $search.subcats !== "Y"}
                 <th width="7%" class="nowrap">
                     {include file="common/table_col_head.tpl"
@@ -46,15 +47,10 @@
                     }
                 </th>
                 {/if}
-                <th>
+                <th width="{if !$runtime.simple_ultimate && $auth.user_type !== "UserTypes::VENDOR"|enum}34%{else}48%{/if}">
                     <div class="th-text-overflow th-text-overflow-wrapper">
                         {include file="common/table_col_head.tpl" type="product" text=__("name")}
-                        <a class="{$ajax_class} th-text-overflow {if $search.sort_by === "code"}th-text-overflow--{$search.sort_order_rev}{/if}"
-                            href="{"`$c_url`&sort_by=code&sort_order=`$search.sort_order_rev`"|fn_url}"
-                            data-ca-target-id={$rev}
-                        >
-                            {__("sku")}
-                        </a>
+                        {include file="common/table_col_head.tpl" type="code" text=__("sku")}
                     </div>
                 </th>
                 <th width="{if $show_update_for_all}16%{else}13%{/if}">
@@ -92,8 +88,15 @@
                         }
                     </th>
                     {/hook}
+                {if !$runtime.simple_ultimate && $auth.user_type !== "UserTypes::VENDOR"|enum}
+                <th width="14%">
+                    {include file="common/table_col_head.tpl"
+                        type="owner_company"
+                        text=__("owner_company")
+                    }
+                </th>
+                {/if}
                 {/hook}
-                <th width="9%" class="mobile-hide">&nbsp;</th>
                 <th width="9%" class="right">
                     {include file="common/table_col_head.tpl" type="status"}
                 </th>
@@ -130,9 +133,9 @@
                     {if !$is_use_context_menu}data-ca-bulkedit-disabled-notice="{__("products_are_not_selectable_for_context_menu")}"{/if}
                 >
                     {hook name="products:manage_body"}
-                    <td class="left mobile-hide table__check-items-cell">
-                    <input type="checkbox" name="product_ids[]" value="{$product.product_id}" class="cm-item cm-item-status-{$product.status|lower} hide" /></td>
-                    <td width="{$image_width + 18px}" class="products-list__image">
+                    <td width="3%" class="left mobile-hide table__check-items-cell table__check-items-cell--show-checkbox">
+                    <input type="checkbox" name="product_ids[]" value="{$product.product_id}" class="cm-item cm-item-status-{$product.status|lower}" /></td>
+                    <td width="{$image_width + 18}" class="products-list__image">
                         {include
                                 file="common/image.tpl"
                                 image=$product.main_pair.icon|default:$product.main_pair.detailed
@@ -148,17 +151,26 @@
                     <td width="7%" class="{if $no_hide_input_if_shared_product}{$no_hide_input_if_shared_product}{/if}">
                         <input type="text" name="products_data[{$product.product_id}][position]" size="3" value="{$product.position}" class="input-micro" /></td>
                     {/if}
-                    <td class="product-name-column wrap-word" data-th="{__("name")}">
+                    <td width="34%" class="product-name-column wrap-word" data-th="{__("name")}">
                         <input type="hidden" name="products_data[{$product.product_id}][product]" value="{$product.product}" {if $no_hide_input_if_shared_product} class="{$no_hide_input_if_shared_product}"{/if} />
                         <a class="row-status" href="{"products.update?product_id=`$product.product_id`"|fn_url}">{$product.product nofilter}</a>
-                        <div class="product-list__labels">
+                        {capture name="tools_list"}
+                            {hook name="products:list_extra_links"}{/hook}
+                        {/capture}
+                        {dropdown content=$smarty.capture.tools_list
+                            icon="icon-chevron-down muted manage-tools-list__icon"
+                            no_caret=true
+                            class="manage-tools-list hidden-tools"
+                            class_toggle="btn-mini"
+                            placement="right"
+                        }
+                        <div class="product-list__labels muted">
                             {hook name="products:product_additional_info"}
                                 <div class="product-code">
                                     <span class="product-code__label">{$product.product_code}</span>
                                 </div>
                             {/hook}
                         </div>
-                        {include file="views/companies/components/company_name.tpl" object=$product}
                     </td>
                     <td width="{if $show_update_for_all}16%{else}13%{/if}" class="{if $no_hide_input_if_shared_product}{$no_hide_input_if_shared_product}{/if} products-list__list-price" data-th="{__("price")}">
                         {hook name="products:list_price"}
@@ -188,27 +200,12 @@
                             <input type="text" name="products_data[{$product.product_id}][amount]" size="6" value="{$product.inventory_amount|default:$product.amount}" class="input-mini input-hidden cm-value-decimal" />
                         {/hook}
                     </td>
-                    {/hook}
-                    <td width="9%" class="nowrap mobile-hide">
-                        <div class="hidden-tools">
-                            {capture name="tools_list"}
-                                {hook name="products:list_extra_links"}
-                                    <li>{btn type="list" text=__("edit") href="products.update?product_id=`$product.product_id`"}</li>
-                                    {if !$hide_inputs_if_shared_product}
-                                        <li>{btn
-                                                type="list"
-                                                text=__("delete")
-                                                class="cm-confirm"
-                                                href="products.delete?product_id=`$product.product_id`{if $delete_redirect_url}&redirect_url={$delete_redirect_url}{/if}"
-                                                method="POST"
-                                            }
-                                        </li>
-                                    {/if}
-                                {/hook}
-                            {/capture}
-                            {dropdown content=$smarty.capture.tools_list}
-                        </div>
+                    {if !$runtime.simple_ultimate && $auth.user_type !== "UserTypes::VENDOR"|enum}
+                    <td width="14%" class="wrap-word company-name-column" data-th="{__("owner_company")}">
+                        {include file="views/companies/components/company_name.tpl" object=$product type="basic"}
                     </td>
+                    {/if}
+                    {/hook}
                     <td width="9%" class="right nowrap" data-th="{__("status")}">
                         {include file="views/products/components/status_on_manage.tpl"
                             id=$product.product_id
@@ -255,19 +252,53 @@
 
 {capture name="buttons"}
     {capture name="tools_list"}
+        {$buttons = []}
         {hook name="products:action_buttons"}
-        <li class="bulkedit-action--legacy hide">{btn type="list" text=__("clone_selected") dispatch="dispatch[products.m_clone]" form="manage_products_form" }</li>
-        <li class="bulkedit-action--legacy hide">{btn type="list" text=__("export_selected") dispatch="dispatch[products.export_range]" form="manage_products_form"}</li>
-        <li class="bulkedit-action--legacy hide">{btn type="delete_selected" dispatch="dispatch[products.m_delete]" form="manage_products_form"}</li>
-        <li class="divider bulkedit-action--legacy hide"></li>
-        <li>{btn type="list" text=__("global_update") href="products.global_update"}</li>
-        <li>{btn type="list" text=__("bulk_product_addition") href="products.m_add"}</li>
-        <li>{btn type="list" text=__("product_subscriptions") href="products.p_subscr"}</li>
-        {if $products}
-            <li>{btn type="list" text=__("export_found_products") href="products.export_found"}</li>
+        {$has_permission_an_import = $has_permission_an_import|default:fn_check_permissions("exim", "import", "admin", "POST")}
+        {if $has_permission_an_import}
+            {$buttons.import.href = "exim.import&section=products"}
         {/if}
-
+        {$buttons.export.href = "exim.export&section=products"}
+        {$buttons.global_update.href = "products.global_update"}
+        {$buttons.bulk_product_addition.href = "products.m_add"}
+        {$buttons.product_subscriptions = [
+            href => "products.p_subscr",
+            text => __("view_product_subscriptions")
+        ]}
+        {if $products}
+            {$buttons.export_found_products.href = "products.export_found"}
+        {/if}
+        {* For search.results page *}
+        {* FIXME *}
+        {$is_search_results = ($smarty.request.result_ids === "content_manage_products,tools_manage_products_buttons")}
+        {if $is_search_results}
+            {$buttons_legacy = [
+                clone_selected => [
+                    type => "list",
+                    dispatch => "dispatch[products.m_clone]",
+                    form => "manage_products_form" ,
+                    wrapper_class => "bulkedit-action--legacy hide"
+                ],
+                export_selected => [
+                    type => "list",
+                    dispatch => "dispatch[products.export_range]",
+                    form => "manage_products_form" ,
+                    wrapper_class => "bulkedit-action--legacy hide"
+                ],
+                delete_selected => [
+                    type => "delete_selected",
+                    dispatch => "dispatch[products.m_delete]",
+                    form => "manage_products_form" ,
+                    wrapper_class => "bulkedit-action--legacy hide"
+                ]
+            ]}
+        {else}
+            {$buttons_legacy = []}
+        {/if}
         {/hook}
+
+        {* Export $navigation.dynamic.actions *}
+        {$navigation.dynamic.actions = $navigation.dynamic.actions|array_merge:$buttons|array_merge:$buttons_legacy}
     {/capture}
     {dropdown content=$smarty.capture.tools_list}
     {if $products}
@@ -277,31 +308,16 @@
 
 {capture name="adv_buttons"}
     {hook name="products:manage_tools"}
-        {$import_product_href = $import_product_href|default:"exim.import&section=products"}
-        {$has_permission_an_import = $has_permission_an_import|default:fn_check_permissions("exim", "import", "admin", "POST")}
         {$allow_create_product = $allow_create_product|default:true}
-
-        {capture name="tools_list_items"}
-            {hook name="products:tools_list_items"}
-                {if $has_permission_an_import}
-                    <li>{btn type="list" text=__("import_products") href="{$import_product_href}"}</li>
-                {/if}
-            {/hook}
-        {/capture}
-
-        {if $product_add_button_as_dropdown && $smarty.capture.tools_list_items|trim}
-            {capture name="dropdown_list"}
-                {hook name="products:tools_list_before_items"}{/hook}
-                {if $allow_create_product}
-                    <li>{btn type="list" text=__("create_new_product") href="products.add"}</li>
-                {/if}
-                {$smarty.capture.tools_list_items nofilter}
-            {/capture}
-            {dropdown content=$smarty.capture.dropdown_list icon="icon-plus" no_caret=true placement="right"}
-        {else}
-            {hook name="products:product_add_button"}
-                {include file="common/tools.tpl" tool_href="products.add" prefix="top" title=__("add_product") hide_tools=true icon="icon-plus"}
-            {/hook}
+        {if $allow_create_product}
+            {include file="common/tools.tpl"
+                tool_href="products.add"
+                prefix="top"
+                title=__("add_product")
+                hide_tools=true
+                icon="icon-plus"
+                tool_override_meta="btn btn-primary"
+            }
         {/if}
     {/hook}
 {/capture}
@@ -316,10 +332,36 @@
 
 {/capture}
 
+{$search_form_dispatch = $dispatch|default:"products.manage"}
+{$saved_search = [
+    dispatch => $search_form_dispatch,
+    view_type => "products"
+]}
+
+{capture name="search_filters"}
+    {include file="views/products/components/products_search_form.tpl"
+        search=$search
+        dispatch=$search_form_dispatch
+        form_id="`$product_search_form_prefix`search_form"
+        type="in_content"
+        show_main_search_field=false
+        show_search_button=false
+        autofocus=false
+    }
+{/capture}
+
+{capture name="context_search"}
+    {include file="components/search_filters/context_search.tpl"
+        name="q"
+        value=$search.q
+        form_id="`$product_search_form_prefix`search_form"
+        placeholder=__("search_products")
+        dispatch=$search_form_dispatch
+    }
+{/capture}
+
 {capture name="sidebar"}
     {hook name="products:manage_sidebar"}
-    {include file="common/saved_search.tpl" dispatch=$dispatch|default: "products.manage" view_type="products"}
-    {include file="views/products/components/products_search_form.tpl" dispatch=$dispatch|default: "products.manage"}
     {/hook}
 {/capture}
 
@@ -337,5 +379,8 @@
     select_languages=true
     buttons=$smarty.capture.buttons
     sidebar=$smarty.capture.sidebar
+    saved_search=$saved_search
+    search_filters=$smarty.capture.search_filters
+    context_search=$smarty.capture.context_search
     content_id="manage_products"
 }

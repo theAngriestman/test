@@ -384,8 +384,15 @@ class Location
                 db_query('DELETE FROM ?:bm_locations WHERE location_id = ?i', $location_id);
                 db_query('DELETE FROM ?:bm_locations_descriptions WHERE location_id = ?i', $location_id);
 
-                Container::removeMissing();
-                Grid::removeMissing();
+                // Remove containers, grids, snappings
+                $container_ids = db_get_fields('SELECT container_id FROM ?:bm_containers WHERE location_id = ?i', $location_id);
+                db_query('DELETE FROM ?:bm_containers WHERE container_id IN (?n)', $container_ids);
+
+                $grid_ids = db_get_fields('SELECT grid_id FROM ?:bm_grids WHERE container_id IN (?n)', $container_ids);
+                db_query('DELETE FROM ?:bm_grids WHERE grid_id IN (?n)', $grid_ids);
+
+                $snapping_ids = db_get_fields('SELECT snapping_id FROM ?:bm_snapping WHERE grid_id IN (?n)', $grid_ids);
+                db_query('DELETE FROM ?:bm_snapping WHERE snapping_id IN (?n)', $snapping_ids);
 
                 return true;
             }

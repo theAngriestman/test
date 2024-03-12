@@ -4,6 +4,7 @@
 {$thumbnail_height=$thumbnail_height|default:250}
 {$post_max_size = $server_env->getIniVar("post_max_size")|fn_return_bytes/(1024*1024)}
 {$upload_max_filesize = $server_env->getIniVar("upload_max_filesize")|fn_return_bytes/(1024*1024)}
+{$settings_image_filesize = $settings.Thumbnails.image_file_size|default:$upload_max_filesize}
 {$existing_files=[]}
 
 {foreach from=$existing_pairs item=pair}
@@ -28,7 +29,7 @@
     data-ca-max-files-count="100"
     data-ca-new-files-param-name="{$file_name}"
     data-ca-default-image-pair-type="A"
-    data-ca-max-file-size="{[$upload_max_filesize, $post_max_size]|min}"
+    data-ca-max-file-size="{[$upload_max_filesize, $post_max_size, $settings_image_filesize]|min}"
 
     data-ca-image-pair-types="{$image_pair_types|default:[]|array_filter|json_encode}"
     data-ca-allow-sorting="{$allow_update_files}"

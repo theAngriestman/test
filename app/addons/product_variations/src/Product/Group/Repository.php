@@ -497,6 +497,24 @@ class Repository
     }
 
     /**
+     * @param int[] $group_ids Group identifiers
+     *
+     * @return array<string, string>
+     */
+    public function findAndMapGroupProductIdsByGroupIds(array $group_ids)
+    {
+        $group_ids = array_filter($group_ids);
+
+        if (empty($group_ids)) {
+            return [];
+        }
+
+        $query = $this->createQuery(self::TABLE_GROUP_PRODUCTS, ['group_id' => $group_ids], ['product_id', 'group_id']);
+
+        return $query->column(['product_id', 'group_id']);
+    }
+
+    /**
      * @param array $feature_ids
      *
      * @return array

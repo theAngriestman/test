@@ -591,3 +591,26 @@ function fn_validate_qty_settings($prefix)
 
     Registry::del('qty_settings');
 }
+
+/**
+ * Checks whether image file size setting value is greater than server 'upload_max_filesize' value.
+ *
+ * @param int|float $new_value New image file size value
+ *
+ * @return void
+ */
+function fn_settings_actions_thumbnails_image_file_size(&$new_value)
+{
+    $server_max_filesize = fn_get_allowed_server_image_file_size(true);
+
+    if ($new_value <= $server_max_filesize) {
+        return;
+    }
+
+    $new_value = $server_max_filesize;
+    fn_set_notification(
+        NotificationSeverity::WARNING,
+        __('warning'),
+        __('image_file_size_set_to_server_setting', ['[file_size]' => $new_value])
+    );
+}

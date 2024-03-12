@@ -227,7 +227,9 @@ function fn_get_user_email($user_id, array $user_info = null)
  */
 function fn_get_api_user($email, $api_key, $token = '')
 {
-    list($email, $api_key, $token) = array_map('trim', [$email, $api_key, $token]);
+    $email = !empty($email) ? trim($email) : '';
+    $api_key = !empty($api_key) ? trim($api_key) : '';
+    $token = !empty($token) ? trim($token) : '';
     $user_data = [];
 
     if ($token) {

@@ -170,8 +170,8 @@ function fn_blocks_update_contact_information_check_required_fields(&$block_data
     if (isset($required_field_ids['email'])) {
         $field_ids = fn_explode(',', $block_data['content']['items']['item_ids']);
 
-        $is_email_exists = in_array($required_field_ids['email'], $field_ids, true);
-        $is_phone_exists = isset($required_field_ids['phone']) && in_array($required_field_ids['phone'], $field_ids, true);
+        $is_email_exists = in_array((string) $required_field_ids['email'], $field_ids, true);
+        $is_phone_exists = isset($required_field_ids['phone']) && in_array((string) $required_field_ids['phone'], $field_ids, true);
 
         $is_email_required = isset($block_data['content']['items']['required'][sprintf('field_id_%s', $required_field_ids['email'])])
             && $block_data['content']['items']['required'][sprintf('field_id_%s', $required_field_ids['email'])] == YesNo::YES;

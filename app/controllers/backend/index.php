@@ -12,16 +12,17 @@
 * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
 ****************************************************************************/
 
-use Tygh\Enum\NotificationSeverity;
+use Tygh\Dashboard\DashboardBlocks;
 use Tygh\Enum\CustomBlockSections;
+use Tygh\Enum\NotificationSeverity;
 use Tygh\Enum\ObjectStatuses;
 use Tygh\Enum\OrderStatuses;
 use Tygh\Enum\ProductTracking;
 use Tygh\Enum\SiteArea;
+use Tygh\Enum\UserTypes;
 use Tygh\Helpdesk;
 use Tygh\Registry;
 use Tygh\Tools\DateTimeHelper;
-use Tygh\Enum\UserTypes;
 use Tygh\VendorPayouts;
 
 if (!defined('BOOTSTRAP')) { die('Access denied'); }
@@ -170,16 +171,20 @@ if ($mode == 'index') {
         $orders_stat = fn_dashboard_get_orders_statistics($timestamp_from, $timestamp_to, $storefront_id);
         $general_stats = fn_dashboard_get_general_stats($runtime_company_id, $company_ids);
 
-        Tygh::$app['view']->assign([
-            'graphs'            => $graphs,
-            'is_day'            => $is_day,
-            'order_by_statuses' => $order_by_statuses,
-            'order_statuses'    => $order_statuses,
-            'logs'              => $logs,
-            'orders_stat'       => $orders_stat,
-            'general_stats'     => $general_stats,
-            'orders'            => $orders,
-        ]);
+        $dashboard_data = [
+            'graphs'             => $graphs,
+            'is_day'             => $is_day,
+            'storefront_id'      => $storefront_id,
+            'time_from'          => $timestamp_from,
+            'time_to'            => $timestamp_to,
+            'order_by_statuses'  => $order_by_statuses,
+            'order_statuses'     => $order_statuses,
+            'logs'               => $logs,
+            'orders_stat'        => $orders_stat,
+            'general_stats'      => $general_stats,
+            'orders'             => $orders,
+            'runtime_company_id' => $runtime_company_id
+        ];
 
         // To-do list
         $todo_items = fn_get_todo_list_items($auth);
@@ -268,13 +273,13 @@ if ($mode == 'index') {
             $dashboard_vendors_activity = null;
             if (!$runtime_company_id && fn_check_view_permissions('companies.manage', 'GET')) {
                 $dashboard_vendors_activity = fn_dashboard_get_vendor_activities($timestamp_from, $timestamp_to, $company_ids);
-                Tygh::$app['view']->assign('dashboard_vendors_activity', $dashboard_vendors_activity);
+                $dashboard_data['dashboard_vendors_activity'] = $dashboard_vendors_activity;
             }
 
             $vendor_payouts = VendorPayouts::instance();
             if ($vendor_payouts->getVendor()) {
                 [$balance,] = $vendor_payouts->getBalance();
-                Tygh::$app['view']->assign('current_balance', $balance);
+                $dashboard_data['current_balance'] = $balance;
             }
 
             $period_income = null;
@@ -285,10 +290,12 @@ if ($mode == 'index') {
                 ]);
             }
 
-            Tygh::$app['view']->assign([
-                'period_income' => $period_income,
-            ]);
+            $dashboard_data['period_income'] = $period_income;
         }
+
+        $dashboard_blocks = new DashboardBlocks($dashboard_data);
+        Tygh::$app['view']->assign('dashboard_blocks', $dashboard_blocks->getDasboardBlocks());
+        Tygh::$app['view']->assign($dashboard_data);
     }
 
     if (!empty(Tygh::$app['session']['stats'])) {

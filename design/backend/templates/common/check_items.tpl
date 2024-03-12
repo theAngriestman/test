@@ -1,5 +1,6 @@
 {$check_data = ""}
 {$container = ($elms_container) ? "data-ca-container={$elms_container}" : ""}
+{$show_checkbox = $show_checkbox|default:false}
 
 {if $check_target}
     {$check_data = "data-ca-target=\"`$check_target`\""}
@@ -38,8 +39,8 @@
 {if ($check_statuses || $is_check_all_shown) && !$is_check_disabled} 
     {if !$wrap_select_actions_into_dropdown}
     <div class="btn-group btn-checkbox cm-check-items {$meta}">
-        <a href="" data-toggle="dropdown" class="btn dropdown-toggle">
-            <span class="caret"></span>
+        <a href="" data-toggle="dropdown" class="btn dropdown-toggle {if $show_checkbox}dropdown-toggle--show-checkbox{/if}">
+            <span class="caret {if $show_checkbox}caret--show-checkbox{/if}"></span>
         </a>
         {$smarty.capture.check_items_checkbox nofilter}
     {/if}

@@ -1,6 +1,5 @@
 {hook name="addons:manage_sidebar"}
     {include file="views/addons/components/manage/addon_name_search.tpl"}
-    {include file="common/saved_search.tpl" dispatch="addons.manage" view_type="addons" allow_new_search=false}
     {if $category_tree}
         <div class="sidebar-row">
             <h6>{__("categories")}</h6>

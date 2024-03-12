@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: nl\n"
-"X-Crowdin-File: /release-4.17.2/core.po\n"
-"X-Crowdin-File-ID: 8104\n"
-"PO-Revision-Date: 2023-11-23 09:55\n"
+"X-Crowdin-File: /release-4.18.1/core.po\n"
+"X-Crowdin-File-ID: 8378\n"
+"PO-Revision-Date: 2024-02-02 11:16\n"
 
 msgctxt "LanguageName"
 msgid "Localized language name"
@@ -599,6 +599,22 @@ msgstr "Geavanceerd zoeken"
 msgctxt "Languages::advanced_search_options"
 msgid "Advanced search options"
 msgstr "Geavanceerde zoekopties"
+
+msgctxt "Languages::search_add_filter"
+msgid "Add filter"
+msgstr ""
+
+msgctxt "Languages::search_range_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::search_range_to"
+msgid "To"
+msgstr ""
+
+msgctxt "Languages::dynamic_navigation_more"
+msgid "More"
+msgstr ""
 
 msgctxt "Languages::after_full_payment"
 msgid "After full payment"
@@ -1860,6 +1876,10 @@ msgctxt "Languages::cdn_settings"
 msgid "CDN settings"
 msgstr "CDN instellingen"
 
+msgctxt "Languages::edit_cdn_settings"
+msgid "Edit CDN settings"
+msgstr ""
+
 msgctxt "Languages::central"
 msgid "Central"
 msgstr "Centraal"
@@ -2040,6 +2060,10 @@ msgctxt "Languages::choose_action"
 msgid "Choose action"
 msgstr "Kies actie"
 
+msgctxt "Languages::more_actions"
+msgid "More actions"
+msgstr ""
+
 msgctxt "Languages::choose_category"
 msgid "Choose category"
 msgstr "Kies categorie"
@@ -2059,6 +2083,10 @@ msgstr "Kies uw licentie modus"
 msgctxt "Languages::cities"
 msgid "Cities"
 msgstr "Steden"
+
+msgctxt "Languages::edit_cities"
+msgid "Edit cities"
+msgstr ""
 
 msgctxt "Languages::city"
 msgid "City"
@@ -2396,6 +2424,10 @@ msgctxt "Languages::countries"
 msgid "Countries"
 msgstr "Landen"
 
+msgctxt "Languages::edit_countries"
+msgid "Edit countries"
+msgstr ""
+
 msgctxt "Languages::countries_menu_description"
 msgid "Manage the set of countries that are supported in your store."
 msgstr "Beheer de landen welke door uw webwinkel worden ondersteund."
@@ -2535,6 +2567,10 @@ msgstr "CSV bestand"
 msgctxt "Languages::currencies"
 msgid "Currencies"
 msgstr "Valuta"
+
+msgctxt "Languages::edit_currencies"
+msgid "Edit currencies"
+msgstr ""
 
 msgctxt "Languages::currency"
 msgid "Currency"
@@ -2832,6 +2868,10 @@ msgctxt "Languages::text_file_editor_notice"
 msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>"
 msgstr "Bestanden zijn via de <a href=\"[href]\">Bestandsbewerker</a> te up- en downloaden."
 
+msgctxt "Languages::text_file_editor_notice_with_image_size_info"
+msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>. The maximum size of image files is [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_file_editor_notice_full_link"
 msgid "You can upload and download files via [link]"
 msgstr "U kunt bestanden uploaden en downloaden via [link]"
@@ -2861,8 +2901,8 @@ msgid "Customers"
 msgstr "Klanten"
 
 msgctxt "Languages::customers_menu_title"
-msgid "Customers"
-msgstr "Klanten"
+msgid "Users"
+msgstr ""
 
 msgctxt "Languages::my_customers"
 msgid "My customers"
@@ -4420,6 +4460,10 @@ msgctxt "Languages::files"
 msgid "Files"
 msgstr "Bestanden"
 
+msgctxt "Languages::view_files"
+msgid "View files"
+msgstr ""
+
 msgctxt "Languages::sell_files"
 msgid "Files to sell"
 msgstr "Bestanden om te verkopen"
@@ -5284,6 +5328,10 @@ msgctxt "Languages::language"
 msgid "Language"
 msgstr "Taal"
 
+msgctxt "Languages::language_content"
+msgid "The language of content"
+msgstr ""
+
 msgctxt "Languages::languagecode"
 msgid "Language code"
 msgstr "Taal code"
@@ -5355,6 +5403,10 @@ msgstr "Opmaak"
 msgctxt "Languages::layouts"
 msgid "Layouts"
 msgstr "Opmaak"
+
+msgctxt "Languages::edit_layouts"
+msgid "Edit layouts"
+msgstr ""
 
 msgctxt "Languages::lbl_amazon_aws_access_public_key"
 msgid "AWS access public key"
@@ -5572,6 +5624,10 @@ msgctxt "Languages::rate_areas"
 msgid "Rate areas"
 msgstr "Tariefgebieden"
 
+msgctxt "Languages::edit_rate_areas"
+msgid "Edit rate areas"
+msgstr ""
+
 msgctxt "Languages::statuses_management"
 msgid "Statuses"
 msgstr "Statussen"
@@ -5607,6 +5663,10 @@ msgstr "Locatie (URL) van het logo"
 msgctxt "Languages::logs"
 msgid "Logs"
 msgstr "Logbestanden"
+
+msgctxt "Languages::view_logs"
+msgid "View logs"
+msgstr ""
 
 msgctxt "Languages::log_action_backup"
 msgid "backup"
@@ -6820,6 +6880,10 @@ msgctxt "Languages::order_statuses"
 msgid "Order statuses"
 msgstr "Bestelstatussen"
 
+msgctxt "Languages::edit_order_statuses"
+msgid "Edit order statuses"
+msgstr ""
+
 msgctxt "Languages::order_statuses_menu_description"
 msgid "Add new or edit existing order statuses."
 msgstr "Nieuwe bestelstatus toevoegen of bestaande aanpassen."
@@ -7988,6 +8052,10 @@ msgctxt "Languages::product_options_forbidden_combination"
 msgid "The <strong>[product]</strong> product has options that are included in the forbidden combination. The product was deleted from the cart"
 msgstr "U heeft bij product <strong>[product]</strong> een verkeerde combinatie gemaakt in de opties. Het product is uit de winkelwagen verwijderd."
 
+msgctxt "Languages::zero_price_product_was_deleted"
+msgid "The <strong>[product]</strong> product has zero price. The product was deleted from the cart"
+msgstr ""
+
 msgctxt "Languages::product_disabled_options"
 msgid "The product <strong>[product]</strong> has options or option variants that are not available anymore, so it was removed from cart"
 msgstr "Het product <strong>[product]</strong> heeft opties of varianten die niet meer beschikbaar zijn, waardoor het werd verwijderd uit de winkelwagen"
@@ -7999,6 +8067,10 @@ msgstr "Product(en)"
 msgctxt "Languages::product_subscriptions"
 msgid "Product subscriptions"
 msgstr "Product inschrijvingen"
+
+msgctxt "Languages::view_product_subscriptions"
+msgid "View product subscriptions"
+msgstr ""
 
 msgctxt "Languages::product_summary"
 msgid "Product summary"
@@ -8031,10 +8103,6 @@ msgstr "Profiel details"
 msgctxt "Languages::profile_fields"
 msgid "Profile fields"
 msgstr "Profiel velden"
-
-msgctxt "Languages::profile_fields_menu_description"
-msgid "Configure the set of fields included in the profile forms."
-msgstr "Configureer de velden in het profiel formulier."
 
 msgctxt "Languages::profile_info"
 msgid "Profile information"
@@ -8944,6 +9012,10 @@ msgctxt "Languages::search_by_order"
 msgid "Search by order"
 msgstr "Zoek op bestelling"
 
+msgctxt "Languages::search_by_customer"
+msgid "Search by customer"
+msgstr ""
+
 msgctxt "Languages::search_by_owner"
 msgid "Search by owner"
 msgstr "Zoeken op eigenaar"
@@ -9128,6 +9200,14 @@ msgctxt "Languages::select_dates"
 msgid "Select dates"
 msgstr "Selecteer datums"
 
+msgctxt "Languages::period_selector_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::period_selector_to"
+msgid "To"
+msgstr ""
+
 msgctxt "Languages::select_descr_lang"
 msgid "Select the description language"
 msgstr "Selecteer taalomschrijving"
@@ -9251,6 +9331,70 @@ msgstr "Wizard kan opnieuw worden geopend in het menu 'Instellingen -> Instellin
 msgctxt "Languages::settings_wizard_title"
 msgid "Settings wizard: Step [current_step] of [total_steps]"
 msgstr "Instellingen wizard: Stap [current_step] of [total_steps]"
+
+msgctxt "Languages::store_mode_menu_description"
+msgid "View and manage your licensing details."
+msgstr ""
+
+msgctxt "Languages::upgrade_center_menu_description"
+msgid "Get the latest versions of CS-Cart and its add-ons."
+msgstr ""
+
+msgctxt "Languages::import_data_menu_description"
+msgid "Import products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::export_data_menu_description"
+msgid "Export products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::languages_menu_description"
+msgid "Configure the available languages and edit any texts on your site."
+msgstr ""
+
+msgctxt "Languages::storage_menu_description"
+msgid "Back up your site data or restore a previous copy, manage files and CDN."
+msgstr ""
+
+msgctxt "Languages::settings_general"
+msgid "General"
+msgstr ""
+
+msgctxt "Languages::settings_general_menu_description"
+msgid "Configure your company info and basic principles of how your site works."
+msgstr ""
+
+msgctxt "Languages::payment_methods_menu_description"
+msgid "Set up the payment options available to your customers."
+msgstr ""
+
+msgctxt "Languages::shipping_methods_menu_description"
+msgid "Set up shipping options, their rates and availability by location."
+msgstr ""
+
+msgctxt "Languages::taxes_menu_description"
+msgid "Configure what taxes you show, how you do it, and tax rates by location."
+msgstr ""
+
+msgctxt "Languages::storefronts_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::stores_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::profile_fields_menu_description"
+msgid "Manage information collected from customers and sellers."
+msgstr ""
+
+msgctxt "Languages::notifications_menu_description"
+msgid "Manage the notifications sent to customers, administrators and sellers."
+msgstr ""
+
+msgctxt "Languages::logs_menu_description"
+msgid "Store activity log."
+msgstr ""
 
 msgctxt "Languages::share"
 msgid "Share"
@@ -9387,10 +9531,6 @@ msgstr "Verzendmethode"
 msgctxt "Languages::shipping_methods"
 msgid "Shipping methods"
 msgstr "Verzendmethoden"
-
-msgctxt "Languages::shipping_methods_menu_description"
-msgid "Set of rules and parameters to calculate the cost of shipping."
-msgstr "Verzameling van regels en parameters om de verzendkosten te berekenen."
 
 msgctxt "Languages::shipping_name"
 msgid "Shipping name"
@@ -10312,6 +10452,10 @@ msgctxt "Languages::states"
 msgid "States"
 msgstr "Provincies"
 
+msgctxt "Languages::edit_states"
+msgid "Edit states"
+msgstr ""
+
 msgctxt "Languages::states_menu_description"
 msgid "Manage the set of states that are supported in your store."
 msgstr "Beheer de provincies welke worden ondersteund in uw winkel."
@@ -10583,10 +10727,6 @@ msgstr "Belasting"
 msgctxt "Languages::taxes"
 msgid "Taxes"
 msgstr "Btw"
-
-msgctxt "Languages::taxes_menu_description"
-msgid "Manage the set of taxes that are supported in your store."
-msgstr "Belastingtarieven beheren in de webwinkel"
 
 msgctxt "Languages::tax_exempt"
 msgid "Tax exempt"
@@ -11272,6 +11412,10 @@ msgstr "Niets gevonden"
 msgctxt "Languages::text_not_allowed_to_upload_file_extension"
 msgid "It is not allowed to upload files with the <b>.[ext]</b> extension here."
 msgstr "Het is niet toegestaan om hier bestanden met de <b>.[ext]</b> te uploaden."
+
+msgctxt "Languages::text_not_allowed_to_upload_file_size"
+msgid "It is not allowed to upload files that exceed the maximum allowed size of [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::text_not_valid_email"
 msgid "<b>[email]</b> is not a valid e-mail address."
@@ -12553,6 +12697,10 @@ msgctxt "Languages::thumbnail_width"
 msgid "Thumbnail width in scroller"
 msgstr "Breedte miniatuur in scroller"
 
+msgctxt "Languages::image_file_size_set_to_server_setting"
+msgid "Image file size set to [file_size] MB. This is the largest file size allowed by the server settings."
+msgstr ""
+
 msgctxt "Languages::tier_account"
 msgid "tier account"
 msgstr "niveau profiel"
@@ -12940,6 +13088,10 @@ msgstr "Niet-downloadbare producten met een gewicht van 0 worden behandeld als h
 msgctxt "Languages::tt_views_products_update_categories"
 msgid "Categories to be displayed in the navigation breadcrumbs."
 msgstr "Categorieën worden weergegeven in het broodkruimelpad."
+
+msgctxt "Languages::tt_views_products_update_images"
+msgid "The maximum size of image files is [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::tt_views_products_update_inventory"
 msgid "Track in stock product quantity. Enable the \"Enable inventory tracking\" option (Settings -> General) to modify."
@@ -13352,6 +13504,10 @@ msgstr "Gebruikers"
 msgctxt "Languages::users_carts"
 msgid "Abandoned / Live carts"
 msgstr "Verlaten / Live winkelwagens"
+
+msgctxt "Languages::users_carts_menu"
+msgid "Live carts"
+msgstr ""
 
 msgctxt "Languages::users_carts_menu_description"
 msgid "Lists of products that have not been purchased for some reason."
@@ -14789,6 +14945,10 @@ msgctxt "SettingsOptions::company_phone_2"
 msgid "Company phone 2"
 msgstr "Bedrijf telefoon 2"
 
+msgctxt "SettingsOptions::image_file_size"
+msgid "Image file size"
+msgstr ""
+
 msgctxt "SettingsOptions::thumbnail_background_color"
 msgid "Thumbnail background color"
 msgstr "Achtergrondkleur miniatuur"
@@ -15336,6 +15496,10 @@ msgstr "Gebruik een getal tussen 1 en 10000000 of laat leeg voor automatisch inv
 msgctxt "SettingsTooltips::user_multiple_profiles"
 msgid "A profile is a combination of shipping and billing address."
 msgstr "Een profiel is een combinatie van verzend- en factuuradres."
+
+msgctxt "SettingsTooltips::image_file_size"
+msgid "The maximum size of an uploaded image file in megabytes. Leave empty to use the server settings."
+msgstr ""
 
 msgctxt "SettingsTooltips::thumbnail_background_color"
 msgid "Leave empty for transparent background."
@@ -16369,6 +16533,10 @@ msgctxt "Languages::templates"
 msgid "Templates"
 msgstr "Sjablonen"
 
+msgctxt "Languages::edit_templates"
+msgid "Edit templates"
+msgstr ""
+
 msgctxt "Languages::payments.realex.referring_url"
 msgid "Please supply this URL to your Realex Payments account manager"
 msgstr "Deze URL op het Realex Payments profiel toepassen"
@@ -16552,6 +16720,10 @@ msgstr "Instellingen voor zoekmachine-optimalisatie van de webwinkel."
 msgctxt "Languages::seo_robots"
 msgid "robots.txt"
 msgstr "robots.txt"
+
+msgctxt "Languages::view_seo_robots"
+msgid "View robots.txt"
+msgstr ""
 
 msgctxt "Languages::robots_title"
 msgid "Editing: robots.txt"
@@ -17157,6 +17329,10 @@ msgstr "Dit thema is niet geschikt voor de thema-editor"
 msgctxt "Languages::shipment_statuses"
 msgid "Shipment statuses"
 msgstr "Verzendstatus"
+
+msgctxt "Languages::edit_shipment_statuses"
+msgid "Edit shipment statuses"
+msgstr ""
 
 msgctxt "Languages::email_templates"
 msgid "Email templates"
@@ -17953,6 +18129,10 @@ msgstr "Sommige van uw kernbestanden zijn gewijzigd. Dit kan een probleem worden
 msgctxt "Languages::file_changes_detector"
 msgid "File changes detector"
 msgstr "Detector bestandswijzigingen"
+
+msgctxt "Languages::view_file_changes_detector"
+msgid "View file changes detector"
+msgstr ""
 
 msgctxt "Languages::privileges.view_file_changes"
 msgid "Can view"
@@ -21034,390 +21214,6 @@ msgctxt "Languages::license_expires"
 msgid "License expires"
 msgstr "Licentie verloopt"
 
-msgctxt "Languages::sw.store_setup_wizard"
-msgid "Store setup wizard"
-msgstr "Wizard voor winkelconfiguratie"
-
-msgctxt "Languages::sw.store_setup_wizard_short"
-msgid "Setup wizard"
-msgstr "Installatiewizard"
-
-msgctxt "Languages::sw.text_about_store_header"
-msgid "Fill out the contact information about your store"
-msgstr "Vul de contactgegevens van uw winkel in"
-
-msgctxt "Languages::sw.text_design_header"
-msgid "Select your storefront design and upload the logo"
-msgstr "Selecteer uw storefront-ontwerp en upload het logo"
-
-msgctxt "Languages::sw.text_payments_header"
-msgid "Set up the service to recieve payments"
-msgstr "De service instellen om betalingen te ontvangen"
-
-msgctxt "Languages::sw.text_shippings_header"
-msgid "Select shipping services"
-msgstr "Selecteer verzendservices"
-
-msgctxt "Languages::sw.text_business_model_header"
-msgid "Choose your business model and checkout flow"
-msgstr "Kies uw bedrijfsmodel en afrekenproces"
-
-msgctxt "Languages::sw.select_money_transfer_methods"
-msgid "Select one of the following models, and we'll handle most of the setup for you."
-msgstr "Selecteer een van de volgende modellen en wij zullen het grootste deel van de installatie voor u regelen."
-
-msgctxt "Languages::sw.text_vendors_header"
-msgid "Set up how you work with vendors and their data"
-msgstr "Instellen hoe u met leveranciers en hun gegevens werkt"
-
-msgctxt "Languages::sw.text_settings_header"
-msgid "Configure product catalog settings"
-msgstr "Instellingen productcatalogus configureren"
-
-msgctxt "Languages::sw.about_store"
-msgid "About store"
-msgstr "Over winkel"
-
-msgctxt "Languages::sw.company_name"
-msgid "Company name"
-msgstr "Bedrijfsnaam"
-
-msgctxt "Languages::sw.google_analytics.tracking_code"
-msgid "Google Analytics account number"
-msgstr "Google Analytics-accountnummer"
-
-msgctxt "Languages::sw.business_model"
-msgid "Business Model"
-msgstr "Bedrijfsmodel"
-
-msgctxt "Languages::sw.vendors"
-msgid "Vendors"
-msgstr "Verkoper"
-
-msgctxt "Languages::sw.site_admin_email"
-msgid "Site administrator e-mail address"
-msgstr "E-mailadres van de sitebeheerder"
-
-msgctxt "Languages::sw.address_text"
-msgid "Company address (street, house, etc.)"
-msgstr "Bedrijfsadres (straat, huis, etc.)"
-
-msgctxt "Languages::sw.country"
-msgid "Company country"
-msgstr "Land van het bedrijf"
-
-msgctxt "Languages::sw.state"
-msgid "Company state"
-msgstr "Bedrijfsstatus:"
-
-msgctxt "Languages::sw.city"
-msgid "Company city"
-msgstr "Bedrijf stad"
-
-msgctxt "Languages::sw.zipcode"
-msgid "Company zip code"
-msgstr "Bedrijf postcode"
-
-msgctxt "Languages::sw.phone"
-msgid "Company phone"
-msgstr "Bedrijfstelefoon"
-
-msgctxt "Languages::sw.phone_2"
-msgid "Company phone 2"
-msgstr "Bedrijfstelefoon 2"
-
-msgctxt "Languages::sw.fax"
-msgid "Fax"
-msgstr "Fax"
-
-msgctxt "Languages::sw.website"
-msgid "Company website"
-msgstr "Bedrijfswebsite"
-
-msgctxt "Languages::sw.company_start_year"
-msgid "Year when the store started its operation"
-msgstr "Jaar waarin de winkel in bedrijf is genomen"
-
-msgctxt "Languages::sw.collect_taxes_from_vendors"
-msgid "Collect taxes from vendors"
-msgstr "Belasting innen van leveranciers"
-
-msgctxt "Languages::sw.moderation"
-msgid "Moderation"
-msgstr "Met mate"
-
-msgctxt "Languages::sw.vendor_profile_updates_approval"
-msgid "Check changes to vendor profile"
-msgstr "Wijzigingen in leveranciersprofiel controleren"
-
-msgctxt "Languages::sw.products_prior_approval"
-msgid "Check new products"
-msgstr "Bekijk nieuwe producten"
-
-msgctxt "Languages::sw.products_updates_approval"
-msgid "Check changes to existing products"
-msgstr "Wijzigingen in bestaande producten controleren"
-
-msgctxt "Languages::sw.accounting"
-msgid "Accounting"
-msgstr "boekhouding"
-
-msgctxt "Languages::sw.lowers_allowed_balance"
-msgid "Minimum allowed vendor balance"
-msgstr "Minimaal toegestaan leverancierssaldo"
-
-msgctxt "Languages::sw.grace_period_to_refill_balance"
-msgid "Block vendor after days"
-msgstr "Verkoper blokkeren na dagen"
-
-msgctxt "Languages::sw.location"
-msgid "Location"
-msgstr "Plaats"
-
-msgctxt "Languages::sw.enable_vendor_location_using_google_map"
-msgid "Let vendors set their location on Google Maps"
-msgstr "Laat leveranciers hun locatie instellen op Google Maps"
-
-msgctxt "Languages::sw.vendor_profile_fields"
-msgid "Vendor profile fields"
-msgstr "Velden leveranciersprofiel"
-
-msgctxt "Languages::sw.set_up_vendor_profile_fields"
-msgid "What information about vendors do you need?"
-msgstr "Welke informatie over leveranciers heeft u nodig?"
-
-msgctxt "Languages::sw.notifications"
-msgid "Notifications"
-msgstr "Meldingen"
-
-msgctxt "Languages::sw.admin_notifications"
-msgid "Admin notifications"
-msgstr "Beheerdersmeldingen"
-
-msgctxt "Languages::sw.vendor_notifications"
-msgid "Vendor notifications"
-msgstr "Leveranciersmeldingen"
-
-msgctxt "Languages::sw.selected_design"
-msgid "Current design"
-msgstr "Huidig ontwerp"
-
-msgctxt "Languages::sw.upload_logo"
-msgid "Upload logo"
-msgstr "Logo uploaden"
-
-msgctxt "Languages::sw.logo_theme"
-msgid "Main"
-msgstr "Hoofd"
-
-msgctxt "Languages::sw.logo_mail"
-msgid "Email"
-msgstr "E-mail"
-
-msgctxt "Languages::sw.select_image"
-msgid "Select image"
-msgstr "Selecteer foto"
-
-msgctxt "Languages::sw.select_right_design"
-msgid "Pick a design preset"
-msgstr "Kies een ontwerpvoorinstelling"
-
-msgctxt "Languages::sw.activate"
-msgid "Activate"
-msgstr "Activeren"
-
-msgctxt "Languages::sw.apply"
-msgid "Apply"
-msgstr "Van toepassing zijn"
-
-msgctxt "Languages::sw.preview"
-msgid "Preview"
-msgstr "Voorbeeld"
-
-msgctxt "Languages::sw.edit_design"
-msgid "Edit design"
-msgstr "Ontwerp bewerken"
-
-msgctxt "Languages::sw.design"
-msgid "Design"
-msgstr "Ontwerp"
-
-msgctxt "Languages::sw.error_updating_payment"
-msgid "Error occured during payment method update"
-msgstr "Er is een fout opgetreden tijdens het updaten van de betaalmethode"
-
-msgctxt "Languages::sw.payments"
-msgid "Payments"
-msgstr "betalingen"
-
-msgctxt "Languages::sw.payment_not_found"
-msgid "The Yandex.Money payment method not found"
-msgstr "De betaalmethode Yandex.Money niet gevonden"
-
-msgctxt "Languages::sw.over_payment_system"
-msgid "Use another payment system"
-msgstr "Gebruik een ander betalingssysteem"
-
-msgctxt "Languages::sw.shippings"
-msgid "Shipping services"
-msgstr "Verzenddiensten:"
-
-msgctxt "Languages::sw.ems_russian_post"
-msgid "EMS Russian Post"
-msgstr "EMS Russische Post"
-
-msgctxt "Languages::sw.russian_post"
-msgid "Russian Post"
-msgstr "Russische post"
-
-msgctxt "Languages::sw.edost"
-msgid "eDost"
-msgstr "eDost"
-
-msgctxt "Languages::sw.usps"
-msgid "USPS"
-msgstr "USPS"
-
-msgctxt "Languages::sw.ups"
-msgid "UPS"
-msgstr "UPS"
-
-msgctxt "Languages::sw.fedex"
-msgid "FedEx"
-msgstr "FedEx"
-
-msgctxt "Languages::sw.goto_shipping_methods"
-msgid "Go to shipping methods"
-msgstr "Ga naar verzendmethoden"
-
-msgctxt "Languages::sw.configure"
-msgid "Configure"
-msgstr "Configureren"
-
-msgctxt "Languages::sw.settings"
-msgid "Settings"
-msgstr "Instellingen"
-
-msgctxt "Languages::sw.enable"
-msgid "Enable"
-msgstr "Inschakelen"
-
-msgctxt "Languages::sw.disable"
-msgid "Disable"
-msgstr "Uitzetten"
-
-msgctxt "Languages::sw.activated"
-msgid "Activated"
-msgstr "geactiveerd"
-
-msgctxt "Languages::sw.select_model"
-msgid "Select model"
-msgstr "Selecteer model"
-
-msgctxt "Languages::sw.timezone"
-msgid "Time zone"
-msgstr "Tijdzone"
-
-msgctxt "Languages::sw.order_start_id"
-msgid "Initial order ID value (leave empty for auto)"
-msgstr "Initiële order-ID-waarde (leeg laten voor automatisch)"
-
-msgctxt "Languages::sw.min_order_amount"
-msgid "Minimum order amount"
-msgstr "Minimum bestelbedrag"
-
-msgctxt "Languages::sw.show_out_of_stock_products"
-msgid "Show out of stock products"
-msgstr "Producten die niet op voorraad zijn weergeven"
-
-msgctxt "Languages::sw.enable_quick_view"
-msgid "Enable quick view"
-msgstr "Snelle weergave inschakelen"
-
-msgctxt "Languages::sw.enable_inventory_tracking"
-msgid "Enable inventory tracking"
-msgstr "Voorraad bijhouden inschakelen"
-
-msgctxt "Languages::sw.allow_negative_amount"
-msgid "Allow negative amount in inventory"
-msgstr "Negatief bedrag in voorraad toestaan"
-
-msgctxt "Languages::sw.ym_merchant_country"
-msgid "Country"
-msgstr "Land"
-
-msgctxt "Languages::sw.ym_merchant_forma"
-msgid "Ownership"
-msgstr "Eigendom"
-
-msgctxt "Languages::sw.send"
-msgid "Send"
-msgstr "Versturen"
-
-msgctxt "Languages::sw.remove_demo_data_text"
-msgid "Clean up orders, products, categories, user profiles, and related data"
-msgstr "Bestellingen, producten, categorieën, gebruikersprofielen en gerelateerde gegevens opschonen"
-
-msgctxt "Languages::sw.remove"
-msgid "Clean up"
-msgstr "Opruimen"
-
-msgctxt "Languages::sw.demo_data_removed"
-msgid "Demo data removed."
-msgstr "Demogegevens verwijderd."
-
-msgctxt "Languages::sw.error_removing_demo_data"
-msgid "An error occurred while removing the demo data"
-msgstr "Er is een fout opgetreden bij het verwijderen van de demogegevens"
-
-msgctxt "Languages::sw.confirm_demo_data_removal_title"
-msgid "Remove the data?"
-msgstr "De gegevens verwijderen?"
-
-msgctxt "Languages::sw.text_confirm_demo_data_removal"
-msgid "All orders, products, product categories, customer profiles, and associated data (tags, comments, etc.) including the data added by you <b>will be permanently removed.</b> This operation cannot be undone. Are you sure you want to continue?"
-msgstr "Alle bestellingen, producten, productcategorieën, klantprofielen en bijbehorende gegevens (tags, opmerkingen, etc.) inclusief de door u toegevoegde gegevens <b>worden permanent verwijderd.</b> Deze bewerking kan niet ongedaan worden gemaakt. Weet je zeker dat je door wilt gaan?"
-
-msgctxt "Languages::sw.delete_demo_data"
-msgid "Delete the  data"
-msgstr "Verwijder de gegevens"
-
-msgctxt "Languages::sw.keep_demo_data"
-msgid "Keep the data"
-msgstr "Bewaar de gegevens"
-
-msgctxt "Languages::sw.more_themes_in_marketplace"
-msgid "More themes in the Marketplace"
-msgstr "Meer thema's in de Marktplaats"
-
-msgctxt "Languages::sw.logo_recommended_size_text"
-msgid "recommended size [height]px × [width]px"
-msgstr "aanbevolen grootte [height]px × [width]px"
-
-msgctxt "Languages::sw.money_goes_to_owner"
-msgid "Customer makes a single payment, all money goes to you"
-msgstr "Klant doet een enkele betaling, al het geld gaat naar jou"
-
-msgctxt "Languages::sw.money_goes_to_owner_descr"
-msgid "The money owed to the vendor is tracked in the admin panel. A vendor can request money withdrawal through the admin panel. You forward the money to vendors as you see fit."
-msgstr "Het geld dat aan de verkoper verschuldigd is, wordt bijgehouden in het admin-paneel. Een verkoper kan geldopname aanvragen via het beheerderspaneel. U stuurt het geld door naar leveranciers zoals u dat wilt."
-
-msgctxt "Languages::sw.money_split_automaticaly"
-msgid "Customer makes a single payment, money is split automatically"
-msgstr "Klant doet een enkele betaling, geld wordt automatisch gesplitst"
-
-msgctxt "Languages::sw.money_split_automaticaly_descr"
-msgid "This is achieved via [stripe_connect] payments and/or [paypal_commerce_platform], so each vendor must have a Stripe and/or PayPal account. We'll create these payment methods for you. You'll just need to configure them, and vendors will need to provide their account information."
-msgstr "Dit wordt bereikt via [stripe_connect] betalingen en/of [paypal_commerce_platform], dus elke verkoper moet een Stripe- en/of PayPal-account hebben. We maken deze betaalmethoden voor je aan. U hoeft ze alleen maar te configureren en leveranciers moeten hun accountgegevens opgeven."
-
-msgctxt "Languages::sw.money_goes_to_vendor"
-msgid "Customer makes multiple payments (one to each vendor)"
-msgstr "Klant doet meerdere betalingen (één aan elke leverancier)"
-
-msgctxt "Languages::sw.money_goes_to_vendor_descr"
-msgid "Each vendor has to create own payment methods. Money goes directly to vendors, and marketplace commission gets added to vendors' debt. It becomes a vendor's responsibility to pay the marketplace."
-msgstr "Elke leverancier moet zijn eigen betaalmethoden creëren. Geld gaat rechtstreeks naar leveranciers en marktcommissie wordt toegevoegd aan de schuld van leveranciers. Het wordt de verantwoordelijkheid van een verkoper om de markt te betalen."
-
 msgctxt "Languages::unsupported_browser_notice"
 msgid "<p>We have detected that the browser you are using is not fully supported by our Admin Panel. You can view this site using your current browser but it may not display properly, and you may not be able to fully use all features.</p><br><p>Admin Panel is best viewed using the following browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (latest version)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (latest version)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (latest version)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (latest version)</a></li></ul><br><p>Click on one of the links to download the browser of your choice. Once the download has completed, install the browser by running the setup program.</p><br><p>If you cannot upgrade your browser now, you can still access Admin Panel, but you may not be able to fully use all features.<br><br><a href=\"[url]\">Continue</a></p>"
 msgstr "<p>We hebben gedetecteerd dat de browser die u gebruikt niet volledig wordt ondersteund door ons beheerdersdashboard. U kunt deze site bekijken met uw huidige browser, maar deze wordt mogelijk niet correct weergegeven en u kunt mogelijk niet alle functies volledig gebruiken.</p><br><p>Admin Panel kan het beste worden bekeken met de volgende browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (laatste versie)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (laatste versie)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (nieuwste versie)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (laatste versie)</a></li></ul><br><p>Klik op een van de links om de browser van uw keuze te downloaden. Nadat de download is voltooid, installeert u de browser door het installatieprogramma uit te voeren.</p><br><p>Als u uw browser nu niet kunt upgraden, heeft u nog steeds toegang tot het beheerdersdashboard, maar kunt u mogelijk niet alle functies volledig gebruiken.<br><br><a href=\"[url]\">Ga verder</a></p>"
@@ -21433,6 +21229,10 @@ msgstr "Instellen als standaard"
 msgctxt "Languages::saved_search.set_as_non_default"
 msgid "Set as non-default"
 msgstr "Instellen als niet-standaard"
+
+msgctxt "Languages::saved_search.more"
+msgid "More saved search"
+msgstr ""
 
 msgctxt "Languages::saved_search.set_as_default_confirm"
 msgid "Saved search \"[name]\" will open by default instead of the full list of objects. Is that what you'd like?"
@@ -21701,10 +21501,6 @@ msgstr "Gebruik voor alle nieuwe leveranciers"
 msgctxt "Languages::show_vendor_info_if_shipping_no_required"
 msgid "Show information about vendors whose products do not require shipping"
 msgstr "Informatie weergeven over leveranciers waarvan de producten niet hoeven te worden verzonden"
-
-msgctxt "Languages::sw.marketplace_setup_wizard"
-msgid "Marketplace setup wizard"
-msgstr "Wizard voor het instellen van Marketplace"
 
 msgctxt "Languages::sw.money_split_automaticaly_descr.ru"
 msgid "This is achieved via YooMoney for marketplaces, so each vendor must have a YooMoney account. We'll create a payment method for you. You'll just need to configure it, and vendors will need to provide their account information."

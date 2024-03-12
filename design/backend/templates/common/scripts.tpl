@@ -19,7 +19,7 @@
 
 {script src="js/tygh/ajax.js"}
 
-{script src="js/tygh/backend/heading.js"}
+{script src="js/tygh/backend/components/dropdown.js"}
 {script src="js/tygh/quick_menu.js"}
 {script src="js/tygh/backend/storefront_switcher.js"}
 {script src="js/tygh/backend/company_switcher.js"}
@@ -42,15 +42,6 @@
 
 {script src="js/tygh/phone_mask.js"}
 {script src="js/tygh/backend/autocomplete.js"}
-
-{if $is_setup_wizard_panel_available}
-    {script src="js/lib/ladda-bootstrap/dist/spin.min.js"}
-    {script src="js/lib/ladda-bootstrap/dist/ladda.min.js"}
-    {script src="js/lib/jquery-liquid-slider/jquery.liquid-slider.js"}
-    {script src="js/lib/jquery-touchswipe/jquery.touchSwipe.js"}
-    {script src="js/tygh/setup_wizard/tabslideout_fork.js"}
-    {script src="js/tygh/setup_wizard/setup_wizard.js"}
-{/if}
 
 {capture name="promo_data"}
     <div class="commercial-promotion-text">

@@ -1,0 +1,196 @@
+// Menu sidebar variables
+@menuSidebarColorActive: @dropdownLinkBackgroundActive;
+
+
+// Menu sidebar styles
+.main-menu-1,
+.main-menu-2,
+.main-menu-3 {
+    list-style: none;
+    margin: 0;
+}
+
+.main-menu-1__accordion-inner,
+.main-menu-2__accordion-inner,
+.main-menu-1__item,
+.main-menu-2__item,
+.main-menu-3__item {
+    padding: 0;
+    border: 0;
+}
+
+.main-menu-1__item:last-child {
+    margin-bottom: 0;
+}
+
+.main-menu-1__accordion-heading,
+.main-menu-2__accordion-heading,
+.main-menu-1__link-wrapper,
+.main-menu-2__link-wrapper,
+.main-menu-3__link-wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.main-menu-1__link-content,
+.main-menu-2__link-content,
+.main-menu-3__link-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.main-menu-1__link-content:first-child {
+    padding-left: 29px;
+}
+
+.main-menu-1__link,
+.main-menu-2__link,
+.main-menu-3__link {
+    width: 100%;
+    border: 0;
+    border-radius: @baseBorderRadius;
+    background: transparent;
+}
+
+.main-menu-1__link.main-menu-1__link,
+.main-menu-2__link.main-menu-2__link,
+.main-menu-3__link.main-menu-3__link {
+    display: flex;
+    padding: 6px 15px;
+}
+
+.main-menu-1__link.main-menu-1__link.mobile-visible,
+.main-menu-2__link.main-menu-2__link.mobile-visible,
+.main-menu-3__link.main-menu-3__link.mobile-visible {
+    display: none;
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .main-menu-1__link.main-menu-1__link.mobile-visible,
+    .main-menu-2__link.main-menu-2__link.mobile-visible,
+    .main-menu-3__link.main-menu-3__link.mobile-visible {
+        display: flex;
+    }
+}
+
+// Level 1 and level 2
+.main-menu-1__link,
+.main-menu-2__link {
+    align-items: center;
+    gap: 16px;
+    font-weight: 500;
+    color: @linkColor;
+    border-radius: @baseBorderRadius;
+}
+
+.main-menu-1__link--regular,
+.main-menu-2__link--regular {
+    font-weight: 400;
+}
+
+.main-menu-1__icon,
+.main-menu-2__icon {
+    opacity: 0.5;
+}
+
+// Level 2 and level 3
+.main-menu-2__link,
+.main-menu-3__link {
+    color: fadeout(@linkColor, 30%);
+}
+
+// Block manager
+.main-menu-1__link--root-hidden:after,
+.main-menu-1__link--hidden-by-permissions:after,
+.main-menu-2__link--hidden-by-permissions:after {
+    content: url('../templates/icons/eye_close.svg');
+    flex-shrink: 0;
+    width: @baseFontSize;
+    height: @baseFontSize;
+    opacity: 0.5;
+}
+
+// Level 2
+.main-menu-2__link.main-menu-2__link {
+    padding-left: 15px + @iconSize + 16px;
+}
+
+// Level 3
+.main-menu-3__link.main-menu-3__link {
+    padding-left: 65px;
+}
+
+// Active
+.main-menu-1__link:hover,
+.main-menu-1__link:focus,
+.main-menu-1__link--active,
+.main-menu-2__link:hover,
+.main-menu-2__link:focus,
+.main-menu-2__link--active,
+.main-menu-3__link:hover,
+.main-menu-3__link:focus,
+.main-menu-3__link--active {
+    text-decoration: none;
+}
+
+.main-menu-1__link:hover,
+.main-menu-1__link:focus,
+.main-menu-2__link:hover,
+.main-menu-2__link:focus,
+.main-menu-3__link:hover,
+.main-menu-3__link:focus {
+    background: fadeout(@menuSidebarColorActive, 50%);
+}
+
+.main-menu-1__link--active,
+.main-menu-1__toggle--active,
+.main-menu-2__link--active,
+.main-menu-2__toggle--active,
+.main-menu-3__link--active,
+.main-menu-3__toggle--active {
+    font-weight: 600;
+}
+
+.main-menu-1__link--active,
+.main-menu-2__link--active,
+.main-menu-3__link--active {
+    background: @menuSidebarColorActive;
+}
+
+// Divider
+.main-menu-1__divider,
+.main-menu-2__divider,
+.main-menu-3__divider {
+    height: 1px;
+    margin: 5px 1px;
+    margin-left: 45px;
+    margin-right: 30px;
+    background-color: @dropdownDividerTop;
+}
+
+.main-menu-1__divider {
+    margin-top: (@baseLineHeight + 2 * 3px) * 0.5;
+    margin-bottom: (@baseLineHeight + 2 * 3px) * 0.5;
+    background-color: transparent;
+}
+
+.main-menu-1__link--title-divider,
+.main-menu-2__link--title-divider,
+.main-menu-3__link--title-divider {
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+    font-size: @fontSizeSmall;
+    font-weight: 600;
+}
+
+.main-menu-1__link--title-divider:hover,
+.main-menu-2__link--title-divider:hover,
+.main-menu-3__link--title-divider:hover {
+    background: transparent;
+    cursor: default;
+}
+
+// Quick link
+.main-menu-1__link--quick-link {
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+}

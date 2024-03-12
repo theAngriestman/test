@@ -67,5 +67,5 @@
 
 .help-center__sections:empty:before {
     content: attr(data-ca-help-center-loading-text);
-    color: @textMutedColor;
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
 }

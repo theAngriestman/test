@@ -1,6 +1,7 @@
 {if fn_check_permissions("discussion", "add", "admin", "") && !("MULTIVENDOR"|fn_allowed_for && $runtime.company_id && ($runtime.company_id != $object_company_id || $discussion.object_type === "Addons\\Discussion\\DiscussionObjectTypes::COMPANY"|enum))}
+{$tabs_count = 1}
     {capture name="add_new_picker"}
-        <div class="tabs cm-j-tabs">
+        <div class="tabs cm-j-tabs tabs--enable-fill tabs--count-{$tabs_count}">
             <ul class="nav nav-tabs">
                 <li id="tab_add_post" class="cm-js active"><a>{__("general")}</a></li>
             </ul>

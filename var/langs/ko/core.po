@@ -8,9 +8,9 @@ msgstr ""
 "X-Crowdin-Project: cs-cart-latest\n"
 "X-Crowdin-Project-ID: 50163\n"
 "X-Crowdin-Language: ko\n"
-"X-Crowdin-File: /release-4.17.2/core.po\n"
-"X-Crowdin-File-ID: 8104\n"
-"PO-Revision-Date: 2023-11-23 09:56\n"
+"X-Crowdin-File: /release-4.18.1/core.po\n"
+"X-Crowdin-File-ID: 8378\n"
+"PO-Revision-Date: 2024-02-02 11:18\n"
 
 msgctxt "LanguageName"
 msgid "Localized language name"
@@ -599,6 +599,22 @@ msgstr "고급 검색"
 msgctxt "Languages::advanced_search_options"
 msgid "Advanced search options"
 msgstr "고급 검색 옵션"
+
+msgctxt "Languages::search_add_filter"
+msgid "Add filter"
+msgstr ""
+
+msgctxt "Languages::search_range_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::search_range_to"
+msgid "To"
+msgstr ""
+
+msgctxt "Languages::dynamic_navigation_more"
+msgid "More"
+msgstr ""
 
 msgctxt "Languages::after_full_payment"
 msgid "After full payment"
@@ -1860,6 +1876,10 @@ msgctxt "Languages::cdn_settings"
 msgid "CDN settings"
 msgstr "CDN 설정"
 
+msgctxt "Languages::edit_cdn_settings"
+msgid "Edit CDN settings"
+msgstr ""
+
 msgctxt "Languages::central"
 msgid "Central"
 msgstr "센트럴"
@@ -2040,6 +2060,10 @@ msgctxt "Languages::choose_action"
 msgid "Choose action"
 msgstr "조치 선택"
 
+msgctxt "Languages::more_actions"
+msgid "More actions"
+msgstr ""
+
 msgctxt "Languages::choose_category"
 msgid "Choose category"
 msgstr "카테고리 선택"
@@ -2059,6 +2083,10 @@ msgstr "라이센스 모드를 선택하십시오"
 msgctxt "Languages::cities"
 msgid "Cities"
 msgstr "도시"
+
+msgctxt "Languages::edit_cities"
+msgid "Edit cities"
+msgstr ""
 
 msgctxt "Languages::city"
 msgid "City"
@@ -2396,6 +2424,10 @@ msgctxt "Languages::countries"
 msgid "Countries"
 msgstr "국가"
 
+msgctxt "Languages::edit_countries"
+msgid "Edit countries"
+msgstr ""
+
 msgctxt "Languages::countries_menu_description"
 msgid "Manage the set of countries that are supported in your store."
 msgstr "상점에서 지원되는 국가 세트를 관리하십시오"
@@ -2535,6 +2567,10 @@ msgstr "CSV 파일"
 msgctxt "Languages::currencies"
 msgid "Currencies"
 msgstr "통화"
+
+msgctxt "Languages::edit_currencies"
+msgid "Edit currencies"
+msgstr ""
 
 msgctxt "Languages::currency"
 msgid "Currency"
@@ -2832,6 +2868,10 @@ msgctxt "Languages::text_file_editor_notice"
 msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>"
 msgstr "<a href=\"[href]\"> 파일 편집기 </a>를 통해 파일을 업로드하고 다운로드 할 수 있습니다."
 
+msgctxt "Languages::text_file_editor_notice_with_image_size_info"
+msgid "You can upload and download files via <a href=\"[href]\">File Editor</a>. The maximum size of image files is [file_size] MB."
+msgstr ""
+
 msgctxt "Languages::text_file_editor_notice_full_link"
 msgid "You can upload and download files via [link]"
 msgstr "[link]를 통해 파일을 업로드 및 다운로드 할 수 있습니다."
@@ -2861,8 +2901,8 @@ msgid "Customers"
 msgstr "고객"
 
 msgctxt "Languages::customers_menu_title"
-msgid "Customers"
-msgstr "고객"
+msgid "Users"
+msgstr ""
 
 msgctxt "Languages::my_customers"
 msgid "My customers"
@@ -4420,6 +4460,10 @@ msgctxt "Languages::files"
 msgid "Files"
 msgstr "파일"
 
+msgctxt "Languages::view_files"
+msgid "View files"
+msgstr ""
+
 msgctxt "Languages::sell_files"
 msgid "Files to sell"
 msgstr "판매 할 파일"
@@ -5284,6 +5328,10 @@ msgctxt "Languages::language"
 msgid "Language"
 msgstr "언어"
 
+msgctxt "Languages::language_content"
+msgid "The language of content"
+msgstr ""
+
 msgctxt "Languages::languagecode"
 msgid "Language code"
 msgstr "언어 코드"
@@ -5355,6 +5403,10 @@ msgstr "레이아웃"
 msgctxt "Languages::layouts"
 msgid "Layouts"
 msgstr "레이아웃"
+
+msgctxt "Languages::edit_layouts"
+msgid "Edit layouts"
+msgstr ""
 
 msgctxt "Languages::lbl_amazon_aws_access_public_key"
 msgid "AWS access public key"
@@ -5572,6 +5624,10 @@ msgctxt "Languages::rate_areas"
 msgid "Rate areas"
 msgstr "요금 영역"
 
+msgctxt "Languages::edit_rate_areas"
+msgid "Edit rate areas"
+msgstr ""
+
 msgctxt "Languages::statuses_management"
 msgid "Statuses"
 msgstr "상태"
@@ -5607,6 +5663,10 @@ msgstr "로고 위치 (URL)"
 msgctxt "Languages::logs"
 msgid "Logs"
 msgstr "로그"
+
+msgctxt "Languages::view_logs"
+msgid "View logs"
+msgstr ""
 
 msgctxt "Languages::log_action_backup"
 msgid "backup"
@@ -6820,6 +6880,10 @@ msgctxt "Languages::order_statuses"
 msgid "Order statuses"
 msgstr "주문 상태"
 
+msgctxt "Languages::edit_order_statuses"
+msgid "Edit order statuses"
+msgstr ""
+
 msgctxt "Languages::order_statuses_menu_description"
 msgid "Add new or edit existing order statuses."
 msgstr "신규 또는 기존 주문 상태를 추가합니다."
@@ -7988,6 +8052,10 @@ msgctxt "Languages::product_options_forbidden_combination"
 msgid "The <strong>[product]</strong> product has options that are included in the forbidden combination. The product was deleted from the cart"
 msgstr "<strong>[product]</strong> 제품에는 금지된 조합에 포함된 옵션이 있습니다. 장바구니에서 제품이 삭제되었습니다."
 
+msgctxt "Languages::zero_price_product_was_deleted"
+msgid "The <strong>[product]</strong> product has zero price. The product was deleted from the cart"
+msgstr ""
+
 msgctxt "Languages::product_disabled_options"
 msgid "The product <strong>[product]</strong> has options or option variants that are not available anymore, so it was removed from cart"
 msgstr "제품 <strong>[product]</strong> 에는 더 이상 사용할 수 없는 옵션 또는 옵션 변형이 있어 장바구니에서 제거되었습니다."
@@ -7999,6 +8067,10 @@ msgstr "상품"
 msgctxt "Languages::product_subscriptions"
 msgid "Product subscriptions"
 msgstr "제품 구독"
+
+msgctxt "Languages::view_product_subscriptions"
+msgid "View product subscriptions"
+msgstr ""
 
 msgctxt "Languages::product_summary"
 msgid "Product summary"
@@ -8031,10 +8103,6 @@ msgstr "프로필 상세내용"
 msgctxt "Languages::profile_fields"
 msgid "Profile fields"
 msgstr "프로필 필드"
-
-msgctxt "Languages::profile_fields_menu_description"
-msgid "Configure the set of fields included in the profile forms."
-msgstr "프로필 양식에 포함 된 필드 집합을 구성합니다."
 
 msgctxt "Languages::profile_info"
 msgid "Profile information"
@@ -8944,6 +9012,10 @@ msgctxt "Languages::search_by_order"
 msgid "Search by order"
 msgstr "주문 검색"
 
+msgctxt "Languages::search_by_customer"
+msgid "Search by customer"
+msgstr ""
+
 msgctxt "Languages::search_by_owner"
 msgid "Search by owner"
 msgstr "소유자로 검색"
@@ -9128,6 +9200,14 @@ msgctxt "Languages::select_dates"
 msgid "Select dates"
 msgstr "날짜 선택"
 
+msgctxt "Languages::period_selector_from"
+msgid "From"
+msgstr ""
+
+msgctxt "Languages::period_selector_to"
+msgid "To"
+msgstr ""
+
 msgctxt "Languages::select_descr_lang"
 msgid "Select the description language"
 msgstr "설명 언어 선택"
@@ -9251,6 +9331,70 @@ msgstr "마법사는 '설정-> 설정 마법사'메뉴에서 다시 열 수 있�
 msgctxt "Languages::settings_wizard_title"
 msgid "Settings wizard: Step [current_step] of [total_steps]"
 msgstr "설정 마법사 : [total_steps] 단계 중 [current_step] 단계"
+
+msgctxt "Languages::store_mode_menu_description"
+msgid "View and manage your licensing details."
+msgstr ""
+
+msgctxt "Languages::upgrade_center_menu_description"
+msgid "Get the latest versions of CS-Cart and its add-ons."
+msgstr ""
+
+msgctxt "Languages::import_data_menu_description"
+msgid "Import products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::export_data_menu_description"
+msgid "Export products, orders, users and more."
+msgstr ""
+
+msgctxt "Languages::languages_menu_description"
+msgid "Configure the available languages and edit any texts on your site."
+msgstr ""
+
+msgctxt "Languages::storage_menu_description"
+msgid "Back up your site data or restore a previous copy, manage files and CDN."
+msgstr ""
+
+msgctxt "Languages::settings_general"
+msgid "General"
+msgstr ""
+
+msgctxt "Languages::settings_general_menu_description"
+msgid "Configure your company info and basic principles of how your site works."
+msgstr ""
+
+msgctxt "Languages::payment_methods_menu_description"
+msgid "Set up the payment options available to your customers."
+msgstr ""
+
+msgctxt "Languages::shipping_methods_menu_description"
+msgid "Set up shipping options, their rates and availability by location."
+msgstr ""
+
+msgctxt "Languages::taxes_menu_description"
+msgid "Configure what taxes you show, how you do it, and tax rates by location."
+msgstr ""
+
+msgctxt "Languages::storefronts_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::stores_menu_description"
+msgid "Create regional or thematic branches, manage common storefront details."
+msgstr ""
+
+msgctxt "Languages::profile_fields_menu_description"
+msgid "Manage information collected from customers and sellers."
+msgstr ""
+
+msgctxt "Languages::notifications_menu_description"
+msgid "Manage the notifications sent to customers, administrators and sellers."
+msgstr ""
+
+msgctxt "Languages::logs_menu_description"
+msgid "Store activity log."
+msgstr ""
 
 msgctxt "Languages::share"
 msgid "Share"
@@ -9387,10 +9531,6 @@ msgstr "배송 방법"
 msgctxt "Languages::shipping_methods"
 msgid "Shipping methods"
 msgstr "배송 방법"
-
-msgctxt "Languages::shipping_methods_menu_description"
-msgid "Set of rules and parameters to calculate the cost of shipping."
-msgstr "배송비를 계산하기위한 규칙 및 파라미터를 세팅합니다."
 
 msgctxt "Languages::shipping_name"
 msgid "Shipping name"
@@ -10312,6 +10452,10 @@ msgctxt "Languages::states"
 msgid "States"
 msgstr "상태"
 
+msgctxt "Languages::edit_states"
+msgid "Edit states"
+msgstr ""
+
 msgctxt "Languages::states_menu_description"
 msgid "Manage the set of states that are supported in your store."
 msgstr "상점에서 지원되는 상태 세트를 관리하십시오."
@@ -10583,10 +10727,6 @@ msgstr "세금"
 msgctxt "Languages::taxes"
 msgid "Taxes"
 msgstr "세금"
-
-msgctxt "Languages::taxes_menu_description"
-msgid "Manage the set of taxes that are supported in your store."
-msgstr "상점에서 지원되는 세금 세트를 관리하십시오."
 
 msgctxt "Languages::tax_exempt"
 msgid "Tax exempt"
@@ -11271,6 +11411,10 @@ msgstr "아무 것도 찾지 못했습니다"
 msgctxt "Languages::text_not_allowed_to_upload_file_extension"
 msgid "It is not allowed to upload files with the <b>.[ext]</b> extension here."
 msgstr "<b>인 파일은 업로드할 수 없습니다.[ext]</b> 확장자는 여기에 있습니다."
+
+msgctxt "Languages::text_not_allowed_to_upload_file_size"
+msgid "It is not allowed to upload files that exceed the maximum allowed size of [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::text_not_valid_email"
 msgid "<b>[email]</b> is not a valid e-mail address."
@@ -12552,6 +12696,10 @@ msgctxt "Languages::thumbnail_width"
 msgid "Thumbnail width in scroller"
 msgstr "스크롤러의 썸네일 너비"
 
+msgctxt "Languages::image_file_size_set_to_server_setting"
+msgid "Image file size set to [file_size] MB. This is the largest file size allowed by the server settings."
+msgstr ""
+
 msgctxt "Languages::tier_account"
 msgid "tier account"
 msgstr "계층 계정"
@@ -12939,6 +13087,10 @@ msgstr "무게가 0인 다운로드 불가 제품은 0이 아닌 최소한의 �
 msgctxt "Languages::tt_views_products_update_categories"
 msgid "Categories to be displayed in the navigation breadcrumbs."
 msgstr "탐색 탐색경로에 표시할 범주입니다."
+
+msgctxt "Languages::tt_views_products_update_images"
+msgid "The maximum size of image files is [file_size] MB."
+msgstr ""
 
 msgctxt "Languages::tt_views_products_update_inventory"
 msgid "Track in stock product quantity. Enable the \"Enable inventory tracking\" option (Settings -> General) to modify."
@@ -13351,6 +13503,10 @@ msgstr "사용자"
 msgctxt "Languages::users_carts"
 msgid "Abandoned / Live carts"
 msgstr "버려진 / 라이브 카트"
+
+msgctxt "Languages::users_carts_menu"
+msgid "Live carts"
+msgstr ""
 
 msgctxt "Languages::users_carts_menu_description"
 msgid "Lists of products that have not been purchased for some reason."
@@ -14788,6 +14944,10 @@ msgctxt "SettingsOptions::company_phone_2"
 msgid "Company phone 2"
 msgstr "회사 전화 2"
 
+msgctxt "SettingsOptions::image_file_size"
+msgid "Image file size"
+msgstr ""
+
 msgctxt "SettingsOptions::thumbnail_background_color"
 msgid "Thumbnail background color"
 msgstr "썸네일 배경색"
@@ -15335,6 +15495,10 @@ msgstr "1에서 10000000 사이의 숫자를 사용하거나 자동 채우기를
 msgctxt "SettingsTooltips::user_multiple_profiles"
 msgid "A profile is a combination of shipping and billing address."
 msgstr "프로필은 배송 주소와 청구서 수신 주소의 조합입니다."
+
+msgctxt "SettingsTooltips::image_file_size"
+msgid "The maximum size of an uploaded image file in megabytes. Leave empty to use the server settings."
+msgstr ""
 
 msgctxt "SettingsTooltips::thumbnail_background_color"
 msgid "Leave empty for transparent background."
@@ -16368,6 +16532,10 @@ msgctxt "Languages::templates"
 msgid "Templates"
 msgstr "템플릿"
 
+msgctxt "Languages::edit_templates"
+msgid "Edit templates"
+msgstr ""
+
 msgctxt "Languages::payments.realex.referring_url"
 msgid "Please supply this URL to your Realex Payments account manager"
 msgstr "Realex Payments 계정 관리자에게 이 URL을 제공하세요."
@@ -16551,6 +16719,10 @@ msgstr "상점의 SEO 설정."
 msgctxt "Languages::seo_robots"
 msgid "robots.txt"
 msgstr "robots.txt"
+
+msgctxt "Languages::view_seo_robots"
+msgid "View robots.txt"
+msgstr ""
 
 msgctxt "Languages::robots_title"
 msgid "Editing: robots.txt"
@@ -17156,6 +17328,10 @@ msgstr "이 테마는 테마 편집기를 지원하지 않습니다"
 msgctxt "Languages::shipment_statuses"
 msgid "Shipment statuses"
 msgstr "배송 상태"
+
+msgctxt "Languages::edit_shipment_statuses"
+msgid "Edit shipment statuses"
+msgstr ""
 
 msgctxt "Languages::email_templates"
 msgid "Email templates"
@@ -17952,6 +18128,10 @@ msgstr "일부 핵심 파일이 변경되었습니다. 이 파일의 변경 사�
 msgctxt "Languages::file_changes_detector"
 msgid "File changes detector"
 msgstr "파일 변경 감지기"
+
+msgctxt "Languages::view_file_changes_detector"
+msgid "View file changes detector"
+msgstr ""
 
 msgctxt "Languages::privileges.view_file_changes"
 msgid "Can view"
@@ -21033,390 +21213,6 @@ msgctxt "Languages::license_expires"
 msgid "License expires"
 msgstr "라이선스 만료"
 
-msgctxt "Languages::sw.store_setup_wizard"
-msgid "Store setup wizard"
-msgstr "스토어 설정 마법사"
-
-msgctxt "Languages::sw.store_setup_wizard_short"
-msgid "Setup wizard"
-msgstr "설정 마법사"
-
-msgctxt "Languages::sw.text_about_store_header"
-msgid "Fill out the contact information about your store"
-msgstr "매장에 대한 연락처 정보를 입력하세요."
-
-msgctxt "Languages::sw.text_design_header"
-msgid "Select your storefront design and upload the logo"
-msgstr "매장 디자인을 선택하고 로고를 업로드하세요."
-
-msgctxt "Languages::sw.text_payments_header"
-msgid "Set up the service to recieve payments"
-msgstr "결제를 받을 수 있도록 서비스 설정"
-
-msgctxt "Languages::sw.text_shippings_header"
-msgid "Select shipping services"
-msgstr "배송 서비스 선택"
-
-msgctxt "Languages::sw.text_business_model_header"
-msgid "Choose your business model and checkout flow"
-msgstr "비즈니스 모델 및 결제 흐름 선택"
-
-msgctxt "Languages::sw.select_money_transfer_methods"
-msgid "Select one of the following models, and we'll handle most of the setup for you."
-msgstr "다음 모델 중 하나를 선택하면 대부분의 설정을 처리해 드립니다."
-
-msgctxt "Languages::sw.text_vendors_header"
-msgid "Set up how you work with vendors and their data"
-msgstr "공급업체 및 해당 데이터로 작업하는 방법 설정"
-
-msgctxt "Languages::sw.text_settings_header"
-msgid "Configure product catalog settings"
-msgstr "제품 카탈로그 설정 구성"
-
-msgctxt "Languages::sw.about_store"
-msgid "About store"
-msgstr "점포소개"
-
-msgctxt "Languages::sw.company_name"
-msgid "Company name"
-msgstr "회사 이름"
-
-msgctxt "Languages::sw.google_analytics.tracking_code"
-msgid "Google Analytics account number"
-msgstr "구글 애널리틱스 계정 번호"
-
-msgctxt "Languages::sw.business_model"
-msgid "Business Model"
-msgstr "비즈니스 모델"
-
-msgctxt "Languages::sw.vendors"
-msgid "Vendors"
-msgstr "공급업체"
-
-msgctxt "Languages::sw.site_admin_email"
-msgid "Site administrator e-mail address"
-msgstr "사이트 관리자 이메일 주소"
-
-msgctxt "Languages::sw.address_text"
-msgid "Company address (street, house, etc.)"
-msgstr "회사 주소(거리, 집 등)"
-
-msgctxt "Languages::sw.country"
-msgid "Company country"
-msgstr "회사 국가"
-
-msgctxt "Languages::sw.state"
-msgid "Company state"
-msgstr "회사 상태"
-
-msgctxt "Languages::sw.city"
-msgid "Company city"
-msgstr "회사 도시"
-
-msgctxt "Languages::sw.zipcode"
-msgid "Company zip code"
-msgstr "회사 우편번호"
-
-msgctxt "Languages::sw.phone"
-msgid "Company phone"
-msgstr "회사 전화"
-
-msgctxt "Languages::sw.phone_2"
-msgid "Company phone 2"
-msgstr "회사 전화 2"
-
-msgctxt "Languages::sw.fax"
-msgid "Fax"
-msgstr "팩스"
-
-msgctxt "Languages::sw.website"
-msgid "Company website"
-msgstr "회사 웹 사이트"
-
-msgctxt "Languages::sw.company_start_year"
-msgid "Year when the store started its operation"
-msgstr "점포가 개업한 연도"
-
-msgctxt "Languages::sw.collect_taxes_from_vendors"
-msgid "Collect taxes from vendors"
-msgstr "공급업체로부터 세금 징수"
-
-msgctxt "Languages::sw.moderation"
-msgid "Moderation"
-msgstr "절도"
-
-msgctxt "Languages::sw.vendor_profile_updates_approval"
-msgid "Check changes to vendor profile"
-msgstr "공급업체 프로필 변경 사항 확인"
-
-msgctxt "Languages::sw.products_prior_approval"
-msgid "Check new products"
-msgstr "새 제품 확인"
-
-msgctxt "Languages::sw.products_updates_approval"
-msgid "Check changes to existing products"
-msgstr "기존 제품의 변경 사항 확인"
-
-msgctxt "Languages::sw.accounting"
-msgid "Accounting"
-msgstr "회계"
-
-msgctxt "Languages::sw.lowers_allowed_balance"
-msgid "Minimum allowed vendor balance"
-msgstr "최소 허용 공급업체 잔액"
-
-msgctxt "Languages::sw.grace_period_to_refill_balance"
-msgid "Block vendor after days"
-msgstr "며칠 후 공급업체 차단"
-
-msgctxt "Languages::sw.location"
-msgid "Location"
-msgstr "위치"
-
-msgctxt "Languages::sw.enable_vendor_location_using_google_map"
-msgid "Let vendors set their location on Google Maps"
-msgstr "공급업체가 Google 지도에서 위치를 설정하도록 허용"
-
-msgctxt "Languages::sw.vendor_profile_fields"
-msgid "Vendor profile fields"
-msgstr "공급업체 프로필 필드"
-
-msgctxt "Languages::sw.set_up_vendor_profile_fields"
-msgid "What information about vendors do you need?"
-msgstr "공급업체에 대한 어떤 정보가 필요합니까?"
-
-msgctxt "Languages::sw.notifications"
-msgid "Notifications"
-msgstr "알림"
-
-msgctxt "Languages::sw.admin_notifications"
-msgid "Admin notifications"
-msgstr "관리자 알림"
-
-msgctxt "Languages::sw.vendor_notifications"
-msgid "Vendor notifications"
-msgstr "공급업체 알림"
-
-msgctxt "Languages::sw.selected_design"
-msgid "Current design"
-msgstr "현재 디자인"
-
-msgctxt "Languages::sw.upload_logo"
-msgid "Upload logo"
-msgstr "로고 업로드"
-
-msgctxt "Languages::sw.logo_theme"
-msgid "Main"
-msgstr "기본"
-
-msgctxt "Languages::sw.logo_mail"
-msgid "Email"
-msgstr "이메일"
-
-msgctxt "Languages::sw.select_image"
-msgid "Select image"
-msgstr "이미지 선택"
-
-msgctxt "Languages::sw.select_right_design"
-msgid "Pick a design preset"
-msgstr "디자인 사전 설정 선택"
-
-msgctxt "Languages::sw.activate"
-msgid "Activate"
-msgstr "활성화"
-
-msgctxt "Languages::sw.apply"
-msgid "Apply"
-msgstr "적용하다"
-
-msgctxt "Languages::sw.preview"
-msgid "Preview"
-msgstr "시사"
-
-msgctxt "Languages::sw.edit_design"
-msgid "Edit design"
-msgstr "디자인 편집"
-
-msgctxt "Languages::sw.design"
-msgid "Design"
-msgstr "설계"
-
-msgctxt "Languages::sw.error_updating_payment"
-msgid "Error occured during payment method update"
-msgstr "결제 수단 업데이트 중 오류가 발생했습니다."
-
-msgctxt "Languages::sw.payments"
-msgid "Payments"
-msgstr "지불"
-
-msgctxt "Languages::sw.payment_not_found"
-msgid "The Yandex.Money payment method not found"
-msgstr "Yandex.Money 결제 수단을 찾을 수 없습니다."
-
-msgctxt "Languages::sw.over_payment_system"
-msgid "Use another payment system"
-msgstr "다른 결제 시스템 사용"
-
-msgctxt "Languages::sw.shippings"
-msgid "Shipping services"
-msgstr "배송 서비스"
-
-msgctxt "Languages::sw.ems_russian_post"
-msgid "EMS Russian Post"
-msgstr "EMS 러시아 우편"
-
-msgctxt "Languages::sw.russian_post"
-msgid "Russian Post"
-msgstr "러시아 포스트"
-
-msgctxt "Languages::sw.edost"
-msgid "eDost"
-msgstr "eDost"
-
-msgctxt "Languages::sw.usps"
-msgid "USPS"
-msgstr "USPS"
-
-msgctxt "Languages::sw.ups"
-msgid "UPS"
-msgstr "UPS"
-
-msgctxt "Languages::sw.fedex"
-msgid "FedEx"
-msgstr "페덱스"
-
-msgctxt "Languages::sw.goto_shipping_methods"
-msgid "Go to shipping methods"
-msgstr "배송 방법으로 이동"
-
-msgctxt "Languages::sw.configure"
-msgid "Configure"
-msgstr "구성"
-
-msgctxt "Languages::sw.settings"
-msgid "Settings"
-msgstr "설정"
-
-msgctxt "Languages::sw.enable"
-msgid "Enable"
-msgstr "할 수 있게 하다"
-
-msgctxt "Languages::sw.disable"
-msgid "Disable"
-msgstr "장애를 입히다"
-
-msgctxt "Languages::sw.activated"
-msgid "Activated"
-msgstr "활성화됨"
-
-msgctxt "Languages::sw.select_model"
-msgid "Select model"
-msgstr "모델 선택"
-
-msgctxt "Languages::sw.timezone"
-msgid "Time zone"
-msgstr "시간대"
-
-msgctxt "Languages::sw.order_start_id"
-msgid "Initial order ID value (leave empty for auto)"
-msgstr "초기 주문 ID 값(자동의 경우 비워 둠)"
-
-msgctxt "Languages::sw.min_order_amount"
-msgid "Minimum order amount"
-msgstr "최소 주문 금액"
-
-msgctxt "Languages::sw.show_out_of_stock_products"
-msgid "Show out of stock products"
-msgstr "품절된 상품을 보여주세요"
-
-msgctxt "Languages::sw.enable_quick_view"
-msgid "Enable quick view"
-msgstr "빠른 보기 활성화"
-
-msgctxt "Languages::sw.enable_inventory_tracking"
-msgid "Enable inventory tracking"
-msgstr "인벤토리 추적 활성화"
-
-msgctxt "Languages::sw.allow_negative_amount"
-msgid "Allow negative amount in inventory"
-msgstr "재고에 음수 허용"
-
-msgctxt "Languages::sw.ym_merchant_country"
-msgid "Country"
-msgstr "국가"
-
-msgctxt "Languages::sw.ym_merchant_forma"
-msgid "Ownership"
-msgstr "소유권"
-
-msgctxt "Languages::sw.send"
-msgid "Send"
-msgstr "보내다"
-
-msgctxt "Languages::sw.remove_demo_data_text"
-msgid "Clean up orders, products, categories, user profiles, and related data"
-msgstr "주문, 제품, 카테고리, 사용자 프로필 및 관련 데이터 정리"
-
-msgctxt "Languages::sw.remove"
-msgid "Clean up"
-msgstr "청소"
-
-msgctxt "Languages::sw.demo_data_removed"
-msgid "Demo data removed."
-msgstr "데모 데이터가 제거되었습니다."
-
-msgctxt "Languages::sw.error_removing_demo_data"
-msgid "An error occurred while removing the demo data"
-msgstr "데모 데이터를 제거하는 동안 오류가 발생했습니다."
-
-msgctxt "Languages::sw.confirm_demo_data_removal_title"
-msgid "Remove the data?"
-msgstr "데이터를 삭제하시겠습니까?"
-
-msgctxt "Languages::sw.text_confirm_demo_data_removal"
-msgid "All orders, products, product categories, customer profiles, and associated data (tags, comments, etc.) including the data added by you <b>will be permanently removed.</b> This operation cannot be undone. Are you sure you want to continue?"
-msgstr "귀하가 추가한 데이터를 포함한 모든 주문, 제품, 제품 카테고리, 고객 프로필 및 관련 데이터(태그, 댓글 등)는 <b>으로 제거됩니다.</b> 이 작업은 취소할 수 없습니다. 너 정말 계속하고 싶니?"
-
-msgctxt "Languages::sw.delete_demo_data"
-msgid "Delete the  data"
-msgstr "데이터 삭제"
-
-msgctxt "Languages::sw.keep_demo_data"
-msgid "Keep the data"
-msgstr "데이터 유지"
-
-msgctxt "Languages::sw.more_themes_in_marketplace"
-msgid "More themes in the Marketplace"
-msgstr "마켓플레이스의 더 많은 테마"
-
-msgctxt "Languages::sw.logo_recommended_size_text"
-msgid "recommended size [height]px × [width]px"
-msgstr "권장 크기 [height]픽셀 × [width]픽셀"
-
-msgctxt "Languages::sw.money_goes_to_owner"
-msgid "Customer makes a single payment, all money goes to you"
-msgstr "고객이 한 번만 결제하면 모든 금액이 귀하에게 전달됩니다."
-
-msgctxt "Languages::sw.money_goes_to_owner_descr"
-msgid "The money owed to the vendor is tracked in the admin panel. A vendor can request money withdrawal through the admin panel. You forward the money to vendors as you see fit."
-msgstr "공급업체에 지불해야 하는 금액은 관리자 패널에서 추적됩니다. 판매자는 관리자 패널을 통해 출금을 요청할 수 있습니다. 적절하다고 생각되는 대로 공급업체에 돈을 전달합니다."
-
-msgctxt "Languages::sw.money_split_automaticaly"
-msgid "Customer makes a single payment, money is split automatically"
-msgstr "고객이 한 번만 결제하면 돈이 자동으로 분할됩니다."
-
-msgctxt "Languages::sw.money_split_automaticaly_descr"
-msgid "This is achieved via [stripe_connect] payments and/or [paypal_commerce_platform], so each vendor must have a Stripe and/or PayPal account. We'll create these payment methods for you. You'll just need to configure them, and vendors will need to provide their account information."
-msgstr "이것은 [stripe_connect] 지불 및/또는 [paypal_commerce_platform]을 통해 이루어지므로 각 공급업체에는 Stripe 및/또는 PayPal 계정이 있어야 합니다. 이러한 지불 방법을 생성해 드립니다. 이를 구성하기만 하면 공급업체에서 계정 정보를 제공해야 합니다."
-
-msgctxt "Languages::sw.money_goes_to_vendor"
-msgid "Customer makes multiple payments (one to each vendor)"
-msgstr "고객이 여러 번 지불(각 공급업체에 하나씩)"
-
-msgctxt "Languages::sw.money_goes_to_vendor_descr"
-msgid "Each vendor has to create own payment methods. Money goes directly to vendors, and marketplace commission gets added to vendors' debt. It becomes a vendor's responsibility to pay the marketplace."
-msgstr "각 공급업체는 자체 결제 방법을 만들어야 합니다. 돈은 공급업체에 직접 전달되고 시장 수수료는 공급업체의 부채에 추가됩니다. 시장에 지불하는 것은 공급업체의 책임이 됩니다."
-
 msgctxt "Languages::unsupported_browser_notice"
 msgid "<p>We have detected that the browser you are using is not fully supported by our Admin Panel. You can view this site using your current browser but it may not display properly, and you may not be able to fully use all features.</p><br><p>Admin Panel is best viewed using the following browsers:</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox (latest version)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome (latest version)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge (latest version)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari (latest version)</a></li></ul><br><p>Click on one of the links to download the browser of your choice. Once the download has completed, install the browser by running the setup program.</p><br><p>If you cannot upgrade your browser now, you can still access Admin Panel, but you may not be able to fully use all features.<br><br><a href=\"[url]\">Continue</a></p>"
 msgstr "<p>사용 중인 브라우저가 관리자 패널에서 완전히 지원되지 않는 것으로 나타났습니다. 이 사이트는 현재 사용 중인 브라우저에서 볼 수 있지만 제대로 표시되지 않을 수 있으며 일부 기능을 완전히 사용하지 못할 수도 있습니다.</p><br><p>관리자 패널은 다음 브라우저를 사용하여 가장 잘 볼 수 있습니다.</p><br><ul><li>&ndash; <a href=\"http://www.mozilla.org/en-US/\" target=\"_blank\">Mozilla Firefox(최신 버전)</a></li><li>&ndash; <a href=\"https://www.google.com/intl/en/chrome/browser/\" target=\"_blank\">Google Chrome(최신 버전)</a></li><li>&ndash; <a href=\"https://www.microsoft.com/en-us/edge\" target=\"_blank\">Microsoft Edge(최신 버전)</a></li><li>&ndash; <a href=\"https://www.apple.com/safari/\" target=\"_blank\">Safari(최신 버전)</a></li></ul><br><p>링크 중 하나를 클릭하여 원하는 브라우저를 다운로드하십시오. 다운로드가 완료되면 설치 프로그램을 실행하여 브라우저를 설치합니다.</p><br><p>지금 브라우저를 업그레이드할 수 없는 경우에도 관리자 패널에 액세스할 수 있지만 모든 기능을 완전히 사용하지 못할 수 있습니다.<br><br><a href=\"[url]\">계속</a></p>"
@@ -21432,6 +21228,10 @@ msgstr "기본값으로 설정"
 msgctxt "Languages::saved_search.set_as_non_default"
 msgid "Set as non-default"
 msgstr "기본값이 아닌 것으로 설정"
+
+msgctxt "Languages::saved_search.more"
+msgid "More saved search"
+msgstr ""
 
 msgctxt "Languages::saved_search.set_as_default_confirm"
 msgid "Saved search \"[name]\" will open by default instead of the full list of objects. Is that what you'd like?"
@@ -21700,10 +21500,6 @@ msgstr "모든 신규 공급업체에 사용"
 msgctxt "Languages::show_vendor_info_if_shipping_no_required"
 msgid "Show information about vendors whose products do not require shipping"
 msgstr "배송이 필요하지 않은 제품의 공급업체에 대한 정보 표시"
-
-msgctxt "Languages::sw.marketplace_setup_wizard"
-msgid "Marketplace setup wizard"
-msgstr "마켓플레이스 설정 마법사"
 
 msgctxt "Languages::sw.money_split_automaticaly_descr.ru"
 msgid "This is achieved via YooMoney for marketplaces, so each vendor must have a YooMoney account. We'll create a payment method for you. You'll just need to configure it, and vendors will need to provide their account information."

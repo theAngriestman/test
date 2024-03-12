@@ -48,15 +48,22 @@
                                         </div>
                                     {/if}
                                 </div>
+                                {capture name="item_value"}
+                                    {if $item.use_price_for_value}
+                                        {include file="common/price.tpl" value=$item.value}
+                                    {else}
+                                        {$item.value nofilter}
+                                    {/if}
+                                {/capture}
                                 {if $item.value_href && isset($item.value)}
                                     <a href="{$item.value_href|fn_url}"
                                         class="analytics-card-resource-list__value analytics-card-resource-list__value--link"
                                     >
-                                        {$item.value nofilter}
+                                        {$smarty.capture.item_value nofilter}
                                     </a>
                                 {elseif isset($item.value)}
                                     <div class="analytics-card-resource-list__value">
-                                        {$item.value nofilter}
+                                        {$smarty.capture.item_value nofilter}
                                     </div>
                                 {/if}
                             </div>

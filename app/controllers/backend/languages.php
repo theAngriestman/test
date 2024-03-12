@@ -253,21 +253,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Get language variables values
 //
 if ($mode == 'manage') {
-
-    $sections = array(
-        'translations' => array(
-            'title' => __('translations'),
-            'href' => fn_url('languages.translations'),
-        ),
-        'manage_languages' => array(
-            'title' => __('manage_languages'),
-            'href' => fn_url('languages.manage'),
-        ),
-    );
-
-    Registry::set('navigation.dynamic.sections', $sections);
-    Registry::set('navigation.dynamic.active_section', 'manage_languages');
-
     Registry::set('navigation.tabs', array (
         'languages' => array (
             'title' => __('installed_languages'),
@@ -307,19 +292,6 @@ if ($mode == 'manage') {
     exit(0);
 
 } elseif ($mode == 'translations') {
-    $sections = array(
-        'translations' => array(
-            'title' => __('translations'),
-            'href' => fn_url('languages.translations'),
-        ),
-        'manage_languages' => array(
-            'title' => __('manage_languages'),
-            'href' => fn_url('languages.manage'),
-        ),
-    );
-    Registry::set('navigation.dynamic.sections', $sections);
-    Registry::set('navigation.dynamic.active_section', 'translations');
-
     list($lang_data, $search) = LanguageValues::getVariables($_REQUEST, Registry::get('settings.Appearance.admin_elements_per_page'));
 
     Tygh::$app['view']->assign('lang_data', $lang_data);

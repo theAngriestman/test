@@ -180,8 +180,6 @@ if (fn_allowed_for('ULTIMATE')) {
 Tygh::$app['view']->assign('quick_menu', fn_get_quick_menu_data());
 Tygh::$app['view']->assign('is_bottom_panel_available', fn_is_bottom_panel_available($auth));
 
-Tygh::$app['view']->assign('is_setup_wizard_panel_available', fn_is_setup_wizard_panel_available($auth));
-
 if (!defined('AJAX_REQUEST')) {
     // update request history
     // save only current and previous page requests in history

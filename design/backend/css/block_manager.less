@@ -1,4 +1,13 @@
-@media (max-width: @DesktopBreakpoint) {
+@BlockManagerGrid:  url(../media/images/block_manager/grid_bg.png);
+@BlockManagerGrid12Col:  url(../media/images/block_manager/12_col.gif);
+@BlockManagerGrid16Col:  url(../media/images/block_manager/16_col.gif);
+@BlockManagerIconsSprite: url(../media/images/block_manager/block_icons_spr.png);
+@BlockManagerOpenHand: url(../media/images/block_manager/openhand.cur);
+@BlockManagerClosedHand: url(../media/images/block_manager/closedhand.cur);
+
+// (Main menu + Gap + 960 grid content + Gap + Sidebar) - 1px
+// (240px + 16px + (16px + 960px + 16px) + 16px + 290px + 16px) - 1px
+@media (max-width: 1569px) {
     .block-manager-location-wrapper {
         overflow-y: auto;
     }   
@@ -75,7 +84,7 @@ html[dir="rtl"] .block-header__name:after {
     float: left;
     height: 52px;
     margin: 3px 10px 22px 0;
-    padding: 5px 0px 0px 10px;
+    padding: 7px 0px 0px 10px;
     width: 53px;
 }
 
@@ -647,7 +656,8 @@ html[dir="rtl"] .block-header__name:after {
     .action {
         width: auto;
         height: auto;
-        padding: 5px 3px 3px 0px;
+        margin-top: 2px;
+        margin-right: 8px;
         cursor: pointer;
         opacity: 0.6;
         float: left;
@@ -663,13 +673,13 @@ html[dir="rtl"] .block-header__name:after {
         visibility: visible;
     }
 
-    .icon-trash {
+    .bm-action-delete.pull-right {
         float: right !important;
     }
 }
 
 .block-control-menu {
-    background-color: #08c;
+    background-color: @mainColor;
 
     .action, .action-properties {
         color: #fff;
@@ -820,12 +830,20 @@ html[dir="rtl"] .block-header__name:after {
             -2px 0 rgba(255, 255, 255, 0.5), 0 2px rgba(255, 255, 255, 0.5), 2px 0 rgba(255, 255, 255, 0.5), 0 -2px rgba(255, 255, 255, 0.5),
             -3px 0 rgba(255, 255, 255, 0.2), 0 3px rgba(255, 255, 255, 0.2), 3px 0 rgba(255, 255, 255, 0.2), 0 -3px rgba(255, 255, 255, 0.2),
             -3px 0 rgba(255, 255, 255, 0.1), 0 3px rgba(255, 255, 255, 0.1), 3px 0 rgba(255, 255, 255, 0.1), 0 -3px rgba(255, 255, 255, 0.1);
-
-            &.icon-phone::before {
-                content: "\f10b";
-            }
         }
     }
+}
+
+.device-specific-block__devices__device--phone:before {
+    content: url('../templates/icons/mobile_phone.svg');
+}
+
+.device-specific-block__devices__device--tablet:before {
+    content: url('../templates/icons/tablet.svg');
+}
+
+.device-specific-block__devices__device--desktop:before {
+    content: url('../templates/icons/desktop.svg');
 }
 
 .grid-control-menu {

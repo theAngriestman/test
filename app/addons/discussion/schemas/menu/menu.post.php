@@ -12,20 +12,13 @@
 * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
 ****************************************************************************/
 
-$schema['central']['website']['items']['comments_and_reviews'] = array(
-    'attrs' => array(
+$schema['central']['website']['items']['comments_and_reviews'] = [
+    'attrs' => [
         'class'=>'is-addon'
-    ),
+    ],
     'href' => 'discussion_manager.manage',
-    'position' => 601
-);
-
-$schema['central']['website']['items']['discussion_title_home_page'] = array(
-    'attrs' => array(
-        'class'=>'is-addon'
-    ),
-    'href' => 'discussion.update?discussion_type=E',
-    'position' => 602
-);
+    'position' => 601,
+    'title' => __('discussion.comments_and_reviews_menu'),
+];
 
 return $schema;

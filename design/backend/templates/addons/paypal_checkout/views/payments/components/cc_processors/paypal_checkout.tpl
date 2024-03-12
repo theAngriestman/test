@@ -91,8 +91,8 @@
     </div>
 </div>
 
-{*{include file="common/subheader.tpl" title=__("paypal_checkout.settings.enable_funding") meta="collapsed" target="#elm_funding{$suffix}"}*}
-{*"card", "credit",*}
+{include file="common/subheader.tpl" title=__("paypal_checkout.settings.enable_funding") meta="collapsed" target="#elm_funding{$suffix}"}
+
 <div id="elm_funding{$suffix}" class="collapse out">
     {foreach ["venmo", "sepa", "bancontact", "eps", "giropay", "ideal", "mybank", "p24", "sofort", "mercadopago", "blik", "paylater"] as $source}
         <div class="control-group">
@@ -108,9 +108,55 @@
                        name="payment_data[processor_params][disable_funding][{$source}]"
                        id="elm_funding_{$source}{$suffix}"
                        value="0"
-                       {if !$processor_params.disable_funding.$source|default:0 && false}checked="checked"{/if}
+                       {if !$processor_params.disable_funding.$source|default:0}checked="checked"{/if}
                 />
             </div>
         </div>
     {/foreach}
+</div>
+
+{include file="common/subheader.tpl" title=__("paypal_checkout.settings.style") meta="collapsed" target="#elm_button_appearance{$suffix}"}
+
+<div id="elm_button_appearance{$suffix}" class="collapse out">
+    <div class="control-group">
+        <label for="elm_shape{$suffix}" class="control-label">{__("paypal_checkout.style.shape")}:</label>
+        <div class="controls">
+            <select name="payment_data[processor_params][style][shape]" id="elm_shape{$suffix}">
+                {foreach ["pill", "rect"] as $shape}
+                    <option value="{$shape}"
+                        {if $processor_params.style.shape|default:"rect" == $shape}selected="selected"{/if}
+                    >{__("paypal_checkout.shape.`$shape`")}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="elm_color{$suffix}" class="control-label">{__("paypal_checkout.style.color")}:</label>
+        <div class="controls">
+            <select name="payment_data[processor_params][style][color]" id="elm_color{$suffix}">
+                {foreach ["gold", "blue", "silver", "black"] as $color}
+                    <option value="{$color}"
+                        {if $processor_params.style.color|default:"gold" == $color}selected="selected"{/if}
+                    >{__("paypal_checkout.color.`$color`")}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label for="elm_height{$suffix}" class="control-label">{__("paypal_checkout.style.height")}:</label>
+        <div class="controls">
+            <input name="payment_data[processor_params][style][height]"
+                id="elm_height{$suffix}"
+                type="text"
+                class="cm-numeric"
+                data-m-dec="0"
+                data-v-max="55"
+                data-a-sign="px"
+                data-p-sign="s"
+                value="{$processor_params.style.height|default:55}"
+            />
+        </div>
+    </div>
 </div>

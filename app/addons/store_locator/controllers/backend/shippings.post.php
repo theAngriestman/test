@@ -23,15 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     return [CONTROLLER_STATUS_OK];
 }
 
-if (in_array($mode, ['add', 'update', 'manage'])) {
-    $dynamic_sections = Registry::ifGet('navigation.dynamic.sections', []);
-    $dynamic_sections['store_locator'] = [
-        'title' => __('store_locator'),
-        'href'  => 'store_locator.manage',
-    ];
-    Registry::set('navigation.dynamic.sections', $dynamic_sections);
-}
-
 if ($mode === 'update') {
     /** @var \Tygh\SmartyEngine\Core $view */
     $view = Tygh::$app['view'];
