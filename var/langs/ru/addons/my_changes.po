@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /release-4.10.3/addons/my_changes.po\n"
+"Last-Translator: cscart\n"
+"PO-Revision-Date: 2019-07-15 11:58\n"
+
+msgctxt "Addons::name::my_changes"
+msgid "My changes"
+msgstr "Мои изменения"
+
+msgctxt "Addons::description::my_changes"
+msgid "A dummy add-on for easier hook design editing"
+msgstr "Специальный модуль для внесения собственных изменений в платформу"
+
+msgctxt "Languages::ab"
+msgid "ab"
+msgstr "AB-DEV"
+
+msgctxt "SettingsOptions::my_changes::ab_dev"
+msgid "ab_dev"
+msgstr "Активировать AB-DEV"
+
+msgctxt "Languages::ab.full_cc"
+msgid "ab.full_cc"
+msgstr "Сбросить кеш"
+
+msgctxt "Languages::ab.dev_mode.compile_check.true"
+msgid "ab.dev_mode.compile_check.true"
+msgstr "Отключить кеширование блоков "
+
+msgctxt "Languages::ab.dev_mode.compile_check.false"
+msgid "ab.dev_mode.compile_check.false"
+msgstr "Включить кеширование блоков "
+
+msgctxt "Languages::ab.update_po"
+msgid "ab.update_po"
+msgstr "Обновить PO"
+
+msgctxt "Languages::ab.log"
+msgid "ab.log"
+msgstr "Лог test-сайта"

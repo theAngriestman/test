@@ -1,0 +1,13 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Languages::upgrade_notification.ups_shipping_with_oauth.title"
+msgid "UPS integration updated to prepare for 2024"
+msgstr "UPS integration updated to prepare for 2024"
+
+msgctxt "Languages::upgrade_notification.ups_shipping_with_oauth.message"
+msgid "You're currently using the old UPS integration that will stop working in June 2024. That's why you'll see \"UPS (Deprecated)\" in the settings of your existing shipping methods. CS-Cart now comes with a new UPS integration—called simply \"UPS\"—that uses OAuth instead of API keys. To prepare for June 2024, add a new shipping method that uses the new \"UPS\" for rate calculation. Once you acquire the credentials and make sure that the new shipping method works, you can disable the deprecated shipping methods.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Go to shipping methods</a>"
+msgstr "You're currently using the old UPS integration that will stop working in June 2024. That's why you'll see \"UPS (Deprecated)\" in the settings of your existing shipping methods. CS-Cart now comes with a new UPS integration—called simply \"UPS\"—that uses OAuth instead of API keys. To prepare for June 2024, add a new shipping method that uses the new \"UPS\" for rate calculation. Once you acquire the credentials and make sure that the new shipping method works, you can disable the deprecated shipping methods.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Go to shipping methods</a>"

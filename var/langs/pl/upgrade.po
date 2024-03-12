@@ -1,0 +1,22 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: /release-4.17.2/upgrade.po\n"
+"X-Crowdin-File-ID: 8106\n"
+"PO-Revision-Date: 2023-11-23 09:56\n"
+
+msgctxt "Languages::upgrade_notification.ups_shipping_with_oauth.title"
+msgid "UPS integration updated to prepare for 2024"
+msgstr "Zaktualizowano integrację z UPS w celu przygotowania na rok 2024"
+
+msgctxt "Languages::upgrade_notification.ups_shipping_with_oauth.message"
+msgid "You're currently using the old UPS integration that will stop working in June 2024. That's why you'll see \"UPS (Deprecated)\" in the settings of your existing shipping methods. CS-Cart now comes with a new UPS integration—called simply \"UPS\"—that uses OAuth instead of API keys. To prepare for June 2024, add a new shipping method that uses the new \"UPS\" for rate calculation. Once you acquire the credentials and make sure that the new shipping method works, you can disable the deprecated shipping methods.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Go to shipping methods</a>"
+msgstr "Obecnie korzystasz ze starej integracji UPS, która przestanie działać w czerwcu 2024 r. Dlatego w ustawieniach istniejących metod wysyłki zobaczysz komunikat \"UPS (przestarzały)\". CS-Cart jest teraz wyposażony w nową integrację UPS – zwaną po prostu \"UPS\" – która wykorzystuje OAuth zamiast kluczy API. Aby przygotować się na czerwiec 2024 r., dodaj nową metodę wysyłki, która do obliczania stawek korzysta z nowego \"UPS\". Po uzyskaniu danych uwierzytelniających i upewnieniu się, że nowa metoda wysyłki działa, możesz wyłączyć przestarzałe metody wysyłki.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Przejdź do metod wysyłki</a>"
+

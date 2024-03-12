@@ -1,0 +1,45 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::my_changes"
+msgid "My changes"
+msgstr "My changes"
+
+msgctxt "Addons::description::my_changes"
+msgid "A dummy add-on for easier hook design editing"
+msgstr "A dummy add-on for easier hook design editing"
+
+msgctxt "Addons::description::my_changes"
+msgid "A dummy add-on for easier hook design editing"
+msgstr "Специальный модуль для внесения собственных изменений в платформу"
+
+msgctxt "Languages::ab"
+msgid "ab"
+msgstr "AB-DEV"
+
+msgctxt "SettingsOptions::my_changes::ab_dev"
+msgid "ab_dev"
+msgstr "Active AB-DEV"
+
+msgctxt "Languages::ab.full_cc"
+msgid "ab.full_cc"
+msgstr "Reset cache"
+
+msgctxt "Languages::ab.dev_mode.compile_check.true"
+msgid "ab.dev_mode.compile_check.true"
+msgstr "Disable block cache"
+
+msgctxt "Languages::ab.dev_mode.compile_check.false"
+msgid "ab.dev_mode.compile_check.false"
+msgstr "Enable block cache"
+
+msgctxt "Languages::ab.update_po"
+msgid "ab.update_po"
+msgstr "Update PO"
+
+msgctxt "Languages::ab.log"
+msgid "ab.log"
+msgstr "Log test-site"

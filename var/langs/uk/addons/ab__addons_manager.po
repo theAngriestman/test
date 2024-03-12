@@ -1,0 +1,387 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Ukrainian\n"
+"Language: uk_UA\n"
+
+msgctxt "Addons::name::ab__addons_manager"
+msgid "ab__addons_manager"
+msgstr "AB: Менеджер модулів"
+
+msgctxt "Addons::description::ab__addons_manager"
+msgid "ab__addons_manager_description"
+msgstr "Керування модулями від AlexBranding. Установка і перевірка оновлень модулів, а також можете ознайомитись з новинками від AlexBranding."
+
+msgctxt "Languages::ab__addons_manager"
+msgid "ab__addons_manager"
+msgstr "AB: Менеджер модулів"
+
+msgctxt "Languages::ab__addons"
+msgid "ab__addons"
+msgstr "AB: Модулі"
+
+msgctxt "Languages::ab__am.addons"
+msgid "ab__am.addons"
+msgstr "AB: Список доступних пакетів/модулів"
+
+msgctxt "Languages::ab__am.our_store"
+msgid "ab__am.our_store"
+msgstr "Магазин AlexBranding"
+
+msgctxt "Languages::ab__am.msg.error_code"
+msgid "ab__am.msg.error_code"
+msgstr "Помилка коду ліцензії модуля"
+
+msgctxt "Languages::ab__am.msg.addon_is_already_installed"
+msgid "ab__am.msg.addon_is_already_installed"
+msgstr "У Вас вже встановлено модуль <b>[name]</b> останньої версії <b>[version]</b>!"
+
+msgctxt "Languages::ab__am.msg.addon_is_already_installed_upd"
+msgid "ab__am.msg.addon_is_already_installed_upd"
+msgstr "У Вас вже встановлено модуль <b>[name]</b> останньої версії <b>[version]</b>, Ви можете здійснити оновлення модуля до версії <b>[version_last]</b>"
+
+msgctxt "Languages::ab__am.msg.no_permissions"
+msgid "ab__am.msg.no_permissions"
+msgstr "Немає прав на перезапис наступних об’єктів"
+
+msgctxt "Languages::ab__am.msg.update_am"
+msgid "ab__am.msg.update_am"
+msgstr "Для установки і/або оновлення модулів необхідно оновити АВ: Менеджер модулів до останньої версії <b>v[ver]</b>!"
+
+msgctxt "Languages::ab__am.addon.action.install_addon"
+msgid "ab__am.addon.action.install_addon"
+msgstr "Вам доступна версія <code>v[ver]</code>"
+
+msgctxt "Languages::ab__am.addon.action.install_addon.button.value"
+msgid "ab__am.addon.action.install_addon.button.value"
+msgstr "Встановити v[ver]"
+
+msgctxt "Languages::ab__am.addon.action.install_addon.button.tooltip"
+msgid "ab__am.addon.action.install_addon.button.tooltip"
+msgstr "При натисканні на цю кнопку модуль v[ver] буде автоматично завантажено і встановлено в обхід стандартній установці CS-Cart. Також у Вас є можливість встановити модуль стандартним способом, завантаживши сумісну з Вашим магазином версію модуля на сторінці Мій Профіль -> Замовлення на сайті <a href='https://cs-cart.alexbranding.com/ru/orders/'>cs-cart.alexbranding.com</a>"
+
+msgctxt "Languages::ab__am.addon.action.update_addon"
+msgid "ab__am.addon.action.update_addon"
+msgstr "Вам доступне оновлення <code>v[ver]</code>"
+
+msgctxt "Languages::ab__am.addon.action.update_addon.button.value"
+msgid "ab__am.addon.action.update_addon.button.value"
+msgstr "Оновити до v[ver]"
+
+msgctxt "Languages::ab__am.addon.action.update_addon.button.tooltip"
+msgid "ab__am.addon.action.update_addon.button.tooltip"
+msgstr "Якщо оновлення недоступне через Центр оновлень CS-Cart, видаліть модуль на сторінці <b>Модулі -> Керування модулями </b> і v[ver] стане доступною для установки на цій сторінці"
+
+msgctxt "Languages::ab__am.addon.action.not_tested_yet"
+msgid "ab__am.addon.action.not_tested_yet"
+msgstr "Установлена версія <code>v[ver]</code> ще не пройшла тестування для Вашої версії магазину <b>[cscart]</b>"
+
+msgctxt "Languages::ab__am.addon.action.wait_new_version"
+msgid "ab__am.addon.action.wait_new_version"
+msgstr "Встановлена остання версія <code>v[ver]</code> сумісна з <b>[cscart]</b> в межах Вашої підписки"
+
+msgctxt "Languages::ab__am.addon.action.unavailable_addon"
+msgid "ab__am.addon.action.unavailable_addon"
+msgstr "Модуль Вам недоступний (або через несумісність з Вашою версією магазину b>[cscart]</b>, або у Вас закінчилась підписка)"
+
+msgctxt "Languages::ab__am.addon.action.require_update"
+msgid "ab__am.addon.action.require_update"
+msgstr "Для установки модуля або установки оновлень, будь ласка, оновіть <b>AB: Менеджер модулів</b> до актуальної версії <code>v[ver]</code>"
+
+msgctxt "Languages::ab__am.addon.subscription.exp"
+msgid "ab__am.addon.subscription.exp"
+msgstr "Ваша підписка закінчилась <b>[date]</b>. Для отримання доступу до актуальних версій модулів необхідно купити підписку"
+
+msgctxt "Languages::ab__am.addon.subscription.exp.button.value"
+msgid "ab__am.addon.subscription.exp.button.value"
+msgstr "Купити підписку"
+
+msgctxt "Languages::ab__am.addon.subscription.exp.button.tooltip"
+msgid "ab__am.addon.subscription.exp.button.tooltip"
+msgstr "Купити підписку для отримання доступу до актуальних версій модулів"
+
+msgctxt "Languages::ab__am.addon.subscription.ok"
+msgid "ab__am.addon.subscription.ok"
+msgstr "Ваша підписка активна до <b>[date]</b>."
+
+msgctxt "Languages::ab__am.addon.subscription.ok.button.value"
+msgid "ab__am.addon.subscription.ok.button.value"
+msgstr "Продовжити підписку"
+
+msgctxt "Languages::ab__am.addon.subscription.ok.button.tooltip"
+msgid "ab__am.addon.subscription.ok.button.tooltip"
+msgstr "Продовжити підписку для отримання доступу до актуальних версій модулів"
+
+msgctxt "Languages::ab__am.install.update"
+msgid "ab__am.install.update"
+msgstr "Процес оновлення модуля"
+
+msgctxt "Languages::ab__am.install.install"
+msgid "ab__am.install.install"
+msgstr "Процес установки модуля"
+
+msgctxt "Languages::ab__am.install.downloading"
+msgid "ab__am.install.downloading"
+msgstr "[name] — <b>завантаження</b>"
+
+msgctxt "Languages::ab__am.install.checking"
+msgid "ab__am.install.checking"
+msgstr "[name] — <b>перевірка</b>"
+
+msgctxt "Languages::ab__am.install.installing"
+msgid "ab__am.install.installing"
+msgstr "[name] — <b>установка</b>"
+
+msgctxt "Languages::ab__am.install.clearing_cache"
+msgid "ab__am.install.clearing_cache"
+msgstr "Очистити кеш"
+
+msgctxt "Languages::ab__am.addon.status.a"
+msgid "ab__am.addon.status.a"
+msgstr "Статус модуля — Увімкнений"
+
+msgctxt "Languages::ab__am.addon.status.d"
+msgid "ab__am.addon.status.d"
+msgstr "Статус модуля — Вимкнений"
+
+msgctxt "Languages::ab__am.addon.status.n"
+msgid "ab__am.addon.status.n"
+msgstr "Статус модуля — Ще не встановлений"
+
+msgctxt "Languages::ab__am.menu.new_version"
+msgid "ab__am.menu.new_version"
+msgstr "v[ver]"
+
+msgctxt "Languages::ab__am.menu.number_of_updates"
+msgid "ab__am.menu.number_of_updates"
+msgstr "Кількість оновлень"
+
+msgctxt "Languages::ab__am.menu.number_of_notifications"
+msgid "ab__am.menu.number_of_notifications"
+msgstr "Кількість повідомлень"
+
+msgctxt "Languages::ab__am.order"
+msgid "ab__am.order"
+msgstr "(Замовлення №[order_id])"
+
+msgctxt "Languages::ab__am.no_data"
+msgid "ab__am.no_data"
+msgstr "Для застосування модулів і/або пакетів AlexBranding Ваш домен <b>[domain]</b> має бути ліцензований. <Br>У випадку відсутності домену <b>[domain]</b> в списку ліцензованих доменів — усі рішення AlexBranding будуть автоматично вимкнені. <br>Зверніться на пошту <b>info@alexbranding.com</b> для вирішення проблем."
+
+msgctxt "Languages::ab__am.no_data.notification"
+msgid "ab__am.no_data.notification"
+msgstr "Модуль <b>[name]</b> не пройшов валідацію ліцензії, тому був автоматично <b>Вимкнений</b>. Зверніться на пошту <b>info@alexbranding.com</b> для вирішення проблем."
+
+msgctxt "Languages::ab__am.note"
+msgid "ab__am.note"
+msgstr "Докладніше"
+
+msgctxt "Languages::ab__am.go_to_all_stores"
+msgid "ab__am.go_to_all_stores"
+msgstr "AB: Модуль доступний лише в режимі <a href='[link]'>Усі магазини</a>."
+
+msgctxt "Languages::ab__am.addons_sets.notes"
+msgid "ab__am.addons_sets.notes"
+msgstr "<h4>Основні поняття</h4>"
+"<p><u>Установлена версія</u> — це версія модуля, яка у цей момент установлена на Вашому сайті.</p>"
+"<p><u>Доступна Вам версія</u> — це найостанніша версія модуля, яка Вам доступна для установки і/або оновлення в межах заздалегідь оплаченої підписки на оновлення. Наприклад, для модуля існують версії: v2.0.0 від 15 лютого 2019р. і v2.1.0 від 2 березня 2019р. І Ваша підписка на модуль завершилась 1 березня 2019р., тоді останньою доступною версією для Вас буде версія v2.0.0 від 15 лютого 2019р. Для отримання версії v2.1.0 від 2 березня 2019р. Вам необхідно купити підписку.</p>"
+"<p><u>Актуальна версія </u> — це найостанніша версія модулю, яка є на цю хвилину. Радимо завжди оновлювати до актуальної версії, яка містить виправлені помилки і новий корисний функціонал. </p>"
+"<p><u>Модуль недоступний для Вашого магазину</u> — це можливо, коли версія Вашого CS-Cart не відповідає мінімально допустимій версії для модуля або у Вас завершився період підписки. Наприклад, тема Unitheme2 доступна тільки для CS-Cart 4.10.x і більше.</p>"
+"<br>"
+"<h4>Процес установки</h4>"
+"<p>Установка модуля ще ніколи не була настільки простою як зараз. Після покупки рішень AlexBranding і установки <b>AB: Менеджера модулів</b> Ви за одне натискання зможете встановити доступну версію модуля, без будь-яких відвідувань оформленого замовлення, пошуку замовлення, завантаження архівів і таке інше.</p>"
+"<br>"
+"<h4>Процес оновлення</h4>"
+"<p>Оновлення модулів відбувається за допомогою <b>Центру оновлень CS-Cart</b>. У випадку відсутності доступного оновлення в Центрі оновлень CS-Cart, оновлення відбувається шляхом Видалення старої версії модуля і Установки нової версії.</p>"
+"</p>"
+"<br>"
+"<h4>Кеш</h4>"
+"<p>Після установки і/або оновлення необхідно скинути кеш CS-Cart. Докладніше дивіться <a target='_blank' href='https://www.cs-cart.ru/docs/4.7.x/developer_guide/addons/tutorials/addon_creation/cache.html'>документацію</a> CS-Cart.</p>"
+
+msgctxt "Languages::ab__am.notifications"
+msgid "ab__am.notifications"
+msgstr "Список повідомлень AlexBranding"
+
+msgctxt "Languages::ab__am.notifications.notes"
+msgid "ab__am.notifications.notes"
+msgstr "В цьому розділі буде наведена інформація про наші новинки і акції."
+" Регулярно ми будемо сповіщати Вас про вихід нових рішень, знижки або закритих промоакціях, доступних лише Вам."
+
+msgctxt "Languages::ab__am.available_addons"
+msgid "ab__am.available_addons"
+msgstr "Список доступних АВ: Модулів"
+
+msgctxt "Languages::ab__am.addon.table_head.addon"
+msgid "ab__am.addon.table_head.addon"
+msgstr "Назва модулю"
+
+msgctxt "Languages::ab__am.addon.table_head.versions"
+msgid "ab__am.addon.table_head.versions"
+msgstr "Версії"
+
+msgctxt "Languages::ab__am.addon.table_head.versions.tooltip"
+msgid "ab__am.addon.table_head.versions.tooltip"
+msgstr "Можливі варіанти: Установлена, Доступна Вам и Актуальна версії модулю"
+
+msgctxt "Languages::ab__am.addon.versions.installed"
+msgid "ab__am.addon.versions.installed"
+msgstr "Установлена"
+
+msgctxt "Languages::ab__am.addon.versions.available"
+msgid "ab__am.addon.versions.available"
+msgstr "Доступна Вам"
+
+msgctxt "Languages::ab__am.addon.versions.final"
+msgid "ab__am.addon.versions.final"
+msgstr "Актуальна"
+
+msgctxt "Languages::ab__am.addon.table_head.actions"
+msgid "ab__am.addon.table_head.actions"
+msgstr "Дії"
+
+msgctxt "Languages::ab__am.addon.table_head.subscription"
+msgid "ab__am.addon.table_head.subscription"
+msgstr "Керування підпискою"
+
+msgctxt "Languages::ab__am.addon.table_head.note"
+msgid "ab__am.addon.table_head.note"
+msgstr "Примітка"
+
+msgctxt "Languages::ab__am.addon.new_version_is_available"
+msgid "ab__am.addon.new_version_is_available"
+msgstr "v[ver] від [date]"
+
+msgctxt "Languages::ab__am.addon.new_version_is_available.tooltip"
+msgid "ab__am.addon.new_version_is_available.tooltip"
+msgstr "Доступна нова версія v[ver] від [date]"
+
+msgctxt "Languages::ab__am.addon.doc"
+msgid "ab__am.addon.doc"
+msgstr "Документація"
+
+msgctxt "Languages::ab__am.addon.version_info"
+msgid "ab__am.addon.version_info"
+msgstr "<b>Дата релізу</b>: [date]<br>"
+"<b>Сумісність</b>:<br>"
+"CS-Cart: [ultimate]<br>"
+"Multivendor: [multivendor]"
+
+msgctxt "Languages::ab__am.submit.install.text"
+msgid "ab__am.submit.install.text"
+msgstr "Встановити v[ver]"
+
+msgctxt "Languages::ab__am.submit.update.text"
+msgid "ab__am.submit.update.text"
+msgstr "Оновити до v[ver]"
+
+msgctxt "Languages::ab__am.submit.update.tooltip"
+msgid "ab__am.submit.update.tooltip"
+msgstr "Якщо оновлення модулю недоступні через Центр оновлень CS-Cart, Вам необхідно Видалити модуль."
+
+msgctxt "Languages::ab__am.submit.tooltip"
+msgid "ab__am.submit.tooltip"
+msgstr "Майте на увазі, що перед установкою будуть видалені усі файли цього модулю. В тому числі, будуть видалені і внесені Вами зміни в цей модуль, якщо вони є — обов’язково збережіть їх. [update_info]"
+
+msgctxt "Languages::ab__am.submit.tooltip.update_info"
+msgid "ab__am.submit.tooltip.update_info"
+msgstr "Обов’язково запам’ятайте налаштування модуля для їх відновлення після оновлення, якщо вони є"
+
+msgctxt "Languages::ab__am.addon.settings"
+msgid "ab__am.addon.settings"
+msgstr "Налаштування модулю"
+
+msgctxt "Languages::ab__am.addon.subscription_updates"
+msgid "ab__am.addon.subscription_updates"
+msgstr "Оновлення доступні до [date]"
+
+msgctxt "Languages::ab__am.addon.button_buy_updates.text"
+msgid "ab__am.addon.button_buy_updates.text"
+msgstr "Продовжити підписку"
+
+msgctxt "Languages::ab__am.addon.button_buy_updates.tooltip"
+msgid "ab__am.addon.button_buy_updates.tooltip"
+msgstr "Продовжіть підписку для отримання актуальних версій модуля"
+
+msgctxt "Languages::ab__am.addon.msg.available_version_is_installed"
+msgid "ab__am.addon.msg.available_version_is_installed"
+msgstr "Установлена остання доступна версія модуля"
+
+msgctxt "Languages::ab__am.addon.subscription.expired"
+msgid "ab__am.addon.subscription.expired"
+msgstr "Підписка закінчилась [date]. Продовжіть підписку для отримання актуальних версій модуля"
+
+msgctxt "Languages::ab__am.addon.subscription.active"
+msgid "ab__am.addon.subscription.active"
+msgstr "Підписка активна до [date]"
+
+msgctxt "Languages::ab__am.addon.msg.final_version_is_installed"
+msgid "ab__am.addon.msg.final_version_is_installed"
+msgstr "Установлена фінальна версія модуля"
+
+msgctxt "Languages::ab__am.addon.msg.not_available"
+msgid "ab__am.addon.msg.not_available"
+msgstr "Модуль недоступний для Вашої версії магазину!"
+
+msgctxt "Languages::ab__am.addon.msg.expired_subscription"
+msgid "ab__am.addon.msg.expired_subscription"
+msgstr "Вам доступна лише версія v[ver]. Продовжіть підписку для отримання актуальної версії модуля"
+
+msgctxt "Languages::ab__am.addon.button_download_am.text"
+msgid "ab__am.addon.button_download_am.text"
+msgstr "Завантажити"
+
+msgctxt "Languages::ab__am.addon.button_download_am.note"
+msgid "ab__am.addon.button_download_am.note"
+msgstr "<p>AB: Менеджер модулів потрібен для правильної роботи наших рішень. "
+"Він упорядковує Ваші модулі і групує їх по пакетам. "
+"Ненав’язливо сповіщаючи Вам про нові доступні оновлення модуля і дає можливість оновити їх одним натисканням. "
+"Також Ви легко можете продовжити підписку на наші рішення і отримати найактуальнішу версію модуля. Ми постійно оновлюємо модулі, щоб зробити їх максимально корисними для Вас. </p>"
+"<p>Зверніть увагу, для установки і/або оновлення модулів необхідно, щоб у Вас була актуальна версія AB: Менеджера модулів версії v[ver]. Ви будете проінформовані про вихід нової версії модуля і буде зазначене посилання для завантаження архіву модуля.</p>"
+"<hr>"
+"<p><b>Як оновити AB: Менеджер модулів до версії v[ver]?</b></p> "
+"<ol>"
+"<li>При появі сповіщення про доступність нової версії АВ: Менеджер модулів завантажте архів;</li>"
+"<li>Закрийте вітрину магазину. (Для цього перейдіть до Налаштувань -> Загальні -> Закрити вітрину - установіть чекбокс і натисніть кнопку [Зберегти], зачиняємо лише на 2 хвилини);</li>"
+"<li>Видаліть AB: Менеджер модулів (Для цього перейдіть в Модулі -> Керування модулями -> AB: Менеджер модулів -> Видалити);</li>"
+"<li>Встановіть архів АВ: Менеджер модулів з п.1 (Для цього перейдіть в Модулі -> Керування модулями -> кнопка [+] -> оберіть раніше завантажений архів з п.1);</li>"
+"<li>Очистіть кеш сайту (Для цього перейдіть в пункт меню Адміністрування -> Сховище даних -> Очистити кеш);</li>"
+"<li>Відкрийте вітрину магазину. (Для цього перейдіть до Налаштувань -> Загальні -> Закрити вітрину - скиньте чекбокс і натисніть кнопку [Зберегти]);</li>"
+"</ol>"
+
+msgctxt "Languages::ab__am.addon.update_instruction"
+msgid "ab__am.addon.update_instruction"
+msgstr "Процедура оновлення"
+
+msgctxt "Languages::ab__am.available_sets"
+msgid "ab__am.available_sets"
+msgstr "Список доступних АВ: Пакетів"
+
+msgctxt "Languages::ab__am.set.set"
+msgid "ab__am.set.set"
+msgstr "Назва пакету"
+
+msgctxt "Languages::ab__am.set.available_updates"
+msgid "ab__am.set.available_updates"
+msgstr "Доступні нові версії: [n]"
+
+msgctxt "Languages::ab__am.set.subscription_updates"
+msgid "ab__am.set.subscription_updates"
+msgstr "Оновлення доступні до [date]"
+
+msgctxt "Languages::ab__am.set.button_buy_updates.text"
+msgid "ab__am.set.button_buy_updates.text"
+msgstr "Продовжити підписку"
+
+msgctxt "Languages::ab__am.set.button_buy_updates.tooltip"
+msgid "ab__am.set.button_buy_updates.tooltip"
+msgstr "Підписка на оновлення закінчилась [date]. Продовжіть підписку для отримання останніх оновлень"
+
+msgctxt "Languages::privilege_sections.ab__addons"
+msgid "privilege_sections.ab__addons"
+msgstr "AB: Модулі"
+
+msgctxt "Languages::privilege_groups.ab__addons_manager"
+msgid "privilege_groups.ab__addons_manager"
+msgstr "AB: Менеджер модулів"
+
+#. Alexbranding. Do not modify this file manually!
