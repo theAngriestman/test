@@ -1,0 +1,11 @@
+{
+  "pre_actions": {
+    "actions": [
+      "set_license_key"
+    ],
+    "upgrades": {
+      "core": "4.18.1.Beta"
+    }
+  }
+}
+
